@@ -100,7 +100,7 @@ export default function ClientReviews() {
             <button className="px-4 py-1 uppercase font-semibold border border-[#E63946] text-black rounded-full text-xs md:text-sm shadow-none">
               Reviews
             </button>
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#E63946] leading-tight font-[MaxOT]">
+            <h2 className="text-3xl text-[#E63946] leading-tight font-[MaxOT]">
               What Our Customers Say About Us
             </h2>
           </div>

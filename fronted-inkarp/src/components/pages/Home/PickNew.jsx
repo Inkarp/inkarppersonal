@@ -76,7 +76,7 @@ export default function PickNew() {
         <h1 className="text-3xl text-[#E63946] font-[MaxOT] leading-tight">
           Explore Our Top Lab Solutions
         </h1>
-        <p className="font-[Roboto] text-base sm:text-lg max-w-xl">
+        <p className="font-[Roboto] text-base sm:text-lg ">
           Explore our expert-curated selection of lab equipment built for precision and reliability
         </p>
       </div>
