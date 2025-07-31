@@ -127,7 +127,7 @@ export default function MainLayout() {
 
   // Show loading animation for 5 seconds
   useEffect(() => {
-    const loadTimer = setTimeout(() => setIsLoading(false), 500);
+    const loadTimer = setTimeout(() => setIsLoading(false), 5000);
     return () => clearTimeout(loadTimer);
   }, []);
 
