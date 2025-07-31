@@ -173,11 +173,11 @@ export default function Principles() {
 
   return (
     <>
-      <div className="w-[90%] sm:w-[85%] md:w-[80%] mx-auto px-4 py-6 text-center">
-        <button className="px-4 py-1 text-center text-sm font-semibold uppercase border border-[#E63946] text-black rounded-full mb-4 font-[maxot]">
+      <div className="text-center py-3 flex flex-col items-center justify-center gap-3">
+        <h4 className="px-4 py-1 text-center text-sm font-semibold uppercase border border-[#E63946] text-black rounded-full  font-[MaxOT]">
           Our Principles
-        </button>
-        <h2 className="text-3xl font-[MaxOT] text-white leading-tight">
+        </h4>
+        <h2 className="text-3xl font-[MaxOT] text-[#E63946] leading-tight">
           Strategic Alliances with Global Scientific Leaders
         </h2>
       </div>
@@ -255,7 +255,7 @@ export default function Principles() {
                     left: x - logoWidth / 2,
                     width: `${logoWidth}px`,
                     height: `${logoHeight}px`,
-                    // backgroundColor: "white",
+                    backgroundColor: "white",
                     borderRadius: "8px",
                     transition: "transform 0.3s ease",
                     display: "flex",

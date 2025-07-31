@@ -11,10 +11,16 @@ import Advion from "/src/assets/PrincipalLogos/RowOne/advion.png";
 function NewAbout() {
   return (
     <>
-    <div className="flex flex-col items-center justify-center">
-      <button className="px-4 py-1 mt-5 text-center text-sm font-semibold uppercase border border-[#E63946] text-black rounded-full mb-4 font-[MaxOT]">
-        Our Group Companies & Collaborations
-      </button>
+    <div className="text-center py-3 flex flex-col items-center justify-center gap-3">
+        <h4 className="px-4 py-1 text-center text-sm font-semibold uppercase border border-[#E63946] text-black rounded-full font-[MaxOT]">
+          Our Group Companies & Collaborations
+        </h4>
+        <h3 className="text-3xl font-[MaxOT] text-[#E63946] leading-tight">
+          At INKARP, innovation is at the core of everything we do.
+        </h3>
+        <p className="text-base text-lg font-[Roboto] max-w-3xl mx-auto">
+          Explore our subsidiaries and joint ventures that drive our shared vision forward.
+        </p>
       </div>
     <div className="w-[98%] mx-auto flex flex-col md:flex-row gap-8 p-4 md:p-6">
       {/* Left Section - Company Info */}
@@ -54,9 +60,9 @@ function NewAbout() {
             <img src={InkarpTelecom} alt="Inkarp Telecom" className="w-32 h-24 object-contain" />
             <img src={InkarpServices} alt="Inkarp Services" className="w-32 h-24 object-contain" />
           </div>
-          <p className="text-center text-gray-700 text-base md:text-lg leading-relaxed font-[Roboto]">
+          {/* <p className="text-center text-gray-700 text-base md:text-lg leading-relaxed font-[Roboto]">
             Inkarp subsidiaries work across multiple verticals to strengthen our scientific footprint throughout India.
-          </p>
+          </p> */}
         </div>
 
         {/* Joint Ventures */}
@@ -68,9 +74,9 @@ function NewAbout() {
             <img src={Verder} alt="Verder JV" className="w-32 h-24 object-contain" />
             <img src={Advion} alt="Advion JV" className="w-32 h-24 object-contain" />
           </div>
-          <p className="text-center text-gray-700 text-base md:text-lg leading-relaxed font-[Roboto]">
+          {/* <p className="text-center text-gray-700 text-base md:text-lg leading-relaxed font-[Roboto]">
             We collaborate through joint ventures to bring specialized scientific technologies and services to our clients.
-          </p>
+          </p> */}
         </div>
       </div>
     </div>

@@ -66,7 +66,7 @@ export default function MainLayout() {
   // Set popupVisible after slide-in finishes (~500ms)
   useEffect(() => {
     if (showPopup && !closingAnimation) {
-      const visibleTimer = setTimeout(() => setPopupVisible(true), 500);
+      const visibleTimer = setTimeout(() => setPopupVisible(true), 5000);
       return () => clearTimeout(visibleTimer);
     } else {
       setPopupVisible(false); // reset on close or animation

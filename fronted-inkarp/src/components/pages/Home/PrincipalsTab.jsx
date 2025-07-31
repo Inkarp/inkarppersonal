@@ -140,11 +140,11 @@ const logoRings = [
 export default function PrincipalsTab() { 
   return (
     <div className="w-full bg-gray-50 py-12 px-4">
-      <div className="flex justify-center items-center flex-col mb-8">
-      <button className="px-4 py-1 mt-5 text-center text-sm font-semibold uppercase border border-[#E63946] text-black rounded-full mb-4 font-[MaxOT]">
-        Our Global Principles
-      </button>
-       <h2 className="text-3xl text-center font-[MaxOT] text-[#E63946]">
+       <div className="text-center py-3 flex flex-col items-center justify-center gap-3">
+        <h4 className="px-4 py-1 text-center text-sm font-semibold uppercase border border-[#E63946] text-black rounded-full  font-[MaxOT]">
+          Our Principles
+        </h4>
+        <h2 className="text-3xl font-[MaxOT] text-[#E63946] leading-tight">
           Strategic Alliances with Global Scientific Leaders
         </h2>
       </div>
@@ -158,7 +158,7 @@ export default function PrincipalsTab() {
             {row.map((logo, idx) => (
               <div
                 key={`logo-${idx}`}
-                className="w-24 h-16 md:w-28 md:h-20 flex items-center justify-center bg-white rounded shadow hover:scale-105 transition-transform"
+                className="w-24 h-16 md:w-28 md:h-20 flex items-center justify-center hover:scale-105 transition-transform"
               >
                 <img
                   src={logo.src}

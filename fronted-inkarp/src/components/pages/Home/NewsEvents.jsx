@@ -18,13 +18,13 @@ const NewsEvents = () => {
   return (
     <>
     <aside className="relative p-2 ">
-      <div className='flex items-center justify-center flex-col'>
-       <p className="text-sm uppercase font-semibold border border-[#E63946] px-4 py-1 rounded-full inline-block mb-3 font-[MaxOT]">
+      <div className='flex items-center justify-center flex-col gap-3'>
+       <h4 className="text-sm uppercase font-semibold border border-[#E63946] px-4 py-1 rounded-full i font-[MaxOT]">
             News & Events
-          </p>
-          <h3 className="text-3xl text-center  font-[MaxOT] text-[#E63946] pb-6">
+          </h4>
+          <h1 className="text-3xl text-center font-[MaxOT] text-[#E63946] leading-tight">
             Events, Initiatives & Community Highlights
-          </h3>
+          </h1>
           </div>
       {/* Decorative Image */}
       <div className="absolute top-0 right-0 hidden md:block z-10">

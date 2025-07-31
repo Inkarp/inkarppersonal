@@ -103,13 +103,13 @@ export default function WhyChooseUsSection() {
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center swing-top-bwd">
-          <button className="px-4 py-1 text-sm font-semibold font-[MaxOT] uppercase border border-[#E63946] text-black rounded-full mb-4">
+        <div className="text-center flex flex-col justify-center items-center gap-3">
+          <h4 className="px-4 py-1 text-sm font-semibold font-[MaxOT] uppercase border border-[#E63946] text-black rounded-full">
             Industries We Serve
-          </button>
-          <h2 className="text-3xl font-[MaxOT] text-[#E63946] leading-tight">
+          </h4>
+          <h1 className="text-3xl font-[MaxOT] text-[#E63946] leading-tight">
             Solutions Tailored to Your Industry
-          </h2>
+          </h1>
         </div>
 
         <div className="flex flex-col lg:flex-row items-start gap-10 px-4 py-3 sm:px-8 lg:px-0">
@@ -164,14 +164,13 @@ export default function WhyChooseUsSection() {
             className="w-full lg:w-1/3 mt-6 lg:mt-0"
           >
             <h3 className="text-xl font-[MaxOT] font-semibold leading-snug mb-1">
-              {activeOption.label}: 
               {activeOption.tagline}
             </h3>
 
             <p className="mb-2 text-sm text-[#E63946] sm:text-base font-[Roboto]">
               {activeOption.description}
             </p>
-            <div className="space-y-3">
+            <div className="space-y-1">
               {activeOption.content.map((feat, i) => (
                 <div key={i} className="flex items-start gap-2">
                   <CheckCircle className="text-[#E63946] w-5 h-5 mt-1" />

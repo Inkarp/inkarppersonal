@@ -68,7 +68,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="text-white bg-white w-[99%] rounded-2xl shadow-xl mx-auto mt-2 border border-gray-200">
+    <footer className="w-[99%] rounded-2xl shadow-xl mx-auto mt-2 border border-gray-200">
       {/* Subscribe Section */}
       <div className="flex flex-col lg:flex-row items-center justify-center gap-6 px-4 py-5 rounded-t-xl">
         <img
@@ -79,7 +79,7 @@ const Footer = () => {
         />
 
         <div className="w-full lg:w-3/4 text-center">
-          <h3 className="text-lg text-[#E63946] font-bold mb-4" style={{ fontFamily: 'MaxOT' }}>
+          <h3 className="text-xl text-[#E63946] mb-4" style={{ fontFamily: 'MaxOT' }}>
             Subscribe for Scientific Updates That Matter
           </h3>
           <div className="relative max-w-xl mx-auto">
@@ -152,7 +152,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12">
           {/* About Section */}
           <div className="text-center lg:text-left">
-            <h2 className="text-xl sm:text-2xl font-semibold mb-4 text-black" style={{ fontFamily: 'MaxOT' }}>
+            <h2 className="text-xl mb-4 text-[#E63946]" style={{ fontFamily: 'MaxOT' }}>
               About Inkarp
             </h2>
             <p className="text-sm sm:text-base font-[Roboto] leading-relaxed mb-6" style={{ fontFamily: 'roboto' }}>
@@ -165,7 +165,7 @@ const Footer = () => {
 
             {/* Social Media Section */}
             <div className='flex flex-col items-center justify-center'>
-              <h3 className="text-lg sm:text-xl font-semibold mb-3 text-center" style={{ fontFamily: 'MaxOT' }}>
+              <h3 className="text-xl text-[#E63946] mb-3 text-center" style={{ fontFamily: 'MaxOT' }}>
                 Follow Us
               </h3>
               <div className="flex flex-row gap-4 items-center justify-center">
@@ -218,42 +218,49 @@ const Footer = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
             {/* Quick Links */}
             <div className="text-center sm:text-left">
-              <h3 className="text-lg sm:text-xl font-semibold mb-4" style={{ fontFamily: 'MaxOT' }}>
+              <h3 className="text-xl text-[#E63946] mb-4" style={{ fontFamily: 'MaxOT' }}>
                 Quick Links
               </h3>
-              <div className="space-y-2 text-sm sm:text-base ">
-                <div style={{ fontFamily: 'roboto' }}>
-                  <Link to="/" className="hover:text-red-600 transition-colors duration-200">Home</Link>
+              <div className="space-y-2 text-sm sm:text-base">
+                {[
+                  { name: 'Home', path: '/' },
+                  { name: 'Our Story', path: '/our-story' },
+                  { name: 'Verticals', path: '/verticals' },
+                  { name: 'Contact Us', path: '/contact' },
+                  { name: 'Blog', path: '/blog' },
+                  { name: 'News & Events', path: '/news-events' },
+                  { name: 'Careers', path: '/careers' },
+                ].map((link, index) => (
+                  <div key={index} style={{ fontFamily: 'Roboto' }}>
+                    <Link to={link.path} className="hover:text-red-600 transition-colors duration-200">
+                      {link.name}
+                    </Link>
+                  </div>
+                ))}
+
+                {/* Catalyst Cue Link */}
+                <div
+                  style={{ fontFamily: 'Roboto' }}
+                  className="flex justify-center sm:justify-start"
+                >
+                  <Link
+                    to="/catalystcue"
+                    className="hover:opacity-80 transition-opacity duration-200"
+                  >
+                    <img
+                      src={CatalystLogo}
+                      alt="Catalyst Cue"
+                      className="w-20 h-8 sm:w-24 sm:h-10 object-contain"
+                    />
+                  </Link>
                 </div>
-                <div style={{ fontFamily: 'roboto' }}>
-                  <Link to="/our-story" className="hover:text-red-600 transition-colors duration-200">Our Story</Link>
-                </div>
-                <div style={{ fontFamily: 'roboto' }}>
-                  <Link to="/verticals" className="hover:text-red-600 transition-colors duration-200">Verticals</Link>
-                </div>
-                <div style={{ fontFamily: 'roboto' }}>
-                  <Link to="/contact" className="hover:text-red-600 transition-colors duration-200">Contact Us</Link>
-                </div>
-                <div style={{ fontFamily: 'roboto' }}>
-                  <Link to="/blog" className="hover:text-red-600 transition-colors duration-200">Blog</Link>
-                </div>
-                <div style={{ fontFamily: 'roboto' }}>
-                  <Link to="/news-events" className="hover:text-red-600 transition-colors duration-200">News & Events</Link>
-                </div>
-                <div style={{ fontFamily: 'roboto' }}>
-                  <Link to="/careers" className="hover:text-red-600 transition-colors duration-200">Careers</Link>
-                </div>
-              </div>
-              <div className="">
-                <Link to="/catalystcue">
-                  <img src={CatalystLogo} className="w-20 h-8 sm:w-24 sm:h-10 object-contain hover:opacity-80 transition-opacity duration-200" alt="Catalyst" />
-                </Link>
               </div>
             </div>
 
+
             {/* Contact Information */}
             <div className="text-center sm:text-left">
-              <h3 className="text-lg sm:text-xl font-semibold mb-4" style={{ fontFamily: 'MaxOT' }}>
+              <h3 className="text-xl text-[#E63946] mb-4" style={{ fontFamily: 'MaxOT' }}>
                 Contact Us
               </h3>
               <ul className="space-y-3 text-sm sm:text-base font-[Roboto]">

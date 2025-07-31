@@ -24,15 +24,14 @@ export default function HomeBlogs() {
   return (
     <section className="w-full mx-auto p-3">
       {/* <div className="text-center mb-6 w-full"> */}
-        <div className="mx-auto w-full flex  items-center justify-center text-center ">
-          <div>
-            <p className="text-xs font-semibold uppercase font-[MaxOT] border px-4 py-1 rounded-full inline-block mb-3 border-[#E63946]">
+        <div className="text-center py-3 flex flex-col items-center justify-center gap-3">
+            <h4 className="text-sm font-semibold uppercase font-[MaxOT] border border-[#E63946] px-4 py-1 rounded-full  ">
               Blogs
-            </p>
-            <h2 className="text-3xl font-[MaxOT] text-[#E63946] pb-5 ">
+            </h4>
+            <h1 className="text-3xl font-[MaxOT] text-[#E63946] leading-tight ">
               Expert Perspectives | Real-World Lab Applications
-            </h2>
-            </div>
+            </h1>
+          
             {/* <div className="border rounded-full px-3 py-2" >
               <button>View All Blogs</button>
             </div> */}

@@ -184,11 +184,11 @@ export default function Companies() {
         }
       `}</style>
 
-      <div className="text-center mb-8">
-        <button className="px-4 py-1 mt-5 text-center text-sm font-semibold uppercase border border-[#E63946] text-black rounded-full mb-4 font-[MaxOT]">
+      <div className="text-center py-3 flex flex-col items-center justify-center gap-3">
+        <h4 className="px-4 py-1 text-center text-sm font-semibold uppercase border border-[#E63946] text-black rounded-full font-[MaxOT]">
           Our Group Companies & Collaborations
-        </button>
-        <h3 className="text-3xl font-[MaxOT] text-[#E63946] mb-2 leading-tight">
+        </h4>
+        <h3 className="text-3xl font-[MaxOT] text-[#E63946] leading-tight">
           At INKARP, innovation is at the core of everything we do.
         </h3>
         <p className="text-base text-lg font-[Roboto] max-w-3xl mx-auto">
