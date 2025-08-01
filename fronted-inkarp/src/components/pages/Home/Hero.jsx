@@ -1,4 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, EffectFade, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Play, Search } from "lucide-react";
 import SearchDialog from "../../SearchDialog";

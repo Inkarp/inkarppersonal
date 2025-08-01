@@ -83,7 +83,7 @@ export default function PickNew() {
 
       {/* Main Layout */}
       <motion.div
-        className="w-full max-w-[1440px] mx-auto border border-gray-200 rounded-2xl px-4 md:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-start gap-8"
+        className="w-full mx-auto border border-gray-200 rounded-2xl px-10 md:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-start gap-8"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}

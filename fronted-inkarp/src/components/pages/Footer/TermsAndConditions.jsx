@@ -1,146 +1,123 @@
-import React, { useRef } from "react";
-import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
 export default function TermsAndConditions() {
-  const contentRef = useRef(null);
-
-  
-  const handleDownloadPDF = async () => {
-    const canvas = await html2canvas(element, {
-  scale: 2,
-  useCORS: true,
-  foreignObjectRendering: false
-});  
-
-    const element = contentRef.current;
-    
-    const imgData = canvas.toDataURL("image/png");
-
-    const pdf = new jsPDF("p", "mm", "a4");
-    const pageWidth = pdf.internal.pageSize.getWidth();
-    const pageHeight = (canvas.height * pageWidth) / canvas.width;
-
-    pdf.addImage(imgData, "PNG", 0, 0, pageWidth, pageHeight);
-    pdf.save("terms-and-conditions.pdf");
-  };
-
   return (
-    <div className="max-w-5xl mx-auto px-4 py-10 text-gray-800">
-      <div className="flex justify-end mb-4">
-        <button
-          onClick={handleDownloadPDF}
-          className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition"
-        >
-          Download PDF
-        </button>
+    <section className="font-[Roboto] text-[#0f1b33] bg-white">
+      <Helmet>
+        <title>Terms And Conditions- Inkarp Instruments Private Ltd.</title>
+      </Helmet>
+      {/* Banner Section */}
+      <div className="bg-[#E63946] py-10 px-4 text-center text-white">
+        <h1 className="text-3xl md:text-4xl font-[MaxOT]">Terms & Conditions</h1>
+        <p className="text-sm md:text-base mt-2">Effective Date: <strong>March 3, 2025</strong></p>
       </div>
 
-      {/* ✅ Entire content is wrapped in the ref */}
-      <div ref={contentRef}>
-        <h1 className="text-3xl font-bold mb-6">
-          Terms and Conditions of Sales and After-Sales Service
-        </h1>
+      <div className="max-w-5xl mx-auto p-4 md:p-8 space-y-8">
+        {/* 1. Company Information */}
+        <div>
+          <h2 className="text-xl font-bold font-[MaxOT] text-[#E63946] mb-2">1. Company Information</h2>
+          <p className="font-semibold">1.1 <span className="text-[#E63946]">Inkarp Instruments Pvt. Ltd.</span></p>
+          <p><strong>Address:</strong> Plot No - 5A/10-11, 3rd Floor, IDA Nacharam, Road No. 1, Chilka Nagar Main Rd, Nacharam, Hyderabad, Telangana 500076.</p>
+          <p className="mb-4"><strong>GST Number:</strong> 36AABCI2728R1Z4</p>
 
-        <div className="space-y-6 text-sm sm:text-base leading-relaxed">
-          <p><strong>Effective Date:</strong> March 3, 2025</p>
+          <p className="font-semibold">1.2 <span className="text-[#E63946]">Inkarp Instruments Services</span></p>
+          <p><strong>Address:</strong> Plot No - 5A/10-11, 2nd Floor, IDA Nacharam, Road No. 1, Chilka Nagar Main Rd, Nacharam, Hyderabad, Telangana 500076.</p>
+          <p><strong>GST Number:</strong> 36AABFI9315B1ZQ</p>
+        </div>
 
-          <section>
-            <h2 className="font-semibold text-lg mb-2">1. COMPANY INFORMATION</h2>
-            <p><strong>1.1 Inkarp Instruments Pvt. Ltd.</strong><br />
-              Head Office:<br />
-              Plot No - 5A/10-11, 3rd Floor, IDA Nacharam, Road No. 1, Chilka Nagar Main Rd, Nacharam, Hyderabad, Telangana 500076.<br />
-              GST Number: 36AABCI2728R1Z4
-            </p>
-            <p className="mt-4"><strong>1.2 Inkarp Instruments Services</strong><br />
-              Head Office:<br />
-              Plot No - 5A/10-11, 2nd Floor, IDA Nacharam, Road No. 1, Chilka Nagar Main Rd, Nacharam, Hyderabad, Telangana 500076.<br />
-              GST Number: 36AABFI9315B1ZQ
-            </p>
-          </section>
+        {/* 2. Applicability */}
+        <div>
+          <h2 className="text-xl font-bold font-[MaxOT] text-[#E63946] mb-2">2. Applicability</h2>
+          <ul className="list-disc ml-5 space-y-1">
+            <li><strong>Applies to all sales</strong> of products, spares, accessories, and services by Inkarp.</li>
+            <li>Placing an order implies <strong>acknowledgement and acceptance</strong> of these T&Cs.</li>
+            <li><strong>Subject to change</strong> without prior notice. Refer to <span className="text-blue-600 underline">www.inkarp.co.in</span> for latest version.</li>
+          </ul>
+        </div>
 
-          <section>
-            <h2 className="font-semibold text-lg mb-2">2. APPLICABILITY</h2>
-            <p>2.1 These T&Cs apply to all sales of products, spare parts, accessories, and services by Inkarp Instruments Pvt. Ltd. and Inkarp Instruments Services (collectively referred to as "Inkarp") to any individual, company, or entity ("Buyer").</p>
-            <p>2.2 By placing an order, Buyer acknowledges, accepts, and agrees to these T&Cs.</p>
-            <p>2.3 These T&Cs may be amended without prior notice. The latest version will always be available at www.inkarp.co.in.</p>
-          </section>
+        {/* 3. Quotations & Orders */}
+        <div>
+          <h2 className="text-xl font-bold font-[MaxOT] text-[#E63946] mb-2">3. Quotations & Orders</h2>
+          <ul className="list-disc ml-5 space-y-1">
+            <li><strong>Quotation validity:</strong> 30 days unless stated otherwise.</li>
+            <li><strong>Order confirmation:</strong> Only in writing by Inkarp.</li>
+            <li>Orders <strong>cannot be cancelled</strong> without Inkarp's written approval.</li>
+            <li>Minimum order value requirements may apply.</li>
+          </ul>
+        </div>
 
-          <section>
-            <h2 className="font-semibold text-lg mb-2">3. QUOTATIONS & ORDERS</h2>
-            <p>3.1 Quotations are valid for a maximum of 30 days from the date of issue unless otherwise stated in writing.</p>
-            <p>3.2 Orders are confirmed only upon written acceptance by Inkarp.</p>
-            <p>3.3 Confirmed orders cannot be cancelled unless Inkarp agrees in writing.</p>
-            <p>3.4 Orders may be subject to minimum order value requirements based on product type.</p>
-          </section>
+        {/* 4. Pricing, Payment & Ownership Retention */}
+        <div>
+          <h2 className="text-xl font-bold font-[MaxOT] text-[#E63946] mb-2">4. Pricing, Payment & Ownership Retention</h2>
+          <ul className="list-disc ml-5 space-y-1">
+            <li><strong>All prices in INR</strong> unless specified otherwise.</li>
+            <li><strong>Excludes:</strong> GST, freight, packaging, duties, and insurance.</li>
+            <li><strong>GST:</strong> Applied at prevailing rate during billing.</li>
+            <li><strong>SEZ GST exemption:</strong> granted only upon receiving valid documents <strong>before invoicing</strong>.</li>
+            <li><strong>Ownership:</strong> retained by Inkarp until full payment is received.</li>
+            <li><strong>Repossession right:</strong> If delayed beyond 90 days from due date.</li>
+          </ul>
+        </div>
 
-          <section>
-            <h2 className="font-semibold text-lg mb-2">4. PRICING, PAYMENT & OWNERSHIP RETENTION</h2>
-            <p>4.1 Prices are in INR unless specified otherwise.</p>
-            <p>4.2 Prices exclude:<br />
-              - GST and other applicable taxes.<br />
-              - Freight, packaging, insurance, handling charges.<br />
-              - Import duties or customs clearances (if applicable).
-            </p>
-            <p>4.3 GST will be applied as per the rate prevailing at the time of billing.</p>
-            <p>4.4 For SEZ customers, GST exemption will be granted only if all valid SEZ documents are received before invoicing. Otherwise, GST will be charged and recovered.</p>
-            <p><strong>4.5 Ownership Retention Clause:</strong><br />
-              - Until full payment is received, the product remains the exclusive property of Inkarp.<br />
-              - Buyer is not allowed to resell, transfer, pledge, or lease the product without Inkarp’s written consent.<br />
-              - Inkarp may repossess the product if payment is delayed beyond 90 days.
-            </p>
-          </section>
+        {/* 5. Delivery, Shipment & Risk of Loss */}
+        <div>
+          <h2 className="text-xl font-bold font-[MaxOT] text-[#E63946] mb-2">5. Delivery, Shipment & Risk of Loss</h2>
+          <ul className="list-disc ml-5 space-y-1">
+            <li><strong>Estimated delivery dates</strong> may vary due to external factors.</li>
+            <li>Supply is on <strong>Ex-Works (Hyderabad)</strong> basis unless agreed otherwise.</li>
+            <li><strong>Risk & title:</strong> Pass to buyer upon carrier handover.</li>
+            <li><strong>Inkarp is not liable</strong> for delays or transit damage after handover.</li>
+            <li>Partial shipments are <strong>allowed and invoiced separately</strong>.</li>
+          </ul>
+        </div>
 
-          <section>
-            <h2 className="font-semibold text-lg mb-2">5. DELIVERY, SHIPMENT & RISK OF LOSS</h2>
-            <p>5.1 Delivery dates are estimates and may change based on availability or import delays.</p>
-            <p>5.2 Products are supplied on Ex-Works (Inkarp Facility, Hyderabad) unless agreed otherwise.</p>
-            <p>5.3 Risk and title pass to Buyer upon handover to the carrier.</p>
-            <p>5.4 Inkarp is not responsible for transit delays or damage after dispatch.</p>
-            <p>5.5 Partial deliveries are allowed and invoiced separately.</p>
-          </section>
+        {/* 6. Order Cancellation & Returns */}
+        <div>
+          <h2 className="text-xl font-bold font-[MaxOT] text-[#E63946] mb-2">6. Order Cancellation & Returns</h2>
+          <ul className="list-disc ml-5 space-y-1">
+            <li><strong>Confirmed orders</strong> are non-cancellable without agreement.</li>
+            <li>Returns allowed for <strong>wrong products</strong> or <strong>defects reported within 7 days</strong>.</li>
+            <li>Returns require <strong>RMA approval</strong> from Inkarp.</li>
+            <li><strong>25% restocking fee</strong> applies to non-defective returns.</li>
+          </ul>
+        </div>
 
-          <section>
-            <h2 className="font-semibold text-lg mb-2">6. ORDER CANCELLATION & RETURNS</h2>
-            <p>6.1 Orders cannot be cancelled post-confirmation unless agreed in writing.</p>
-            <p>6.2 Returns are only accepted if:<br />
-              - Wrong product was supplied<br />
-              - Manufacturing defect is reported within 7 days
-            </p>
-            <p><em>Disclaimer:</em> Replacement or repair is at Inkarp’s discretion.</p>
-            <p>6.3 All returns require prior approval and RMA number.</p>
-            <p>6.4 Non-defective returns attract a 25% restocking fee.</p>
-          </section>
+        {/* 7. Warranty Policy */}
+        <div>
+          <h2 className="text-xl font-bold font-[MaxOT] text-[#E63946] mb-2">7. Warranty Policy</h2>
+          <ul className="list-disc ml-5 space-y-1">
+            <li><strong>Standard warranty:</strong> 12 months from shipment for manufacturing defects.</li>
+            <li><strong>Excludes:</strong> Consumables, wear & tear parts (e.g. seals, filters, tubing).</li>
+            <li><strong>Void if:</strong> Misused, modified, or serviced by unauthorized personnel.</li>
+            <li><strong>Coverage:</strong> Repair or replacement only, no refunds.</li>
+          </ul>
+        </div>
 
-          <section>
-            <h2 className="font-semibold text-lg mb-2">7. WARRANTY POLICY</h2>
-            <p>7.1 Standard warranty: 12 months from shipment, for manufacturing defects only.</p>
-            <p>7.2 Does not cover wear & tear parts (glassware, tubing, sensors, lamps, belts, etc.).</p>
-            <p>7.3 Warranty void if product is misused, altered, or repaired by unauthorized personnel.</p>
-            <p>7.4 Warranty covers repair/replacement only. No refunds under warranty.</p>
-          </section>
+        {/* 8. Foreign Currency Orders */}
+        <div>
+          <h2 className="text-xl font-bold font-[MaxOT] text-[#E63946] mb-2">8. Foreign Currency Orders – OEM Responsibility</h2>
+          <ul className="list-disc ml-5 space-y-1">
+            <li><strong>OEM responsible</strong> for performance, warranty, and service.</li>
+            <li><strong>Inkarp acts as facilitator only</strong>; not liable for OEM issues.</li>
+            <li><strong>Legal claims</strong> must be addressed directly to the OEM.</li>
+          </ul>
+        </div>
 
-          <section>
-            <h2 className="font-semibold text-lg mb-2">8. FOREIGN CURRENCY (FC) ORDERS – OEM RESPONSIBILITY</h2>
-            <p>8.1 In FC Orders, Buyer transacts directly with OEM; Inkarp is only a facilitator.</p>
-            <p>8.2 OEM is solely responsible for performance, warranty, and service obligations.</p>
-            <p>8.3 Inkarp holds no legal responsibility for failures or disputes in FC Orders.</p>
-          </section>
+        {/* 9. Governing Law & Jurisdiction */}
+        <div>
+          <h2 className="text-xl font-bold font-[MaxOT] text-[#E63946] mb-2">9. Governing Law & Jurisdiction</h2>
+          <p><strong>Applicable Law:</strong> Indian Law.</p>
+          <p><strong>Jurisdiction:</strong> Courts in Hyderabad, Telangana.</p>
+        </div>
 
-          <section>
-            <h2 className="font-semibold text-lg mb-2">9. GOVERNING LAW & JURISDICTION</h2>
-            <p>9.1 Governed by Indian law.</p>
-            <p>9.2 All disputes fall under Hyderabad, Telangana jurisdiction.</p>
-          </section>
-
-          <section>
-            <h2 className="font-semibold text-lg mb-2">10. CUSTOMER DATA & PRIVACY</h2>
-            <p>10.1 Inkarp may collect and process customer data for support, order, and legal compliance.</p>
-            <p>This data may be shared with operational partners (e.g., logistics, auditors) only as needed.</p>
-          </section>
+        {/* 10. Customer Data & Privacy */}
+        <div>
+          <h2 className="text-xl font-bold font-[MaxOT] text-[#E63946] mb-2">10. Customer Data & Privacy</h2>
+          <p><strong>Inkarp may collect and store Buyer data</strong> for processing orders, compliance, and customer service.</p>
+          <p>This data <strong>may be shared with logistics partners or auditors</strong> for operational needs.</p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
-

@@ -7,14 +7,14 @@ export default function MissionVision() {
     <section className="w-full px-6 md:px-16 py-5 ">
       {/* Section Header */}
       <Fade direction="down" triggerOnce>
-        <div className="text-center mb-16 max-w-3xl mx-auto">
-          <button className="px-4 py-1 text-sm font-semibold uppercase border border-[#be0010] text-black rounded-full mb-4 bg-white/40">
+        <div className="text-center flex flex-col items-center justify-center max-w-5xl mx-auto gap-3">
+          <h4 className="px-4 py-1 font-[MaxOT] text-sm font-semibold uppercase border border-[#be0010] text-black rounded-full bg-white/40">
             Who Are We
-          </button>
-          <h1 className="text-4xl md:text-5xl font-bold font-[MaxOT] text-[#E63946] leading-tight mb-4">
+          </h4>
+          <h1 className="text-3xl font-[MaxOT] text-[#E63946] leading-tight ">
             Our Purpose & Principles
           </h1>
-          <p className="text-lg text-black ">
+          <p className="text-lg text-black py-3 font-[Roboto] ">
             With over four decades of experience, we partner with global leaders to empower research,
             diagnostics, and industry through reliable, precise instrumentation and personalized
             technical support.

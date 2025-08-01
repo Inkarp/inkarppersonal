@@ -3,6 +3,7 @@ import { FaLinkedin } from 'react-icons/fa';
 import { Fade } from 'react-awesome-reveal';
 import Balu from '/src/assets/Team/Balu.png';
 import Natesh2 from '/src/assets/Team/Natesh2.png';
+import Sign from '/src/assets/Team/balu-sign.png';
 
 const members = [
   {
@@ -27,21 +28,32 @@ const members = [
 
 const MemberCard = ({ member }) => {
   return (
-    <div className="relative flex items-start gap-8 text-left p-6 bg-white backdrop-blur-md rounded-2xl shadow-lg border border-gray-200 hover:shadow-2xl hover:border-[#E63946] transition-all duration-300 w-full max-w-4xl">
-      <div className="flex-shrink-0">
-        <div className=" rounded-lg flex items-center justify-center bg-white shadow-md overflow-hidden w-64 h-80">
+    <div className="relative flex flex-col lg:flex-row items-start gap-6 text-left p-5 sm:p-6 bg-white backdrop-blur-md rounded-2xl shadow-lg border border-gray-200 hover:shadow-2xl hover:border-[#E63946] transition-all duration-300 w-full max-w-5xl">
+      <div className="w-full sm:w-[300px] flex-shrink-0 mx-auto sm:mx-0">
+        <div className="rounded-lg flex flex-col gap-3 items-center justify-center shadow-md overflow-hidden w-full h-[360px]">
           <img
             src={member.img}
             alt={member.name}
             className="w-full h-full object-cover"
           />
         </div>
+
+        {member.name === 'S. Balu' && (
+          <div className="mt-3 flex justify-center items-center p-3 bg-[F5F5F5]">
+            <img
+              src={Sign}
+              alt="Balu Signature"
+              className="w-36 h-auto object-contain bg-[#E63946] rounded-3xl"
+            />
+          </div>
+        )}
       </div>
+
       <div className="flex flex-col flex-grow min-w-0">
         <div className="flex justify-between items-start w-full mb-2">
           <div>
-            <h3 className="text-xl font-bold text-[#E63946] font-[MaxOT]">{member.name}</h3>
-            <p className="text-lg text-gray-800 font-semibold font-[MaxOT]">{member.title}</p>
+            <h3 className="text-3xl text-black font-[MaxOT]">{member.name}</h3>
+            <p className="text-xl text-[#E63946] font-[MaxOT]">{member.title}</p>
           </div>
           {member.links?.[0] && (
             <a
@@ -54,7 +66,9 @@ const MemberCard = ({ member }) => {
             </a>
           )}
         </div>
-        <p className="text-md font-[Roboto] font-italic whitespace-pre-line text-black">{member.message}</p>
+        <p className="text-lg italic font-[Roboto]  whitespace-pre-line text-black">
+          {member.message}
+        </p>
       </div>
     </div>
   );
@@ -62,27 +76,28 @@ const MemberCard = ({ member }) => {
 
 export default function TeamNew() {
   return (
-    <section className=" min-h-screen">
-      <div className="mx-auto text-center">
-        <div className='bg-white w-full mx-auto' >
-        <h2 className="text-3xl font-bold font-[MaxOT] text-[#E63946] tracking-tight">Meet Our Leadership</h2>
-        <p className="text-lg  max-w-3xl mx-auto font-[Roboto]">
-          At Inkarp, our leadership team isn't just made up of titles — it's built on decades of
-          expertise, a passion for scientific innovation, and a commitment to excellence. Together,
-          they guide our journey, empower our people, and elevate our customer experience.
-        </p>
+    <section className="min-h-screen py-6 px-4 sm:px-6 md:px-10 lg:px-20 ">
+      <div className="mx-auto text-center max-w-6xl">
+        <div className="flex flex-col justify-center items-center gap-3">
+          <h4 className="text-xs sm:text-sm font-[MaxOT] text-black uppercase px-4 py-1 border border-[#E63946] bg-white rounded-full">
+            Meet Our Leadership
+          </h4>
+          <p className="text-sm sm:text-base md:text-lg text-black max-w-5xl bg-white/50 p-3 sm:p-4 rounded-full font-[Roboto]">
+            At Inkarp, our leadership team isn't just made up of titles — it's built on decades of
+            expertise, a passion for scientific innovation, and a commitment to excellence. Together,
+            they guide our journey, empower our people, and elevate our customer experience.
+          </p>
         </div>
-        <div className="flex flex-col items-center gap-8 py-5">
-          {/* Chairman */}
+
+        <div className="flex flex-col items-center gap-5 py-10">
           <Fade direction="down" triggerOnce>
-            <div className="flex justify-center w-full">
+            <div className="flex justify-center w-full px-2">
               <MemberCard member={members[0]} />
             </div>
           </Fade>
-          <div className="w-px h-12" />
-          {/* Executive Director */}
+          <div className="w-px h-6 sm:h-12" />
           <Fade direction="up" triggerOnce delay={300}>
-            <div className="flex justify-center w-full">
+            <div className="flex justify-center w-full px-2">
               <MemberCard member={members[1]} />
             </div>
           </Fade>

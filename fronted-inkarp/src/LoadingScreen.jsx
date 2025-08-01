@@ -5,7 +5,7 @@ import LogoNew from "/inkarp old.svg";
 function LoadingScreen() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-white">
-      <div className="relative w-64 h-64 bg-[#f5f5f5] rounded-full shadow-xl flex items-center justify-center animate-zoomInOut ring-4 ring-[#E63946]">
+      <div className="relative w-64 h-64 bg-[#f5f5f5] rounded-full shadow-xl flex items-center justify-center animate-zoomInOut ring-2 ring-[#E63946]">
         <img
           src={Logo}
           alt="Inkarp Logo"
@@ -18,7 +18,7 @@ function LoadingScreen() {
         <img
           src={LogoNew}
           alt="40 Years"
-          className="absolute top-2 right-2 w-12 h-12 object-contain rounded-full border-2 border-white shadow"
+          className="absolute top-2 right-2 w-12 h-12 object-contain rounded-full border-2 border-[#E63946] bg-[#F5F5F5] shadow"
         />
       </div>
 

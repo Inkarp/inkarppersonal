@@ -22,6 +22,7 @@ const OurStory = () => {
       <div className="relative">
         <MissionVision />
         <ClientsNew />
+        <TrustedClients />
       </div>
 
       {/* Section with background image - Team sections */}

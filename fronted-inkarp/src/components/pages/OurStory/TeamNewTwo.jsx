@@ -72,9 +72,9 @@ const DirectorCard = ({ director }) => {
 export default function TeamNewTwo() {
   return (
     <section className="py-5 px-4 min-h-screen">
-      <div className="max-w-7xl mx-auto text-center">
-        {/* <div className='bg-white p-5 w-[50%] mx-auto mb-5 rounded-xl'>
-        <h2 className="text-3xl font-bold font-[MaxOT] text-[#E63946] mb-4 tracking-tight">Our Regional Directors</h2>
+      <div className=" mx-auto text-center">
+        {/* <div className='bg-white/50 py-3 mx-auto flex flex-col gap-3 rounded-xl'>
+        <h2 className="text-3xl font-[MaxOT] text-[#E63946] tracking-tight">Our Regional Directors</h2>
         <p className="text-lg max-w-3xl mx-auto font-[Roboto]">
           Our regional directors bring specialized expertise and deep market knowledge to serve our customers across India.
         </p>
