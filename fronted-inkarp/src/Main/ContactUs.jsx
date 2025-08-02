@@ -12,9 +12,9 @@ function ContactUs() {
       <Contact />
       {/* <ContactNew /> */}
       <SupportSection />
-      <div className="p-5">
+      {/* <div className="p-5"> */}
       <ContactForm />
-      </div>
+      {/* </div> */}
       {/* <SalesforceForm /> */}
       {/* <ContactNew /> */}
       {/* <LocationCards /> */}

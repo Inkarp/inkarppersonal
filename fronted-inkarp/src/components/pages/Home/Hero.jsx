@@ -272,7 +272,7 @@ export default function Hero() {
   };
 
   return (
-    <div className="relative w-full max-w-[98vw] mx-auto h-[320px] xs:h-[400px] sm:h-[450px] md:h-[520px] lg:h-[600px]  overflow-hidden">
+    <div className="relative w-[98%] my-3 rounded-xl max-w-[98vw] mx-auto h-[320px] xs:h-[400px] sm:h-[450px] md:h-[520px] lg:h-[600px]  overflow-hidden">
       {/* Background image or video with direct transition */}
       <AnimatePresence mode="sync">
         {slides[current].isVideo ? (
