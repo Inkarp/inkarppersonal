@@ -65,7 +65,7 @@ const TrustedClients = () => {
       <Swiper
         modules={[Autoplay]}
         loop={true}
-        speed={3000}
+        speed={2000}
         autoplay={{
           delay: 0,
           disableOnInteraction: false,
@@ -80,11 +80,11 @@ const TrustedClients = () => {
       >
         {logos.map((logo, idx) => (
           <SwiperSlide key={idx}>
-            <div className="w-28 h-28 sm:w-32 sm:h-32 p-4 rounded flex items-center justify-center  transition-all duration-700 ease-out">
+            <div className="w-full h-full rounded flex items-center justify-center  transition-all duration-700 ease-out">
               <img
                 src={logo.src}
                 alt={logo.alt}
-                className="object-contain max-h-full"
+                className="object-cover max-h-full"
               />
             </div>
           </SwiperSlide>

@@ -41,7 +41,6 @@ export default function NavbarNew() {
         }
       }
     }
-
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
@@ -51,29 +50,9 @@ export default function NavbarNew() {
   // Handle search
   const handleSearch = async (query, callback) => {
     try {
-      // Here you can implement your backend search logic
-      // For example:
-      // const response = await fetch(`/api/search?q=${query}`);
-      // const results = await response.json();
-      // callback(results);
-
-      // Temporary mock results for testing
-      // const mockResults = [
-      //   {
-      //     title: "Sample Result 1",
-      //     description: "This is a sample search result description.",
-      //     link: "/sample-1"
-      //   },
-      //   {
-      //     title: "Sample Result 2",
-      //     description: "Another sample search result with more details.",
-      //     link: "/sample-2"
-      //   }
-      // ];
-
       // Simulate API delay
       setTimeout(() => {
-        callback(mockResults);
+        callback([]);
       }, 500);
     } catch (error) {
       console.error('Search error:', error);
@@ -83,7 +62,11 @@ export default function NavbarNew() {
 
   return (
     <>
-      <div ref={navRef} className="flex bg-black/10  flex-col h-screen max-h-screen w-full  py-4 px-3 lg:px-5 space-y-3 overflow-y-auto">
+      {/* Set the base font size here */}
+      <div
+        ref={navRef}
+        className="flex bg-black/10 flex-col h-screen max-h-screen w-full py-4 px-3 lg:px-5 space-y-3 overflow-y-auto font-[Roboto] text-base" // <--- SET BASE FONT SIZE
+      >
         {/* Logo */}
         <div className="flex items-center justify-center mb-2">
           <Link to="/" className="block">
@@ -96,15 +79,15 @@ export default function NavbarNew() {
         </div>
 
         {/* Nav Links */}
-        <nav className="flex-1 space-y-2 text-sm lg:text-md font-semibold">
+        <nav className="flex-1 space-y-2 font-semibold">
           {navLinks.map(({ name, path }) => (
             <Link
               key={name}
               to={path}
-              className={`block px-3 py-2 rounded-md transition-all duration-200 font-[Roboto] text-[16px] ${isActive(path)
+              className={`block px-3 py-2 rounded-md transition-all duration-200 ${isActive(path)
                 ? "bg-[#E63946] text-white shadow"
                 : "text-black hover:bg-gray-300"
-                }`}
+              }`}
               onClick={() => {
                 // Dispatch custom event to close sidebar
                 const closeSidebarEvent = new CustomEvent('closeSidebar');
@@ -121,7 +104,7 @@ export default function NavbarNew() {
               onClick={() => setInsightsOpen(!insightsOpen)}
               className="flex items-center justify-between w-full px-3 py-2 rounded-md text-black hover:bg-gray-300 transition-all"
             >
-              <span className="font-[Roboto] ">Insights & Updates</span>
+              <span className="">Insights & Updates</span>
               <ChevronDown
                 className={`h-4 w-4 transition-transform duration-200 ${insightsOpen ? 'rotate-180' : ''}`}
                 color="#E63946"
@@ -129,14 +112,14 @@ export default function NavbarNew() {
             </button>
 
             {insightsOpen && (
-              <div className="absolute z-10 bg-[#F5F5F5] mt-1 rounded-md overflow-hidden font-[Roboto] shadow-lg w-full left-0 top-full">
+              <div className="absolute z-10 bg-[#F5F5F5] mt-1 rounded-md overflow-hidden shadow-lg w-full left-0 top-full font-normal">
                 <div className="flex flex-col space-y-1 py-2 text-ellipsis overflow-hidden">
                   <Link
                     to="/insights-and-updates/blogs"
-                    className={`block px-4 py-2 transition-all text-[16px] ${isActive("/insights&updates/blogs")
-                      ? "bg-[E63946] text-white"
+                    className={`block px-4 py-2 transition-all ${isActive("/insights&updates/blogs")
+                      ? "bg-[#E63946] text-white"
                       : "hover:bg-[#E63946] hover:text-white"
-                      }`}
+                    }`}
                     onClick={() => {
                       setInsightsOpen(false);
                       window.dispatchEvent(new CustomEvent('closeSidebar'));
@@ -147,9 +130,9 @@ export default function NavbarNew() {
                   <Link
                     to="/insights-and-updates/news-and-events"
                     className={`block px-4 py-2 transition-all ${isActive("/insights&updates/news-and-events")
-                      ? "bg-[E63946] text-white"
+                      ? "bg-[#E63946] text-white"
                       : "hover:bg-[#E63946] hover:text-white"
-                      }`}
+                    }`}
                     onClick={() => {
                       setInsightsOpen(false);
                       window.dispatchEvent(new CustomEvent('closeSidebar'));
@@ -162,7 +145,7 @@ export default function NavbarNew() {
                     className={`block px-4 py-2 transition-all ${isActive("/insights&updates/webinars")
                       ? "bg-[#E63946] text-white"
                       : "hover:bg-[#E63946] hover:text-white"
-                      }`}
+                    }`}
                     onClick={() => {
                       setInsightsOpen(false);
                       window.dispatchEvent(new CustomEvent('closeSidebar'));
@@ -193,20 +176,6 @@ export default function NavbarNew() {
 
         {/* Bottom Buttons */}
         <div className="space-y-2 pt-5 border-t border-gray-200 mt-4">
-          {/* <button
-            onClick={() => setShowSearchModal(true)}
-            className="flex items-center gap-2 px-4 py-2 w-full text-gray-700 hover:bg-gray-100 rounded-md"
-          >
-            <Search className="w-4 h-4" />
-            <span>Search</span>
-          </button> */}
-          {/* <button
-            // onClick={() => setShowSearchModal(true)}
-            className=""
-          >
-            <FeedbackModal/>
-          </button> */}
-
           <a
             href={ProductProfile}
             download
@@ -215,7 +184,7 @@ export default function NavbarNew() {
               window.dispatchEvent(closeSidebarEvent);
             }}
           >
-            <button className="flex items-start gap-2 px-4 py-2 bg-[#E63946] text-white text-sm font-semibold rounded-md w-full hover:bg-red-600 font-[Roboto] text-[17px]">
+            <button className="flex items-start gap-2 px-4 py-2 bg-[#E63946] text-white font-semibold rounded-md w-full hover:bg-red-600">
               Product Profile
               <ArrowDownToLine className="w-4 h-4" />
             </button>

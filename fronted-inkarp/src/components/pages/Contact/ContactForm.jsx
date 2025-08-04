@@ -104,7 +104,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="w-full p-5 z-[-10] mx-auto border border-gray-200 bg-[#F5F5F5] rounded-xl">
+    <section className="w-[95%] mx-auto px-5 py-2 z-[-10] mx-auto border border-gray-200 rounded-xl">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-10">
         {/* Left Content */}
         <div className="lg:w-1/3 space-y-8 ">

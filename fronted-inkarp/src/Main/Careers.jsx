@@ -58,9 +58,9 @@ export default function Careers() {
       </Helmet>
       <section className="py-5 px-3 text-center">
         <div className="flex justify-center items-center">
-         <h1 className="px-4 py-1 text-center text-sm font-[MaxOT] font-semibold uppercase border border-[#E63946] text-black rounded-full mb-4 w-fit">
-          Careers
-        </h1>
+          <h1 className="px-4 py-1 text-center text-sm font-[MaxOT] font-semibold uppercase border border-[#E63946] text-black rounded-full mb-4 w-fit">
+            Careers
+          </h1>
         </div>
         <div className=" mx-auto px-3  py-20 bg-[#F5F5F5] rounded-xl">
           <h1 className="text-3xl font-bold leading-tight font-[MaxOT]">
@@ -72,12 +72,12 @@ export default function Careers() {
       {/* Timeline Section */}
       <section className="px-4">
         <div className="flex justify-center items-center py-5">
-         {/* <h1 className="px-4 py-1 text-center text-sm font-[MaxOT] font-semibold uppercase border border-[#E63946] text-black rounded-full mb-4 w-fit">
+          {/* <h1 className="px-4 py-1 text-center text-sm font-[MaxOT] font-semibold uppercase border border-[#E63946] text-black rounded-full mb-4 w-fit">
           Join a team that thrives on innovation, trust, and impact.
         </h1> */}
-        <h2 className="text-center text-3xl text-[#E63946] font-[MaxOT]">
-          Join a team that thrives on innovation, trust, and impact.
-        </h2>
+          <h2 className="text-center text-3xl text-[#E63946] font-[MaxOT]">
+            Join a team that thrives on innovation, trust, and impact.
+          </h2>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center gap-12">
           {steps.map((step, index) => (
@@ -96,10 +96,10 @@ export default function Careers() {
       {/* Team Voices Section */}
       <NewCareers />
       <section className="py-8 px-4 mt-25">
-         <div className="flex justify-center items-center">
-         <h1 className="px-4 py-1 text-center text-sm font-[MaxOT] font-semibold uppercase border border-[#E63946] text-black rounded-full mb-4 w-fit">
-          What Our Team Says 🎧
-        </h1>
+        <div className="flex justify-center items-center">
+          <h1 className="px-4 py-1 text-center text-sm font-[MaxOT] font-semibold uppercase border border-[#E63946] text-black rounded-full mb-4 w-fit">
+            What Our Team Says 🎧
+          </h1>
         </div>
         {/* <h2 className="text-3xl font-bold text-[#E63946] text-center py-3 font-[MaxOT]">
           What Our Team Says 🎧
@@ -133,7 +133,7 @@ export default function Careers() {
         </div>
       </section>
       <div className=" p-5">
-      <CareersForm />
+        <CareersForm />
       </div>
     </div>
   );

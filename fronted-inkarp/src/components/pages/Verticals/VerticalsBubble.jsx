@@ -5,6 +5,7 @@ import VerticalsPage from "./VerticalsPage";
 import VerticalsBubbleNew from "./VerticalsBubbleNew";
 import VerticalProducts from "./VerticalProducts";
 import Micro from '/Microscope.png';
+import VerticalsNew from "./VerticalsNew";
 
 const verticalsList = [
   { name: "Synthesis and Flow Chemistry", key: "synthesis-and-flow-chemistry" },
@@ -37,7 +38,7 @@ const FallingBackground = () => {
     []
   );
   return (
-    <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
+    <div className="absolute inset-0 w-full min-h-screen pointer-events-none z-0">
       {items.map((_, index) => (
         <span
           key={index}
@@ -141,7 +142,9 @@ const VerticalsBubble = () => {
         <meta name="description" content="Explore Verticals by Inkarp Instruments Pvt Ltd. Discover innovative solutions tailored to your needs. Elevate your projects with our expert instruments." />
       </Helmet>
       {/* <VerticalsPage /> */}
-      <main className="min-h-screen w-full overflow-hidden relative px-4 bg-white">
+      {/* <VerticalsNew />
+       */}
+      <main className="h-[600px] w-full overflow-hidden relative px-4 bg-white">
         {/* Falling background animation */}
         <FallingBackground />
         {/* Decorative small bubbles */}

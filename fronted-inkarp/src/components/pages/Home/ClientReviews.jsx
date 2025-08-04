@@ -63,26 +63,26 @@ export default function ClientReviews() {
           }}
           autoplay={{ delay: 5000, disableOnInteraction: false }}
           loop={true}
+          className="h-full"
         >
           {reviews.map((review, i) => (
-            <SwiperSlide key={i}>
-              <figure className="relative bg-white text-center rounded-md border-t-[4px] border-[#E63946] shadow-sm m-4 p-6 flex flex-col items-center justify-start min-h-[280px]">
+            <SwiperSlide key={i} className="h-full">
+              <figure className="relative bg-white text-center rounded-md border-t-[4px] border-[#E63946] shadow-sm m-4 px-6 py-6 flex flex-col items-center min-h-[280px]">
                 <div className="absolute -top-6 bg-white w-12 h-12 rounded-full flex items-center justify-center shadow-md">
                   <Quote className="text-[#E63946]" size={22} />
                 </div>
-                <blockquote className="mt-8 text-sm md:text-base text-black leading-relaxed">
+                <blockquote className="mt-8 text-sm md:text-base italic text-black leading-relaxed font-normal">
                   {review.message}
                 </blockquote>
-                <figcaption className="mt-4">
-                  <h3 className="font-[MaxOT] text-[#0f1b33] text-base md:text-lg">
+                <div className="mt-auto pt-4 w-full flex flex-col items-center">
+                  <span className="font-[MaxOT] text-[#0f1b33] text-base md:text-lg not-italic">
                     {review.name}
-                  </h3>
-                </figcaption>
+                  </span>
+                </div>
               </figure>
             </SwiperSlide>
           ))}
         </Swiper>
-
       </div>
     </section>
   );

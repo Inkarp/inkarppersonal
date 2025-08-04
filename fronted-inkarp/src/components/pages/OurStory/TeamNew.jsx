@@ -39,12 +39,17 @@ const MemberCard = ({ member }) => {
         </div>
 
         {member.name === 'S. Balu' && (
-          <div className="mt-3 flex justify-center items-center p-3 bg-[F5F5F5]">
+          <div className="mt-3 flex justify-center flex-col items-center p-3 bg-[F5F5F5]">
             <img
               src={Sign}
               alt="Balu Signature"
               className="w-36 h-auto object-contain bg-[#E63946] rounded-3xl"
             />
+            <div className='font-[MaxOT] flex flex-col justify-center items-center'>
+              <span className='text-bold'>S. Balu</span>
+              <span className='text-[#E63946]'>Chairman & Managing Director</span>
+              <span className='text-[#E63946]'>(Inkarp Group of Companies)</span>   
+            </div>
           </div>
         )}
       </div>

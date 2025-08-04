@@ -21,7 +21,7 @@ const OurStory = () => {
       {/* Section without background - Mission and Clients */}
       <div className="relative">
         <MissionVision />
-        <ClientsNew />
+        {/* <ClientsNew /> */}
         <TrustedClients />
       </div>
 

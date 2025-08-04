@@ -35,20 +35,20 @@ const slides = [
     image: HeroImg1,
     isVideo: false,
   },
-  {
-    id: 3,
-    title: "Where Science Meet Laboratories",
-    subtitle: "Excel Laboratory Equipment",
-    image: DNA,
-    isVideo: false,
-  },
-  {
-    id: 4,
-    title: "Where Science Meet Laboratories",
-    subtitle: "Advance Equipment",
-    image: DNA2,
-    isVideo: false,
-  },
+  // {
+  //   id: 3,
+  //   title: "Where Science Meet Laboratories",
+  //   subtitle: "Excel Laboratory Equipment",
+  //   image: DNA,
+  //   isVideo: false,
+  // },
+  // {
+  //   id: 4,
+  //   title: "Where Science Meet Laboratories",
+  //   subtitle: "Advance Equipment",
+  //   image: DNA2,
+  //   isVideo: false,
+  // },
   // {
   //   id: 5,
   //   title: "Precision for Progress",
@@ -337,11 +337,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="uppercase tracking-widest border border-white/50 font-[MaxOT] px-2 xs:px-4 py-1 rounded-full text-base xs:text-lg mb-2 xs:mb-4 inline-block bg-white text-[#E63946] backdrop-blur-sm"
+            className="uppercase tracking-widest border border-white/50 font-[Roboto] px-2 xs:px-4 py-1 rounded-full text-base xs:text-lg mb-2 xs:mb-4 inline-block bg-white text-[#E63946] backdrop-blur-sm"
           >
             <TypingText text={slides[current].title} />
           </motion.span>
-          <h1 className="text-base xs:text-xl md:text-2xl  leading-tight font-[Roboto] drop-shadow-lg">
+          <h1 className="text-base xs:text-xl md:text-2xl  leading-tight font-[MaxOT] drop-shadow-lg">
             <TypingText text={slides[current].subtitle} delay={0.5} />
           </h1>
         </div>
