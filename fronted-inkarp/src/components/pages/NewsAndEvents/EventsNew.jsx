@@ -1,4 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import { EffectFade, Autoplay } from 'swiper/modules';
+
 import EventsImg from "/src/assets/Events/EventsImage.jpg";
 import EventsBanner1 from "/src/assets/Events/EventBanner1.jpg";
 import EventsBanner from "/src/assets/Events/EventBanner.jpg";
@@ -56,42 +61,36 @@ const labCards = [
     ...eventsData,
 ];
 
-const LabCard = ({ category, title, description, image }) => (
-    <div className="rounded-3xl shadow-md overflow-hidden relative p-2 group transition duration-300 ease-in-out transform hover:scale-1.01 bg-[#F5F5F5]">
-        <img
-            src={image}
-            alt={title}
-            className="rounded-2xl w-full h-auto object-cover min-h-[200px] sm:min-h-[250px] md:min-h-[300px]"
-        />
-        <div className="group rounded-full p-1 m-2 flex justify-center items-center">
-            <button
-                className="relative flex items-center px-4 sm:px-6 py-2 sm:py-3 overflow-hidden font-medium transition-all bg-[#E63946] rounded-md group text-sm sm:text-base"
-            >
-                <span
-                    className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-[#333333] rounded group-hover:-mr-4 group-hover:-mt-4"
+const LabCard = ({ category, title, description, image, date }) => {
+    const isPast = new Date(date) < new Date();
+
+    return (
+        <div className="relative group overflow-hidden rounded-3xl shadow-md p-2 transition-all duration-300 bg-[#F5F5F5]">
+            {/* Card Image with conditional blur on hover if past */}
+            <img
+                src={image}
+                alt={title}
+                className={`rounded-2xl w-full h-auto object-cover min-h-[200px] sm:min-h-[250px] md:min-h-[300px] transition duration-300 ease-in-out ${
+                    isPast ? 'group-hover:blur-sm group-hover:brightness-75' : ''
+                }`}
+            />
+
+            {/* Button Area */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 group-hover:opacity-100 opacity-0 transition-opacity duration-300">
+                <button
+                    className={`relative px-6 py-2 font-medium rounded-md text-sm ${
+                        isPast
+                            ? 'bg-gray-800 text-white'
+                            : 'bg-[#E63946] text-white hover:bg-[#b72834]'
+                    }`}
                 >
-                    <span
-                        className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"
-                    ></span>
-                </span>
-                <span
-                    className="absolute bottom-0 rotate-180 left-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-[#333333] rounded group-hover:-ml-4 group-hover:-mb-4"
-                >
-                    <span
-                        className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"
-                    ></span>
-                </span>
-                <span
-                    className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full bg-black text-white rounded-md group-hover:translate-x-0"
-                ></span>
-                <span
-                    className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white"
-                >Join Us</span
-                >
-            </button>
+                    {isPast ? 'Know More' : 'Join Us'}
+                </button>
+            </div>
         </div>
-    </div>
-);
+    );
+};
+
 
 
 const SlidingDigit = ({ digit }) => {
@@ -202,7 +201,7 @@ const EventsNew = () => {
         const isUpcoming = upcomingOnly ? eventDate >= today : true;
         return matchesMonth && matchesYear && isUpcoming;
     })
-      .sort((a, b) => b.id - a.id);
+        .sort((a, b) => b.id - a.id);
 
     // Helper to pad numbers to two digits
     const pad = (num, size = 2) => String(num).padStart(size, '0');
@@ -222,28 +221,39 @@ const EventsNew = () => {
             </Helmet>
 
             {/* Banner Image Only */}
-            <div className="w-full relative">
-                <img
-                    src={bannerSlides[currentSlide].img}
-                    alt={bannerSlides[currentSlide].title}
-                    className="w-full object-contain rounded-xl p-3"
-                // style={{ borderRadius: '0 0 85% 85% / 30%' }}
-                />
-                {/* Overlay sliding countdown */}
-                <div className="absolute inset-0 flex flex-col justify-end items-center p-4">
-                    <div className="bg-white/90 rounded-lg shadow px-5 py-3 mb-4">
-                        <div className="flex items-center justify-center space-x-2 sm:space-x-3 md:space-x-4 text-black">
-                            <TimeUnit label="Days" value={pad(countdown.days)} />
-                            <Separator />
-                            <TimeUnit label="Hours" value={pad(countdown.hours)} />
-                            <Separator />
-                            <TimeUnit label="Min" value={pad(countdown.minutes)} />
-                            <Separator />
-                            <TimeUnit label="Sec" value={pad(countdown.seconds)} />
+            <Swiper
+                modules={[Autoplay, EffectFade]}
+                effect="fade"
+                loop={true}
+                autoplay={{ delay: 5000, disableOnInteraction: false }}
+                className="w-full h-[500px] rounded-3xl overflow-hidden"
+            >
+                {bannerSlides.map((slide, index) => (
+                    <SwiperSlide key={index}>
+                        <div className="relative w-full h-full">
+                            <img
+                                src={slide.img}
+                                alt={slide.title}
+                                className="w-full h-full object-cover"
+                            />
+                            <div className="absolute inset-0 bg-black/40 z-10"></div>
+                            <div className="absolute inset-0 z-20 flex flex-col justify-end items-center p-4">
+                                <div className="bg-white/80 rounded-lg shadow px-5 py-3 mb-4">
+                                    <div className="flex items-center justify-center space-x-3 text-black">
+                                        <TimeUnit label="Days" value={pad(countdown.days)} />
+                                        <Separator />
+                                        <TimeUnit label="Hours" value={pad(countdown.hours)} />
+                                        <Separator />
+                                        <TimeUnit label="Min" value={pad(countdown.minutes)} />
+                                        <Separator />
+                                        <TimeUnit label="Sec" value={pad(countdown.seconds)} />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
 
             {/* Filters Section */}
             <div className="w-[95%] mx-auto flex flex-col sm:flex-row flex-wrap items-center gap-6 justify-around py-8 bg-gradient-to-br from-white to-gray-100 shadow-xl rounded-xl border border-gray-200">
@@ -303,6 +313,17 @@ const EventsNew = () => {
                 >
                     Reset Filters
                 </button>
+            </div>
+
+             {/* Upcoming Events Section */}
+            <div className="w-[95%] mx-auto py-10">
+                <h2 className="text-2xl font-bold text-gray-800 mb-6">Upcoming Events</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {labCards
+                        .filter(e => new Date(e.date) > today)
+                        .map(card => <LabCard key={card.id} {...card} />)
+                    }
+                </div>
             </div>
 
             {/* Event Cards Grid */}
