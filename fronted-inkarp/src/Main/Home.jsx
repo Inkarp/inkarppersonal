@@ -125,8 +125,8 @@ const Home = () => {
       <PickNew />
       <WhyChooseUsSection />
       <ExperienceSection />
-      <Sample />
-      <About/>
+      {/* <Sample /> */}
+      {/* <About/> */}
       {isMobileOrTablet ? <NewAbout /> : <Companies />}
       {isMobileOrTablet ? <PrincipalsTab /> : <Principles />}
       <Offerings />

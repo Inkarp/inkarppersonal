@@ -18,7 +18,7 @@ import Event16 from "/src/assets/Events/Event16.jpeg";
 
 import EventNew1 from "/src/assets/Events/EventNew1.jpg";
 import EventNew2 from "/src/assets/Events/EventNew2.jpg";
-import EventNew3 from "/src/assets/Events/EventNew2.jpg";
+import EventNew3 from "/src/assets/Events/EventNew3.jpg";
 
 export const eventsData = [
    

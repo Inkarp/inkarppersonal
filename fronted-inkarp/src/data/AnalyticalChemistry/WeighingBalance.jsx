@@ -34,6 +34,7 @@ import Xsr205du from "/images/products/Mettler/xsr205du.jpg";
 
 import Banner1 from "/images/products/Banner/Banner1.jpg";
 import Banner2 from "/images/products/Banner/Banner2.jpg";
+import Banner3 from "/images/products/Banner/Banner3.jpg";
 
 
 export const WeighingBalance = {
@@ -43,7 +44,7 @@ export const WeighingBalance = {
         name: "Analytical Balance ME204 Weighing Balance",
         image: Me204,
         logo: Mettler,
-        bannerImg: Banner1,
+        bannerImg: Banner3,
         altText: "Analytical Balance ME204 Weighing Balance",
         videoId: "DBJ_Gs5H76Y",
         meta: {
@@ -114,7 +115,7 @@ export const WeighingBalance = {
         name: "Analytical Balance ME204T/00 Weighing Balance",
         image: Me204t,
         logo: Mettler,
-        bannerImg: Banner1,
+        bannerImg: Banner3,
         altText: "Analytical Balance ME204T/00 Weighing Balance",
         videoId: "DBJ_Gs5H76Y",
         meta: {
@@ -187,7 +188,7 @@ export const WeighingBalance = {
         name: "Precision Balance ME1002 Weighing Balance",
         image: Me1002, // Replace with correct imported image variable
         logo: Mettler,
-        bannerImg: Banner2, // Replace if needed
+        bannerImg: Banner3, // Replace if needed
         altText: "Precision Balance ME1002 Weighing Balance",
         videoId: "DBJ_Gs5H76Y", // Replace if you have a dedicated video ID
         meta: {
@@ -255,7 +256,7 @@ export const WeighingBalance = {
         name: "Precision Balance ME2002 Weighing Balance",
         image: Me2002, // Replace with the correct imported image
         logo: Mettler,
-        bannerImg: Banner2, // Replace if needed
+        bannerImg: Banner3, // Replace if needed
         altText: "Precision Balance ME2002 Weighing Balance",
         videoId: "DBJ_Gs5H76Y", // Replace if specific video is available
         meta: {
@@ -325,7 +326,7 @@ export const WeighingBalance = {
         name: "Precision Balance ME3002 Weighing Balance",
         image: Me3002, // Replace with correct imported image
         logo: Mettler,
-        bannerImg: Banner2, // Update if you have a different banner
+        bannerImg: Banner3, // Update if you have a different banner
         altText: "Precision Balance ME3002 Weighing Balance",
         videoId: "DBJ_Gs5H76Y", // Replace with actual video ID if available
         meta: {
@@ -397,7 +398,7 @@ export const WeighingBalance = {
         name: "Precision Balance ME4002 Weighing Balance",
         image: Me4002, // Replace with correct imported image
         logo: Mettler,
-        bannerImg: Banner2, // Update if different
+        bannerImg: Banner3, // Update if different
         altText: "Precision Balance ME4002 Weighing Balance",
         videoId: "DBJ_Gs5H76Y", // Replace with actual video ID if available
         meta: {
@@ -469,7 +470,7 @@ export const WeighingBalance = {
         name: "Analytical Balance ML204T/00 Weighing Balance",
         image: Ml204t, // Replace with actual imported image
         logo: Mettler,
-        bannerImg: Banner2, // Replace if needed
+        bannerImg: Banner3, // Replace if needed
         altText: "Analytical Balance ML204T/00 Weighing Balance",
         videoId: "DBJ_Gs5H76Y", // Update if specific video is available
         meta: {
@@ -552,7 +553,7 @@ export const WeighingBalance = {
         name: "Analytical Balance MS205DU Weighing Balance",
         image: Ms205du, // Replace with actual imported image
         logo: Mettler,
-        bannerImg: Banner2, // Update if different
+        bannerImg: Banner3, // Update if different
         altText: "Analytical Balance MS205DU Weighing Balance",
         videoId: "DBJ_Gs5H76Y", // Replace with actual video ID if available
         meta: {
@@ -627,7 +628,7 @@ export const WeighingBalance = {
         name: "Balance XPR205DU Weighing Balance",
         image: Xpr205du, // Replace with actual imported image
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "Balance XPR205DU Weighing Balance",
         videoId: "DBJ_Gs5H76Y", // Replace with actual video ID if available
         meta: {
@@ -707,7 +708,7 @@ export const WeighingBalance = {
         name: "Balance XPR226DR Weighing Balance",
         image: Xpr226dr, // Replace with actual imported image
         logo: Mettler,
-        bannerImg: Banner2, // Replace if different
+        bannerImg: Banner3, // Replace if different
         altText: "Balance XPR226DR Weighing Balance",
         videoId: "DBJ_Gs5H76Y", // Replace with actual video ID if available
         meta: {
@@ -785,7 +786,7 @@ export const WeighingBalance = {
         name: "Balance XSR205DU Weighing Balance",
         image: Xsr205du, // Replace with actual imported image
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "Balance XSR205DU Weighing Balance",
         videoId: "DBJ_Gs5H76Y", // Replace if specific video available
         meta: {
@@ -865,7 +866,7 @@ export const WeighingBalance = {
         name: "Balance XPR2 Weighing Balance",
         image: Xpr2, // Replace with actual imported image
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "Balance XPR2 Weighing Balance",
         videoId: "DBJ_Gs5H76Y", // Replace with actual video ID if available
         meta: {
@@ -913,7 +914,7 @@ export const WeighingBalance = {
         name: "Balance XPR2U Weighing Balance",
         image: Xpr2u, // Replace with actual imported image
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "Balance XPR2U Weighing Balance",
         videoId: "DBJ_Gs5H76Y", // Replace if specific video available
         meta: {
@@ -983,7 +984,5 @@ export const WeighingBalance = {
             "Resolution": "0.1 µg",
             "Hygienic Design": "Yes"
         }
-    },
-    
-    
+    },  
 }

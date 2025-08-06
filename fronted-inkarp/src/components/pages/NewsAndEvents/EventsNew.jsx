@@ -37,7 +37,7 @@ const bannerSlides = [
         subtitle: "Automation and Innovation",
         date: "2025-09-18",
     },
- 
+
 ];
 
 
@@ -54,19 +54,17 @@ const LabCard = ({ category, title, description, image, date }) => {
             <img
                 src={image}
                 alt={title}
-                className={`rounded-2xl w-full h-auto object-cover min-h-[200px] sm:min-h-[250px] md:min-h-[300px] transition duration-300 ease-in-out ${
-                    isPast ? 'group-hover:blur-sm group-hover:brightness-75' : ''
-                }`}
+                className={`rounded-2xl w-full h-auto object-cover min-h-[200px] sm:min-h-[250px] md:min-h-[300px] transition duration-300 ease-in-out ${isPast ? 'group-hover:blur-sm group-hover:brightness-75' : ''
+                    }`}
             />
 
             {/* Button Area */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 group-hover:opacity-100 opacity-0 transition-opacity duration-300">
                 <button
-                    className={`relative px-6 py-2 font-medium rounded-md text-sm ${
-                        isPast
+                    className={`relative px-6 py-2 font-medium rounded-md text-sm ${isPast
                             ? 'bg-[#E63946] text-white font-[MaxOT]'
                             : 'bg-[#E63946] text-white hover:bg-[#b72834]'
-                    }`}
+                        }`}
                 >
                     {isPast ? 'Know More' : 'Join Us'}
                 </button>
@@ -207,22 +205,21 @@ const EventsNew = () => {
             {/* Banner Image Only */}
             <Swiper
                 modules={[Autoplay]}
-                // effect="fade"
                 loop={true}
                 autoplay={{ delay: 5000, disableOnInteraction: false }}
-                className="w-full h-[500px]  overflow-hidden"
+                className="w-full h-[500px] overflow-hidden"
             >
                 {bannerSlides.map((slide, index) => (
-                    <SwiperSlide key={index}>
-                        <div className="relative w-[98%] mx-auto py-3 h-full">
+                    <SwiperSlide key={index} className="w-full h-full">
+                        <div className="relative w-full h-full ">
                             <img
                                 src={slide.img}
                                 alt={slide.title}
-                                className="w-full h-full object-cover rounded-3xl"
+                                className="w-full h-full object-cover rounded-2xl p-5"
                             />
                             <div className="absolute inset-0 z-10"></div>
                             <div className="absolute inset-0 z-20 flex flex-col justify-end items-center p-4">
-                                <div className="bg-white/50 rounded-lg shadow px-5 py-3 mb-4">
+                                <div className="bg-white/60 rounded-lg shadow px-5 py-3 mb-4">
                                     <div className="flex items-center justify-center space-x-3 text-black">
                                         <TimeUnit label="Days" value={pad(countdown.days)} />
                                         <Separator />
@@ -238,6 +235,7 @@ const EventsNew = () => {
                     </SwiperSlide>
                 ))}
             </Swiper>
+
 
             {/* Filters Section */}
             <div className="w-[95%] mx-auto flex flex-col sm:flex-row flex-wrap items-center gap-6 justify-around py-8 bg-gradient-to-br from-white to-gray-100 shadow-xl rounded-xl border border-gray-200">
@@ -299,7 +297,7 @@ const EventsNew = () => {
                 </button>
             </div>
 
-             {/* Upcoming Events Section */}
+            {/* Upcoming Events Section */}
             <div className="w-[95%] mx-auto py-10">
                 <h2 className="text-2xl font-bold text-gray-800 font-[MaxOT] mb-6">Upcoming Events</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
