@@ -98,7 +98,7 @@ export default function ProductDetails() {
                 alt="Logo"
                 className="w-48 h-auto mb-4 bg-white p-4 rounded-lg shadow-lg inline-block"
               />
-              <h1 className="text-4xl font-extrabold tracking-tight font-[MaxOT] text-black drop-shadow-md">
+              <h1 className="text-4xl font-extrabold tracking-tight font-[MaxOT] text-white drop-shadow-md">
                 {product.name}
               </h1>
             </div>
