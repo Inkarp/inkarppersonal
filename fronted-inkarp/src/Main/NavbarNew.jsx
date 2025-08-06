@@ -65,7 +65,7 @@ export default function NavbarNew() {
       {/* Set the base font size here */}
       <div
         ref={navRef}
-        className="flex bg-black/10 flex-col h-screen max-h-screen w-full py-4 px-3 lg:px-5 space-y-3 overflow-y-auto font-[Roboto] " // <--- SET BASE FONT SIZE
+        className="flex bg-black/10 flex-col h-screen max-h-screen w-full py-4 px-3 lg:px-5 space-y-3 overflow-y-auto font-[Roboto] text-base" // <--- SET BASE FONT SIZE
       >
         {/* Logo */}
         <div className="flex items-center justify-center mb-2">
@@ -79,7 +79,7 @@ export default function NavbarNew() {
         </div>
 
         {/* Nav Links */}
-        <nav className="flex-1 space-y-2 font-bold font-[Roboto] text-[15px]">
+        <nav className="flex-1 space-y-2 font-semibold">
           {navLinks.map(({ name, path }) => (
             <Link
               key={name}
