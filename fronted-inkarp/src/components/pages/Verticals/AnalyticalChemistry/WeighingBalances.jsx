@@ -2,10 +2,53 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import Mettler from '/src/assets/PrincipalLogos/RowTwo/Metller.png';
-import ME204 from "/images/products/Mettler/ME204.jpg";
-import ME204T from "/images/products/Mettler/ME204t.jpg";
-import ME1002 from "/images/products/Mettler/ME1002.jpg";
+import C10sx from "/images/products/Mettler/c10sx.jpg";
+import Densito from "/images/products/Mettler/densito.jpg";
+import DensityMeterExcellenceD4 from "/images/products/Mettler/density-meter-excellence-d4.jpg";
+import EasyKfv from "/images/products/Mettler/easy-kfv.jpg";
+import EasyPh from "/images/products/Mettler/easy-ph.jpg";
+import EasyPro from "/images/products/Mettler/easy-pro.jpg";
+import ExcellenceR4 from "/images/products/Mettler/Rrefractometer-excellence-r4.jpg";
+import HandheldRefractometerMybrix from "/images/products/Mettler/handheld-refractometer-mybrix.jpg";
+import Hc103 from "/images/products/Mettler/hc103.jpg";
+import He53 from "/images/products/Mettler/he53.jpg";
+import He73 from "/images/products/Mettler/he73.jpg";
+import Hx204 from "/images/products/Mettler/hx204.jpg";
 
+
+
+
+import MeltingPointSystemMp80 from "/images/products/Mettler/melting-point-System-mp80.jpg";
+import MeltingPointSystemMp30 from "/images/products/Mettler/melting-point-System-mp30.jpg";
+
+
+
+import Ms205du from "/images/products/Mettler/ms205du.jpg";
+// import Rrefract from "/images/products/Mettler/Rrefract.jpg";
+import S400bio from "/images/products/Mettler/s400bio.jpg";
+import S470StdKit from "/images/products/Mettler/s470-std-kit.jpg";
+import S700StdKit from "/images/products/Mettler/s700-std-kit.jpg";
+import Sd20Kit from "/images/products/Mettler/sd20-kit.jpg";
+import Sd23 from "/images/products/Mettler/sd23.jpg";
+import Sd30Kit from "/images/products/Mettler/sd30-kit.jpg";
+import Sd50Kit from "/images/products/Mettler/sd50-kit.jpg";
+
+import TitratorExcellenceT5 from "/images/products/Mettler/titrator-excellence-t5.jpg";
+import V20s from "/images/products/Mettler/v20s.jpg";
+
+import Xpr2 from "/images/products/Mettler/xpr2.jpg";
+import Xpr2u from "/images/products/Mettler/xpr2u.jpg";
+import Xpr205du from "/images/products/Mettler/xpr205du.jpg";
+import Xpr226dr from "/images/products/Mettler/xpr226dr.jpg";
+import Xsr205du from "/images/products/Mettler/xsr205du.jpg";
+
+import Me204 from "/images/products/Mettler/ME204.jpg";
+import Me204t from "/images/products/Mettler/ME204t.jpg";
+import Me1002 from "/images/products/Mettler/ME1002.jpg";
+import Me2002 from "/images/products/Mettler/me2002.jpg";
+import Me3022 from "/images/products/Mettler/me3022.jpg";
+import Me4002 from "/images/products/Mettler/me4002.jpg";
+import Ml204t from "/images/products/Mettler/ml204t.jpg";
 
 
 const synthesisData = [
@@ -23,23 +66,78 @@ const synthesisData = [
 const synthesisProducts = {
   "weighing-balance": {
     models: [
-      { heading: "Standard Models" },
+      { heading: "Analytical & Precision Balances" },
       {
-        name: "Hei-VAP Core",
-        slug: "hei-vap-core",
-        image: ME204,
+        name: "Analytical Balance ME204",
+        slug: "analytical-balance-me204",
+        image: Me204,
       },
       {
-        name: "Hei-VAP Expert",
-        slug: "hei-vap-expert",
-        image: ME204T,
+        name: "Analytical Balance ME204T/00",
+        slug: "analytical-balance-me204t-00",
+        image: Me204t,
       },
       {
-        name: "Hei-VAP Ultimate",
-        slug: "hei-vap-ultimate",
-        image: ME1002,
+        name: "Precision Balance ME1002",
+        slug: "precision-balance-me1002",
+        image: Me1002,
+      },
+      {
+        name: "Precision Balance ME2002",
+        slug: "precision-balance-me2002",
+        image: Me2002,
+      },
+      {
+        name: "Precision Balance ME3002",
+        slug: "precision-balance-me3002",
+        image: Me3022,
+      },
+      {
+        name: "Precision Balance ME4002",
+        slug: "precision-balance-me4002",
+        image: Me4002,
+      },
+      {
+        name: "Analytical Balance ML204T/00",
+        slug: "analytical-balance-ml204t-00",
+        image: Ml204t,
+      },
+    
+      { heading: "Semi Micro Balances" },
+      {
+        name: "Analytical Balance MS205DU",
+        slug: "analytical-balance-ms205du",
+        image: Ms205du,
+      },
+      {
+        name: "Balance XPR205DU",
+        slug: "balance-xpr205du",
+        image: Xpr205du,
+      },
+      {
+        name: "Balance XPR226DR",
+        slug: "balance-xpr226dr",
+        image: Xpr226dr,
+      },
+      {
+        name: "Balance XSR205DU",
+        slug: "balance-xsr205du",
+        image: Xsr205du,
+      },
+    
+      { heading: "Micro & Ultra Micro Balances" },
+      {
+        name: "Balance XPR2",
+        slug: "balance-xpr2",
+        image: Xpr2,
+      },
+      {
+        name: "Balance XPR2U",
+        slug: "balance-xpr2u",
+        image: Xpr2u,
       },
     ],
+    
     meta: {
       title: "Best Rotary Evaporator – Water Distillation & Solvent Recovery Unit Distributor And Service Provider In India | Inkarp",
       description: "Explore Heidolph Rotary Evaporators for precise water distillation and solvent recovery in laboratories. Distributed by Inkarp – India's trusted scientific equipment partner.",
@@ -59,226 +157,233 @@ const synthesisProducts = {
       internalLinks: ["Internal Product Pages Links"],
       externalLinks: ["Heidolph Website"]
     },
-    pageData: {
-      title: "Best Rotary Evaporator In India",
-      intro:
-        "Rotary evaporators are essential laboratory instruments used for gentle and efficient removal of solvents through evaporation. Commonly employed in chemical, pharmaceutical, and academic labs, rotary evaporators enable precise distillation under vacuum for concentration, purification, and solvent recovery.",
-      highlight:
-        "The Heidolph Rotary Evaporators are the best rotary evaporators in India, the series is engineered for reliability, safety, and superior performance—making it a preferred choice for laboratories worldwide. Whether you're conducting routine distillations or working with complex compounds, Heidolph evaporators deliver unmatched precision and ease of use.",
+//     pageData: {
+//       title: "Best Rotary Evaporator In India",
+//       intro:
+//         "Rotary evaporators are essential laboratory instruments used for gentle and efficient removal of solvents through evaporation. Commonly employed in chemical, pharmaceutical, and academic labs, rotary evaporators enable precise distillation under vacuum for concentration, purification, and solvent recovery.",
+//       highlight:
+//         "The Heidolph Rotary Evaporators are the best rotary evaporators in India, the series is engineered for reliability, safety, and superior performance—making it a preferred choice for laboratories worldwide. Whether you're conducting routine distillations or working with complex compounds, Heidolph evaporators deliver unmatched precision and ease of use.",
 
-      modelHeading: "Model Categories",
-      infoSection: {
-        title: "Heidolph Rotary Evaporator",
-        description: `Developed in close cooperation with laboratory professionals, the Heidolph Hei-VAP series focuses on the essentials of effective distillation: user-friendly operation, thoughtful design, and enhanced safety features.
-          Every model in the series offers:
-          - Intuitive control panels
-          - Reliable performance in demanding conditions
-          - High chemical resistance and durability
-          - Modular design to suit your unique application needs
+//       modelHeading: "Model Categories",
+//       infoSection: {
+//         title: "Heidolph Rotary Evaporator",
+//         description: `Developed in close cooperation with laboratory professionals, the Heidolph Hei-VAP series focuses on the essentials of effective distillation: user-friendly operation, thoughtful design, and enhanced safety features.
+//           Every model in the series offers:
+//           - Intuitive control panels
+//           - Reliable performance in demanding conditions
+//           - High chemical resistance and durability
+//           - Modular design to suit your unique application needs
 
-          With extensive combinations of glassware and accessories, Heidolph rotary evaporators provide scalable solutions for every lab environment—from education to R&D and manufacturing.`,
-      },
-      subSection: {
-        title:
-          "Rotary Evaporator for Laboratories – Water Distillation & Solvent Recovery Unit",
-        description:
-          "Designed for a wide range of distillation tasks, Heidolph rotary evaporators ensure efficient water distillation and solvent recovery. Whether you're removing low-boiling solvents or processing high-viscosity samples, these units offer full control, precision, and safety.",
-      },
-      industriesIntro:
-        "Heidolph Rotary Evaporators are trusted across a wide range of industries and scientific domains. Their precision, reliability, and adaptability make them essential tools in the following sectors:",
-      industries: [
-        {
-          title: "Academic & Research Institutions",
-          description: "Widely used in universities and research centers for organic synthesis, sample concentration, and solvent removal in both undergraduate teaching labs and advanced R&D. Their intuitive design and safety features make them ideal for training students and streamlining academic research workflows.",
-          benefits: [
-            "Enables quick evaporation for multiple experiments",
-            "Facilitates organic synthesis and method development",
-            "Safe, intuitive controls"
-          ]
-        },
-        {
-          title: "Pharmaceutical & Biotechnology Companies",
-          description: "Crucial for active pharmaceutical ingredient (API) purification, formulation testing, and compound isolation. Heidolph evaporators provide reproducible, GMP-compatible distillation processes, ensuring consistent results in drug discovery, development, and quality control.",
-          benefits: [
-            "Enhances efficiency in API purification",
-            "Ensures reproducibility in formulation",
-            "Integrates into GMP-compliant labs"
-          ]
-        },
-        {
-          title: "Chemical & Petrochemical Industries",
-          description: "Enable high-precision separation of chemical mixtures, recovery of valuable solvents, and pilot-scale distillation under vacuum. Their corrosion-resistant components and scalability make them suitable for both analytical testing and industrial R&D.",
-          benefits: [
-            "Separates volatile components from mixtures",
-            "High chemical resistance",
-            "Scalable for pilot-scale processes"
-          ]
-        },
-        {
-          title: "Food & Beverage Industry",
-          description: "Ideal for concentrating natural extracts, essential oils, and volatile compounds while preserving aroma and flavor integrity. Used in quality control labs and R&D to create new flavor profiles and test food additives in compliance with safety standards.",
-          benefits: [
-            "Ideal for flavor and aroma extraction",
-            "Preserves volatile compounds",
-            "Supports product innovation and quality testing"
-          ]
-        },
-        {
-          title: "Environmental Testing Laboratories",
-          description: "Support pre-concentration of environmental samples such as water, soil, and air extracts. Facilitate trace-level detection of contaminants (e.g., pesticides, heavy metals) in regulatory and quality assurance applications with high reproducibility.",
-          benefits: [
-            "Concentrates pollutants for analysis",
-            "Reduces sample prep time",
-            "Enhances precision and consistency"
-          ]
-        },
-        {
-          title: "Cannabis & Herbal Extraction Facilities",
-          description: "Used post-extraction to recover solvents safely and efficiently while preserving delicate cannabinoids and terpenes. Heidolph rotary evaporators help maintain compliance with purity standards and optimize product yield in commercial cannabis processing.",
-          benefits: [
-            "Gentle solvent recovery post-extraction",
-            "Retains terpenes and cannabinoids",
-            "Meets purity and compliance standards"
-          ]
-        },
-        {
-          title: "Contract Research Organizations (CROs)",
-          description: "Provide scalable solvent recovery and purification processes to serve multiple client projects. Their flexibility allows for method development, custom formulation trials, and reproducible results across diverse industries.",
-          benefits: [
-            "Flexible for diverse sample types",
-            "Supports high-throughput workflows",
-            "Optimized for scalable method development"
-          ]
-        },
-        {
-          title: "Government Labs & Regulatory Bodies",
-          description: "Essential in labs focused on public safety, quality enforcement, and policy testing. Used for validated methods in compliance testing, fraud detection, and monitoring of controlled substances with consistent, reliable performance.",
-          benefits: [
-            "Reproducible for compliance testing",
-            "Durable for daily use",
-            "Compatible with validated methods"
-          ]
-        },
-        {
-          title: "Cosmetic & Personal Care Manufacturers",
-          description: "Facilitate development of serums, creams, and concentrated actives. Ensure formulation stability during evaporation and allow small-batch testing for R&D and pilot launches while preserving efficacy of bioactive ingredients.",
-          benefits: [
-            "Aids in concentrated actives development",
-            "Maintains ingredient integrity",
-            "Enables batch-scale testing"
-          ]
-        },
-        {
-          title: "Forensics & Toxicology Labs",
-          description: "Critical for isolating and concentrating toxicological substances, drugs, and forensic samples. Ensure clean sample recovery for evidence analysis while minimizing degradation and contamination, supporting accurate legal investigations.",
-          benefits: [
-            "Isolates trace substances for analysis",
-            "Minimizes contamination risk",
-            "Ensures reproducible evidence processing"
-          ]
-        }
-      ],
-      distributor: {
-        title:
-          "Inkarp: Authorized Distributor and Service Provider for Heidolph Rotary Evaporators in India",
-        text: `Inkarp stands out as a leading distributor and service provider of Heidolph Rotary Evaporators in India, supported by an extensive nationwide network. Our robust infrastructure ensures prompt technical support, timely service, and reliable distribution solutions tailored specifically to your laboratory's needs.
+//           With extensive combinations of glassware and accessories, Heidolph rotary evaporators provide scalable solutions for every lab environment—from education to R&D and manufacturing.`,
+//       },
+//       subSection: {
+//         title:
+//           "Rotary Evaporator for Laboratories – Water Distillation & Solvent Recovery Unit",
+//         description:
+//           "Designed for a wide range of distillation tasks, Heidolph rotary evaporators ensure efficient water distillation and solvent recovery. Whether you're removing low-boiling solvents or processing high-viscosity samples, these units offer full control, precision, and safety.",
+//       },
+//       industriesIntro:
+//         "Heidolph Rotary Evaporators are trusted across a wide range of industries and scientific domains. Their precision, reliability, and adaptability make them essential tools in the following sectors:",
+//       industries: [
+//         {
+//           title: "Academic & Research Institutions",
+//           description: "Widely used in universities and research centers for organic synthesis, sample concentration, and solvent removal in both undergraduate teaching labs and advanced R&D. Their intuitive design and safety features make them ideal for training students and streamlining academic research workflows.",
+//           benefits: [
+//             "Enables quick evaporation for multiple experiments",
+//             "Facilitates organic synthesis and method development",
+//             "Safe, intuitive controls"
+//           ]
+//         },
+//         {
+//           title: "Pharmaceutical & Biotechnology Companies",
+//           description: "Crucial for active pharmaceutical ingredient (API) purification, formulation testing, and compound isolation. Heidolph evaporators provide reproducible, GMP-compatible distillation processes, ensuring consistent results in drug discovery, development, and quality control.",
+//           benefits: [
+//             "Enhances efficiency in API purification",
+//             "Ensures reproducibility in formulation",
+//             "Integrates into GMP-compliant labs"
+//           ]
+//         },
+//         {
+//           title: "Chemical & Petrochemical Industries",
+//           description: "Enable high-precision separation of chemical mixtures, recovery of valuable solvents, and pilot-scale distillation under vacuum. Their corrosion-resistant components and scalability make them suitable for both analytical testing and industrial R&D.",
+//           benefits: [
+//             "Separates volatile components from mixtures",
+//             "High chemical resistance",
+//             "Scalable for pilot-scale processes"
+//           ]
+//         },
+//         {
+//           title: "Food & Beverage Industry",
+//           description: "Ideal for concentrating natural extracts, essential oils, and volatile compounds while preserving aroma and flavor integrity. Used in quality control labs and R&D to create new flavor profiles and test food additives in compliance with safety standards.",
+//           benefits: [
+//             "Ideal for flavor and aroma extraction",
+//             "Preserves volatile compounds",
+//             "Supports product innovation and quality testing"
+//           ]
+//         },
+//         {
+//           title: "Environmental Testing Laboratories",
+//           description: "Support pre-concentration of environmental samples such as water, soil, and air extracts. Facilitate trace-level detection of contaminants (e.g., pesticides, heavy metals) in regulatory and quality assurance applications with high reproducibility.",
+//           benefits: [
+//             "Concentrates pollutants for analysis",
+//             "Reduces sample prep time",
+//             "Enhances precision and consistency"
+//           ]
+//         },
+//         {
+//           title: "Cannabis & Herbal Extraction Facilities",
+//           description: "Used post-extraction to recover solvents safely and efficiently while preserving delicate cannabinoids and terpenes. Heidolph rotary evaporators help maintain compliance with purity standards and optimize product yield in commercial cannabis processing.",
+//           benefits: [
+//             "Gentle solvent recovery post-extraction",
+//             "Retains terpenes and cannabinoids",
+//             "Meets purity and compliance standards"
+//           ]
+//         },
+//         {
+//           title: "Contract Research Organizations (CROs)",
+//           description: "Provide scalable solvent recovery and purification processes to serve multiple client projects. Their flexibility allows for method development, custom formulation trials, and reproducible results across diverse industries.",
+//           benefits: [
+//             "Flexible for diverse sample types",
+//             "Supports high-throughput workflows",
+//             "Optimized for scalable method development"
+//           ]
+//         },
+//         {
+//           title: "Government Labs & Regulatory Bodies",
+//           description: "Essential in labs focused on public safety, quality enforcement, and policy testing. Used for validated methods in compliance testing, fraud detection, and monitoring of controlled substances with consistent, reliable performance.",
+//           benefits: [
+//             "Reproducible for compliance testing",
+//             "Durable for daily use",
+//             "Compatible with validated methods"
+//           ]
+//         },
+//         {
+//           title: "Cosmetic & Personal Care Manufacturers",
+//           description: "Facilitate development of serums, creams, and concentrated actives. Ensure formulation stability during evaporation and allow small-batch testing for R&D and pilot launches while preserving efficacy of bioactive ingredients.",
+//           benefits: [
+//             "Aids in concentrated actives development",
+//             "Maintains ingredient integrity",
+//             "Enables batch-scale testing"
+//           ]
+//         },
+//         {
+//           title: "Forensics & Toxicology Labs",
+//           description: "Critical for isolating and concentrating toxicological substances, drugs, and forensic samples. Ensure clean sample recovery for evidence analysis while minimizing degradation and contamination, supporting accurate legal investigations.",
+//           benefits: [
+//             "Isolates trace substances for analysis",
+//             "Minimizes contamination risk",
+//             "Ensures reproducible evidence processing"
+//           ]
+//         }
+//       ],
+//       distributor: {
+//         title:
+//           "Inkarp: Authorized Distributor and Service Provider for Heidolph Rotary Evaporators in India",
+//         text: `Inkarp stands out as a leading distributor and service provider of Heidolph Rotary Evaporators in India, supported by an extensive nationwide network. Our robust infrastructure ensures prompt technical support, timely service, and reliable distribution solutions tailored specifically to your laboratory's needs.
 
-        With over 40 years of experience, Inkarp has proudly partnered with premier research institutions, pharmaceutical companies, and academic laboratories across India. We are committed to enabling scientific excellence by delivering cutting-edge rotary evaporator systems along with responsive and professional technical support.
+//         With over 40 years of experience, Inkarp has proudly partnered with premier research institutions, pharmaceutical companies, and academic laboratories across India. We are committed to enabling scientific excellence by delivering cutting-edge rotary evaporator systems along with responsive and professional technical support.
 
-        Whether you're optimizing routine distillations or deploying complex evaporation setups, Inkarp offers:
-        - Personalized consultations for configuration and applications
-        - On-site service and support by experienced engineers
-        - Comprehensive installation, training, and maintenance
+//         Whether you're optimizing routine distillations or deploying complex evaporation setups, Inkarp offers:
+//         - Personalized consultations for configuration and applications
+//         - On-site service and support by experienced engineers
+//         - Comprehensive installation, training, and maintenance
 
-        Partner with Inkarp to elevate your lab's evaporation performance—efficiently, reliably, and expertly.`,
-      },
-      faqs: [
-        {
-          question: 'What is the Weighing balance?',
-          answer: 'The principle of a rotary evaporator is based on reducing the pressure inside the system using a vacuum, which in turn lowers the boiling point of solvents. This allows evaporation to occur at significantly lower temperatures, making the process ideal for heat-sensitive materials. A round-bottom flask containing the solution is rotated in a heated water bath. The rotation increases the surface area of the liquid and ensures even heat distribution, preventing bumping or boiling over. As the solvent evaporates, it travels through a condenser where it is cooled and then collected in a separate receiving flask. This method is highly effective for concentrating, purifying, or recovering solvents in applications such as organic synthesis, natural product extraction, and analytical chemistry. The process preserves the integrity of delicate compounds and improves efficiency in laboratory workflows.'
-        },
-        {
-          question: 'What is the working procedure of a rotary evaporator?',
-          answer: 'The working procedure of a rotary evaporator involves several coordinated steps to achieve safe and efficient solvent evaporation. First, the solution is poured into a round-bottom flask, which is securely attached to the evaporator’s rotating motor. The flask is then partially immersed in a heated water bath to promote evaporation. At the same time, a vacuum pump is engaged to reduce the pressure within the system, lowering the boiling point of the solvent. The flask is rotated to maximize surface area, allowing uniform heating and faster evaporation. The solvent vapor then passes through a condenser where it is cooled and converted back into liquid, collected in a receiving flask. This process enables users to remove solvents at lower temperatures, reducing thermal stress on the sample. It is commonly used in pharmaceutical development, sample concentration, and chemical research.'
-        },
-        {
-          question: 'What are the top 10 applications where a rotary evaporator can be used?',
-          answer: `Rotary evaporators are widely used across diverse scientific and industrial fields due to their versatility and efficiency. Top 10 applications include:
+//         Partner with Inkarp to elevate your lab's evaporation performance—efficiently, reliably, and expertly.`,
+//       },
+//       faqs: [
+//         {
+//           question: 'What is the Weighing balance?',
+//           answer: 'The principle of a rotary evaporator is based on reducing the pressure inside the system using a vacuum, which in turn lowers the boiling point of solvents. This allows evaporation to occur at significantly lower temperatures, making the process ideal for heat-sensitive materials. A round-bottom flask containing the solution is rotated in a heated water bath. The rotation increases the surface area of the liquid and ensures even heat distribution, preventing bumping or boiling over. As the solvent evaporates, it travels through a condenser where it is cooled and then collected in a separate receiving flask. This method is highly effective for concentrating, purifying, or recovering solvents in applications such as organic synthesis, natural product extraction, and analytical chemistry. The process preserves the integrity of delicate compounds and improves efficiency in laboratory workflows.'
+//         },
+//         {
+//           question: 'What is the working procedure of a rotary evaporator?',
+//           answer: 'The working procedure of a rotary evaporator involves several coordinated steps to achieve safe and efficient solvent evaporation. First, the solution is poured into a round-bottom flask, which is securely attached to the evaporator’s rotating motor. The flask is then partially immersed in a heated water bath to promote evaporation. At the same time, a vacuum pump is engaged to reduce the pressure within the system, lowering the boiling point of the solvent. The flask is rotated to maximize surface area, allowing uniform heating and faster evaporation. The solvent vapor then passes through a condenser where it is cooled and converted back into liquid, collected in a receiving flask. This process enables users to remove solvents at lower temperatures, reducing thermal stress on the sample. It is commonly used in pharmaceutical development, sample concentration, and chemical research.'
+//         },
+//         {
+//           question: 'What are the top 10 applications where a rotary evaporator can be used?',
+//           answer: `Rotary evaporators are widely used across diverse scientific and industrial fields due to their versatility and efficiency. Top 10 applications include:
 
-1. Organic synthesis for removing solvents after reactions,
-2. Pharmaceutical research for purifying APIs,
-3. Cannabis and herbal industries for extracting and concentrating bioactives,
-4. Food and beverage R&D for aroma and flavor concentration,
-5. Environmental analysis for concentrating trace-level pollutants,
-6. Toxicology and forensic labs for isolating and analyzing samples,
-7. Cosmetic industry for formulating active ingredients and essential oils,
-8. Contract Research Organizations (CROs) for standardized and scalable solvent removal,
-9. Academic institutions for lab teaching and training,
-10. Petrochemical sector for analyzing and refining chemical compounds.
+// 1. Organic synthesis for removing solvents after reactions,
+// 2. Pharmaceutical research for purifying APIs,
+// 3. Cannabis and herbal industries for extracting and concentrating bioactives,
+// 4. Food and beverage R&D for aroma and flavor concentration,
+// 5. Environmental analysis for concentrating trace-level pollutants,
+// 6. Toxicology and forensic labs for isolating and analyzing samples,
+// 7. Cosmetic industry for formulating active ingredients and essential oils,
+// 8. Contract Research Organizations (CROs) for standardized and scalable solvent removal,
+// 9. Academic institutions for lab teaching and training,
+// 10. Petrochemical sector for analyzing and refining chemical compounds.
 
-These applications highlight the instrument's crucial role in both routine and complex processes.`
-        }
-        ,
-        {
-          question: 'What makes Heidolph Rotary Evaporators ideal for laboratory use?',
-          answer: 'Heidolph Rotary Evaporators stand out in the laboratory space due to their high-quality construction, intelligent design, and user-focused features. Designed in collaboration with scientists, they offer superior performance, chemical resistance, and unmatched reliability. Intuitive digital interfaces simplify operation for beginners and experts alike, while the modular design allows compatibility with a wide range of glassware and accessories. Safety features such as dry-run protection, motorized lift, and over-temperature cutoffs make them ideal for regulated environments including GMP/GLP labs. Their low-noise operation and German engineering ensure long-term durability with minimal maintenance. Whether for routine distillation or advanced solvent recovery, Heidolph units are engineered to increase efficiency, minimize risk, and provide consistency in daily lab work. That’s why they are trusted by researchers and institutions worldwide.'
-        },
-        {
-          question: 'How can I request a product demo or consultation from Inkarp?',
-          answer: 'Requesting a product demo or technical consultation from Inkarp is easy and tailored to your specific needs. You can visit the official Inkarp website and fill out the contact form with your details, indicating interest in Heidolph Rotary Evaporators. Alternatively, reach out via email or phone to speak directly with our product specialists. Once your request is received, our team will schedule either an on-site demonstration or a virtual consultation based on your convenience. During this session, our experts will evaluate your lab’s requirements, discuss your application goals, and recommend the most suitable rotary evaporator model. Inkarp also provides post-demo support such as installation planning, user training, and assistance with compliance documentation. Our goal is to ensure you make an informed purchase decision that adds long-term value to your operations.'
-        },
-        {
-          question: 'What glassware options are available with Heidolph rotary evaporators?',
-          answer: 'Heidolph offers a comprehensive selection of high-quality borosilicate glassware for different evaporation tasks. Options include vertical condensers, ideal for space-saving setups and standard distillations; diagonal condensers, which are easy to clean and maintain; and dry-ice condensers for volatile solvent recovery. Cold traps and anti-splash adapters are available for specialty applications. Each glassware set is designed for maximum chemical resistance and thermal stability. Labs can also customize their configurations based on solvent type, application volume, and condensation needs. Modular glassware designs allow for easy switching between setups without disrupting ongoing workflows. Heidolph ensures each component is leak-proof, secure, and compatible with safety shields and accessories. This flexibility helps labs manage various protocols using a single rotary evaporator system, improving productivity and reducing downtime.'
-        },
-        {
-          question: 'Can I integrate Heidolph rotary evaporators with automation systems?',
-          answer: `Yes, Heidolph rotary evaporators—especially the Hei-VAP Expert Control and Ultimate Control models—are fully compatible with modern lab automation systems. These models feature digital interfaces, programmable functions, and connectivity options for remote monitoring and control.
+// These applications highlight the instrument's crucial role in both routine and complex processes.`
+//         }
+//         ,
+//         {
+//           question: 'What makes Heidolph Rotary Evaporators ideal for laboratory use?',
+//           answer: 'Heidolph Rotary Evaporators stand out in the laboratory space due to their high-quality construction, intelligent design, and user-focused features. Designed in collaboration with scientists, they offer superior performance, chemical resistance, and unmatched reliability. Intuitive digital interfaces simplify operation for beginners and experts alike, while the modular design allows compatibility with a wide range of glassware and accessories. Safety features such as dry-run protection, motorized lift, and over-temperature cutoffs make them ideal for regulated environments including GMP/GLP labs. Their low-noise operation and German engineering ensure long-term durability with minimal maintenance. Whether for routine distillation or advanced solvent recovery, Heidolph units are engineered to increase efficiency, minimize risk, and provide consistency in daily lab work. That’s why they are trusted by researchers and institutions worldwide.'
+//         },
+//         {
+//           question: 'How can I request a product demo or consultation from Inkarp?',
+//           answer: 'Requesting a product demo or technical consultation from Inkarp is easy and tailored to your specific needs. You can visit the official Inkarp website and fill out the contact form with your details, indicating interest in Heidolph Rotary Evaporators. Alternatively, reach out via email or phone to speak directly with our product specialists. Once your request is received, our team will schedule either an on-site demonstration or a virtual consultation based on your convenience. During this session, our experts will evaluate your lab’s requirements, discuss your application goals, and recommend the most suitable rotary evaporator model. Inkarp also provides post-demo support such as installation planning, user training, and assistance with compliance documentation. Our goal is to ensure you make an informed purchase decision that adds long-term value to your operations.'
+//         },
+//         {
+//           question: 'What glassware options are available with Heidolph rotary evaporators?',
+//           answer: 'Heidolph offers a comprehensive selection of high-quality borosilicate glassware for different evaporation tasks. Options include vertical condensers, ideal for space-saving setups and standard distillations; diagonal condensers, which are easy to clean and maintain; and dry-ice condensers for volatile solvent recovery. Cold traps and anti-splash adapters are available for specialty applications. Each glassware set is designed for maximum chemical resistance and thermal stability. Labs can also customize their configurations based on solvent type, application volume, and condensation needs. Modular glassware designs allow for easy switching between setups without disrupting ongoing workflows. Heidolph ensures each component is leak-proof, secure, and compatible with safety shields and accessories. This flexibility helps labs manage various protocols using a single rotary evaporator system, improving productivity and reducing downtime.'
+//         },
+//         {
+//           question: 'Can I integrate Heidolph rotary evaporators with automation systems?',
+//           answer: `Yes, Heidolph rotary evaporators—especially the Hei-VAP Expert Control and Ultimate Control models—are fully compatible with modern lab automation systems. These models feature digital interfaces, programmable functions, and connectivity options for remote monitoring and control.
 
-They can be seamlessly integrated with external vacuum controllers, chillers, and solvent recovery units to create a complete automated distillation workflow. Automation enhances efficiency, reduces human error, and ensures reproducibility—critical for pharmaceutical manufacturing and other regulated environments.
+// They can be seamlessly integrated with external vacuum controllers, chillers, and solvent recovery units to create a complete automated distillation workflow. Automation enhances efficiency, reduces human error, and ensures reproducibility—critical for pharmaceutical manufacturing and other regulated environments.
 
-Additionally, these systems support data logging and compliance reporting, which are essential for audits and quality control. Inkarp provides expert consultation and integration support to ensure a smooth setup. Whether you're scaling up operations or aiming for greater process consistency, automation-ready Heidolph evaporators deliver the flexibility and precision your lab requires.`
-        }
-        ,
-        {
-          question: 'Do rotary evaporators require special maintenance?',
-          answer: 'Rotary evaporators require regular but simple maintenance to maintain optimal performance. This includes cleaning the evaporating and receiving flasks, checking vacuum seals and tubing for leaks, lubricating joints, and inspecting moving parts like the drive motor and lift mechanism. The water bath should be kept clean to prevent scaling, and sensors should be tested periodically for accuracy. For Heidolph units, maintenance is streamlined with easy-access components and automated safety shutdown features. Inkarp provides annual maintenance contracts, preventive service checkups, and emergency repair services across India. Our service team is trained to ensure minimal downtime and extend the life of your system. Maintaining your rotary evaporator not only improves reliability but also ensures consistent results in sensitive lab operations.'
-        },
-        {
-          question: 'How do I choose the right rotary evaporator model for my lab?',
-          answer: `Choosing the right Heidolph rotary evaporator depends on your lab's workflow, application complexity, solvent types, and desired level of automation.
+// Additionally, these systems support data logging and compliance reporting, which are essential for audits and quality control. Inkarp provides expert consultation and integration support to ensure a smooth setup. Whether you're scaling up operations or aiming for greater process consistency, automation-ready Heidolph evaporators deliver the flexibility and precision your lab requires.`
+//         }
+//         ,
+//         {
+//           question: 'Do rotary evaporators require special maintenance?',
+//           answer: 'Rotary evaporators require regular but simple maintenance to maintain optimal performance. This includes cleaning the evaporating and receiving flasks, checking vacuum seals and tubing for leaks, lubricating joints, and inspecting moving parts like the drive motor and lift mechanism. The water bath should be kept clean to prevent scaling, and sensors should be tested periodically for accuracy. For Heidolph units, maintenance is streamlined with easy-access components and automated safety shutdown features. Inkarp provides annual maintenance contracts, preventive service checkups, and emergency repair services across India. Our service team is trained to ensure minimal downtime and extend the life of your system. Maintaining your rotary evaporator not only improves reliability but also ensures consistent results in sensitive lab operations.'
+//         },
+//         {
+//           question: 'How do I choose the right rotary evaporator model for my lab?',
+//           answer: `Choosing the right Heidolph rotary evaporator depends on your lab's workflow, application complexity, solvent types, and desired level of automation.
 
-For routine operations, the Hei-VAP Core or Expert models offer reliability and simplicity. For high-throughput laboratories or regulated environments, the Hei-VAP Expert Control and Ultimate Control models provide advanced automation, digital monitoring, and system integration capabilities.
+// For routine operations, the Hei-VAP Core or Expert models offer reliability and simplicity. For high-throughput laboratories or regulated environments, the Hei-VAP Expert Control and Ultimate Control models provide advanced automation, digital monitoring, and system integration capabilities.
 
-Key factors to consider include glassware configuration, space availability, solvent volatility, and safety requirements. Inkarp offers personalized consultation to assess your specific needs and recommend a tailored model with the right accessories.
+// Key factors to consider include glassware configuration, space availability, solvent volatility, and safety requirements. Inkarp offers personalized consultation to assess your specific needs and recommend a tailored model with the right accessories.
 
-We also provide on-site demonstrations and training, ensuring you make an informed decision. Selecting the right model will enhance efficiency, safety, and scalability in your solvent distillation workflows.`
-        }
+// We also provide on-site demonstrations and training, ensuring you make an informed decision. Selecting the right model will enhance efficiency, safety, and scalability in your solvent distillation workflows.`
+//         }
 
-      ],
-    },
+//       ],
+//     },
 
 
   },
   "moisture-analyzer": {
     models: [
-      { heading: "Standard Models" },
+      { heading: "Halogen Moisture Analyzers" },
       {
-        name: "Hei-VAP Core",
-        slug: "hei-vap-core",
-        image: ME204,
+        name: "Halogen Moisture Analyzer HE53 (230V)",
+        slug: "halogen-moisture-analyzer-he53-230v",
+        image: He53,
       },
       {
-        name: "Hei-VAP Expert",
-        slug: "hei-vap-expert",
-        image: ME204T,
+        name: "Halogen Moisture Analyzer HE73 (230V)",
+        slug: "halogen-moisture-analyzer-he73-230v",
+        image: He73,
       },
       {
-        name: "Hei-VAP Ultimate",
-        slug: "hei-vap-ultimate",
-        image: ME1002,
+        name: "Halogen Moisture Analyzer HC103 (230V)",
+        slug: "halogen-moisture-analyzer-hc103-230v",
+        image: Hc103,
+      },
+      {
+        name: "Halogen Moisture Analyzer HX204",
+        slug: "halogen-moisture-analyzer-hx204",
+        image: Hx204,
       },
     ],
+    
+
     meta: {
       title: "Best Rotary Evaporator – Water Distillation & Solvent Recovery Unit Distributor And Service Provider In India | Inkarp",
       description: "Explore Heidolph Rotary Evaporators for precise water distillation and solvent recovery in laboratories. Distributed by Inkarp – India's trusted scientific equipment partner.",
@@ -298,227 +403,320 @@ We also provide on-site demonstrations and training, ensuring you make an inform
       internalLinks: ["Internal Product Pages Links"],
       externalLinks: ["Heidolph Website"]
     },
-    pageData: {
-      title: "Best Rotary Evaporator In India",
-      intro:
-        "Rotary evaporators are essential laboratory instruments used for gentle and efficient removal of solvents through evaporation. Commonly employed in chemical, pharmaceutical, and academic labs, rotary evaporators enable precise distillation under vacuum for concentration, purification, and solvent recovery.",
-      highlight:
-        "The Heidolph Rotary Evaporators are the best rotary evaporators in India, the series is engineered for reliability, safety, and superior performance—making it a preferred choice for laboratories worldwide. Whether you're conducting routine distillations or working with complex compounds, Heidolph evaporators deliver unmatched precision and ease of use.",
+//     pageData: {
+//       title: "Best Rotary Evaporator In India",
+//       intro:
+//         "Rotary evaporators are essential laboratory instruments used for gentle and efficient removal of solvents through evaporation. Commonly employed in chemical, pharmaceutical, and academic labs, rotary evaporators enable precise distillation under vacuum for concentration, purification, and solvent recovery.",
+//       highlight:
+//         "The Heidolph Rotary Evaporators are the best rotary evaporators in India, the series is engineered for reliability, safety, and superior performance—making it a preferred choice for laboratories worldwide. Whether you're conducting routine distillations or working with complex compounds, Heidolph evaporators deliver unmatched precision and ease of use.",
 
-      modelHeading: "Model Categories",
-      infoSection: {
-        title: "Heidolph Rotary Evaporator",
-        description: `Developed in close cooperation with laboratory professionals, the Heidolph Hei-VAP series focuses on the essentials of effective distillation: user-friendly operation, thoughtful design, and enhanced safety features.
-          Every model in the series offers:
-          - Intuitive control panels
-          - Reliable performance in demanding conditions
-          - High chemical resistance and durability
-          - Modular design to suit your unique application needs
+//       modelHeading: "Model Categories",
+//       infoSection: {
+//         title: "Heidolph Rotary Evaporator",
+//         description: `Developed in close cooperation with laboratory professionals, the Heidolph Hei-VAP series focuses on the essentials of effective distillation: user-friendly operation, thoughtful design, and enhanced safety features.
+//           Every model in the series offers:
+//           - Intuitive control panels
+//           - Reliable performance in demanding conditions
+//           - High chemical resistance and durability
+//           - Modular design to suit your unique application needs
 
-          With extensive combinations of glassware and accessories, Heidolph rotary evaporators provide scalable solutions for every lab environment—from education to R&D and manufacturing.`,
-      },
-      subSection: {
-        title:
-          "Rotary Evaporator for Laboratories – Water Distillation & Solvent Recovery Unit",
-        description:
-          "Designed for a wide range of distillation tasks, Heidolph rotary evaporators ensure efficient water distillation and solvent recovery. Whether you're removing low-boiling solvents or processing high-viscosity samples, these units offer full control, precision, and safety.",
-      },
-      industriesIntro:
-        "Heidolph Rotary Evaporators are trusted across a wide range of industries and scientific domains. Their precision, reliability, and adaptability make them essential tools in the following sectors:",
-      industries: [
-        {
-          title: "Academic & Research Institutions",
-          description: "Widely used in universities and research centers for organic synthesis, sample concentration, and solvent removal in both undergraduate teaching labs and advanced R&D. Their intuitive design and safety features make them ideal for training students and streamlining academic research workflows.",
-          benefits: [
-            "Enables quick evaporation for multiple experiments",
-            "Facilitates organic synthesis and method development",
-            "Safe, intuitive controls"
-          ]
-        },
-        {
-          title: "Pharmaceutical & Biotechnology Companies",
-          description: "Crucial for active pharmaceutical ingredient (API) purification, formulation testing, and compound isolation. Heidolph evaporators provide reproducible, GMP-compatible distillation processes, ensuring consistent results in drug discovery, development, and quality control.",
-          benefits: [
-            "Enhances efficiency in API purification",
-            "Ensures reproducibility in formulation",
-            "Integrates into GMP-compliant labs"
-          ]
-        },
-        {
-          title: "Chemical & Petrochemical Industries",
-          description: "Enable high-precision separation of chemical mixtures, recovery of valuable solvents, and pilot-scale distillation under vacuum. Their corrosion-resistant components and scalability make them suitable for both analytical testing and industrial R&D.",
-          benefits: [
-            "Separates volatile components from mixtures",
-            "High chemical resistance",
-            "Scalable for pilot-scale processes"
-          ]
-        },
-        {
-          title: "Food & Beverage Industry",
-          description: "Ideal for concentrating natural extracts, essential oils, and volatile compounds while preserving aroma and flavor integrity. Used in quality control labs and R&D to create new flavor profiles and test food additives in compliance with safety standards.",
-          benefits: [
-            "Ideal for flavor and aroma extraction",
-            "Preserves volatile compounds",
-            "Supports product innovation and quality testing"
-          ]
-        },
-        {
-          title: "Environmental Testing Laboratories",
-          description: "Support pre-concentration of environmental samples such as water, soil, and air extracts. Facilitate trace-level detection of contaminants (e.g., pesticides, heavy metals) in regulatory and quality assurance applications with high reproducibility.",
-          benefits: [
-            "Concentrates pollutants for analysis",
-            "Reduces sample prep time",
-            "Enhances precision and consistency"
-          ]
-        },
-        {
-          title: "Cannabis & Herbal Extraction Facilities",
-          description: "Used post-extraction to recover solvents safely and efficiently while preserving delicate cannabinoids and terpenes. Heidolph rotary evaporators help maintain compliance with purity standards and optimize product yield in commercial cannabis processing.",
-          benefits: [
-            "Gentle solvent recovery post-extraction",
-            "Retains terpenes and cannabinoids",
-            "Meets purity and compliance standards"
-          ]
-        },
-        {
-          title: "Contract Research Organizations (CROs)",
-          description: "Provide scalable solvent recovery and purification processes to serve multiple client projects. Their flexibility allows for method development, custom formulation trials, and reproducible results across diverse industries.",
-          benefits: [
-            "Flexible for diverse sample types",
-            "Supports high-throughput workflows",
-            "Optimized for scalable method development"
-          ]
-        },
-        {
-          title: "Government Labs & Regulatory Bodies",
-          description: "Essential in labs focused on public safety, quality enforcement, and policy testing. Used for validated methods in compliance testing, fraud detection, and monitoring of controlled substances with consistent, reliable performance.",
-          benefits: [
-            "Reproducible for compliance testing",
-            "Durable for daily use",
-            "Compatible with validated methods"
-          ]
-        },
-        {
-          title: "Cosmetic & Personal Care Manufacturers",
-          description: "Facilitate development of serums, creams, and concentrated actives. Ensure formulation stability during evaporation and allow small-batch testing for R&D and pilot launches while preserving efficacy of bioactive ingredients.",
-          benefits: [
-            "Aids in concentrated actives development",
-            "Maintains ingredient integrity",
-            "Enables batch-scale testing"
-          ]
-        },
-        {
-          title: "Forensics & Toxicology Labs",
-          description: "Critical for isolating and concentrating toxicological substances, drugs, and forensic samples. Ensure clean sample recovery for evidence analysis while minimizing degradation and contamination, supporting accurate legal investigations.",
-          benefits: [
-            "Isolates trace substances for analysis",
-            "Minimizes contamination risk",
-            "Ensures reproducible evidence processing"
-          ]
-        }
-      ],
-      distributor: {
-        title:
-          "Inkarp: Authorized Distributor and Service Provider for Heidolph Rotary Evaporators in India",
-        text: `Inkarp stands out as a leading distributor and service provider of Heidolph Rotary Evaporators in India, supported by an extensive nationwide network. Our robust infrastructure ensures prompt technical support, timely service, and reliable distribution solutions tailored specifically to your laboratory's needs.
+//           With extensive combinations of glassware and accessories, Heidolph rotary evaporators provide scalable solutions for every lab environment—from education to R&D and manufacturing.`,
+//       },
+//       subSection: {
+//         title:
+//           "Rotary Evaporator for Laboratories – Water Distillation & Solvent Recovery Unit",
+//         description:
+//           "Designed for a wide range of distillation tasks, Heidolph rotary evaporators ensure efficient water distillation and solvent recovery. Whether you're removing low-boiling solvents or processing high-viscosity samples, these units offer full control, precision, and safety.",
+//       },
+//       industriesIntro:
+//         "Heidolph Rotary Evaporators are trusted across a wide range of industries and scientific domains. Their precision, reliability, and adaptability make them essential tools in the following sectors:",
+//       industries: [
+//         {
+//           title: "Academic & Research Institutions",
+//           description: "Widely used in universities and research centers for organic synthesis, sample concentration, and solvent removal in both undergraduate teaching labs and advanced R&D. Their intuitive design and safety features make them ideal for training students and streamlining academic research workflows.",
+//           benefits: [
+//             "Enables quick evaporation for multiple experiments",
+//             "Facilitates organic synthesis and method development",
+//             "Safe, intuitive controls"
+//           ]
+//         },
+//         {
+//           title: "Pharmaceutical & Biotechnology Companies",
+//           description: "Crucial for active pharmaceutical ingredient (API) purification, formulation testing, and compound isolation. Heidolph evaporators provide reproducible, GMP-compatible distillation processes, ensuring consistent results in drug discovery, development, and quality control.",
+//           benefits: [
+//             "Enhances efficiency in API purification",
+//             "Ensures reproducibility in formulation",
+//             "Integrates into GMP-compliant labs"
+//           ]
+//         },
+//         {
+//           title: "Chemical & Petrochemical Industries",
+//           description: "Enable high-precision separation of chemical mixtures, recovery of valuable solvents, and pilot-scale distillation under vacuum. Their corrosion-resistant components and scalability make them suitable for both analytical testing and industrial R&D.",
+//           benefits: [
+//             "Separates volatile components from mixtures",
+//             "High chemical resistance",
+//             "Scalable for pilot-scale processes"
+//           ]
+//         },
+//         {
+//           title: "Food & Beverage Industry",
+//           description: "Ideal for concentrating natural extracts, essential oils, and volatile compounds while preserving aroma and flavor integrity. Used in quality control labs and R&D to create new flavor profiles and test food additives in compliance with safety standards.",
+//           benefits: [
+//             "Ideal for flavor and aroma extraction",
+//             "Preserves volatile compounds",
+//             "Supports product innovation and quality testing"
+//           ]
+//         },
+//         {
+//           title: "Environmental Testing Laboratories",
+//           description: "Support pre-concentration of environmental samples such as water, soil, and air extracts. Facilitate trace-level detection of contaminants (e.g., pesticides, heavy metals) in regulatory and quality assurance applications with high reproducibility.",
+//           benefits: [
+//             "Concentrates pollutants for analysis",
+//             "Reduces sample prep time",
+//             "Enhances precision and consistency"
+//           ]
+//         },
+//         {
+//           title: "Cannabis & Herbal Extraction Facilities",
+//           description: "Used post-extraction to recover solvents safely and efficiently while preserving delicate cannabinoids and terpenes. Heidolph rotary evaporators help maintain compliance with purity standards and optimize product yield in commercial cannabis processing.",
+//           benefits: [
+//             "Gentle solvent recovery post-extraction",
+//             "Retains terpenes and cannabinoids",
+//             "Meets purity and compliance standards"
+//           ]
+//         },
+//         {
+//           title: "Contract Research Organizations (CROs)",
+//           description: "Provide scalable solvent recovery and purification processes to serve multiple client projects. Their flexibility allows for method development, custom formulation trials, and reproducible results across diverse industries.",
+//           benefits: [
+//             "Flexible for diverse sample types",
+//             "Supports high-throughput workflows",
+//             "Optimized for scalable method development"
+//           ]
+//         },
+//         {
+//           title: "Government Labs & Regulatory Bodies",
+//           description: "Essential in labs focused on public safety, quality enforcement, and policy testing. Used for validated methods in compliance testing, fraud detection, and monitoring of controlled substances with consistent, reliable performance.",
+//           benefits: [
+//             "Reproducible for compliance testing",
+//             "Durable for daily use",
+//             "Compatible with validated methods"
+//           ]
+//         },
+//         {
+//           title: "Cosmetic & Personal Care Manufacturers",
+//           description: "Facilitate development of serums, creams, and concentrated actives. Ensure formulation stability during evaporation and allow small-batch testing for R&D and pilot launches while preserving efficacy of bioactive ingredients.",
+//           benefits: [
+//             "Aids in concentrated actives development",
+//             "Maintains ingredient integrity",
+//             "Enables batch-scale testing"
+//           ]
+//         },
+//         {
+//           title: "Forensics & Toxicology Labs",
+//           description: "Critical for isolating and concentrating toxicological substances, drugs, and forensic samples. Ensure clean sample recovery for evidence analysis while minimizing degradation and contamination, supporting accurate legal investigations.",
+//           benefits: [
+//             "Isolates trace substances for analysis",
+//             "Minimizes contamination risk",
+//             "Ensures reproducible evidence processing"
+//           ]
+//         }
+//       ],
+//       distributor: {
+//         title:
+//           "Inkarp: Authorized Distributor and Service Provider for Heidolph Rotary Evaporators in India",
+//         text: `Inkarp stands out as a leading distributor and service provider of Heidolph Rotary Evaporators in India, supported by an extensive nationwide network. Our robust infrastructure ensures prompt technical support, timely service, and reliable distribution solutions tailored specifically to your laboratory's needs.
 
-        With over 40 years of experience, Inkarp has proudly partnered with premier research institutions, pharmaceutical companies, and academic laboratories across India. We are committed to enabling scientific excellence by delivering cutting-edge rotary evaporator systems along with responsive and professional technical support.
+//         With over 40 years of experience, Inkarp has proudly partnered with premier research institutions, pharmaceutical companies, and academic laboratories across India. We are committed to enabling scientific excellence by delivering cutting-edge rotary evaporator systems along with responsive and professional technical support.
 
-        Whether you're optimizing routine distillations or deploying complex evaporation setups, Inkarp offers:
-        - Personalized consultations for configuration and applications
-        - On-site service and support by experienced engineers
-        - Comprehensive installation, training, and maintenance
+//         Whether you're optimizing routine distillations or deploying complex evaporation setups, Inkarp offers:
+//         - Personalized consultations for configuration and applications
+//         - On-site service and support by experienced engineers
+//         - Comprehensive installation, training, and maintenance
 
-        Partner with Inkarp to elevate your lab's evaporation performance—efficiently, reliably, and expertly.`,
-      },
-      faqs: [
-        {
-          question: 'What is the principle of a rotary evaporator?',
-          answer: 'The principle of a rotary evaporator is based on reducing the pressure inside the system using a vacuum, which in turn lowers the boiling point of solvents. This allows evaporation to occur at significantly lower temperatures, making the process ideal for heat-sensitive materials. A round-bottom flask containing the solution is rotated in a heated water bath. The rotation increases the surface area of the liquid and ensures even heat distribution, preventing bumping or boiling over. As the solvent evaporates, it travels through a condenser where it is cooled and then collected in a separate receiving flask. This method is highly effective for concentrating, purifying, or recovering solvents in applications such as organic synthesis, natural product extraction, and analytical chemistry. The process preserves the integrity of delicate compounds and improves efficiency in laboratory workflows.'
-        },
-        {
-          question: 'What is the working procedure of a rotary evaporator?',
-          answer: 'The working procedure of a rotary evaporator involves several coordinated steps to achieve safe and efficient solvent evaporation. First, the solution is poured into a round-bottom flask, which is securely attached to the evaporator’s rotating motor. The flask is then partially immersed in a heated water bath to promote evaporation. At the same time, a vacuum pump is engaged to reduce the pressure within the system, lowering the boiling point of the solvent. The flask is rotated to maximize surface area, allowing uniform heating and faster evaporation. The solvent vapor then passes through a condenser where it is cooled and converted back into liquid, collected in a receiving flask. This process enables users to remove solvents at lower temperatures, reducing thermal stress on the sample. It is commonly used in pharmaceutical development, sample concentration, and chemical research.'
-        },
-        {
-          question: 'What are the top 10 applications where a rotary evaporator can be used?',
-          answer: `Rotary evaporators are widely used across diverse scientific and industrial fields due to their versatility and efficiency. Top 10 applications include:
+//         Partner with Inkarp to elevate your lab's evaporation performance—efficiently, reliably, and expertly.`,
+//       },
+//       faqs: [
+//         {
+//           question: 'What is the principle of a rotary evaporator?',
+//           answer: 'The principle of a rotary evaporator is based on reducing the pressure inside the system using a vacuum, which in turn lowers the boiling point of solvents. This allows evaporation to occur at significantly lower temperatures, making the process ideal for heat-sensitive materials. A round-bottom flask containing the solution is rotated in a heated water bath. The rotation increases the surface area of the liquid and ensures even heat distribution, preventing bumping or boiling over. As the solvent evaporates, it travels through a condenser where it is cooled and then collected in a separate receiving flask. This method is highly effective for concentrating, purifying, or recovering solvents in applications such as organic synthesis, natural product extraction, and analytical chemistry. The process preserves the integrity of delicate compounds and improves efficiency in laboratory workflows.'
+//         },
+//         {
+//           question: 'What is the working procedure of a rotary evaporator?',
+//           answer: 'The working procedure of a rotary evaporator involves several coordinated steps to achieve safe and efficient solvent evaporation. First, the solution is poured into a round-bottom flask, which is securely attached to the evaporator’s rotating motor. The flask is then partially immersed in a heated water bath to promote evaporation. At the same time, a vacuum pump is engaged to reduce the pressure within the system, lowering the boiling point of the solvent. The flask is rotated to maximize surface area, allowing uniform heating and faster evaporation. The solvent vapor then passes through a condenser where it is cooled and converted back into liquid, collected in a receiving flask. This process enables users to remove solvents at lower temperatures, reducing thermal stress on the sample. It is commonly used in pharmaceutical development, sample concentration, and chemical research.'
+//         },
+//         {
+//           question: 'What are the top 10 applications where a rotary evaporator can be used?',
+//           answer: `Rotary evaporators are widely used across diverse scientific and industrial fields due to their versatility and efficiency. Top 10 applications include:
 
-1. Organic synthesis for removing solvents after reactions,
-2. Pharmaceutical research for purifying APIs,
-3. Cannabis and herbal industries for extracting and concentrating bioactives,
-4. Food and beverage R&D for aroma and flavor concentration,
-5. Environmental analysis for concentrating trace-level pollutants,
-6. Toxicology and forensic labs for isolating and analyzing samples,
-7. Cosmetic industry for formulating active ingredients and essential oils,
-8. Contract Research Organizations (CROs) for standardized and scalable solvent removal,
-9. Academic institutions for lab teaching and training,
-10. Petrochemical sector for analyzing and refining chemical compounds.
+// 1. Organic synthesis for removing solvents after reactions,
+// 2. Pharmaceutical research for purifying APIs,
+// 3. Cannabis and herbal industries for extracting and concentrating bioactives,
+// 4. Food and beverage R&D for aroma and flavor concentration,
+// 5. Environmental analysis for concentrating trace-level pollutants,
+// 6. Toxicology and forensic labs for isolating and analyzing samples,
+// 7. Cosmetic industry for formulating active ingredients and essential oils,
+// 8. Contract Research Organizations (CROs) for standardized and scalable solvent removal,
+// 9. Academic institutions for lab teaching and training,
+// 10. Petrochemical sector for analyzing and refining chemical compounds.
 
-These applications highlight the instrument's crucial role in both routine and complex processes.`
-        }
-        ,
-        {
-          question: 'What makes Heidolph Rotary Evaporators ideal for laboratory use?',
-          answer: 'Heidolph Rotary Evaporators stand out in the laboratory space due to their high-quality construction, intelligent design, and user-focused features. Designed in collaboration with scientists, they offer superior performance, chemical resistance, and unmatched reliability. Intuitive digital interfaces simplify operation for beginners and experts alike, while the modular design allows compatibility with a wide range of glassware and accessories. Safety features such as dry-run protection, motorized lift, and over-temperature cutoffs make them ideal for regulated environments including GMP/GLP labs. Their low-noise operation and German engineering ensure long-term durability with minimal maintenance. Whether for routine distillation or advanced solvent recovery, Heidolph units are engineered to increase efficiency, minimize risk, and provide consistency in daily lab work. That’s why they are trusted by researchers and institutions worldwide.'
-        },
-        {
-          question: 'How can I request a product demo or consultation from Inkarp?',
-          answer: 'Requesting a product demo or technical consultation from Inkarp is easy and tailored to your specific needs. You can visit the official Inkarp website and fill out the contact form with your details, indicating interest in Heidolph Rotary Evaporators. Alternatively, reach out via email or phone to speak directly with our product specialists. Once your request is received, our team will schedule either an on-site demonstration or a virtual consultation based on your convenience. During this session, our experts will evaluate your lab’s requirements, discuss your application goals, and recommend the most suitable rotary evaporator model. Inkarp also provides post-demo support such as installation planning, user training, and assistance with compliance documentation. Our goal is to ensure you make an informed purchase decision that adds long-term value to your operations.'
-        },
-        {
-          question: 'What glassware options are available with Heidolph rotary evaporators?',
-          answer: 'Heidolph offers a comprehensive selection of high-quality borosilicate glassware for different evaporation tasks. Options include vertical condensers, ideal for space-saving setups and standard distillations; diagonal condensers, which are easy to clean and maintain; and dry-ice condensers for volatile solvent recovery. Cold traps and anti-splash adapters are available for specialty applications. Each glassware set is designed for maximum chemical resistance and thermal stability. Labs can also customize their configurations based on solvent type, application volume, and condensation needs. Modular glassware designs allow for easy switching between setups without disrupting ongoing workflows. Heidolph ensures each component is leak-proof, secure, and compatible with safety shields and accessories. This flexibility helps labs manage various protocols using a single rotary evaporator system, improving productivity and reducing downtime.'
-        },
-        {
-          question: 'Can I integrate Heidolph rotary evaporators with automation systems?',
-          answer: `Yes, Heidolph rotary evaporators—especially the Hei-VAP Expert Control and Ultimate Control models—are fully compatible with modern lab automation systems. These models feature digital interfaces, programmable functions, and connectivity options for remote monitoring and control.
+// These applications highlight the instrument's crucial role in both routine and complex processes.`
+//         }
+//         ,
+//         {
+//           question: 'What makes Heidolph Rotary Evaporators ideal for laboratory use?',
+//           answer: 'Heidolph Rotary Evaporators stand out in the laboratory space due to their high-quality construction, intelligent design, and user-focused features. Designed in collaboration with scientists, they offer superior performance, chemical resistance, and unmatched reliability. Intuitive digital interfaces simplify operation for beginners and experts alike, while the modular design allows compatibility with a wide range of glassware and accessories. Safety features such as dry-run protection, motorized lift, and over-temperature cutoffs make them ideal for regulated environments including GMP/GLP labs. Their low-noise operation and German engineering ensure long-term durability with minimal maintenance. Whether for routine distillation or advanced solvent recovery, Heidolph units are engineered to increase efficiency, minimize risk, and provide consistency in daily lab work. That’s why they are trusted by researchers and institutions worldwide.'
+//         },
+//         {
+//           question: 'How can I request a product demo or consultation from Inkarp?',
+//           answer: 'Requesting a product demo or technical consultation from Inkarp is easy and tailored to your specific needs. You can visit the official Inkarp website and fill out the contact form with your details, indicating interest in Heidolph Rotary Evaporators. Alternatively, reach out via email or phone to speak directly with our product specialists. Once your request is received, our team will schedule either an on-site demonstration or a virtual consultation based on your convenience. During this session, our experts will evaluate your lab’s requirements, discuss your application goals, and recommend the most suitable rotary evaporator model. Inkarp also provides post-demo support such as installation planning, user training, and assistance with compliance documentation. Our goal is to ensure you make an informed purchase decision that adds long-term value to your operations.'
+//         },
+//         {
+//           question: 'What glassware options are available with Heidolph rotary evaporators?',
+//           answer: 'Heidolph offers a comprehensive selection of high-quality borosilicate glassware for different evaporation tasks. Options include vertical condensers, ideal for space-saving setups and standard distillations; diagonal condensers, which are easy to clean and maintain; and dry-ice condensers for volatile solvent recovery. Cold traps and anti-splash adapters are available for specialty applications. Each glassware set is designed for maximum chemical resistance and thermal stability. Labs can also customize their configurations based on solvent type, application volume, and condensation needs. Modular glassware designs allow for easy switching between setups without disrupting ongoing workflows. Heidolph ensures each component is leak-proof, secure, and compatible with safety shields and accessories. This flexibility helps labs manage various protocols using a single rotary evaporator system, improving productivity and reducing downtime.'
+//         },
+//         {
+//           question: 'Can I integrate Heidolph rotary evaporators with automation systems?',
+//           answer: `Yes, Heidolph rotary evaporators—especially the Hei-VAP Expert Control and Ultimate Control models—are fully compatible with modern lab automation systems. These models feature digital interfaces, programmable functions, and connectivity options for remote monitoring and control.
 
-They can be seamlessly integrated with external vacuum controllers, chillers, and solvent recovery units to create a complete automated distillation workflow. Automation enhances efficiency, reduces human error, and ensures reproducibility—critical for pharmaceutical manufacturing and other regulated environments.
+// They can be seamlessly integrated with external vacuum controllers, chillers, and solvent recovery units to create a complete automated distillation workflow. Automation enhances efficiency, reduces human error, and ensures reproducibility—critical for pharmaceutical manufacturing and other regulated environments.
 
-Additionally, these systems support data logging and compliance reporting, which are essential for audits and quality control. Inkarp provides expert consultation and integration support to ensure a smooth setup. Whether you're scaling up operations or aiming for greater process consistency, automation-ready Heidolph evaporators deliver the flexibility and precision your lab requires.`
-        }
-        ,
-        {
-          question: 'Do rotary evaporators require special maintenance?',
-          answer: 'Rotary evaporators require regular but simple maintenance to maintain optimal performance. This includes cleaning the evaporating and receiving flasks, checking vacuum seals and tubing for leaks, lubricating joints, and inspecting moving parts like the drive motor and lift mechanism. The water bath should be kept clean to prevent scaling, and sensors should be tested periodically for accuracy. For Heidolph units, maintenance is streamlined with easy-access components and automated safety shutdown features. Inkarp provides annual maintenance contracts, preventive service checkups, and emergency repair services across India. Our service team is trained to ensure minimal downtime and extend the life of your system. Maintaining your rotary evaporator not only improves reliability but also ensures consistent results in sensitive lab operations.'
-        },
-        {
-          question: 'How do I choose the right rotary evaporator model for my lab?',
-          answer: `Choosing the right Heidolph rotary evaporator depends on your lab's workflow, application complexity, solvent types, and desired level of automation.
+// Additionally, these systems support data logging and compliance reporting, which are essential for audits and quality control. Inkarp provides expert consultation and integration support to ensure a smooth setup. Whether you're scaling up operations or aiming for greater process consistency, automation-ready Heidolph evaporators deliver the flexibility and precision your lab requires.`
+//         }
+//         ,
+//         {
+//           question: 'Do rotary evaporators require special maintenance?',
+//           answer: 'Rotary evaporators require regular but simple maintenance to maintain optimal performance. This includes cleaning the evaporating and receiving flasks, checking vacuum seals and tubing for leaks, lubricating joints, and inspecting moving parts like the drive motor and lift mechanism. The water bath should be kept clean to prevent scaling, and sensors should be tested periodically for accuracy. For Heidolph units, maintenance is streamlined with easy-access components and automated safety shutdown features. Inkarp provides annual maintenance contracts, preventive service checkups, and emergency repair services across India. Our service team is trained to ensure minimal downtime and extend the life of your system. Maintaining your rotary evaporator not only improves reliability but also ensures consistent results in sensitive lab operations.'
+//         },
+//         {
+//           question: 'How do I choose the right rotary evaporator model for my lab?',
+//           answer: `Choosing the right Heidolph rotary evaporator depends on your lab's workflow, application complexity, solvent types, and desired level of automation.
 
-For routine operations, the Hei-VAP Core or Expert models offer reliability and simplicity. For high-throughput laboratories or regulated environments, the Hei-VAP Expert Control and Ultimate Control models provide advanced automation, digital monitoring, and system integration capabilities.
+// For routine operations, the Hei-VAP Core or Expert models offer reliability and simplicity. For high-throughput laboratories or regulated environments, the Hei-VAP Expert Control and Ultimate Control models provide advanced automation, digital monitoring, and system integration capabilities.
 
-Key factors to consider include glassware configuration, space availability, solvent volatility, and safety requirements. Inkarp offers personalized consultation to assess your specific needs and recommend a tailored model with the right accessories.
+// Key factors to consider include glassware configuration, space availability, solvent volatility, and safety requirements. Inkarp offers personalized consultation to assess your specific needs and recommend a tailored model with the right accessories.
 
-We also provide on-site demonstrations and training, ensuring you make an informed decision. Selecting the right model will enhance efficiency, safety, and scalability in your solvent distillation workflows.`
-        }
+// We also provide on-site demonstrations and training, ensuring you make an informed decision. Selecting the right model will enhance efficiency, safety, and scalability in your solvent distillation workflows.`
+//         }
 
-      ],
-    },
+//       ],
+//     },
 
 
   },
-
   "analytical-instruments": {
-    models: [
-      { heading: "Standard Models" },
+     models : [
+      { heading: "SevenDirect pH/Ion/Conductivity" },
       {
-        name: "Hei-VAP Core",
-        slug: "hei-vap-core",
-        image: ME204,
+        name: "pH meter SevenDirect SD20 Kit",
+        slug: "ph-meter-sevendirect-sd20-kit",
+        image: Sd20Kit,
       },
       {
-        name: "Hei-VAP Expert",
-        slug: "hei-vap-expert",
-        image: ME204T,
+        name: "Cond meter SevenDirect SD30 Kit",
+        slug: "cond-meter-sevendirect-sd30-kit",
+        image: Sd30Kit,
       },
       {
-        name: "Hei-VAP Ultimate",
-        slug: "hei-vap-ultimate",
-        image: ME1002,
+        name: "pH/Cond meter SevenDirect SD23 Kit",
+        slug: "ph-cond-meter-sevendirect-sd23-kit",
+        image: Sd23,
+      },
+      {
+        name: "pH/Ion meter SevenDirect SD50 Kit",
+        slug: "ph-ion-meter-sevendirect-sd50-kit",
+        image: Sd50Kit,
+      },
+
+      { heading: "SevenExcellence pH/Conductivity/Ion" },
+      {
+        name: "SevenExcellence pH meter S400-Bio-Kit",
+        slug: "seven-excellence-ph-meter-s400-bio-kit",
+        image: S400bio,
+      },
+      {
+        name: "SevenExcellence Cond meter S700-Std-Kit",
+        slug: "seven-excellence-ph-cond-meter-s700-std-kit",
+        image: S700StdKit,
+      },
+      {
+        name: "SevenExcellence pH/Cond meter S470-Std-K",
+        slug: "seven-excellence-ph-cond-meter-s470-std-k",
+        image: S470StdKit,
+      },
+    
+      { heading: "Titrators" },
+      {
+        name: "Titrator EasyPlus Easy pH",
+        slug: "titrator-easyplus-easy-ph",
+        image: EasyPh,
+      },
+      {
+        name: "Titrator EasyPlus Easy Pro",
+        slug: "titrator-easyplus-easy-pro",
+        image: EasyPro,
+      },
+      {
+        name: "Titrator EasyPlus Easy KFV",
+        slug: "titrator-easyplus-easy-kfv",
+        image: EasyKfv,
+      },
+      {
+        name: "Titrator Excellence T5",
+        slug: "titrator-excellence-t5",
+        image: TitratorExcellenceT5,
+      },
+      {
+        name: "Titrator Compact V20S",
+        slug: "titrator-compact-v20s",
+        image: V20s,
+      },
+      {
+        name: "Titrator Compact C10SX",
+        slug: "titrator-compact-c10sx",
+        image: C10sx,
+      },
+    
+      { heading: "Density Meter" },
+      {
+        name: "Handheld Density Meter Densito",
+        slug: "handheld-density-meter-densito",
+        image: Densito,
+      },
+      {
+        name: "Density meter Excellence D4",
+        slug: "density-meter-excellence-d4",
+        image: DensityMeterExcellenceD4,
+      },
+    
+      { heading: "Refractometer" },
+      {
+        name: "Refractometer Excellence R4",
+        slug: "refractometer-excellence-r4",
+        image: ExcellenceR4,
+      },
+      {
+        name: "Handheld Refractometer MyBrix",
+        slug: "handheld-refractometer-mybrix",
+        image: HandheldRefractometerMybrix,
+      },
+    
+      { heading: "Melting Point Apparatus" },
+      {
+        name: "Melting Point System MP30",
+        slug: "melting-point-system-mp30",
+        image: MeltingPointSystemMp30,
+      },
+      {
+        name: "Melting Point System MP80",
+        slug: "melting-point-system-mp80",
+        image: MeltingPointSystemMp80,
       },
     ],
+    
+
+
+
     meta: {
       title: "Best Rotary Evaporator – Water Distillation & Solvent Recovery Unit Distributor And Service Provider In India | Inkarp",
       description: "Explore Heidolph Rotary Evaporators for precise water distillation and solvent recovery in laboratories. Distributed by Inkarp – India's trusted scientific equipment partner.",
@@ -538,204 +736,204 @@ We also provide on-site demonstrations and training, ensuring you make an inform
       internalLinks: ["Internal Product Pages Links"],
       externalLinks: ["Heidolph Website"]
     },
-    pageData: {
-      title: "Best Rotary Evaporator In India",
-      intro:
-        "Rotary evaporators are essential laboratory instruments used for gentle and efficient removal of solvents through evaporation. Commonly employed in chemical, pharmaceutical, and academic labs, rotary evaporators enable precise distillation under vacuum for concentration, purification, and solvent recovery.",
-      highlight:
-        "The Heidolph Rotary Evaporators are the best rotary evaporators in India, the series is engineered for reliability, safety, and superior performance—making it a preferred choice for laboratories worldwide. Whether you're conducting routine distillations or working with complex compounds, Heidolph evaporators deliver unmatched precision and ease of use.",
+//     pageData: {
+//       title: "Best Rotary Evaporator In India",
+//       intro:
+//         "Rotary evaporators are essential laboratory instruments used for gentle and efficient removal of solvents through evaporation. Commonly employed in chemical, pharmaceutical, and academic labs, rotary evaporators enable precise distillation under vacuum for concentration, purification, and solvent recovery.",
+//       highlight:
+//         "The Heidolph Rotary Evaporators are the best rotary evaporators in India, the series is engineered for reliability, safety, and superior performance—making it a preferred choice for laboratories worldwide. Whether you're conducting routine distillations or working with complex compounds, Heidolph evaporators deliver unmatched precision and ease of use.",
 
-      modelHeading: "Model Categories",
-      infoSection: {
-        title: "Heidolph Rotary Evaporator",
-        description: `Developed in close cooperation with laboratory professionals, the Heidolph Hei-VAP series focuses on the essentials of effective distillation: user-friendly operation, thoughtful design, and enhanced safety features.
-          Every model in the series offers:
-          - Intuitive control panels
-          - Reliable performance in demanding conditions
-          - High chemical resistance and durability
-          - Modular design to suit your unique application needs
+//       modelHeading: "Model Categories",
+//       infoSection: {
+//         title: "Heidolph Rotary Evaporator",
+//         description: `Developed in close cooperation with laboratory professionals, the Heidolph Hei-VAP series focuses on the essentials of effective distillation: user-friendly operation, thoughtful design, and enhanced safety features.
+//           Every model in the series offers:
+//           - Intuitive control panels
+//           - Reliable performance in demanding conditions
+//           - High chemical resistance and durability
+//           - Modular design to suit your unique application needs
 
-          With extensive combinations of glassware and accessories, Heidolph rotary evaporators provide scalable solutions for every lab environment—from education to R&D and manufacturing.`,
-      },
-      subSection: {
-        title:
-          "Rotary Evaporator for Laboratories – Water Distillation & Solvent Recovery Unit",
-        description:
-          "Designed for a wide range of distillation tasks, Heidolph rotary evaporators ensure efficient water distillation and solvent recovery. Whether you're removing low-boiling solvents or processing high-viscosity samples, these units offer full control, precision, and safety.",
-      },
-      industriesIntro:
-        "Heidolph Rotary Evaporators are trusted across a wide range of industries and scientific domains. Their precision, reliability, and adaptability make them essential tools in the following sectors:",
-      industries: [
-        {
-          title: "Academic & Research Institutions",
-          description: "Widely used in universities and research centers for organic synthesis, sample concentration, and solvent removal in both undergraduate teaching labs and advanced R&D. Their intuitive design and safety features make them ideal for training students and streamlining academic research workflows.",
-          benefits: [
-            "Enables quick evaporation for multiple experiments",
-            "Facilitates organic synthesis and method development",
-            "Safe, intuitive controls"
-          ]
-        },
-        {
-          title: "Pharmaceutical & Biotechnology Companies",
-          description: "Crucial for active pharmaceutical ingredient (API) purification, formulation testing, and compound isolation. Heidolph evaporators provide reproducible, GMP-compatible distillation processes, ensuring consistent results in drug discovery, development, and quality control.",
-          benefits: [
-            "Enhances efficiency in API purification",
-            "Ensures reproducibility in formulation",
-            "Integrates into GMP-compliant labs"
-          ]
-        },
-        {
-          title: "Chemical & Petrochemical Industries",
-          description: "Enable high-precision separation of chemical mixtures, recovery of valuable solvents, and pilot-scale distillation under vacuum. Their corrosion-resistant components and scalability make them suitable for both analytical testing and industrial R&D.",
-          benefits: [
-            "Separates volatile components from mixtures",
-            "High chemical resistance",
-            "Scalable for pilot-scale processes"
-          ]
-        },
-        {
-          title: "Food & Beverage Industry",
-          description: "Ideal for concentrating natural extracts, essential oils, and volatile compounds while preserving aroma and flavor integrity. Used in quality control labs and R&D to create new flavor profiles and test food additives in compliance with safety standards.",
-          benefits: [
-            "Ideal for flavor and aroma extraction",
-            "Preserves volatile compounds",
-            "Supports product innovation and quality testing"
-          ]
-        },
-        {
-          title: "Environmental Testing Laboratories",
-          description: "Support pre-concentration of environmental samples such as water, soil, and air extracts. Facilitate trace-level detection of contaminants (e.g., pesticides, heavy metals) in regulatory and quality assurance applications with high reproducibility.",
-          benefits: [
-            "Concentrates pollutants for analysis",
-            "Reduces sample prep time",
-            "Enhances precision and consistency"
-          ]
-        },
-        {
-          title: "Cannabis & Herbal Extraction Facilities",
-          description: "Used post-extraction to recover solvents safely and efficiently while preserving delicate cannabinoids and terpenes. Heidolph rotary evaporators help maintain compliance with purity standards and optimize product yield in commercial cannabis processing.",
-          benefits: [
-            "Gentle solvent recovery post-extraction",
-            "Retains terpenes and cannabinoids",
-            "Meets purity and compliance standards"
-          ]
-        },
-        {
-          title: "Contract Research Organizations (CROs)",
-          description: "Provide scalable solvent recovery and purification processes to serve multiple client projects. Their flexibility allows for method development, custom formulation trials, and reproducible results across diverse industries.",
-          benefits: [
-            "Flexible for diverse sample types",
-            "Supports high-throughput workflows",
-            "Optimized for scalable method development"
-          ]
-        },
-        {
-          title: "Government Labs & Regulatory Bodies",
-          description: "Essential in labs focused on public safety, quality enforcement, and policy testing. Used for validated methods in compliance testing, fraud detection, and monitoring of controlled substances with consistent, reliable performance.",
-          benefits: [
-            "Reproducible for compliance testing",
-            "Durable for daily use",
-            "Compatible with validated methods"
-          ]
-        },
-        {
-          title: "Cosmetic & Personal Care Manufacturers",
-          description: "Facilitate development of serums, creams, and concentrated actives. Ensure formulation stability during evaporation and allow small-batch testing for R&D and pilot launches while preserving efficacy of bioactive ingredients.",
-          benefits: [
-            "Aids in concentrated actives development",
-            "Maintains ingredient integrity",
-            "Enables batch-scale testing"
-          ]
-        },
-        {
-          title: "Forensics & Toxicology Labs",
-          description: "Critical for isolating and concentrating toxicological substances, drugs, and forensic samples. Ensure clean sample recovery for evidence analysis while minimizing degradation and contamination, supporting accurate legal investigations.",
-          benefits: [
-            "Isolates trace substances for analysis",
-            "Minimizes contamination risk",
-            "Ensures reproducible evidence processing"
-          ]
-        }
-      ],
-      distributor: {
-        title:
-          "Inkarp: Authorized Distributor and Service Provider for Heidolph Rotary Evaporators in India",
-        text: `Inkarp stands out as a leading distributor and service provider of Heidolph Rotary Evaporators in India, supported by an extensive nationwide network. Our robust infrastructure ensures prompt technical support, timely service, and reliable distribution solutions tailored specifically to your laboratory's needs.
+//           With extensive combinations of glassware and accessories, Heidolph rotary evaporators provide scalable solutions for every lab environment—from education to R&D and manufacturing.`,
+//       },
+//       subSection: {
+//         title:
+//           "Rotary Evaporator for Laboratories – Water Distillation & Solvent Recovery Unit",
+//         description:
+//           "Designed for a wide range of distillation tasks, Heidolph rotary evaporators ensure efficient water distillation and solvent recovery. Whether you're removing low-boiling solvents or processing high-viscosity samples, these units offer full control, precision, and safety.",
+//       },
+//       industriesIntro:
+//         "Heidolph Rotary Evaporators are trusted across a wide range of industries and scientific domains. Their precision, reliability, and adaptability make them essential tools in the following sectors:",
+//       industries: [
+//         {
+//           title: "Academic & Research Institutions",
+//           description: "Widely used in universities and research centers for organic synthesis, sample concentration, and solvent removal in both undergraduate teaching labs and advanced R&D. Their intuitive design and safety features make them ideal for training students and streamlining academic research workflows.",
+//           benefits: [
+//             "Enables quick evaporation for multiple experiments",
+//             "Facilitates organic synthesis and method development",
+//             "Safe, intuitive controls"
+//           ]
+//         },
+//         {
+//           title: "Pharmaceutical & Biotechnology Companies",
+//           description: "Crucial for active pharmaceutical ingredient (API) purification, formulation testing, and compound isolation. Heidolph evaporators provide reproducible, GMP-compatible distillation processes, ensuring consistent results in drug discovery, development, and quality control.",
+//           benefits: [
+//             "Enhances efficiency in API purification",
+//             "Ensures reproducibility in formulation",
+//             "Integrates into GMP-compliant labs"
+//           ]
+//         },
+//         {
+//           title: "Chemical & Petrochemical Industries",
+//           description: "Enable high-precision separation of chemical mixtures, recovery of valuable solvents, and pilot-scale distillation under vacuum. Their corrosion-resistant components and scalability make them suitable for both analytical testing and industrial R&D.",
+//           benefits: [
+//             "Separates volatile components from mixtures",
+//             "High chemical resistance",
+//             "Scalable for pilot-scale processes"
+//           ]
+//         },
+//         {
+//           title: "Food & Beverage Industry",
+//           description: "Ideal for concentrating natural extracts, essential oils, and volatile compounds while preserving aroma and flavor integrity. Used in quality control labs and R&D to create new flavor profiles and test food additives in compliance with safety standards.",
+//           benefits: [
+//             "Ideal for flavor and aroma extraction",
+//             "Preserves volatile compounds",
+//             "Supports product innovation and quality testing"
+//           ]
+//         },
+//         {
+//           title: "Environmental Testing Laboratories",
+//           description: "Support pre-concentration of environmental samples such as water, soil, and air extracts. Facilitate trace-level detection of contaminants (e.g., pesticides, heavy metals) in regulatory and quality assurance applications with high reproducibility.",
+//           benefits: [
+//             "Concentrates pollutants for analysis",
+//             "Reduces sample prep time",
+//             "Enhances precision and consistency"
+//           ]
+//         },
+//         {
+//           title: "Cannabis & Herbal Extraction Facilities",
+//           description: "Used post-extraction to recover solvents safely and efficiently while preserving delicate cannabinoids and terpenes. Heidolph rotary evaporators help maintain compliance with purity standards and optimize product yield in commercial cannabis processing.",
+//           benefits: [
+//             "Gentle solvent recovery post-extraction",
+//             "Retains terpenes and cannabinoids",
+//             "Meets purity and compliance standards"
+//           ]
+//         },
+//         {
+//           title: "Contract Research Organizations (CROs)",
+//           description: "Provide scalable solvent recovery and purification processes to serve multiple client projects. Their flexibility allows for method development, custom formulation trials, and reproducible results across diverse industries.",
+//           benefits: [
+//             "Flexible for diverse sample types",
+//             "Supports high-throughput workflows",
+//             "Optimized for scalable method development"
+//           ]
+//         },
+//         {
+//           title: "Government Labs & Regulatory Bodies",
+//           description: "Essential in labs focused on public safety, quality enforcement, and policy testing. Used for validated methods in compliance testing, fraud detection, and monitoring of controlled substances with consistent, reliable performance.",
+//           benefits: [
+//             "Reproducible for compliance testing",
+//             "Durable for daily use",
+//             "Compatible with validated methods"
+//           ]
+//         },
+//         {
+//           title: "Cosmetic & Personal Care Manufacturers",
+//           description: "Facilitate development of serums, creams, and concentrated actives. Ensure formulation stability during evaporation and allow small-batch testing for R&D and pilot launches while preserving efficacy of bioactive ingredients.",
+//           benefits: [
+//             "Aids in concentrated actives development",
+//             "Maintains ingredient integrity",
+//             "Enables batch-scale testing"
+//           ]
+//         },
+//         {
+//           title: "Forensics & Toxicology Labs",
+//           description: "Critical for isolating and concentrating toxicological substances, drugs, and forensic samples. Ensure clean sample recovery for evidence analysis while minimizing degradation and contamination, supporting accurate legal investigations.",
+//           benefits: [
+//             "Isolates trace substances for analysis",
+//             "Minimizes contamination risk",
+//             "Ensures reproducible evidence processing"
+//           ]
+//         }
+//       ],
+//       distributor: {
+//         title:
+//           "Inkarp: Authorized Distributor and Service Provider for Heidolph Rotary Evaporators in India",
+//         text: `Inkarp stands out as a leading distributor and service provider of Heidolph Rotary Evaporators in India, supported by an extensive nationwide network. Our robust infrastructure ensures prompt technical support, timely service, and reliable distribution solutions tailored specifically to your laboratory's needs.
 
-        With over 40 years of experience, Inkarp has proudly partnered with premier research institutions, pharmaceutical companies, and academic laboratories across India. We are committed to enabling scientific excellence by delivering cutting-edge rotary evaporator systems along with responsive and professional technical support.
+//         With over 40 years of experience, Inkarp has proudly partnered with premier research institutions, pharmaceutical companies, and academic laboratories across India. We are committed to enabling scientific excellence by delivering cutting-edge rotary evaporator systems along with responsive and professional technical support.
 
-        Whether you're optimizing routine distillations or deploying complex evaporation setups, Inkarp offers:
-        - Personalized consultations for configuration and applications
-        - On-site service and support by experienced engineers
-        - Comprehensive installation, training, and maintenance
+//         Whether you're optimizing routine distillations or deploying complex evaporation setups, Inkarp offers:
+//         - Personalized consultations for configuration and applications
+//         - On-site service and support by experienced engineers
+//         - Comprehensive installation, training, and maintenance
 
-        Partner with Inkarp to elevate your lab's evaporation performance—efficiently, reliably, and expertly.`,
-      },
-      faqs: [
-        {
-          question: 'What is the principle of a rotary evaporator?',
-          answer: 'The principle of a rotary evaporator is based on reducing the pressure inside the system using a vacuum, which in turn lowers the boiling point of solvents. This allows evaporation to occur at significantly lower temperatures, making the process ideal for heat-sensitive materials. A round-bottom flask containing the solution is rotated in a heated water bath. The rotation increases the surface area of the liquid and ensures even heat distribution, preventing bumping or boiling over. As the solvent evaporates, it travels through a condenser where it is cooled and then collected in a separate receiving flask. This method is highly effective for concentrating, purifying, or recovering solvents in applications such as organic synthesis, natural product extraction, and analytical chemistry. The process preserves the integrity of delicate compounds and improves efficiency in laboratory workflows.'
-        },
-        {
-          question: 'What is the working procedure of a rotary evaporator?',
-          answer: 'The working procedure of a rotary evaporator involves several coordinated steps to achieve safe and efficient solvent evaporation. First, the solution is poured into a round-bottom flask, which is securely attached to the evaporator’s rotating motor. The flask is then partially immersed in a heated water bath to promote evaporation. At the same time, a vacuum pump is engaged to reduce the pressure within the system, lowering the boiling point of the solvent. The flask is rotated to maximize surface area, allowing uniform heating and faster evaporation. The solvent vapor then passes through a condenser where it is cooled and converted back into liquid, collected in a receiving flask. This process enables users to remove solvents at lower temperatures, reducing thermal stress on the sample. It is commonly used in pharmaceutical development, sample concentration, and chemical research.'
-        },
-        {
-          question: 'What are the top 10 applications where a rotary evaporator can be used?',
-          answer: `Rotary evaporators are widely used across diverse scientific and industrial fields due to their versatility and efficiency. Top 10 applications include:
+//         Partner with Inkarp to elevate your lab's evaporation performance—efficiently, reliably, and expertly.`,
+//       },
+//       faqs: [
+//         {
+//           question: 'What is the principle of a rotary evaporator?',
+//           answer: 'The principle of a rotary evaporator is based on reducing the pressure inside the system using a vacuum, which in turn lowers the boiling point of solvents. This allows evaporation to occur at significantly lower temperatures, making the process ideal for heat-sensitive materials. A round-bottom flask containing the solution is rotated in a heated water bath. The rotation increases the surface area of the liquid and ensures even heat distribution, preventing bumping or boiling over. As the solvent evaporates, it travels through a condenser where it is cooled and then collected in a separate receiving flask. This method is highly effective for concentrating, purifying, or recovering solvents in applications such as organic synthesis, natural product extraction, and analytical chemistry. The process preserves the integrity of delicate compounds and improves efficiency in laboratory workflows.'
+//         },
+//         {
+//           question: 'What is the working procedure of a rotary evaporator?',
+//           answer: 'The working procedure of a rotary evaporator involves several coordinated steps to achieve safe and efficient solvent evaporation. First, the solution is poured into a round-bottom flask, which is securely attached to the evaporator’s rotating motor. The flask is then partially immersed in a heated water bath to promote evaporation. At the same time, a vacuum pump is engaged to reduce the pressure within the system, lowering the boiling point of the solvent. The flask is rotated to maximize surface area, allowing uniform heating and faster evaporation. The solvent vapor then passes through a condenser where it is cooled and converted back into liquid, collected in a receiving flask. This process enables users to remove solvents at lower temperatures, reducing thermal stress on the sample. It is commonly used in pharmaceutical development, sample concentration, and chemical research.'
+//         },
+//         {
+//           question: 'What are the top 10 applications where a rotary evaporator can be used?',
+//           answer: `Rotary evaporators are widely used across diverse scientific and industrial fields due to their versatility and efficiency. Top 10 applications include:
 
-1. Organic synthesis for removing solvents after reactions,
-2. Pharmaceutical research for purifying APIs,
-3. Cannabis and herbal industries for extracting and concentrating bioactives,
-4. Food and beverage R&D for aroma and flavor concentration,
-5. Environmental analysis for concentrating trace-level pollutants,
-6. Toxicology and forensic labs for isolating and analyzing samples,
-7. Cosmetic industry for formulating active ingredients and essential oils,
-8. Contract Research Organizations (CROs) for standardized and scalable solvent removal,
-9. Academic institutions for lab teaching and training,
-10. Petrochemical sector for analyzing and refining chemical compounds.
+// 1. Organic synthesis for removing solvents after reactions,
+// 2. Pharmaceutical research for purifying APIs,
+// 3. Cannabis and herbal industries for extracting and concentrating bioactives,
+// 4. Food and beverage R&D for aroma and flavor concentration,
+// 5. Environmental analysis for concentrating trace-level pollutants,
+// 6. Toxicology and forensic labs for isolating and analyzing samples,
+// 7. Cosmetic industry for formulating active ingredients and essential oils,
+// 8. Contract Research Organizations (CROs) for standardized and scalable solvent removal,
+// 9. Academic institutions for lab teaching and training,
+// 10. Petrochemical sector for analyzing and refining chemical compounds.
 
-These applications highlight the instrument's crucial role in both routine and complex processes.`
-        }
-        ,
-        {
-          question: 'What makes Heidolph Rotary Evaporators ideal for laboratory use?',
-          answer: 'Heidolph Rotary Evaporators stand out in the laboratory space due to their high-quality construction, intelligent design, and user-focused features. Designed in collaboration with scientists, they offer superior performance, chemical resistance, and unmatched reliability. Intuitive digital interfaces simplify operation for beginners and experts alike, while the modular design allows compatibility with a wide range of glassware and accessories. Safety features such as dry-run protection, motorized lift, and over-temperature cutoffs make them ideal for regulated environments including GMP/GLP labs. Their low-noise operation and German engineering ensure long-term durability with minimal maintenance. Whether for routine distillation or advanced solvent recovery, Heidolph units are engineered to increase efficiency, minimize risk, and provide consistency in daily lab work. That’s why they are trusted by researchers and institutions worldwide.'
-        },
-        {
-          question: 'How can I request a product demo or consultation from Inkarp?',
-          answer: 'Requesting a product demo or technical consultation from Inkarp is easy and tailored to your specific needs. You can visit the official Inkarp website and fill out the contact form with your details, indicating interest in Heidolph Rotary Evaporators. Alternatively, reach out via email or phone to speak directly with our product specialists. Once your request is received, our team will schedule either an on-site demonstration or a virtual consultation based on your convenience. During this session, our experts will evaluate your lab’s requirements, discuss your application goals, and recommend the most suitable rotary evaporator model. Inkarp also provides post-demo support such as installation planning, user training, and assistance with compliance documentation. Our goal is to ensure you make an informed purchase decision that adds long-term value to your operations.'
-        },
-        {
-          question: 'What glassware options are available with Heidolph rotary evaporators?',
-          answer: 'Heidolph offers a comprehensive selection of high-quality borosilicate glassware for different evaporation tasks. Options include vertical condensers, ideal for space-saving setups and standard distillations; diagonal condensers, which are easy to clean and maintain; and dry-ice condensers for volatile solvent recovery. Cold traps and anti-splash adapters are available for specialty applications. Each glassware set is designed for maximum chemical resistance and thermal stability. Labs can also customize their configurations based on solvent type, application volume, and condensation needs. Modular glassware designs allow for easy switching between setups without disrupting ongoing workflows. Heidolph ensures each component is leak-proof, secure, and compatible with safety shields and accessories. This flexibility helps labs manage various protocols using a single rotary evaporator system, improving productivity and reducing downtime.'
-        },
-        {
-          question: 'Can I integrate Heidolph rotary evaporators with automation systems?',
-          answer: `Yes, Heidolph rotary evaporators—especially the Hei-VAP Expert Control and Ultimate Control models—are fully compatible with modern lab automation systems. These models feature digital interfaces, programmable functions, and connectivity options for remote monitoring and control.
+// These applications highlight the instrument's crucial role in both routine and complex processes.`
+//         }
+//         ,
+//         {
+//           question: 'What makes Heidolph Rotary Evaporators ideal for laboratory use?',
+//           answer: 'Heidolph Rotary Evaporators stand out in the laboratory space due to their high-quality construction, intelligent design, and user-focused features. Designed in collaboration with scientists, they offer superior performance, chemical resistance, and unmatched reliability. Intuitive digital interfaces simplify operation for beginners and experts alike, while the modular design allows compatibility with a wide range of glassware and accessories. Safety features such as dry-run protection, motorized lift, and over-temperature cutoffs make them ideal for regulated environments including GMP/GLP labs. Their low-noise operation and German engineering ensure long-term durability with minimal maintenance. Whether for routine distillation or advanced solvent recovery, Heidolph units are engineered to increase efficiency, minimize risk, and provide consistency in daily lab work. That’s why they are trusted by researchers and institutions worldwide.'
+//         },
+//         {
+//           question: 'How can I request a product demo or consultation from Inkarp?',
+//           answer: 'Requesting a product demo or technical consultation from Inkarp is easy and tailored to your specific needs. You can visit the official Inkarp website and fill out the contact form with your details, indicating interest in Heidolph Rotary Evaporators. Alternatively, reach out via email or phone to speak directly with our product specialists. Once your request is received, our team will schedule either an on-site demonstration or a virtual consultation based on your convenience. During this session, our experts will evaluate your lab’s requirements, discuss your application goals, and recommend the most suitable rotary evaporator model. Inkarp also provides post-demo support such as installation planning, user training, and assistance with compliance documentation. Our goal is to ensure you make an informed purchase decision that adds long-term value to your operations.'
+//         },
+//         {
+//           question: 'What glassware options are available with Heidolph rotary evaporators?',
+//           answer: 'Heidolph offers a comprehensive selection of high-quality borosilicate glassware for different evaporation tasks. Options include vertical condensers, ideal for space-saving setups and standard distillations; diagonal condensers, which are easy to clean and maintain; and dry-ice condensers for volatile solvent recovery. Cold traps and anti-splash adapters are available for specialty applications. Each glassware set is designed for maximum chemical resistance and thermal stability. Labs can also customize their configurations based on solvent type, application volume, and condensation needs. Modular glassware designs allow for easy switching between setups without disrupting ongoing workflows. Heidolph ensures each component is leak-proof, secure, and compatible with safety shields and accessories. This flexibility helps labs manage various protocols using a single rotary evaporator system, improving productivity and reducing downtime.'
+//         },
+//         {
+//           question: 'Can I integrate Heidolph rotary evaporators with automation systems?',
+//           answer: `Yes, Heidolph rotary evaporators—especially the Hei-VAP Expert Control and Ultimate Control models—are fully compatible with modern lab automation systems. These models feature digital interfaces, programmable functions, and connectivity options for remote monitoring and control.
 
-They can be seamlessly integrated with external vacuum controllers, chillers, and solvent recovery units to create a complete automated distillation workflow. Automation enhances efficiency, reduces human error, and ensures reproducibility—critical for pharmaceutical manufacturing and other regulated environments.
+// They can be seamlessly integrated with external vacuum controllers, chillers, and solvent recovery units to create a complete automated distillation workflow. Automation enhances efficiency, reduces human error, and ensures reproducibility—critical for pharmaceutical manufacturing and other regulated environments.
 
-Additionally, these systems support data logging and compliance reporting, which are essential for audits and quality control. Inkarp provides expert consultation and integration support to ensure a smooth setup. Whether you're scaling up operations or aiming for greater process consistency, automation-ready Heidolph evaporators deliver the flexibility and precision your lab requires.`
-        }
-        ,
-        {
-          question: 'Do rotary evaporators require special maintenance?',
-          answer: 'Rotary evaporators require regular but simple maintenance to maintain optimal performance. This includes cleaning the evaporating and receiving flasks, checking vacuum seals and tubing for leaks, lubricating joints, and inspecting moving parts like the drive motor and lift mechanism. The water bath should be kept clean to prevent scaling, and sensors should be tested periodically for accuracy. For Heidolph units, maintenance is streamlined with easy-access components and automated safety shutdown features. Inkarp provides annual maintenance contracts, preventive service checkups, and emergency repair services across India. Our service team is trained to ensure minimal downtime and extend the life of your system. Maintaining your rotary evaporator not only improves reliability but also ensures consistent results in sensitive lab operations.'
-        },
-        {
-          question: 'How do I choose the right rotary evaporator model for my lab?',
-          answer: `Choosing the right Heidolph rotary evaporator depends on your lab's workflow, application complexity, solvent types, and desired level of automation.
+// Additionally, these systems support data logging and compliance reporting, which are essential for audits and quality control. Inkarp provides expert consultation and integration support to ensure a smooth setup. Whether you're scaling up operations or aiming for greater process consistency, automation-ready Heidolph evaporators deliver the flexibility and precision your lab requires.`
+//         }
+//         ,
+//         {
+//           question: 'Do rotary evaporators require special maintenance?',
+//           answer: 'Rotary evaporators require regular but simple maintenance to maintain optimal performance. This includes cleaning the evaporating and receiving flasks, checking vacuum seals and tubing for leaks, lubricating joints, and inspecting moving parts like the drive motor and lift mechanism. The water bath should be kept clean to prevent scaling, and sensors should be tested periodically for accuracy. For Heidolph units, maintenance is streamlined with easy-access components and automated safety shutdown features. Inkarp provides annual maintenance contracts, preventive service checkups, and emergency repair services across India. Our service team is trained to ensure minimal downtime and extend the life of your system. Maintaining your rotary evaporator not only improves reliability but also ensures consistent results in sensitive lab operations.'
+//         },
+//         {
+//           question: 'How do I choose the right rotary evaporator model for my lab?',
+//           answer: `Choosing the right Heidolph rotary evaporator depends on your lab's workflow, application complexity, solvent types, and desired level of automation.
 
-For routine operations, the Hei-VAP Core or Expert models offer reliability and simplicity. For high-throughput laboratories or regulated environments, the Hei-VAP Expert Control and Ultimate Control models provide advanced automation, digital monitoring, and system integration capabilities.
+// For routine operations, the Hei-VAP Core or Expert models offer reliability and simplicity. For high-throughput laboratories or regulated environments, the Hei-VAP Expert Control and Ultimate Control models provide advanced automation, digital monitoring, and system integration capabilities.
 
-Key factors to consider include glassware configuration, space availability, solvent volatility, and safety requirements. Inkarp offers personalized consultation to assess your specific needs and recommend a tailored model with the right accessories.
+// Key factors to consider include glassware configuration, space availability, solvent volatility, and safety requirements. Inkarp offers personalized consultation to assess your specific needs and recommend a tailored model with the right accessories.
 
-We also provide on-site demonstrations and training, ensuring you make an informed decision. Selecting the right model will enhance efficiency, safety, and scalability in your solvent distillation workflows.`
-        }
+// We also provide on-site demonstrations and training, ensuring you make an informed decision. Selecting the right model will enhance efficiency, safety, and scalability in your solvent distillation workflows.`
+//         }
 
-      ],
-    },
+//       ],
+//     },
 
 
   },

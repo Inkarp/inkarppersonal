@@ -65,12 +65,12 @@ import TitramaxPackage from "/images/products/heidolph/titramax-package.webp"
 
 import ProductDistributorSection from "../ProductDistributorSection";
 
-import { RotaryEvaporators } from '../../../../data/RotaryEvaporators';
-import { OverHeadStirrers } from '../../../../data/OverHeadStirrers';
-import { LargeScale } from '../../../../data/LargeScale';
-import { MagneticStirrers } from '../../../../data/MagneticStirrers';
-import { ProcessingSolutions } from '../../../../data/ProcessingSolutions';
-import { PeristalicPumps } from '../../../../data/PeristalicPumps';
+import { RotaryEvaporators } from '../../../../data/SynthesisAndFlowChemistry/RotaryEvaporators';
+import { OverHeadStirrers } from '../../../../data/SynthesisAndFlowChemistry/OverHeadStirrers';
+import { LargeScale } from '../../../../data/SynthesisAndFlowChemistry/LargeScale';
+import { MagneticStirrers } from '../../../../data/SynthesisAndFlowChemistry/MagneticStirrers';
+import { ProcessingSolutions } from '../../../../data/SynthesisAndFlowChemistry/ProcessingSolutions';
+import { PeristalicPumps } from '../../../../data/SynthesisAndFlowChemistry/PeristalicPumps';
 import { SynthesisProductDetails } from '../../../../data/synthesisProductDetails';
 import { SynthesisProductDetailsOne } from '../../../../data/synthesisProductDetailsOne';
 import { SynthesisProductDetailsTwo } from '../../../../data/synthesisProductDetailsTwo';

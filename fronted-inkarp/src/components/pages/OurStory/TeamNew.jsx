@@ -43,7 +43,7 @@ const MemberCard = ({ member }) => {
             <img
               src={Sign}
               alt="Balu Signature"
-              className="w-36 h-auto object-contain bg-[#E63946] rounded-3xl"
+              className="w-36 h-auto object-contain rounded-3xl"
             />
             <div className='font-[MaxOT] flex flex-col justify-center items-center'>
               <span className='text-bold'>S. Balu</span>

@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import Logo from "/40-years-logo.png";
 import { Link } from "react-router-dom";
-import inkarp from '/inkarp.png'
+import Logo from "/40-years-logo.png";
+import inkarp from "/inkarp.png";
+import { Users, Building2, Award, MapPin } from "lucide-react";
 
 export default function ExperienceSection() {
   const sectionRef = useRef(null);
@@ -33,6 +34,33 @@ export default function ExperienceSection() {
     }
   }, [visible, typedText]);
 
+  const stats = [
+    {
+      icon: <Users className="w-8 h-8 text-white" />,
+      title: "5000 +",
+      subtitle: "Customers",
+      description: "Serving pharma, biotech, diagnostics, academia, and more."
+    },
+    {
+      icon: <Building2 className="w-8 h-8 text-white" />,
+      title: "50 +",
+      subtitle: "Brands",
+      description: "Global leaders across instruments, automation, and workflows."
+    },
+    {
+      icon: <Award className="w-8 h-8 text-white" />,
+      title: "10 +",
+      subtitle: "Awards",
+      description: "Recognized for excellence in performance and customer satisfaction."
+    },
+    {
+      icon: <MapPin className="w-8 h-8 text-white" />,
+      title: "12 +",
+      subtitle: "Branches",
+      description: "Pan-India reach ensuring fast, localized support."
+    }
+  ];
+
   return (
     <section
       ref={sectionRef}
@@ -44,11 +72,11 @@ export default function ExperienceSection() {
           Who are we
         </h4>
         <h1 className="text-3xl text-[#E63946] font-[MaxOT] leading-tight">
-          {/* Precision Picks:  */}
-           We'll Ensure You Always get the Best Results
+          We'll Ensure You Always get the Best Results
         </h1>
       </div>
-      {/* Blinking cursor */}
+
+      {/* Blinking cursor style */}
       <style>{`
         .cursor {
           animation: blink 0.7s infinite;
@@ -61,7 +89,6 @@ export default function ExperienceSection() {
       `}</style>
 
       <div className="flex flex-col lg:flex-row items-center justify-between gap-10 bg-black p-6 rounded-2xl">
-
         {/* Left Column */}
         <div className="w-full lg:w-1/3 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
           <div className="w-full flex justify-center lg:justify-start">
@@ -81,61 +108,40 @@ export default function ExperienceSection() {
           </Link>
         </div>
 
-        {/* Right Column - Stats Grid */}
+        {/* Right Column - Stats */}
         <div
           className={`w-full lg:w-3/5 grid grid-cols-2 sm:grid-cols-2 gap-4 md:gap-6 ${visible ? "text-focus-in" : "opacity-0"
             }`}
         >
-          <StatCard
-            icon="👥"
-            title="5000 +"
-            subtitle="Customers"
-            description="Serving pharma, biotech, diagnostics, academia, and more."
-            image={inkarp}
-          />
-          <StatCard
-            icon="🤝"
-            title="50 +"
-            subtitle="Brands"
-            description="Global leaders across instruments, automation, and workflows."
-            image={inkarp}
-          />
-          <StatCard
-            icon="🏆"
-            title="10 +"
-            subtitle="Awards"
-            description="Recognized for excellence in performance and customer satisfaction."
-            image={inkarp}
-          />
-          <StatCard
-            icon="🌐"
-            title="12 +"
-            subtitle="Branches"
-            description="Pan-India reach ensuring fast, localized support."
-            image={inkarp}
-          />
+          {stats.map((stat, index) => (
+            <StatCard
+              key={index}
+              icon={stat.icon}
+              title={stat.title}
+              subtitle={stat.subtitle}
+              description={stat.description}
+            />
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
-// Reusable Stat Card
-function StatCard({ icon, title, subtitle, description, image }) {
+// Reusable Stat Card with Lucide Icon
+function StatCard({ icon, title, subtitle, description }) {
   return (
-    <div className="bg-white/10 backdrop-blur-md p-4 sm:p-5 rounded-xl flex flex-col items-center text-center transition-all duration-300 hover:scale-105 border border-white">
-      <div className="w-24 h-16 mb-3 flex items-center justify-center ">
-        {/* <img
-          src={image}
-          alt={subtitle}
-          className="w-full h-full object-contain"
-          onError={(e) => {
-            e.target.style.display = 'none';
-            e.target.nextSibling.style.display = 'block';
-          }}
-        /> */}
-        <div className="mb-2">
-          <h3 className="text-3xl font-bold text-[#E63946] to-white bg-clip-text font-[MaxOT] ">
+    <div className="bg-white/10 backdrop-blur-md p-4 sm:p-5 rounded-xl flex flex-col items-center justify-cenetr transition-all duration-300 hover:scale-105 border border-white">
+      {/* Row: Icon + Title & Subtitle */}
+      <div className="flex items-center gap-4 mb-3">
+        {/* Icon */}
+        <div className="w-14 h-14 flex items-center justify-center bg-[#E63946] rounded-full shadow-lg">
+          {icon}
+        </div>
+
+        {/* Title & Subtitle */}
+        <div className="text-left">
+          <h3 className="text-3xl font-bold text-[#E63946] font-[MaxOT] leading-none">
             {title}
           </h3>
           <p className="text-lg sm:text-xl font-semibold text-white mt-1 font-[MaxOT]">
@@ -143,7 +149,9 @@ function StatCard({ icon, title, subtitle, description, image }) {
           </p>
         </div>
       </div>
-      <p className="text-sm sm:text-base text-white leading-relaxed font-medium font-[Roboto]">
+
+      {/* Description */}
+      <p className="text-sm sm:text-base text-center text-white leading-relaxed font-[Roboto]">
         {description}
       </p>
     </div>

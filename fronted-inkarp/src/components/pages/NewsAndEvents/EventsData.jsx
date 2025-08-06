@@ -16,6 +16,9 @@ import Event14 from "/src/assets/Events/Event14.jpeg";
 import Event15 from "/src/assets/Events/Event15.jpeg";
 import Event16 from "/src/assets/Events/Event16.jpeg";
 
+import EventNew1 from "/src/assets/Events/EventNew1.jpg";
+import EventNew2 from "/src/assets/Events/EventNew2.jpg";
+import EventNew3 from "/src/assets/Events/EventNew2.jpg";
 
 export const eventsData = [
    
@@ -148,6 +151,33 @@ export const eventsData = [
             description: 'Date: Friday, 25 th July 2025\nLocation: Peacock Banquet – Taj Skyline, 16th Floor – Sankalp Building, Ahmedabad',
             image: Event16,
             date: '2025-07-25',
+        },
+
+        {
+            id: 17,
+            category: 'Asia Labex & Labotica Conclave 2026',
+            title: 'Invitation to the Purify Conclave on Purify’25 West, Chromatography Purification Conclave',
+            description: 'Date: Friday, 25 th July 2025\nLocation: Peacock Banquet – Taj Skyline, 16th Floor – Sankalp Building, Ahmedabad',
+            image: EventNew1,
+            date: '2025-09-18',
+        },
+
+        {
+            id: 18,
+            category: 'Asia Labex & Labotica Conclave 2026',
+            title: 'Invitation to the Purify Conclave on Purify’25 West, Chromatography Purification Conclave',
+            description: 'Date: Friday, 25 th July 2025\nLocation: Peacock Banquet – Taj Skyline, 16th Floor – Sankalp Building, Ahmedabad',
+            image: EventNew2,
+            date: '2025-09-18',
+        },
+
+        {
+            id: 19,
+            category: 'Asia Labex & Labotica Conclave 2026',
+            title: 'Invitation to the Purify Conclave on Purify’25 West, Chromatography Purification Conclave',
+            description: 'Date: Friday, 25 th July 2025\nLocation: Peacock Banquet – Taj Skyline, 16th Floor – Sankalp Building, Ahmedabad',
+            image: EventNew3,
+            date: '2025-09-25',
         },
     
    

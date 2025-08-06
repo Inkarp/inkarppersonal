@@ -25,47 +25,55 @@ const cards = [
 const Catalyst = () => {
   const [flipbookLoaded, setFlipbookLoaded] = useState(false);
 
-  // Load DearFlip JS and CSS dynamically
+  // Load DearFlip assets
   useEffect(() => {
-    const loadFlipbookAssets = async () => {
-      if (!document.getElementById("dearflip-css")) {
-        const css1 = document.createElement("link");
-        css1.id = "dearflip-css";
-        css1.rel = "stylesheet";
-        css1.href = "https://cdn.jsdelivr.net/npm/dearflip@2.1.1/css/dflip.min.css";
-        document.head.appendChild(css1);
+    const loadCSS = (id, href) => {
+      if (!document.getElementById(id)) {
+        const link = document.createElement("link");
+        link.id = id;
+        link.rel = "stylesheet";
+        link.href = href;
+        document.head.appendChild(link);
       }
+    };
 
-      if (!document.getElementById("ti-icons-css")) {
-        const css2 = document.createElement("link");
-        css2.id = "ti-icons-css";
-        css2.rel = "stylesheet";
-        css2.href = "https://cdn.jsdelivr.net/npm/dearflip@2.1.1/css/themify-icons.min.css";
-        document.head.appendChild(css2);
-      }
-
-      if (!document.getElementById("dearflip-js")) {
+    const loadScript = (id, src) => {
+      return new Promise((resolve) => {
+        if (document.getElementById(id)) {
+          resolve();
+          return;
+        }
         const script = document.createElement("script");
-        script.id = "dearflip-js";
-        script.src = "https://cdn.jsdelivr.net/npm/dearflip@2.1.1/js/dflip.min.js";
+        script.id = id;
+        script.src = src;
+        script.onload = resolve;
         document.body.appendChild(script);
-      }
+      });
+    };
+
+    const loadFlipbookAssets = async () => {
+      loadCSS("dearflip-css", "https://cdn.jsdelivr.net/npm/dearflip@2.1.1/css/dflip.min.css");
+      loadCSS("ti-icons-css", "https://cdn.jsdelivr.net/npm/dearflip@2.1.1/css/themify-icons.min.css");
+      await loadScript("dearflip-js", "https://cdn.jsdelivr.net/npm/dearflip@2.1.1/js/dflip.min.js");
+
+      // Wait for window.DFLIP to initialize
+      let tries = 0;
+      const maxTries = 20;
+      const interval = setInterval(() => {
+        if (window.DFLIP) {
+          clearInterval(interval);
+          setFlipbookLoaded(true);
+          console.log("✅ DearFlip is ready");
+        } else if (tries >= maxTries) {
+          clearInterval(interval);
+          console.warn("⚠️ DearFlip failed to load.");
+        }
+        tries++;
+      }, 200);
     };
 
     loadFlipbookAssets();
-
-    // ✅ Listen for dflip-ready event
-    const handleFlipbookReady = () => {
-      setFlipbookLoaded(true);
-    };
-
-    window.addEventListener("dflip-ready", handleFlipbookReady);
-
-    return () => {
-      window.removeEventListener("dflip-ready", handleFlipbookReady);
-    };
   }, []);
-
 
   const openFlipbook = (pdfUrl) => {
     if (flipbookLoaded && window.DFLIP) {
@@ -77,11 +85,9 @@ const Catalyst = () => {
         duration: 800,
       });
     } else {
-      alert("Flipbook is still loading. Please try again in a few seconds.");
+      alert("Flipbook is still loading. Please try again shortly.");
     }
   };
-
-
 
   const groupedByVolume = cards.reduce((acc, card) => {
     if (!acc[card.Volume]) acc[card.Volume] = [];

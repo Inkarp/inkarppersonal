@@ -4,11 +4,9 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 import { EffectFade, Autoplay } from 'swiper/modules';
 
-import EventsImg from "/src/assets/Events/EventsImage.jpg";
 import EventsBanner1 from "/src/assets/Events/EventBanner1.jpg";
 import EventsBanner from "/src/assets/Events/EventBanner.jpg";
-import EventsBanner3 from "/src/assets/Events/EventBanner3.jpg";
-import PahrmaBanner from "/src/assets/Events/PhamaBanner.jpg";
+
 
 import Event1 from "/src/assets/Events/Event1.jpeg";
 import Event2 from "/src/assets/Events/Event2.jpeg";
@@ -34,26 +32,12 @@ import { Helmet } from 'react-helmet';
 const bannerSlides = [
     {
         id: 1,
-        img: PahrmaBanner,
+        img: EventsBanner,
         title: "Next-Gen Lab Technologies",
         subtitle: "Automation and Innovation",
-        date: "2025-08-10",
-    },
-    {
-        id: 2,
-        img: EventsBanner,
-        title: "Asia Labex & Labotica Conclave",
-        subtitle: "Empowering Labs Through Knowledge",
         date: "2025-09-18",
     },
-
-    // {
-    //     id: 3,
-    //     img: EventsBanner3,
-    //     title: "Future of Research Labs",
-    //     subtitle: "Discover Cutting Edge Equipment",
-    //     date: "2026-01-15",
-    // },
+ 
 ];
 
 
@@ -80,7 +64,7 @@ const LabCard = ({ category, title, description, image, date }) => {
                 <button
                     className={`relative px-6 py-2 font-medium rounded-md text-sm ${
                         isPast
-                            ? 'bg-gray-800 text-white'
+                            ? 'bg-[#E63946] text-white font-[MaxOT]'
                             : 'bg-[#E63946] text-white hover:bg-[#b72834]'
                     }`}
                 >
@@ -222,23 +206,23 @@ const EventsNew = () => {
 
             {/* Banner Image Only */}
             <Swiper
-                modules={[Autoplay, EffectFade]}
-                effect="fade"
+                modules={[Autoplay]}
+                // effect="fade"
                 loop={true}
                 autoplay={{ delay: 5000, disableOnInteraction: false }}
-                className="w-full h-[500px] rounded-3xl overflow-hidden"
+                className="w-full h-[500px]  overflow-hidden"
             >
                 {bannerSlides.map((slide, index) => (
                     <SwiperSlide key={index}>
-                        <div className="relative w-full h-full">
+                        <div className="relative w-[98%] mx-auto py-3 h-full">
                             <img
                                 src={slide.img}
                                 alt={slide.title}
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover rounded-3xl"
                             />
-                            <div className="absolute inset-0 bg-black/40 z-10"></div>
+                            <div className="absolute inset-0 z-10"></div>
                             <div className="absolute inset-0 z-20 flex flex-col justify-end items-center p-4">
-                                <div className="bg-white/80 rounded-lg shadow px-5 py-3 mb-4">
+                                <div className="bg-white/50 rounded-lg shadow px-5 py-3 mb-4">
                                     <div className="flex items-center justify-center space-x-3 text-black">
                                         <TimeUnit label="Days" value={pad(countdown.days)} />
                                         <Separator />
@@ -317,7 +301,7 @@ const EventsNew = () => {
 
              {/* Upcoming Events Section */}
             <div className="w-[95%] mx-auto py-10">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">Upcoming Events</h2>
+                <h2 className="text-2xl font-bold text-gray-800 font-[MaxOT] mb-6">Upcoming Events</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {labCards
                         .filter(e => new Date(e.date) > today)
