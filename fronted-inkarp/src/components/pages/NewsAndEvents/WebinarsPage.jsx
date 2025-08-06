@@ -39,7 +39,7 @@ const webinars = [
   },
   {
     id: 2,
-    title: "Live Webinar Alert! Calibration of Weighing Devices: 🎯 Boost Profitability with Accurate Weighing Processes",
+    title: "Calibration of Weighing Devices: 🎯 Boost Profitability with Accurate Weighing Processes",
     description:
       "Ensure compliance and precision in your weighing operations with METTLER TOLEDO’s ACC – the new benchmark in calibration. Learn how accuracy impacts cost, quality, and efficiency.",
     date1: "August 27 | 11:30 PM IST",
