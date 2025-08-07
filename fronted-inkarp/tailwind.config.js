@@ -6,6 +6,9 @@ module.exports = {
       fontFamily: {
         MaxOT: ['MaxOT', 'sans-serif'],
       },
+      screens: {
+        ink: '710px', // ✅ Your custom breakpoint
+      },
     },
   },
   plugins: [],

@@ -27,7 +27,7 @@ import Series4600 from "/images/products/Maccor/Series4600.png";
 
 import Banner1 from "/images/products/Banner/Banner1.jpg";
 import Banner2 from "/images/products/Banner/Banner2.jpg";
-
+import Banner3 from "/images/products/Banner/Banner3.jpg";
 
 export const Battery = {
 
@@ -36,7 +36,7 @@ export const Battery = {
         name: "Mixing Machine Equipment for Battery",
         image: MixingMachine,
         logo: HohsenCorp,
-        bannerImg: Banner1,
+        bannerImg: Banner3,
         altText: "Mixing Machine Equipment for Battery",
         videoId: "",
         meta: {
@@ -76,7 +76,7 @@ export const Battery = {
         name: "Manual Coin Cell Crimper Equipment for Battery",
         image: ManualCoinCellCrimper,
         logo: HohsenCorp,
-        bannerImg: Banner1,
+        bannerImg: Banner3,
         altText: "Manual Coin Cell Crimper Equipment for Battery",
         videoId: "",
         meta: {
@@ -117,7 +117,7 @@ export const Battery = {
         name: "Mixing Machine Equipment for Battery",
         image: MixingMachine,
         logo: HohsenCorp,
-        bannerImg: Banner1,
+        bannerImg: Banner3,
         altText: "Mixing Machine Equipment for Battery",
         videoId: "",
         meta: {
@@ -158,7 +158,7 @@ export const Battery = {
         name: "Series 4000 Battery & Cell Test Equipment",
         image: Series4000,
         logo: Maccor,
-        bannerImg: Banner1,
+        bannerImg: Banner3,
         altText: "Series 4000 Battery & Cell Test Equipment",
         videoId: "",
         meta: {
@@ -237,7 +237,7 @@ export const Battery = {
         name: "Series 4600 A Battery & Cell Test Equipment",
         image: Series4600,
         logo: Maccor,
-        bannerImg: Banner1,
+        bannerImg: Banner3,
         altText: "Series 4600 A Battery & Cell Test Equipment",
         videoId: "",
         meta: {
@@ -319,7 +319,7 @@ export const Battery = {
         name: "Model 4200 Battery & Cell Test Equipment",
         image: Model4200, // Make sure this is correctly imported
         logo: Maccor,
-        bannerImg: Banner1,
+        bannerImg: Banner3,
         altText: "Model 4200 Battery & Cell Test Equipment",
         videoId: "",
         meta: {
@@ -409,7 +409,7 @@ export const Battery = {
         name: "Model 4300 Battery & Cell Test Equipment",
         image: Model4300,
         logo: Maccor,
-        bannerImg: Banner1,
+        bannerImg: Banner3,
         altText: "Model 4300 Battery & Cell Test Equipment",
         videoId: "",
         meta: {
@@ -500,7 +500,7 @@ export const Battery = {
         name: "Model 4304 Battery & Cell Test Equipment",
         image: Model4304,
         logo: Maccor,
-        bannerImg: Banner1,
+        bannerImg: Banner3,
         altText: "Model 4304 Battery & Cell Test Equipment",
         videoId: "",
         meta: {
@@ -595,7 +595,7 @@ export const Battery = {
         name: "Model 4400 Battery & Cell Test Equipment",
         image: Model4400,
         logo: Maccor,
-        bannerImg: Banner1,
+        bannerImg: Banner3,
         altText: "Model 4400 Battery & Cell Test Equipment",
         videoId: "",
         meta: {
@@ -677,7 +677,7 @@ export const Battery = {
         name: "Labstation I – Glovebox and Accessories",
         image: LabstationIGlovebox,
         logo: LabStation,
-        bannerImg: Banner1,
+        bannerImg: Banner3,
         altText: "Labstation I – Glovebox and Accessories",
         videoId: "",
         meta: {
@@ -755,7 +755,7 @@ export const Battery = {
         name: "Labstation I – Size Configuration",
         image: LabstationISizeConfig,
         logo: LabStation,
-        bannerImg: Banner1,
+        bannerImg: Banner3,
         altText: "Labstation I – Size Configuration",
         videoId: "",
         meta: {
@@ -791,7 +791,7 @@ export const Battery = {
         name: "Labstation i – Solvent Purification System (SPS)",
         image: LabstationISPS,
         logo: LabStation,
-        bannerImg: Banner1,
+        bannerImg: Banner3,
         altText: "Labstation i – Solvent Purification System (SPS)",
         videoId: "",
         meta: {

@@ -54,7 +54,7 @@ export default function ExperienceSection() {
       description: "Recognized for excellence in performance and customer satisfaction."
     },
     {
-      icon: <MapPin className="w-8 h-8 text-white" />,
+      icon: <MapPin className="w-6 h-6 text-white" />,
       title: "12 +",
       subtitle: "Branches",
       description: "Pan-India reach ensuring fast, localized support."
