@@ -141,6 +141,20 @@ export default function MainLayout() {
     return () => clearInterval(interval);
   }, []);
 
+useEffect(() => {
+  (function (w, d) {
+    w.CollectId = "6895dcc0c3650e35db59bb6b";
+    const h = d.head || d.getElementsByTagName("head")[0];
+    const s = d.createElement("script");
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = "https://collectcdn.com/launcher.js";
+    h.appendChild(s);
+  })(window, document);
+}, []);
+
+
+
   useEffect(() => {
     const handleResize = () => {
       setIsSidebarOpen(window.innerWidth >= 1024);
