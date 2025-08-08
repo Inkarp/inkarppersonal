@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import InkarpLogo from '/inkarp old.svg';
+import InkarpLogo from '/InkarpLogo.svg';
 import CatalystLogo from "/Catalyst.svg";
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaInstagram, FaInstagramSquare, FaLinkedin, FaLinkedinIn, FaWhatsapp, FaYoutube } from "react-icons/fa";

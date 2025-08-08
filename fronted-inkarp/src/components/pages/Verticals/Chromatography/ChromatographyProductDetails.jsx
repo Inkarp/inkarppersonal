@@ -10,11 +10,15 @@ import Mettler from "/src/assets/PrincipalLogos/RowTwo/Metller.svg";
 import ME204T from "/images/products/Mettler/ME204t.jpg";
 import ME1002 from "/images/products/Mettler/ME1002.jpg";
 import { NanalysisProducts } from "../../../../data/Chromatography/NanalysisProducts";
+import { WatersProducts } from "../../../../data/Chromatography/WatersProducts";
+import { EcomProducts } from "../../../../data/Chromatography/EcomProducts";
 
 
 
 const SynthesisProductDetails = {
-  ...NanalysisProducts
+  ...NanalysisProducts,
+  ...WatersProducts,
+  ...EcomProducts
 }
 
 export default function ChromatographyProductDetails() {

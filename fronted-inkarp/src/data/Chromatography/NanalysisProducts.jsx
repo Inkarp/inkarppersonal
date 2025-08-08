@@ -684,42 +684,38 @@ export const NanalysisProducts = {
     },
 
     "experiment-designer": {
-  id: "experiment-designer",
-  name: "Experiment Designer Software Packages",
-  image: ImgExperimentDesigner,
-  logo: Nanalysis,
-  bannerImg: Banner3,
-  altText: "Experiment Designer Software Packages",
-  videoId: "",
-  meta: {
-    title: "Experiment Designer NMR Software by Nanalysis | Distributor & Service Provider in India | Inkarp",
-    description:
-      "Design and optimize custom NMR pulse sequences with Experiment Designer Software from Nanalysis, distributed by Inkarp Instruments in India. Enhance experiment control, workflow, and productivity with advanced automation.",
-    keywords: [
-      "Experiment Designer NMR software",
-      "Nanalysis software distributor India",
-      "Custom pulse sequence NMR",
-      "Automated NMR experiments India",
-      "NMR experiment optimization software",
-      "Inkarp Nanalysis software support",
-      "NMR software packages",
-      "JSON-based NMR control",
-      "Benchtop NMR software",
-      "Pulse programming NMR software"
-    ],
-    altText: "Experiment Designer Software for NMR",
-    internalLinks: ["nmr-software", "nanalysis-products"],
-    externalLinks: ["https://www.nanalysis.com/"]
-  },
-  description: `
+        id: "experiment-designer-",
+        name: "Experiment Designer Software Packages",
+        image: ImgExperimentDesigner,
+        logo: Nanalysis,
+        bannerImg: Banner3,
+        altText: "Experiment Designer Software Packages",
+        videoId: "",
+        meta: {
+            title: "Experiment Designer NMR Software by Nanalysis | Distributor & Service Provider in India | Inkarp",
+            description:
+                "Optimize your NMR workflow with Nanalysis' Experiment Designer Software, distributed and supported by Inkarp Instruments in India. Simplify pulse sequence customization and improve data analysis productivity.",
+            keywords: [
+                "Experiment Designer NMR software",
+                "Nanalysis software distributor India",
+                "Pulse sequence customization",
+                "JSON NMR software",
+                "NMR automation tool",
+                "Inkarp Nanalysis support",
+                "Benchtop NMR control software",
+                "Academic NMR software",
+                "Industrial NMR designer",
+                "NMR optimization software"
+            ],
+            altText: "Experiment Designer Software for NMR",
+            internalLinks: ["nmr-software", "nanalysis-products"],
+            externalLinks: ["https://www.nanalysis.com/"]
+        },
+        description: `
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-      <!-- Description and Highlights -->
+      <!-- Left: Description -->
       <div class="space-y-6">
-        <div class="flex justify-center lg:justify-start">
-          <a href="/verticals/analytical-and-chromatography-solutions">
-            <img src="/assets/images/principals/nanalysis.png" alt="Nanalysis Logo" class="w-40 h-auto" />
-          </a>
-        </div>
+    
         <h2 class="text-2xl sm:text-3xl font-bold font-[MaxOT] text-gray-800 leading-snug">
           Experiment Designer Software Packages
           <br />
@@ -727,49 +723,108 @@ export const NanalysisProducts = {
         </h2>
         <div class="text-gray-700 space-y-4 text-base leading-relaxed font-[Roboto]">
           <p>
-            Optimize your NMR experiments with <a href="https://www.nanalysis.com/" class="underline text-blue-700" target="_blank">Nanalysis'</a> Experiment Designer Software Packages, exclusively distributed and supported by Inkarp Instruments in India.
+            Optimize your NMR experiments with <a href="https://www.nanalysis.com/" class="underline text-blue-700" target="_blank">Nanalysis'</a> Experiment Designer Software Packages, distributed and serviced by Inkarp Instruments in India.
           </p>
           <p>
-            This powerful and intuitive software allows expert users to create, modify, and customize pulse sequences to match unique research and testing workflows—making it ideal for academic, industrial, and research laboratories.
+            This intuitive software offers:
+            Automated experiment setup and optimization,
+            Simplified pulse sequence design,
+            Enhanced data analysis and visualization,
+            Streamlined workflow and increased productivity.
           </p>
-          <p class="font-semibold text-gray-900">Customization Features Include:</p>
+          <p>
+            Experience the benefits of Nanalysis' innovative technology and Inkarp's dedicated support, perfect for your laboratory requirements.
+          </p>
+          <p>
+            Every instrument comes standard with basic pulse programs depending on the model that is purchased (e.g., 1D, COSY, HSQC). For expert users that want to modify pulse programs or generate their own we offer the experiment designer.
+          </p>
+          <p class="font-semibold text-gray-900">Customize:</p>
           <ul class="list-disc list-inside space-y-2">
-            <li>Design and control multiple pulses across two channels</li>
-            <li>Fine-tune timing between pulses</li>
-            <li>Configure phase cycling for enhanced precision</li>
-            <li>JSON-based interface for flexible integration</li>
+            <li>Number of pulses on up to two channels simultaneously</li>
+            <li>Timing between pulses</li>
+            <li>Phase cycling</li>
           </ul>
           <p>
-            Every NMReady spectrometer comes standard with common pulse programs (e.g., 1D, COSY, HSQC). The Experiment Designer unlocks the power to build beyond presets with complete control.
+            Currently uses JSON-based interface. Please contact for more information.
           </p>
         </div>
       </div>
 
-      <!-- Placeholder Technical Data Note -->
-      <div class="mt-10 overflow-x-auto bg-white rounded-2xl border border-gray-200 shadow-md">
-        <table class="min-w-full table-auto text-sm text-gray-800 font-[Roboto]">
-          <thead>
-            <tr>
-              <th colspan="2" class="bg-gray-100 text-left px-6 py-4 text-base font-bold text-gray-900 border-b border-gray-300">
-                TECHNICAL HIGHLIGHTS
-              </th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-gray-200">
-            <tr><td class="px-6 py-3 font-semibold">Interface:</td><td class="px-6 py-3">JSON-based programming</td></tr>
-            <tr><td class="px-6 py-3 font-semibold">Pulse Control:</td><td class="px-6 py-3">Multi-pulse on dual channels</td></tr>
-            <tr><td class="px-6 py-3 font-semibold">Supported Models:</td><td class="px-6 py-3">NMReady 60e, 60PRO</td></tr>
-            <tr><td class="px-6 py-3 font-semibold">Core Use Cases:</td><td class="px-6 py-3">Advanced experiment design, teaching, R&D, custom sequences</td></tr>
-            <tr><td class="px-6 py-3 font-semibold">Add-ons:</td><td class="px-6 py-3">Compatible with NMReady-CONNECT API</td></tr>
-          </tbody>
-        </table>
+      <!-- Right Column: (optional) placeholder for future use -->
+      <div></div>
+    </div>
+  `
+    },
+
+    "remote-access": {
+        id: "remote-access",
+        name: "Remote Access Software Packages",
+        image: ImgRemoteAccess,
+        logo: Nanalysis,
+        bannerImg: Banner3,
+        altText: "Remote Access Software Packages",
+        videoId: "uajnoN1Vdyk",
+        meta: {
+            title: "Remote Access NMR Software by Nanalysis | Distributor & Service Provider in India | Inkarp",
+            description:
+                "Enable secure and real-time control of your NMR instruments with Nanalysis' Remote Access Software Packages. Distributed and supported in India by Inkarp Instruments.",
+            keywords: [
+                "Remote NMR software",
+                "Nanalysis remote access software India",
+                "NMR instrument VNC control",
+                "Benchtop NMR monitoring",
+                "Remote data acquisition NMR",
+                "Inkarp Nanalysis support India",
+                "NMR remote teaching tools",
+                "Collaborative NMR analysis",
+                "Remote lab NMR software",
+                "Online NMR control software"
+            ],
+            altText: "Remote Access Software for NMR",
+            internalLinks: ["nmr-software", "nanalysis-products"],
+            externalLinks: ["https://www.nanalysis.com/"]
+        },
+        description: `
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+      <!-- Left Column -->
+      <div class="space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-bold font-[MaxOT] text-gray-800 leading-snug">
+          Remote Access Software Packages
+          <br />
+          <span class="text-lg text-red-600 font-semibold block mt-1">Distributor & Service Provider in India</span>
+        </h2>
+        <div class="text-gray-700 space-y-4 text-base leading-relaxed font-[Roboto]">
+          <p>
+            Access and control your NMR instruments remotely with
+            <a href="https://www.nanalysis.com/" class="underline text-blue-700" target="_blank">Nanalysis'</a>
+            Remote Access Software Packages, distributed and serviced by Inkarp Instruments in India.
+          </p>
+          <p>
+            This secure and user-friendly software offers:
+            Real-time instrument monitoring and control,
+            Remote data acquisition and analysis,
+            Collaborative research and training capabilities,
+            Increased productivity and flexibility.
+          </p>
+          <p>
+            Experience the benefits of Nanalysis' innovative technology and Inkarp's dedicated support.
+          </p>
+          <p>
+            To control the instrument directly from an external computer, tablet, or phone, users are granted VNC access.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Column: YouTube Video Embed -->
+      <div class="mt-6 lg:mt-0">
+        <iframe width="100%" height="400" src="https://www.youtube.com/embed/uajnoN1Vdyk" 
+          title="Teaching Remote Undergrad Labs with Nanalysis Benchtop NMR Spectrometers" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
       </div>
     </div>
   `
-}
-
-
-
+    },
 
 
 };

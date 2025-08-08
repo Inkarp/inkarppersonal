@@ -77,7 +77,12 @@ export default function ChromatographyProducts() {
   const selectedData = synthesisProducts[type];
   const meta = selectedData?.meta;
   const pageData = selectedData?.pageData || {};
-  const products = selectedData?.models || selectedData || [];
+  const products = Array.isArray(selectedData?.models)
+  ? selectedData.models
+  : Array.isArray(selectedData)
+  ? selectedData
+  : [];
+
 
   const [openIndex, setOpenIndex] = useState(null);
 
