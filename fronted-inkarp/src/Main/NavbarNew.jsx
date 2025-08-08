@@ -84,7 +84,7 @@ export default function NavbarNew() {
             <Link
               key={name}
               to={path}
-              className={`block px-3 py-2 rounded-md transition-all duration-200 ${isActive(path)
+              className={`block px-3 py-2 rounded-md text-[15px] transition-all duration-200 ${isActive(path)
                 ? "bg-[#E63946] text-white shadow"
                 : "text-black hover:bg-gray-300"
               }`}
@@ -104,7 +104,7 @@ export default function NavbarNew() {
               onClick={() => setInsightsOpen(!insightsOpen)}
               className="flex items-center justify-between w-full px-3 py-2 rounded-md text-black hover:bg-gray-300 transition-all"
             >
-              <span className="">Insights & Updates</span>
+              <span className="text-left">Insights & Updates</span>
               <ChevronDown
                 className={`h-4 w-4 transition-transform duration-200 ${insightsOpen ? 'rotate-180' : ''}`}
                 color="#E63946"
