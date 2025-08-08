@@ -184,7 +184,7 @@ export default function MainLayout() {
         <aside
           className={`fixed top-0 left-0 bottom-0 z-20 bg-white border-r border-gray-200 shadow-lg transition-transform duration-300 ease-in-out ${
             isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-          } lg:translate-x-0 w-[280px] lg:w-[15%] ink:[23%]`}
+          } lg:translate-x-0 w-[280px] lg:w-[15%] ink:[18%]`}
         >
           <NavbarNew />
         </aside>
