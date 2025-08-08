@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Search, ChevronDown, ArrowDownToLine } from "lucide-react";
-import InkarpLogo from "/inkarp old.svg";
+import InkarpLogo from "/InkarpLogo.svg";
 import CatalystLogo from "/Catalyst.svg";
 import SearchDialog from "../components/SearchDialog";
 import FeedbackModal from "../components/pages/Home/FeedbackModal";
@@ -79,12 +79,12 @@ export default function NavbarNew() {
         </div>
 
         {/* Nav Links */}
-        <nav className="flex-1 space-y-2 font-semibold">
+        <nav className="flex-1 space-y-2  font-medium ">
           {navLinks.map(({ name, path }) => (
             <Link
               key={name}
               to={path}
-              className={`block px-3 py-2 rounded-md text-[15px] transition-all duration-200 ${isActive(path)
+              className={`block px-3 py-2 rounded-md  transition-all duration-200 ${isActive(path)
                 ? "bg-[#E63946] text-white shadow"
                 : "text-black hover:bg-gray-300"
                 }`}
@@ -185,10 +185,11 @@ export default function NavbarNew() {
               window.dispatchEvent(closeSidebarEvent);
             }}
           >
-            <button className="flex items-start gap-2 px-4 py-2 bg-[#E63946] text-white font-semibold rounded-md w-full hover:bg-red-600">
+            <button className="flex items-start gap-2 px-4 py-2 bg-[#Be0010] text-white font-medium rounded-md w-full hover:bg-red-600 whitespace-nowrap">
               Product Profile
               <ArrowDownToLine className="w-4 h-4" />
             </button>
+
           </a>
         </div>
       </div>
