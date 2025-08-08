@@ -64,7 +64,7 @@ export default function Breadcrumbs() {
         .flat-breadcrumb li a {
           color: #fff;
           display: block;
-          background: #E63946;
+          background: #Be0010;
           text-decoration: none;
           position: relative;
           height: 40px;
@@ -77,7 +77,7 @@ export default function Breadcrumbs() {
         }
 
         .flat-breadcrumb li:nth-child(even) a {
-          background-color: #E63946;
+          background-color: #Be0010;
         }
 
         .flat-breadcrumb li:first-child a {
@@ -95,7 +95,7 @@ export default function Breadcrumbs() {
           content: "";
           position: absolute;
           top: 0;
-          border: 0 solid #E63946;
+          border: 0 solid #Be0010;
           border-width: 20px 10px;
           width: 0;
           height: 0;
@@ -109,16 +109,16 @@ export default function Breadcrumbs() {
         .flat-breadcrumb li a:after {
           left: 100%;
           border-color: transparent;
-          border-left-color: #E63946;
+          border-left-color: #Be0010;
         }
 
         .flat-breadcrumb li:nth-child(even) a:before {
-          border-color: #E63946;
+          border-color: #Be0010;
           border-left-color: transparent;
         }
 
         .flat-breadcrumb li:nth-child(even) a:after {
-          border-left-color: #E63946;
+          border-left-color: #Be0010;
         }
 
         .flat-breadcrumb li a:hover {
