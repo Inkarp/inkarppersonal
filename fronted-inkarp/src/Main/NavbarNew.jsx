@@ -87,7 +87,7 @@ export default function NavbarNew() {
               className={`block px-3 py-2 rounded-md text-[15px] transition-all duration-200 ${isActive(path)
                 ? "bg-[#E63946] text-white shadow"
                 : "text-black hover:bg-gray-300"
-              }`}
+                }`}
               onClick={() => {
                 // Dispatch custom event to close sidebar
                 const closeSidebarEvent = new CustomEvent('closeSidebar');
@@ -102,7 +102,7 @@ export default function NavbarNew() {
           <div className="w-full relative">
             <button
               onClick={() => setInsightsOpen(!insightsOpen)}
-              className="flex items-center justify-between w-full px-3 py-2 rounded-md text-black hover:bg-gray-300 transition-all"
+              className="flex items-center justify-between w-full px-3 py-2 rounded-md text-black hover:bg-gray-300 transition-all whitespace-nowrap"
             >
               <span className="text-left">Insights & Updates</span>
               <ChevronDown
@@ -110,6 +110,7 @@ export default function NavbarNew() {
                 color="#E63946"
               />
             </button>
+
 
             {insightsOpen && (
               <div className="absolute z-10 bg-[#F5F5F5] mt-1 rounded-md overflow-hidden shadow-lg w-full left-0 top-full font-normal">
@@ -119,7 +120,7 @@ export default function NavbarNew() {
                     className={`block px-4 py-2 transition-all ${isActive("/insights&updates/blogs")
                       ? "bg-[#E63946] text-white"
                       : "hover:bg-[#E63946] hover:text-white"
-                    }`}
+                      }`}
                     onClick={() => {
                       setInsightsOpen(false);
                       window.dispatchEvent(new CustomEvent('closeSidebar'));
@@ -132,7 +133,7 @@ export default function NavbarNew() {
                     className={`block px-4 py-2 transition-all ${isActive("/insights&updates/news-and-events")
                       ? "bg-[#E63946] text-white"
                       : "hover:bg-[#E63946] hover:text-white"
-                    }`}
+                      }`}
                     onClick={() => {
                       setInsightsOpen(false);
                       window.dispatchEvent(new CustomEvent('closeSidebar'));
@@ -145,7 +146,7 @@ export default function NavbarNew() {
                     className={`block px-4 py-2 transition-all ${isActive("/insights&updates/webinars")
                       ? "bg-[#E63946] text-white"
                       : "hover:bg-[#E63946] hover:text-white"
-                    }`}
+                      }`}
                     onClick={() => {
                       setInsightsOpen(false);
                       window.dispatchEvent(new CustomEvent('closeSidebar'));
