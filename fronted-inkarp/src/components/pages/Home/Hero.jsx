@@ -113,7 +113,7 @@ export default function Hero() {
       const timer = setTimeout(() => {
         video.pause();
         nextSlide();
-      }, 3000);
+      }, 6000);
 
       return () => clearTimeout(timer);
     }
@@ -272,7 +272,7 @@ export default function Hero() {
   };
 
   return (
-    <div className="relative w-[98%] my-3 rounded-xl max-w-[98vw] mx-auto h-[320px] xs:h-[400px] sm:h-[450px] md:h-[520px] lg:h-[600px]  overflow-hidden">
+    <div className="relative w-[98%] my-3 xs:mt-1 xs:mb-3 rounded-xl max-w-[98vw] mx-auto h-[320px] xs:h-[400px] sm:h-[500px] md:h-[520px] lg:h-[600px] overflow-hidden">
       {/* Background image or video with direct transition */}
       <AnimatePresence mode="sync">
         {slides[current].isVideo ? (
@@ -315,7 +315,7 @@ export default function Hero() {
       <div className="absolute top-3 right-2 xs:top-4 xs:right-4 sm:top-6 sm:right-6 z-20">
         <button
           onClick={() => setShowSearchDialog(true)}
-          className="relative h-10 xs:h-12 px-4 xs:px-8 pr-8 xs:pr-10 min-w-[140px] xs:min-w-[200px] rounded-full text-xs xs:text-sm backdrop-blur-md border-2 border-[#E63946] shadow-md text-gray-800 flex items-center gap-2 transition-all duration-300 hover:ring-2 hover:ring-[#E63946] hover:bg-white/30 group bg-white/80"
+          className="relative h-10 xs:h-12 px-4 xs:px-8 pr-8 xs:pr-10 min-w-[300px] xs:min-w-[200px] rounded-xl text-xs xs:text-sm backdrop-blur-md border-2 border-[#E63946] shadow-md text-gray-800 flex items-center gap-2 transition-all duration-300 hover:ring-2 hover:ring-[#E63946] hover:bg-white/30 group bg-white/80"
         >
           <span className="absolute -top-2 -right-2 bg-[#E63946] text-white text-xs px-2 py-0.5 rounded-full animate-pulse shadow-lg">
             NEW
@@ -332,7 +332,7 @@ export default function Hero() {
         key={`text-${slides[current].id}`}
         className="absolute bottom-0 z-10 w-full text-white text-center px-2 xs:px-4 pb-6 xs:pb-10 sm:pb-12 flex justify-center"
       >
-        <div className="bg-white/70 backdrop-blur-[1px] rounded-t-2xl p-3 xs:p-6 max-w-xs xs:max-w-2xl sm:max-w-3xl md:max-w-4xl mx-auto">
+        <div className="bg-white opacity-90 backdrop-blur-[1px] rounded-t-2xl p-3 xs:p-6 max-w-xs xs:max-w-2xl sm:max-w-3xl md:max-w-4xl mx-auto">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

@@ -3,31 +3,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import { EffectFade, Autoplay } from 'swiper/modules';
+import { Helmet } from 'react-helmet';
 
-import EventsBanner1 from "/src/assets/Events/EventBanner1.jpg";
 import EventsBanner from "/src/assets/Events/EventBanner.jpg";
 
-
-import Event1 from "/src/assets/Events/Event1.jpeg";
-import Event2 from "/src/assets/Events/Event2.jpeg";
-import Event3 from "/src/assets/Events/Event3.jpeg";
-import Event4 from "/src/assets/Events/Event4.jpeg";
-import Event5 from "/src/assets/Events/Event5.jpeg";
-import Event6 from "/src/assets/Events/Event6.jpeg";
-import Event7 from "/src/assets/Events/Event7.jpeg";
-import Event8 from "/src/assets/Events/Event8.jpeg";
-import Event9 from "/src/assets/Events/Event9.jpeg";
-import Event10 from "/src/assets/Events/Event10.jpeg";
-import Event11 from "/src/assets/Events/Event11.jpeg";
-import Event12 from "/src/assets/Events/Event12.jpeg";
-import Event13 from "/src/assets/Events/Event13.jpeg";
-import Event14 from "/src/assets/Events/Event14.jpeg";
-import Event15 from "/src/assets/Events/Event15.jpeg";
-import Event16 from "/src/assets/Events/Event16.jpeg";
-
 import { eventsData } from '../NewsAndEvents/EventsData';
-
-import { Helmet } from 'react-helmet';
 
 const bannerSlides = [
     {
@@ -39,7 +19,6 @@ const bannerSlides = [
     },
 
 ];
-
 
 const labCards = [
     ...eventsData,
@@ -62,8 +41,8 @@ const LabCard = ({ category, title, description, image, date }) => {
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 group-hover:opacity-100 opacity-0 transition-opacity duration-300">
                 <button
                     className={`relative px-6 py-2 font-medium rounded-md text-sm ${isPast
-                            ? 'bg-[#E63946] text-white font-[MaxOT]'
-                            : 'bg-[#E63946] text-white hover:bg-[#b72834]'
+                        ? 'bg-[#E63946] text-white font-[MaxOT]'
+                        : 'bg-[#E63946] text-white hover:bg-[#b72834]'
                         }`}
                 >
                     {isPast ? 'Know More' : 'Join Us'}
@@ -297,16 +276,7 @@ const EventsNew = () => {
                 </button>
             </div>
 
-            {/* Upcoming Events Section */}
-            <div className="w-[95%] mx-auto py-10">
-                <h2 className="text-2xl font-bold text-gray-800 font-[MaxOT] mb-6">Upcoming Events</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {labCards
-                        .filter(e => new Date(e.date) > today)
-                        .map(card => <LabCard key={card.id} {...card} />)
-                    }
-                </div>
-            </div>
+
 
             {/* Event Cards Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-2 sm:px-4 md:px-6 lg:px-10 py-2 sm:py-4">

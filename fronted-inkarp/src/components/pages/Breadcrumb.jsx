@@ -16,7 +16,7 @@ export default function Breadcrumbs() {
   // Show only on specific routes
   const validPaths = [
     "/verticals",
-    // "/careers",
+    "/careers",
     // "/insights-and-updates/news-and-events",
   ];
   const show = validPaths.some((p) => location.pathname.startsWith(p));

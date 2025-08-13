@@ -140,13 +140,34 @@ const CareersForm = () => {
     };
 
     return (
-        <div className=" mx-auto ">
+        <div className=" mx-auto max-w-5xl py-5 ">
+              <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_20%_-10%,rgba(230,57,70,0.08),transparent),radial-gradient(1200px_600px_at_80%_110%,rgba(230,57,70,0.08),transparent)]" />
+            <div className="max-w-5xl mx-auto">
+                <div className="rounded-2xl bg-white border border-gray-100 shadow-sm overflow-hidden">
+                    <div className="bg-[radial-gradient(800px_400px_at_20%_-10%,#fde7ea,transparent)] px-6 md:px-10 py-8">
+                        <h3 className="text-2xl md:text-3xl font-[MaxOT] text-gray-900">
+                            Ready to grow your career with <span className="text-[#E63946]">INKARP</span>?
+                        </h3>
+                        <p className="text-gray-700 mt-1">
+                            Tell us about yourself—our team will get back to you soon.
+                        </p>
+                    </div>
+                </div>
+            </div>
             {/* <h2 className="text-3xl font-bold text-[#E63946] mb-8 text-center font-[MaxOT]">Apply to Join Our Team</h2> */}
-            <div className="flex p-5 justify-center items-center">
-                <h1 className="px-4 py-1 text-center text-sm font-[MaxOT] font-semibold uppercase border border-[#E63946] text-black rounded-full mb-4 w-fit">
+            <div className="flex justify-center items-center p-5">
+                <h1
+                    className="px-4 py-1 w-fit rounded-full uppercase text-xs sm:text-sm font-[MaxOT] bg-white text-black"
+                    style={{
+                        borderImage: 'linear-gradient(90deg,#BE0010,#E63946) 1',
+                        borderWidth: 1,
+                        borderStyle: 'solid',
+                    }}
+                >
                     Apply to Join Our Team
                 </h1>
             </div>
+
 
             {status.message && (
                 <div className={`mb-6 p-4 rounded-lg ${status.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'

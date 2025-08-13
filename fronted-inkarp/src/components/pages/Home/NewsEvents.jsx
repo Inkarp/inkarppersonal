@@ -7,8 +7,14 @@ const newsEvents = eventsData.sort((a, b) => b.id - a.id).slice(0, 3);
 export default function NewsEvents() {
   const navigate = useNavigate();
 
-  const handleReadMore = (event) => {
-    navigate(`/insights-and-updates/events/${event.id}`, {
+  // const handleReadMore = (event) => {
+  //   navigate(`/insights-and-updates/events/${event.id}`, {
+  //     state: { event },
+  //   });
+  // };
+
+   const handleReadMore = (event) => {
+    navigate(`/insights-and-updates/news-and-events`, {
       state: { event },
     });
   };

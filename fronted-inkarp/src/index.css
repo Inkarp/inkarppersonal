@@ -7,11 +7,34 @@
   font-style: normal; */
 }
 
-@font-face {
-  font-family: 'MaxOT-light';
-  src: url('/fonts/MaxOT.otf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+
+/* Add to your main CSS file */
+.animate-out {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Different animation directions */
+.animate-out.slide-left {
+  transform: translateX(-30px);
+}
+
+.animate-out.slide-right {
+  transform: translateX(30px);
+}
+
+.animate-out.slide-up {
+  transform: translateY(-30px);
+}
+
+.animate-out.fade-only {
+  transform: none;
 }
 
 

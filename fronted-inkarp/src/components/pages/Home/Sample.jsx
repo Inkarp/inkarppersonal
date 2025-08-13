@@ -123,7 +123,7 @@ export default function Sample() {
           Who we are
         </span>
         <h1 className="text-xl sm:text-2xl font-[MaxOT] text-[#E63946] leading-tight text-center">
-          We will Ensure You Always Get the Best Results
+          We Will Ensure You Always Get the Best Results
         </h1>
       </div>
 

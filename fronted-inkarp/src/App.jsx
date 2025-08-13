@@ -58,19 +58,22 @@ import GeneralProductDetails from "./components/pages/Verticals/GeneneralLaborat
 import WebinarsNew from "./components/pages/NewsAndEvents/WebinarsPage";
 import Webinars from "./components/pages/NewsAndEvents/Webinars";
 import HomeNew from "./Main/HomeNew";
+import ScrollAnimations from "./ScrollAnimations";
+import CareersForm from "./components/pages/Careers/CareersForm";
+
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
+      <ScrollAnimations />
       <Routes>
         <Route element={<MainLayout />}>
           {/* Main Routes */}
           <Route index element={<Home />} />
-          
           <Route path="/about" element={<OurStory />} />
           <Route path="/careers" element={<Careers />} />
-          {/* <Route path="/careers/positions" element={<CareersForm />} /> */}
+          <Route path="/careers/send-resume" element={<CareersForm />} />
           <Route path="/contactUs" element={<ContactUs />} />
           <Route path="/catalystcue" element={<Catalyst />} />
           <Route path="/productProfile" element={<ProductProfile />} />

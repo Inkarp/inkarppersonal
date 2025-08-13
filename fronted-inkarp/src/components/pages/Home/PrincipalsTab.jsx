@@ -137,39 +137,48 @@ const logoRings = [
   ],
 ];
 
-export default function PrincipalsTab() { 
+export default function PrincipalsTab() {
+  const logos = logoRings.flat(); // single continuous set
+
   return (
-    <div className="w-full bg-gray-50 py-12 px-4">
-       <div className="text-center py-3 flex flex-col items-center justify-center gap-3">
-        <h4 className="px-4 py-1 text-center text-sm font-semibold uppercase border border-[#E63946] text-black rounded-full  font-[MaxOT]">
-          Our Principles
-        </h4>
-        <h2 className="text-3xl font-[MaxOT] text-[#E63946] leading-tight">
-          Strategic Alliances with Global Scientific Leaders
+    <section className="w-full bg-gray-50 py-10 px-4">
+      {/* Headings in your theme */}
+      <div className="text-center flex flex-col justify-center items-center gap-3">
+        <span
+          className="px-4 py-1 text-xs sm:text-sm font-[MaxOT] uppercase rounded-full bg-white"
+          style={{
+            borderImage: "linear-gradient(90deg,#BE0010,#E63946) 1",
+            borderWidth: 1,
+            borderStyle: "solid",
+          }}
+        >
+          Our Principals
+        </span>
+        <h2 className="text-xl sm:text-2xl font-[MaxOT] text-[#E63946] leading-tight">
+          Strategic Alliances with Global Scientific Leaders
         </h2>
       </div>
 
-      <div className="space-y-8">
-        {logoRings.map((row, rowIndex) => (
-          <div
-            key={`logo-row-${rowIndex}`}
-            className="flex flex-wrap justify-center items-center gap-6 md:gap-10"
-          >
-            {row.map((logo, idx) => (
-              <div
-                key={`logo-${idx}`}
-                className="w-24 h-16 md:w-28 md:h-20 flex items-center justify-center hover:scale-105 transition-transform"
-              >
-                <img
-                  src={logo.src}
-                  alt={logo.name}
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-            ))}
-          </div>
-        ))}
+      {/* Static grid of all logos */}
+      <div className="mt-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-5 md:gap-8">
+          {logos.map((logo, idx) => (
+            <div
+              key={idx}
+              className="relative bg-white rounded-xl border border-gray-200 p-3 h-20 md:h-24 flex items-center justify-center shadow-sm hover:shadow-md hover:border-[#E63946]/60 transition"
+              title={logo.name}
+            >
+          
+              <img
+                src={logo.src}
+                alt={logo.name}
+                className="max-h-full max-w-full object-contain"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

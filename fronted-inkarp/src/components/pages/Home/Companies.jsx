@@ -163,7 +163,7 @@ export default function Companies() {
               }
 
               .circular-reviews__void .crop {
-                -webkit-mask-image: linear-gradient(30deg, rgba(19, 15, 15, 0), rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1));
+                -webkit-mask-image: linear-gradient(0deg, rgba(19, 15, 15, 0), rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1));
               }
             `}</style>
 
