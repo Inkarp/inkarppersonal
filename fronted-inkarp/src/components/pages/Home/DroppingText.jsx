@@ -3,7 +3,7 @@ import InkarpNotation from '/src/assets/PrincipalLogos/InkarpNotation.svg';
 
 export default function DroppingText() {
   return (
-    <div className="w-auto flex items-center justify-center overflow-hidden relative">
+    <div className="w-auto w-full flex items-center justify-center overflow-hidden relative">
       {/* Inline Keyframes */}
       <style>{`
         @keyframes roll {
@@ -87,15 +87,15 @@ export default function DroppingText() {
         }
 
         .dropping-texts > div {
-          font-size: 1.5rem;
+          font-size: 18px;
           opacity: 0;
-          margin-top: 3px;
-          margin-left: -30px;
+          margin-top: 2px;
+          // margin-left: -30px;
           position: absolute;
-          font-weight: 600;
+          // font-weight: 600;
           box-shadow: 0px 60px 25px -20px rgba(0,0,0,0.5);
           width: 100%;
-          text-align: left;
+          text-align: center;
         }
 
         .dropping-texts > div:nth-child(1) {
@@ -118,15 +118,15 @@ export default function DroppingText() {
         }
       `}</style>
 
-      <h1 className="text-black font-[MaxOT] text-4xl font-semibold z-10 relative flex items-center gap-1 flex-wrap">
+      <h1 className="text-black font-[MaxOT] text-lg z-10 relative flex items-center justify-center gap-1 flex-wrap">
         <img
           src={InkarpNotation}
           alt="Inkarp Logo"
           className="h-[50px] w-auto object-cover"
         />
-      <span className="text-xl">lives by</span> 
+      <span className="text-lg">lives by</span> 
       <span className="text-lg"> {" "}</span>
-        <span className="dropping-texts relative w-[240px] h-[50px] block">
+        <span className="dropping-texts text-2xl font-bold relative w-full h-[50px] block">
           <div>
             <span className="text-[#E63946]">I</span><span className="text-black">nnovation</span>
           </div>

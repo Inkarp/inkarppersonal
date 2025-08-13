@@ -17,9 +17,17 @@ import Banner2 from '/src/assets/Webinars/WebinarImg2.jpg';
 import Banner3 from '/src/assets/Webinars/WebinarImg3.jpg';
 import { Helmet } from 'react-helmet';
 import { FiBell } from 'react-icons/fi';
-import Reviews from '../components/pages/Home/Reviews';
 import About from '../components/pages/Home/About';
 import Sample from '../components/pages/Home/Sample';
+import PickProduct from '../components/pages/Home/PickProduct';
+import Industries from '../components/pages/Home/Industries';
+import InkarpGroupShowcase from '../components/pages/Home/InkarpCompanies';
+import OrbitMap from '../components/pages/Home/OrbitMap';
+import SplitAffiliates from '../components/pages/Home/SplitAffiliates';
+import HoneyCombAffiliates from '../components/pages/Home/HoneyCombAffiliates';
+import HeroNew from '../components/pages/Home/HeroNew';
+import CompaniesNew from '../components/pages/Home/CompaniesNew';
+
 
 
 const Home = () => {
@@ -122,18 +130,28 @@ const Home = () => {
         <meta name="description" content="Discover the best Laboratory Equipment Supplier in India. Inkarp Instruments offers unmatched sales and service networks across India." />
       </Helmet>
       <Hero />
-      <PickNew />
+      {/* <HeroNew /> */}
       <WhyChooseUsSection />
-      <ExperienceSection />
-      {/* <Sample /> */}
+      {/* <Industries /> */}
+      {/* <PickNew /> */}
+      <PickProduct />
+      {/* <OrbitMap />
+      <SplitAffiliates />
+      <HoneyCombAffiliates/> */}
+      {/* <Companies /> */}
+      {/* <InkarpGroupShowcase /> */}
+
+
+      {/* <ExperienceSection /> */}
+      <Sample />
       {/* <About/> */}
       {isMobileOrTablet ? <NewAbout /> : <Companies />}
+      {/* <CompaniesNew /> */}
       {isMobileOrTablet ? <PrincipalsTab /> : <Principles />}
       <Offerings />
       <HomeBlogs />
       <NewsEvents />
       <ClientReviews />
-      {/* <Reviews /> */}
     </>
   );
 };

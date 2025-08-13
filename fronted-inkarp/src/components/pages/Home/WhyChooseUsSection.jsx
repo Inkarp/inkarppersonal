@@ -7,14 +7,13 @@ import {
   CheckCircle,
   PillBottle
 } from 'lucide-react';
-import { motion, useInView } from 'framer-motion';
-import Pharma1 from '/src/assets/Industries/Pharma1.jpg'
-import Bio from '/src/assets/Industries/Bio.jpg'
-import Petro from '/src/assets/Industries/Petro.jpg'
-import Diagno from '/src/assets/Industries/Diagno.jpg'
-import Academic from '/src/assets/Industries/Academic.jpg'
+import { motion, useInView, useMotionValue, useTransform } from 'framer-motion';
 
-
+import Pharma1 from '/src/assets/Industries/Pharma1.jpg';
+import Bio from '/src/assets/Industries/Bio.jpg';
+import Petro from '/src/assets/Industries/Petro.jpg';
+import Diagno from '/src/assets/Industries/Diagno.jpg';
+import Academic from '/src/assets/Industries/Academic.jpg';
 
 const options = [
   {
@@ -22,7 +21,7 @@ const options = [
     tagline: 'Tailored Solutions for You',
     description: 'We provide trusted consultation and precision instruments designed for:',
     icon: <PillBottle className="w-5 h-5 text-white" />,
-    image:Pharma1,
+    image: Pharma1,
     content: [
       'Streamlining R&D and manufacturing processes',
       'Regulatory compliance support',
@@ -61,7 +60,7 @@ const options = [
     tagline: 'Reliable Tools for Accurate Detection',
     description: 'From sample prep to final analysis, our tools help improve diagnostics workflows:',
     icon: <Microscope className="w-5 h-5 text-white" />,
-    image:Diagno,
+    image: Diagno,
     content: [
       'Precision instruments for clinical and molecular diagnostics',
       'High-sensitivity detection systems for critical testing',
@@ -84,104 +83,189 @@ const options = [
   }
 ];
 
-
-
 export default function WhyChooseUsSection() {
   const [active, setActive] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true });
+
+  // Parallax background (on section)
+  const sx = useMotionValue(0);
+  const sy = useMotionValue(0);
+  const parallaxX = useTransform(sx, [-60, 60], [-12, 12]);
+  const parallaxY = useTransform(sy, [-60, 60], [-10, 10]);
+
+  const onStageMove = (e) => {
+    const rect = sectionRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const x = e.clientX - (rect.left + rect.width / 2);
+    const y = e.clientY - (rect.top + rect.height / 2);
+    sx.set(Math.max(-60, Math.min(60, x / 4)));
+    sy.set(Math.max(-60, Math.min(60, y / 4)));
+  };
+  const onStageLeave = () => {
+    sx.set(0);
+    sy.set(0);
+  };
+
+  // 3D tilt for the image card
+  const cardRef = useRef(null);
+  const mx = useMotionValue(0);
+  const my = useMotionValue(0);
+  const rx = useTransform(my, [-40, 40], [10, -10]);
+  const ry = useTransform(mx, [-40, 40], [-10, 10]);
+  const glare = useTransform(mx, [-40, 40], ['0%', '100%']);
+
+  const onCardMove = (e) => {
+    const rect = cardRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    mx.set(Math.max(-40, Math.min(40, x / 6)));
+    my.set(Math.max(-40, Math.min(40, y / 6)));
+  };
+  const onCardLeave = () => {
+    mx.set(0); my.set(0);
+  };
 
   const activeOption = options[active];
 
   return (
-    <motion.div
-      ref={ref}
+    <motion.section
+      ref={sectionRef}
+      onMouseMove={onStageMove}
+      onMouseLeave={onStageLeave}
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8 }}
-      className=" py-5 md:px-10 lg:px-20"
+      className="relative  py-10 md:px-10 lg:px-20 w-[98%] mx-auto"
     >
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
+      {/* Soft stage background (on-brand) */}
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_20%_-10%,rgba(230,57,70,0.08),transparent),radial-gradient(1200px_600px_at_80%_110%,rgba(230,57,70,0.08),transparent)]" />
+
+      {/* Parallax gradient orbs */}
+      {/* <motion.div style={{ x: parallaxX, y: parallaxY }} className="pointer-events-none absolute -z-10 -left-12 top-12 h-44 w-44 rounded-full blur-3xl opacity-30 bg-gradient-to-tr from-[#BE0010] to-[#E63946]" /> */}
+      <motion.div style={{ x: useTransform(parallaxX, v => -v), y: useTransform(parallaxY, v => -v) }} className="pointer-events-none absolute -z-10 right-6 bottom-0 h-52 w-52 rounded-full blur-3xl opacity-25 bg-gradient-to-tr from-[#E63946] to-[#BE0010]" />
+
+      <div className="w-[98%] mx-auto">
+        {/* Header */}
         <div className="text-center flex flex-col justify-center items-center gap-3">
-          <h4 className="px-4 py-1 text-sm font-semibold font-[MaxOT] uppercase border border-[#E63946] text-black rounded-full">
+          <span
+            className="px-4 py-1 text-xs sm:text-sm font-[MaxOT] uppercase rounded-full bg-white"
+            style={{
+              borderImage: 'linear-gradient(90deg,#BE0010,#E63946) 1',
+              borderWidth: 1,
+              borderStyle: 'solid'
+            }}
+          >
             Industries We Serve
-          </h4>
-          <h1 className="text-3xl font-[MaxOT] text-[#E63946] leading-tight">
+          </span>
+          <h1 className="text-xl sm:text-2xl font-[MaxOT] text-[#e63946] leading-tight">
             Solutions Tailored to Your Industry
           </h1>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-start gap-10 px-4 py-3 sm:px-8 lg:px-0">
-          {/* LEFT - Industries */}
-          <div className="w-full lg:w-1/3">
-            <div className="flex flex-col gap-3">
-              {options.map((opt, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActive(index)}
-                  className={`flex items-center justify-between w-full px-4 py-2 rounded-full border text-left text-lg   transition-all duration-300 font-[MaxOT]  ${active === index
-                    ? "bg-white text-[#E63946] shadow-md border-[#E63946] "
-                    : "bg-[#F5F5F5] text-black border-gray-300"
-                    }`}
-                >
-                  {opt.label}
-                  <span
-                    className={`w-8 h-8 flex items-center justify-center rounded-full ${active === index ? "bg-[#be0010]" : "bg-[#1b254b]"
-                      }`}
-                  >
-                    {opt.icon}
-                  </span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* MIDDLE - Image */}
-          <motion.div
-            key={active}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="w-full lg:w-[45%] flex justify-center items-center mt-6 lg:mt-0"
-          >
-            <div className="w-full overflow-hidden rounded-2xl shadow-md">
-              <img
-                src={activeOption.image}
-                alt={activeOption.label}
-                className="w-full h-72 sm:h-80 object-cover rounded-2xl transition-transform duration-300 hover:scale-105"
-              />
-            </div>
-          </motion.div>
-
-
-          {/* RIGHT - Description */}
-          <motion.div
-            key={active + "-desc"}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="w-full lg:w-1/3 mt-6 lg:mt-0"
-          >
-            <h3 className="text-xl font-[MaxOT] font-semibold leading-snug mb-1">
-              {activeOption.tagline}
-            </h3>
-
-            <p className="mb-2 text-sm text-[#E63946] sm:text-base font-[Roboto]">
-              {activeOption.description}
-            </p>
-            <div className="space-y-1">
-              {activeOption.content.map((feat, i) => (
-                <div key={i} className="flex items-start gap-2">
-                  <CheckCircle className="text-[#E63946] w-5 h-5 mt-1" />
-                  <span className="text-[16px] text-black font-[Roboto]">{feat}</span>
+        {/* Content frame with gradient border + glass */}
+        <div className="mt-6 rounded-3xl p-[1.5px] ">
+          {/* <div className="rounded-[20px] bg-white/70 backdrop-blur-xl border border-white/60 p-5 sm:p-6 lg:p-8"> */}
+            <div className="flex flex-col lg:flex-row items-start gap-8">
+              {/* LEFT – Options list */}
+              <div className="w-full lg:w-1/3">
+                <div className="flex flex-col gap-3">
+                  {options.map((opt, index) => {
+                    const isActive = active === index;
+                    return (
+                      <div key={index} className={isActive ? 'p-[1px] rounded-full bg-[linear-gradient(90deg,#BE0010,#E63946)]' : ''}>
+                        <motion.button
+                          whileHover={{ y: -2 }}
+                          onClick={() => setActive(index)}
+                          aria-pressed={isActive}
+                          className={`flex items-center justify-between w-full px-4 py-2 rounded-full text-left text-base sm:text-lg transition-all duration-300 font-[MaxOT] border ${
+                            isActive
+                              ? 'bg-white text-[#E63946] border-transparent shadow-md'
+                              : 'bg-[#F5F5F5] text-black border-gray-300 hover:border-[#E63946]/40 hover:bg-white'
+                          }`}
+                        >
+                          {opt.label}
+                          <span
+                            className={`ml-3 w-8 h-8 flex items-center justify-center rounded-full ${
+                              isActive ? 'bg-gradient-to-r from-[#BE0010] to-[#E63946]' : 'bg-[#333333] border border-gray-300'
+                            }`}
+                          >
+                            {opt.icon}
+                          </span>
+                        </motion.button>
+                      </div>
+                    );
+                  })}
                 </div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
+              </div>
 
+              {/* MIDDLE – Image spotlight with 3D tilt */}
+              <motion.div
+                key={active}
+                initial={{ opacity: 0, scale: 0.97 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.45 }}
+                className="w-full lg:w-[45%] flex justify-center items-center"
+              >
+                <div
+                  ref={cardRef}
+                  onMouseMove={onCardMove}
+                  onMouseLeave={onCardLeave}
+                  className="relative w-full rounded-2xl"
+                >
+                  <motion.div
+                    style={{ rotateX: rx, rotateY: ry }}
+                    className="relative w-full h-72 sm:h-80 rounded-2xl  flex items-center justify-center overflow-hidden "
+                  >
+                    <div className="absolute -inset-10 bg-[radial-gradient(1200px_600px_at_20%_-10%,rgba(230,57,70,0.08),transparent),radial-gradient(1200px_600px_at_80%_110%,rgba(230,57,70,0.08),transparent)]" />
+                    <img
+                      src={activeOption.image}
+                      alt={activeOption.label}
+                      className="relative z-10 h-full w-full object-cover rounded-2xl"
+                    />
+                    {/* moving glare */}
+                    <motion.div
+                      style={{ left: glare }}
+                      className="pointer-events-none absolute top-0 left-0 h-full w-[18%] bg-gradient-to-r from-transparent via-white/40 to-transparent"
+                      animate={{ left: ['-20%', '120%'] }}
+                      transition={{ duration: 2.8, repeat: Infinity, ease: 'linear' }}
+                    />
+                  </motion.div>
+                </div>
+              </motion.div>
+
+              {/* RIGHT – Description */}
+              <motion.div
+                key={active + '-desc'}
+                initial={{ opacity: 0, x: 40 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.45 }}
+                className="w-full lg:w-1/3"
+              >
+                <div className="relative">
+                  {/* top accent line */}
+                  <div className="absolute left-0 -top-2 h-1 w-24 rounded-full bg-gradient-to-r from-[#BE0010] to-[#E63946]" />
+                </div>
+                <h3 className="text-xl font-[MaxOT] font-semibold leading-snug mb-1">
+                  {activeOption.tagline}
+                </h3>
+                <p className="mb-2 text-sm sm:text-base font-[Roboto] text-[#E63946]">
+                  {activeOption.description}
+                </p>
+                <div className="space-y-2">
+                  {activeOption.content.map((feat, i) => (
+                    <div key={i} className="flex items-start gap-2">
+                      <CheckCircle className="text-[#E63946] w-5 h-5 mt-0.5" />
+                      <span className="text-[16px] text-black font-[Roboto]">{feat}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          {/* </div> */}
+        </div>
       </div>
-    </motion.div>
+    </motion.section>
   );
 }

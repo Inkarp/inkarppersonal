@@ -7,8 +7,6 @@ import { FiBell } from 'react-icons/fi';
 import NavbarNew from "../Main/NavbarNew";
 import Breadcrumbs from "./pages/Breadcrumb";
 import LoadingScreen from "../LoadingScreen";
-import Chatbot from "../Chatbot";
-import Card from "./pages/UI/Card";
 
 import Webinar1 from '/src/assets/Webinars/WebinarImg1.jpg';
 import Webinar2 from '/src/assets/Webinars/WebinarImg2.jpg';
@@ -143,7 +141,7 @@ export default function MainLayout() {
 
 useEffect(() => {
   (function (w, d) {
-    w.CollectId = "6895dcc0c3650e35db59bb6b";
+    w.CollectId = "672db8abf4bc76248fc52c81";
     const h = d.head || d.getElementsByTagName("head")[0];
     const s = d.createElement("script");
     s.type = "text/javascript";
@@ -185,7 +183,7 @@ useEffect(() => {
 
   return (
     <>
-      <div className="flex min-h-screen w-full overflow-hidden">
+      <div className="flex min-h-screen  w-full overflow-hidden">
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -205,7 +203,7 @@ useEffect(() => {
 
         {/* Main Content */}
         <div
-          className={`flex-1 transition-all duration-300 ease-in-out ${
+          className={`flex-1 transition-all duration-300 ease-in-out  ${
             isSidebarOpen ? "lg:ml-[15%]" : "ml-0"
           } w-full lg:w-[85%]`}
         >
@@ -301,9 +299,8 @@ useEffect(() => {
             {showScrollTop && (
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="cursor-pointer fixed right-2 bottom-2 z-[99999] group/button after:content-['Go_to_top'] after:text-black after:absolute after:text-nowrap after:scale-0 hover:after:scale-100 after:duration-200 w-12 h-12 rounded-full border border-[#E63946] bg-white pointer flex items-center justify-center duration-300 hover:rounded-[50px] hover:w-36 overflow-hidden active:scale-90"
+                className="cursor-pointer fixed right-25 bottom-5 z-[99999] group/button after:content-['Go_to_top'] after:text-black after:absolute after:text-nowrap after:scale-0 hover:after:scale-100 after:duration-200 w-12 h-12 rounded-full border border-[#E63946] bg-white pointer flex items-center justify-center duration-300 hover:rounded-[50px] hover:w-36 overflow-hidden active:scale-90"
                 // aria-label="Go to top"
-                
               >
                 <ScrollToTopIcon />     
               </button>
@@ -312,8 +309,6 @@ useEffect(() => {
         </div>
       </div>
 
-      {/* Chatbot: fixed bottom right, accessible on all pages */}
-      {/* <Chatbot /> */}
       {/* Animations */}
       <style>{`
         @keyframes slideIn {

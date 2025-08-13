@@ -30,7 +30,7 @@ const synthesisData = [
     logo: Advion,
     products: [
       "Express CMS",
-      "Solation ICP-MS",
+      "Solation ICP MS",
       "Preperative Purification Systems",
       "Plate Express",
       "TriVersa NanoMate",
@@ -66,7 +66,7 @@ const synthesisData = [
 ];
 
 const synthesisProducts = {
-...Chromatography
+  ...Chromatography
 
 };
 
@@ -78,10 +78,10 @@ export default function ChromatographyProducts() {
   const meta = selectedData?.meta;
   const pageData = selectedData?.pageData || {};
   const products = Array.isArray(selectedData?.models)
-  ? selectedData.models
-  : Array.isArray(selectedData)
-  ? selectedData
-  : [];
+    ? selectedData.models
+    : Array.isArray(selectedData)
+      ? selectedData
+      : [];
 
 
   const [openIndex, setOpenIndex] = useState(null);

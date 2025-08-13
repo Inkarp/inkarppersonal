@@ -1,27 +1,27 @@
 import { useState } from "react";
-import Synthesis from '/src/assets/Offerings/Synthesis.jpg'
-import Chromato from '/src/assets/Offerings/Chromatography.jpg'
-import Weighing from '/src/assets/Offerings/Weighing.jpg'
-import Material from '/src/assets/Offerings/Material.jpg'
-import PilotPlants from '/src/assets/Offerings/PilotPlants.jpg'
-import Lifescience from '/src/assets/Offerings/Lifescience.jpg'
-import Hemo from '/src/assets/Offerings/Hemo.jpg'
-import Thermal from '/src/assets/Offerings/Thermal.jpg'
-import General from '/src/assets/Offerings/General.jpg'
+import { Link } from "react-router-dom";
+import { Share2 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
-import SynthesisIcon from '/src/assets/Icons/Synthesis.png'
-import ChromatographyIcon from '/src/assets/Icons/Chromatography.png'
-import ChemistryIcon from '/src/assets/Icons/Chemistry.png'
-import BatteryIcon from '/src/assets/Icons/Battery.png'
-import ExtrusionIcon from '/src/assets/Icons/Extrusion.png'
-import ThermalIcon from '/src/assets/Icons/Thermal.png'
-import GeneralIcon from '/src/assets/Icons/General.png'
-import PilotIcon from '/src/assets/Icons/Pilot.png'
-import LifeIcon from '/src/assets/Icons/Life.png'
+import Synthesis from '/src/assets/Offerings/Synthesis.jpg';
+import Chromato from '/src/assets/Offerings/Chromatography.jpg';
+import Weighing from '/src/assets/Offerings/Weighing.jpg';
+import Material from '/src/assets/Offerings/Material.jpg';
+import PilotPlants from '/src/assets/Offerings/PilotPlants.jpg';
+import Lifescience from '/src/assets/Offerings/Lifescience.jpg';
+import Hemo from '/src/assets/Offerings/Hemo.jpg';
+import Thermal from '/src/assets/Offerings/Thermal.jpg';
+import General from '/src/assets/Offerings/General.jpg';
 
-
-
-
+import SynthesisIcon from '/src/assets/Icons/Synthesis.png';
+import ChromatographyIcon from '/src/assets/Icons/Chromatography.png';
+import ChemistryIcon from '/src/assets/Icons/Chemistry.png';
+import BatteryIcon from '/src/assets/Icons/Battery.png';
+import ExtrusionIcon from '/src/assets/Icons/Extrusion.png';
+import ThermalIcon from '/src/assets/Icons/Thermal.png';
+import GeneralIcon from '/src/assets/Icons/General.png';
+import PilotIcon from '/src/assets/Icons/Pilot.png';
+import LifeIcon from '/src/assets/Icons/Life.png';
 
 const profiles = [
   {
@@ -30,28 +30,15 @@ const profiles = [
     link: "/verticals/synthesis-and-flow-chemistry",
     image: Synthesis,
     icon: SynthesisIcon,
-    socials: {
-      linkedin: "https://www.linkedin.com/company/inkarp-instruments-pvt-ltd",
-      facebook: "https://www.facebook.com/InkarpInstruments/",
-      instagram: "https://www.instagram.com/inkarp.instruments/",
-      mail: "mailto:support@inkarp.com",
-      whatsapp: "https://wa.me/918019828999",
-    },
+    socials: { whatsapp: "https://wa.me/918019828999" },
   },
-
   {
     name: "Analytical and Chromatography Solutions",
     link: "/verticals/analytical-and-chromatography-solutions",
     description: "Delivering precise analytical instrumentation to ensure peak resolution and unmatched data reproducibility.",
     image: Chromato,
     icon: ChromatographyIcon,
-    socials: {
-      linkedin: "https://www.linkedin.com/company/inkarp-instruments-pvt-ltd",
-      facebook: "https://www.facebook.com/InkarpInstruments/",
-      instagram: "https://www.instagram.com/inkarp.instruments/",
-      mail: "mailto:support@inkarp.com",
-      whatsapp: "https://wa.me/918019828999",
-    },
+    socials: { whatsapp: "https://wa.me/918019828999" },
   },
   {
     name: "Analytical Chemistry and Weighing",
@@ -59,13 +46,7 @@ const profiles = [
     description: "Delivering precise analytical instrumentation to ensure peak resolution and unmatched data reproducibility.",
     image: Weighing,
     icon: ChemistryIcon,
-    socials: {
-      linkedin: "https://www.linkedin.com/company/inkarp-instruments-pvt-ltd",
-      facebook: "https://www.facebook.com/InkarpInstruments/",
-      instagram: "https://www.instagram.com/inkarp.instruments/",
-      mail: "mailto:support@inkarp.com",
-      whatsapp: "https://wa.me/918019828999",
-    },
+    socials: { whatsapp: "https://wa.me/918019828999" },
   },
   {
     name: "Material Science and Battery Research",
@@ -73,13 +54,7 @@ const profiles = [
     description: "Advanced material characterization and thermal analysis tools for energy storage, semiconductors, and polymers.",
     image: Material,
     icon: BatteryIcon,
-    socials: {
-      linkedin: "https://www.linkedin.com/company/inkarp-instruments-pvt-ltd",
-      facebook: "https://www.facebook.com/InkarpInstruments/",
-      instagram: "https://www.instagram.com/inkarp.instruments/",
-      mail: "mailto:support@inkarp.com",
-      whatsapp: "https://wa.me/918019828999",
-    },
+    socials: { whatsapp: "https://wa.me/918019828999" },
   },
   {
     name: "Pilot Plants and Automation",
@@ -87,13 +62,7 @@ const profiles = [
     description: "Designing and implementing pilot-scale automation for chemical and pharmaceutical scale-ups.",
     image: PilotPlants,
     icon: PilotIcon,
-    socials: {
-      linkedin: "https://www.linkedin.com/company/inkarp-instruments-pvt-ltd",
-      facebook: "https://www.facebook.com/InkarpInstruments/",
-      instagram: "https://www.instagram.com/inkarp.instruments/",
-      mail: "mailto:support@inkarp.com",
-      whatsapp: "https://wa.me/918019828999",
-    },
+    socials: { whatsapp: "https://wa.me/918019828999" },
   },
   {
     name: "Life Sciences",
@@ -101,13 +70,7 @@ const profiles = [
     description: "Empowering biological breakthroughs with cutting-edge cell analysis, imaging, and molecular biology platforms.",
     image: Lifescience,
     icon: LifeIcon,
-    socials: {
-      linkedin: "https://www.linkedin.com/company/inkarp-instruments-pvt-ltd",
-      facebook: "https://www.facebook.com/InkarpInstruments/",
-      instagram: "https://www.instagram.com/inkarp.instruments/",
-      mail: "mailto:support@inkarp.com",
-      whatsapp: "https://wa.me/918019828999",
-    },
+    socials: { whatsapp: "https://wa.me/918019828999" },
   },
   {
     name: "Extrusion and Homogenization",
@@ -115,13 +78,7 @@ const profiles = [
     description: "Delivering high-pressure homogenization and extrusion equipment for nanoemulsions, dispersions, and formulations.",
     image: Hemo,
     icon: ExtrusionIcon,
-    socials: {
-      linkedin: "https://www.linkedin.com/company/inkarp-instruments-pvt-ltd",
-      facebook: "https://www.facebook.com/InkarpInstruments/",
-      instagram: "https://www.instagram.com/inkarp.instruments/",
-      mail: "mailto:support@inkarp.com",
-      whatsapp: "https://wa.me/918019828999",
-    },
+    socials: { whatsapp: "https://wa.me/918019828999" },
   },
   {
     name: "Rheology and Thermal Analysis",
@@ -129,13 +86,7 @@ const profiles = [
     description: "Measuring material behavior and thermal properties with precision rheometers and calorimeters.",
     image: Thermal,
     icon: ThermalIcon,
-    socials: {
-      linkedin: "https://www.linkedin.com/company/inkarp-instruments-pvt-ltd",
-      facebook: "https://www.facebook.com/InkarpInstruments/",
-      instagram: "https://www.instagram.com/inkarp.instruments/",
-      mail: "mailto:support@inkarp.com",
-      whatsapp: "https://wa.me/918019828999",
-    },
+    socials: { whatsapp: "https://wa.me/918019828999" },
   },
   {
     name: "General Laboratory Instruments",
@@ -143,52 +94,45 @@ const profiles = [
     description: "From pH meters to water purification – your everyday research essentials under one roof.",
     image: General,
     icon: GeneralIcon,
-    socials: {
-      linkedin: "https://www.linkedin.com/company/inkarp-instruments-pvt-ltd",
-      facebook: "https://www.facebook.com/InkarpInstruments/",
-      instagram: "https://www.instagram.com/inkarp.instruments/",
-      mail: "mailto:support@inkarp.com",
-      whatsapp: "https://wa.me/?text=https://www.inkarp.co.in/verticals/synthesis-and-flow-chemistry/rotary-evaporators/hei-vap-core",
-    },
+    socials: { whatsapp: "https://wa.me/918019828999" },
   },
-
 ];
 
-import { Share2, Mail } from "lucide-react";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedinIn,
-  FaWhatsapp,
-} from "react-icons/fa";
-import { Link } from "react-router-dom";
-
 function ProfileCard({ profile, isOpen, index, setOpenIndex }) {
-  const { linkedin, facebook, instagram, mail, whatsapp } = profile.socials || {};
-  const socialLinks = [
-    { Icon: FaWhatsapp, url: whatsapp, colour: "green", title: "WhatsApp" },
-  ].filter(link => link.url);
-  const colorMap = {
-    blue: "bg-blue-500",
-    // red: "bg-red-500",
-    pink: "bg-pink-500",
-    gray: "bg-gray-500",
-    green: "bg-green-500",
-  };
+  const { whatsapp } = profile.socials || {};
+  const hasShare = Boolean(whatsapp);
 
   return (
-    <div className="w-full max-w-xs rounded-3xl overflow-hidden transition-transform duration-300 hover:scale-105 group border border-gray-200 bg-white shadow-md hover:shadow-2xl hover:border-[#E63946] relative">
+    <div className="w-full max-w-xs rounded-2xl overflow-hidden transition-transform duration-300 hover:scale-[1.02] group border border-[#F5F5F5] bg-white shadow-sm hover:shadow-md hover:border-[#E63946] relative">
       <Link to={profile.link} className="block">
+        {/* gradient top border */}
+        {/* <div className="h-[3px] w-full bg-gradient-to-r from-[#BE0010] to-[#E63946]" /> */}
+
+        {/* header band */}
         <div className="bg-[#F5F5F5] text-black h-[200px] p-5 flex flex-col justify-center items-start relative">
           <div className="flex items-center mb-3">
-            <div className="w-16 h-16 rounded-full flex items-center justify-center">
-              <img src={profile.icon} alt="icon" className="w-full h-full object-contain" />
+            <div
+              className="w-16 h-16 rounded-full bg-white grid place-items-center"
+              // style={{
+              //   borderImage: 'linear-gradient(90deg,#BE0010,#E63946) 1',
+              //   borderWidth: 1,
+              //   borderStyle: 'solid',
+              // }}
+            >
+              <img src={profile.icon} alt={`${profile.name} icon`} className="w-12 h-12 object-contain" />
             </div>
-            <h3 className="text-lg font-bold font-[MaxOT] pl-3">{profile.name}</h3>
+            <h3 className="text-lg font-bold font-[MaxOT] pl-3 text-[#E63946]">
+              {profile.name}
+            </h3>
           </div>
-          <hr className="w-full border-t-[1.5px] border-gray-300 group-hover:border-red-500 transition-all duration-300 mb-2" />
-          <p className="text-sm leading-relaxed font-[Roboto]">{profile.description}</p>
+
+          <div className="w-full h-[1px] bg-gradient-to-r from-[#BE0010] to-[#E63946] mb-2" />
+          <p className="text-sm leading-relaxed font-[Roboto] text-black">
+            {profile.description}
+          </p>
         </div>
+
+        {/* image */}
         <div className="relative w-full h-[250px]">
           <img
             src={profile.image}
@@ -197,7 +141,9 @@ function ProfileCard({ profile, isOpen, index, setOpenIndex }) {
           />
         </div>
       </Link>
-      {socialLinks.length > 0 && (
+
+      {/* share */}
+      {hasShare && (
         <div className="absolute bottom-3 right-3 flex items-center">
           <div
             className="relative flex items-center"
@@ -205,28 +151,30 @@ function ProfileCard({ profile, isOpen, index, setOpenIndex }) {
             onMouseLeave={() => setOpenIndex(null)}
           >
             <button
-              className="w-10 h-10 rounded-full bg-white  flex items-center justify-center shadow-md z-20 border border-gray-300"
+              className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md z-20 border border-[#F5F5F5]"
+              aria-label="Share"
             >
-              <Share2 size={18} color="black" />
+              <Share2 size={18} color="#000000" />
             </button>
+
             <div
-              className={`flex items-center gap-2 absolute right-12 top-1/2 transform -translate-y-1/2 transition-all duration-300 ease-in-out z-10
+              className={`flex items-center gap-2 absolute right-12 top-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out z-10
                 ${isOpen ? 'opacity-100 translate-x-0 pointer-events-auto' : 'opacity-0 translate-x-8 pointer-events-none'}`}
-              style={{ minWidth: isOpen ? `${socialLinks.length * 44}px` : '0' }}
             >
-              {socialLinks.map(({ Icon, url, colour, title }, i) => (
-                <a
-                  key={`social-${i}`}
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title={title}
-                  className={`rounded-full p-2 transition-all hover:bg-[#E63946] ${colorMap[colour]} shadow`}
-                  style={{ transitionDelay: isOpen ? `${i * 60}ms` : '0ms' }}
-                >
-                  <Icon size={18} className="text-white transition-colors duration-200 hover:text-green-400" />
-                </a>
-              ))}
+              <a
+                href={whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="WhatsApp"
+                className="rounded-full p-2 bg-green-500 text-white shadow hover:opacity-90 transition"
+                // style={{
+                //   borderImage: 'linear-gradient(90deg,#BE0010,#E63946) 1',
+                //   borderWidth: 1,
+                //   borderStyle: 'solid',
+                // }}
+              >
+                <FaWhatsapp size={18} />
+              </a>
             </div>
           </div>
         </div>
@@ -239,17 +187,30 @@ export default function Offerings() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <div className="w-full flex flex-col items-center justify-center py-5 mt-8">
-      <div className="text-center py-3 flex flex-col items-center justify-center gap-3">
-        <h4 className="px-4 py-1 text-sm font-semibold uppercase border border-[#E63946] font-[MaxOT] text-black rounded-full ">
+    <section className="relative w-[98%] mx-auto py-10 md:px-10 lg:px-20">
+      {/* soft stage background */}
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_20%_-10%,rgba(230,57,70,0.08),transparent),radial-gradient(1200px_600px_at_80%_110%,rgba(230,57,70,0.08),transparent)]" />
+
+      {/* heading */}
+      <div className="text-center flex flex-col items-center justify-center gap-3">
+        <span
+          className="px-4 py-1 text-xs sm:text-sm font-[MaxOT] uppercase rounded-full bg-white"
+          style={{
+            borderImage: 'linear-gradient(90deg,#BE0010,#E63946) 1',
+            borderWidth: 1,
+            borderStyle: 'solid',
+          }}
+        >
           Our Offerings
-        </h4>
-        <h2 className="text-3xl font-[MaxOT] text-[#E63946] leading-tight">
-          Explore Our Scientific Focus Areas
+        </span>
+        <h2 className="text-xl sm:text-2xl font-[MaxOT] text-[#E63946] leading-tight">
+          Explore Our Scientific Focus Areas
         </h2>
       </div>
-      <div className="w-full py-5 flex justify-center ">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-4 ">
+
+      {/* grid */}
+      <div className="w-full py-8 flex justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4">
           {profiles.map((profile, index) => (
             <ProfileCard
               key={index}
@@ -261,7 +222,6 @@ export default function Offerings() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
-

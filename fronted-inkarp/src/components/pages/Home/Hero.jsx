@@ -20,18 +20,18 @@ import { synthesisVertical } from "../Search.jsx/SynthesisVertical";
 
 
 const slides = [
-  // {
-  //   id: 1,
-  //   title: "Advances of Science",
-  //   subtitle: "Make Easier Life",
-  //   // image: ,
-  //   isVideo: true,
-  //   videoUrl: BGVideo, // Use the video file directly
-  // },
+  {
+    id: 1,
+    title: "Advances of Science",
+    subtitle: "Make Easier Life",
+    // image: ,
+    isVideo: true,
+    videoUrl: BGVideo, // Use the video file directly
+  },
   {
     id: 2,
-    title: "25 years",
-    subtitle: "Trust Growth Science",
+    title: "25 years of",
+    subtitle: "Trust.Growth.Science",
     image: HeroImg1,
     isVideo: false,
   },
@@ -315,13 +315,13 @@ export default function Hero() {
       <div className="absolute top-3 right-2 xs:top-4 xs:right-4 sm:top-6 sm:right-6 z-20">
         <button
           onClick={() => setShowSearchDialog(true)}
-          className="relative h-10 xs:h-12 px-4 xs:px-8 pr-8 xs:pr-10 min-w-[140px] xs:min-w-[200px] rounded-full text-xs xs:text-sm bg-white/20 backdrop-blur-md border-2 border-[#E63946] shadow-md text-gray-800 flex items-center gap-2 transition-all duration-300 hover:ring-2 hover:ring-[#E63946] hover:bg-white/30 group"
+          className="relative h-10 xs:h-12 px-4 xs:px-8 pr-8 xs:pr-10 min-w-[140px] xs:min-w-[200px] rounded-full text-xs xs:text-sm backdrop-blur-md border-2 border-[#E63946] shadow-md text-gray-800 flex items-center gap-2 transition-all duration-300 hover:ring-2 hover:ring-[#E63946] hover:bg-white/30 group bg-white/80"
         >
           <span className="absolute -top-2 -right-2 bg-[#E63946] text-white text-xs px-2 py-0.5 rounded-full animate-pulse shadow-lg">
             NEW
           </span>
           <Search className="h-4 w-4 text-gray-700 group-hover:scale-110 transition-transform duration-300" />
-          <span className="text-gray-700 font-medium group-hover:text-[#E63946] group-hover:scale-105 transform transition-all duration-300">
+          <span className="text-gray-700 font-medium  group-hover:text-[#E63946] group-hover:scale-105 transform transition-all duration-300">
             Search for Products
           </span>
         </button>
@@ -332,16 +332,16 @@ export default function Hero() {
         key={`text-${slides[current].id}`}
         className="absolute bottom-0 z-10 w-full text-white text-center px-2 xs:px-4 pb-6 xs:pb-10 sm:pb-12 flex justify-center"
       >
-        <div className="bg-black/30 backdrop-blur-[1px] rounded-t-2xl p-3 xs:p-6 max-w-xs xs:max-w-2xl sm:max-w-3xl md:max-w-4xl mx-auto">
+        <div className="bg-white/70 backdrop-blur-[1px] rounded-t-2xl p-3 xs:p-6 max-w-xs xs:max-w-2xl sm:max-w-3xl md:max-w-4xl mx-auto">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="uppercase tracking-widest border border-white/50 font-[Roboto] px-2 xs:px-4 py-1 rounded-full text-base xs:text-lg mb-2 xs:mb-4 inline-block bg-white text-[#E63946] backdrop-blur-sm"
+            className="uppercase tracking-widest border  font-[Roboto] px-2 xs:px-4 py-1 rounded-full text-base xs:text-lg mb-2 xs:mb-4 inline-block bg-white text-[#E63946] backdrop-blur-sm"
           >
             <TypingText text={slides[current].title} />
           </motion.span>
-          <h1 className="text-base xs:text-xl md:text-2xl  leading-tight font-[MaxOT] drop-shadow-lg">
+          <h1 className="text-base xs:text-xl md:text-2xl uppercase text-black leading-tight font-[Roboto] drop-shadow-lg">
             <TypingText text={slides[current].subtitle} delay={0.5} />
           </h1>
         </div>

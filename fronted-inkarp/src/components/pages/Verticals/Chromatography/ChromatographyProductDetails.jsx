@@ -12,13 +12,15 @@ import ME1002 from "/images/products/Mettler/ME1002.jpg";
 import { NanalysisProducts } from "../../../../data/Chromatography/NanalysisProducts";
 import { WatersProducts } from "../../../../data/Chromatography/WatersProducts";
 import { EcomProducts } from "../../../../data/Chromatography/EcomProducts";
+import { AdvionProducts } from "../../../../data/Chromatography/AdvionProducts";
 
 
 
 const SynthesisProductDetails = {
   ...NanalysisProducts,
   ...WatersProducts,
-  ...EcomProducts
+  ...EcomProducts,
+  ...AdvionProducts
 }
 
 export default function ChromatographyProductDetails() {
@@ -40,7 +42,6 @@ export default function ChromatographyProductDetails() {
 
   return (
     <>
-
       {meta && (
         <Helmet>
           <title>{meta.title}</title>

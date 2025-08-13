@@ -40,11 +40,11 @@ const MemberCard = ({ member }) => {
 
         {member.name === 'S. Balu' && (
           <div className="mt-3 flex justify-center flex-col items-center p-3 bg-[F5F5F5]">
-            <img
+            {/* <img
               src={Sign}
               alt="Balu Signature"
               className="w-36 h-auto object-contain rounded-3xl"
-            />
+            /> */}
             <div className='font-[MaxOT] flex flex-col justify-center items-center'>
               <span className='text-bold'>S. Balu</span>
               <span className='text-[#E63946]'>Chairman & Managing Director</span>
@@ -87,11 +87,7 @@ export default function TeamNew() {
           <h4 className="text-xs sm:text-sm font-[MaxOT] text-black uppercase px-4 py-1 border border-[#E63946] bg-white rounded-full">
             Meet Our Leadership
           </h4>
-          <p className="text-sm sm:text-base md:text-lg text-black max-w-5xl bg-white/50 p-3 sm:p-4 rounded-full font-[Roboto]">
-            At Inkarp, our leadership team isn't just made up of titles — it's built on decades of
-            expertise, a passion for scientific innovation, and a commitment to excellence. Together,
-            they guide our journey, empower our people, and elevate our customer experience.
-          </p>
+         
         </div>
 
         <div className="flex flex-col items-center gap-5 py-10">

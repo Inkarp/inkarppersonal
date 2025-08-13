@@ -1,151 +1,164 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import Logo from "/40-years-logo.png";
-import inkarp from "/inkarp.png";
-import { Users, Building2, Award, MapPin } from "lucide-react";
+import React, { useRef, useEffect, useState } from "react";
+import { ArrowBigRight, Award, Users, Building2, MapPin } from "lucide-react";
+import Logo from "/inkarp.png";
 
-export default function ExperienceSection() {
-  const sectionRef = useRef(null);
-  const [visible, setVisible] = useState(false);
-  const [typedText, setTypedText] = useState("");
-  const fullText = "With 40+ Years of Scientific Excellence";
-  const typingSpeed = 40;
-
+// CountUp logic
+function useCountUp(end, start = 0, duration = 1500, inView) {
+  const [value, setValue] = useState(start);
   useEffect(() => {
+    if (!inView) {
+      setValue(start);
+      return;
+    }
+    let frame;
+    let startTime;
+    function animateCount(ts) {
+      if (!startTime) startTime = ts;
+      const progress = Math.min((ts - startTime) / duration, 1);
+      setValue(Math.floor(start + (end - start) * progress));
+      if (progress < 1) {
+        frame = requestAnimationFrame(animateCount);
+      } else {
+        setValue(end);
+      }
+    }
+    frame = requestAnimationFrame(animateCount);
+    return () => cancelAnimationFrame(frame);
+  }, [end, start, duration, inView]);
+  return value;
+}
+
+// In-view logic
+function useInView(ref) {
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    if (!ref.current) return;
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setVisible(true);
-      },
-      { threshold: 0.2 }
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.5 }
     );
+    observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [ref]);
+  return inView;
+}
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
-    };
-  }, []);
+// Stats Data (unchanged copy)
+const statisticsData = [
+  {
+    icon: <Users className="w-6 h-6" />,
+    number: 5000,
+    plus: "+",
+    label: "Customers",
+    info: "Serving pharma, biotech, diagnostics, academia, and more.",
+  },
+  {
+    icon: <Building2 className="w-6 h-6" />,
+    number: 50,
+    plus: "+",
+    label: "Brands",
+    info: "Global leaders across instruments, automation, and workflows.",
+  },
+  {
+    icon: <Award className="w-6 h-6" />,
+    number: 10,
+    plus: "+",
+    label: "Awards",
+    info: "Recognized for excellence in performance and customer satisfaction.",
+  },
+  {
+    icon: <MapPin className="w-6 h-6" />,
+    number: 12,
+    plus: "+",
+    label: "Branches",
+    info: "Pan-India reach ensuring fast, localized support.",
+  },
+];
 
-  useEffect(() => {
-    if (visible && typedText.length < fullText.length) {
-      const timeout = setTimeout(() => {
-        setTypedText(fullText.slice(0, typedText.length + 1));
-      }, typingSpeed);
-      return () => clearTimeout(timeout);
-    }
-  }, [visible, typedText]);
-
-  const stats = [
-    {
-      icon: <Users className="w-6 h-6 text-white" />,
-      title: "5000 +",
-      subtitle: "Customers",
-      description: "Serving pharma, biotech, diagnostics, academia, and more."
-    },
-    {
-      icon: <Building2 className="w-6 h-6 text-white" />,
-      title: "50 +",
-      subtitle: "Brands",
-      description: "Global leaders across instruments, automation, and workflows."
-    },
-    {
-      icon: <Award className="w-6 h-6 text-white" />,
-      title: "10 +",
-      subtitle: "Awards",
-      description: "Recognized for excellence in performance and customer satisfaction."
-    },
-    {
-      icon: <MapPin className="w-6 h-6 text-white" />,
-      title: "12 +",
-      subtitle: "Branches",
-      description: "Pan-India reach ensuring fast, localized support."
-    }
-  ];
+function StatCard({ icon, number, plus, label, info }) {
+  const ref = useRef(null);
+  const inView = useInView(ref);
+  const value = useCountUp(number, 0, 1600, inView);
 
   return (
-    <section
-      ref={sectionRef}
-      className={`relative bg-center text-white px-4 sm:px-6 md:px-10 transition-opacity duration-1000 ${visible ? "opacity-100" : "opacity-50"
-        }`}
-    >
-      <div className="text-center py-3 flex flex-col items-center justify-center gap-3">
-        <h4 className="px-4 py-1 text-center text-sm font-[MaxOT] font-semibold uppercase border border-[#E63946] text-black rounded-full ">
-          Who are we
-        </h4>
-        <h1 className="text-3xl text-[#E63946] font-[MaxOT] leading-tight">
-          We'll Ensure You Always get the Best Results
-        </h1>
+    <div className="relative flex items-center bg-white/90 backdrop-blur rounded-full p-1 pr-4 hover:scale-[1.015] transition-all duration-300 group border border-[#F5F5F5] shadow">
+      <div className="w-14 h-14 flex items-center justify-center rounded-full text-white text-2xl ml-2 mr-4 shadow-md bg-[linear-gradient(90deg,#BE0010,#E63946)] group-hover:opacity-90 transition">
+        {icon}
       </div>
-
-      {/* Blinking cursor style */}
-      <style>{`
-        .cursor {
-          animation: blink 0.7s infinite;
-          vertical-align: bottom;
-        }
-        @keyframes blink {
-          0%, 100% { opacity: 0; }
-          50% { opacity: 1; }
-        }
-      `}</style>
-
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-10 bg-black p-6 rounded-2xl">
-        {/* Left Column */}
-        <div className="w-full lg:w-1/3 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
-          <div className="w-full flex justify-center lg:justify-start">
-            <img
-              src={Logo}
-              alt="Inkarp 40 years Logo"
-              className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px] h-auto object-contain p-2 rounded-lg"
-            />
-          </div>
-          <Link to="/about">
-            <button
-              className={`ml-5 bg-white hover:bg-[#E63946] text-black hover:text-white px-6 py-2 rounded-full font-semibold shadow transition ${visible ? "bounce-right" : "opacity-0"
-                }`}
-            >
-              Know More
-            </button>
-          </Link>
+      <div className="flex-1">
+        <div className="flex items-center gap-1">
+          <span ref={ref} className="text-2xl font-bold font-[Roboto] text-black">
+            {value}
+          </span>
+          <span className="text-[#E63946] font-bold">{plus}</span>
         </div>
-
-        {/* Right Column - Stats */}
-        <div
-          className={`w-full lg:w-3/5 grid grid-cols-2 sm:grid-cols-2 gap-4 md:gap-6 ${visible ? "text-focus-in" : "opacity-0"
-            }`}
-        >
-          {stats.map((stat, index) => (
-            <StatCard
-              key={index}
-              icon={stat.icon}
-              title={stat.title}
-              subtitle={stat.subtitle}
-              description={stat.description}
-            />
-          ))}
-        </div>
+        <h3 className="font-semibold uppercase text-sm md:text-base text-[#E63946] tracking-wider font-[MaxOT]">
+          {label}
+        </h3>
+        
+        <p className="text-xs md:text-sm text-black/70 font-light leading-tight mt-1">
+          {info}
+        </p>
       </div>
-    </section>
+    </div>
   );
 }
 
-// Reusable Stat Card with Lucide Icon
-function StatCard({ icon, title, subtitle, description }) {
+export default function Sample() {
   return (
-    <div className="bg-white/10 backdrop-blur-md p-4 sm:p-5 rounded-xl flex flex-col items-center text-center transition-all duration-300 hover:scale-105 border border-white">
-      <div className="w-14 h-14 mb-3 flex items-center justify-center bg-[#E63946] rounded-full shadow-lg">
-        {icon}
+    <div className="relative w-[98%] mx-auto py-10 md:px-10 lg:px-20">
+      {/* Soft stage background (on-brand) */}
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_20%_-10%,rgba(230,57,70,0.08),transparent),radial-gradient(1200px_600px_at_80%_110%,rgba(230,57,70,0.08),transparent)]" />
+
+      {/* Header – matches other sections */}
+      <div className="text-center flex flex-col justify-center items-center gap-3">
+        <span
+          className="px-4 py-1 text-xs sm:text-sm font-[MaxOT] uppercase rounded-full bg-white"
+          style={{
+            borderImage: 'linear-gradient(90deg,#BE0010,#E63946) 1',
+            borderWidth: 1,
+            borderStyle: 'solid',
+          }}
+        >
+          Who we are
+        </span>
+        <h1 className="text-xl sm:text-2xl font-[MaxOT] text-[#E63946] leading-tight text-center">
+          We will Ensure You Always Get the Best Results
+        </h1>
       </div>
-      <div>
-        <h3 className="text-3xl font-bold text-[#E63946] font-[MaxOT]">
-          {title}
-        </h3>
-        <p className="text-lg sm:text-xl font-semibold text-white mt-1 font-[MaxOT]">
-          {subtitle}
-        </p>
+
+      {/* Content frame with gradient border + glass */}
+      <div className="mt-6 rounded-3xl p-[1.5px]">
+        {/* <div className="rounded-[20px] bg-white/70 backdrop-blur-xl border border-white/60 p-6"> */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+            {/* Left – Logo & button */}
+            <div className="flex flex-col items-center justify-center w-full md:w-[45%] text-center">
+              <img src={Logo} alt="Inkarp Logo" className="w-[70%] h-auto object-contain" />
+              <button className="mt-6 px-6 py-2 rounded-full font-semibold shadow text-white font-[MaxOT] relative overflow-hidden">
+                <span className="absolute inset-0 rounded-full bg-[linear-gradient(90deg,#BE0010,#E63946)]" />
+                <span className="relative z-10 inline-flex items-center gap-2 text-sm">
+                  Know More <ArrowBigRight className="w-5 h-5" />
+                </span>
+              </button>
+            </div>
+
+            {/* Divider – vertical dots on a red line */}
+            <div className="hidden md:flex flex-col items-center justify-between h-[400px] mx-6 relative">
+              <div className="absolute w-1 bg-[#E63946] h-full left-1/2 -translate-x-1/2 rounded-full z-0" />
+              {[...Array(4)].map((_, i) => (
+                <div key={i} className="w-4 h-4 rounded-full border-4 border-white z-10 shadow-md bg-[#E63946]" />
+              ))}
+            </div>
+
+            {/* Right – Stats */}
+            <div className="flex flex-col gap-6 w-full md:w-[40%]">
+              {statisticsData.map((stat, i) => (
+                <StatCard key={i} {...stat} />
+              ))}
+            </div>
+          </div>
+        {/* </div> */}
       </div>
-      <p className="text-sm sm:text-base text-white leading-relaxed font-medium font-[Roboto] mt-2">
-        {description}
-      </p>
     </div>
   );
 }

@@ -17,7 +17,6 @@ import Banner2 from '/src/assets/Webinars/WebinarImg2.jpg';
 import Banner3 from '/src/assets/Webinars/WebinarImg3.jpg';
 import { Helmet } from 'react-helmet';
 import { FiBell } from 'react-icons/fi';
-import Reviews from '../components/pages/Home/Reviews';
 import About from '../components/pages/Home/About';
 import Sample from '../components/pages/Home/Sample';
 
@@ -151,7 +150,6 @@ const HomeNew = () => {
         <HomeBlogs />
         <NewsEvents />
         <ClientReviews />
-        {/* <Reviews /> */}
       </div>
     </div>
   );

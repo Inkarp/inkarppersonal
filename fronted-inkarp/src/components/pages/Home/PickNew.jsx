@@ -69,25 +69,26 @@ export default function PickNew() {
   return (
     <>
       {/* Heading Section */}
-      <div className="text-center py-3 flex flex-col items-center justify-center gap-3">
-        <h4 className="px-4 py-1 text-center text-sm font-[MaxOT] font-semibold uppercase border border-[#E63946] text-black rounded-full ">
+    <div className="text-center py-3 flex flex-col items-center justify-center gap-3">
+        <h4 className="px-3 py-1 text-center text-xs uppercase font-[Roboto] border border-[#E63946] text-black rounded-full ">
           Precision Picks
         </h4>
-        <h1 className="text-3xl text-[#E63946] font-[MaxOT] leading-tight">
+        <h1 className="text-xl text-[#E63946] font-[MaxOT] leading-tight">
           Explore Our Top Lab Solutions
         </h1>
-        <p className="font-[Roboto] text-base sm:text-lg ">
+        <p className="font-[Roboto] ">
           Explore our expert-curated selection of lab equipment built for precision and reliability
         </p>
       </div>
 
       {/* Main Layout */}
       <motion.div
-        className="w-[98%] mx-auto border border-gray-200 rounded-2xl px-10 md:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-start gap-8"
+        className="w-[98%] mx-auto border border-gray-200 rounded-2xl px-10 md:px-6 lg:px-8 py-6 flex flex-wow items-start gap-8"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
+          
         {/* Mobile Dropdown */}
         <div className="w-full md:hidden">
           <div className="bg-gray-50 rounded-xl p-4 shadow-inner border border-gray-300">

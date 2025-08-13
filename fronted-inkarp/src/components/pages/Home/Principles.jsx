@@ -172,23 +172,33 @@ export default function Principles() {
   const containerHeight = totalRadius * 2 + 120;
 
   return (
-    <>
-      <div className="text-center py-3 flex flex-col items-center justify-center gap-3">
-        <h4 className="px-4 py-1 text-center text-sm font-semibold uppercase border border-[#E63946] text-black rounded-full  font-[MaxOT]">
+    <div className="relative w-full min-h-screen flex flex-col items-center justify-center py-10">
+      <div className="text-center flex flex-col justify-center items-center gap-3">
+        <span
+          className="px-4 py-1 text-xs sm:text-sm font-[MaxOT] uppercase rounded-full bg-white"
+          style={{
+            borderImage: 'linear-gradient(90deg,#BE0010,#E63946) 1',
+            borderWidth: 1,
+            borderStyle: 'solid',
+          }}
+        >
           Our Principles
-        </h4>
-        <h2 className="text-3xl font-[MaxOT] text-[#E63946] leading-tight">
-          Strategic Alliances with Global Scientific Leaders
+        </span>
+
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-[MaxOT] text-[#E63946] leading-tight">
+          Strategic Alliances with Global Scientific Leaders
         </h2>
       </div>
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_20%_-10%,rgba(230,57,70,0.08),transparent),radial-gradient(1200px_600px_at_80%_110%,rgba(230,57,70,0.08),transparent)]" />
 
       <div
         className="relative w-full min-h-[50vh] flex flex-col md:flex-row px-4 py-8 md:py-12 overflow-hidden"
         style={{ height: `${containerHeight}px` }}
       >
+        
 
         {/* Right Section: Orbit Rings */}
-        <div className="relative w-full md:w-2/3 flex justify-center items-center">
+        <div className="relative w-full md:w-1/3 flex justify-center items-center">
           {/* Orbit Rings */}
           {mergedLogoRings.map((_, ringIndex) => {
             const radius = baseRadius + ringIndex * ringSpacing;
@@ -203,7 +213,7 @@ export default function Principles() {
                   width: `${diameter}px`,
                   height: `${diameter}px`,
                   borderRadius: "50%",
-                  border: "3px solid #E63946",
+                  border: "2px solid #E63946",
                   zIndex: 1,
                 }}
               />
@@ -312,7 +322,7 @@ export default function Principles() {
       }
     `}</style>
       </div>
-    </>
+    </div>
   );
 
 }

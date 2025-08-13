@@ -58,7 +58,7 @@ const TrustedClients = () => {
           Our Clients
         </h4>
         <h2 className="text-3xl font-[MaxOT] text-[#E63946] leading-tight">
-          Trusted by Global Brands
+          Trusted by 
         </h2>
       </div>
 

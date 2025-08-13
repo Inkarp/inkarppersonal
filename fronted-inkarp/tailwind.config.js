@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        MaxOT: ['MaxOT', 'sans-serif'],
+        MaxOT: ['MaxOT'],
       },
       screens: {
         ink: '710px', // ✅ Your custom breakpoint

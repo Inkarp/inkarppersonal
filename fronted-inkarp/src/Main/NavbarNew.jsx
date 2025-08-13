@@ -23,49 +23,56 @@ export default function NavbarNew() {
 
   const isActive = (path) => location.pathname === path;
 
-  // Close insights dropdown when location changes
+  // Close insights dropdown on route change
   useEffect(() => {
     setInsightsOpen(false);
   }, [location.pathname]);
 
-  // Handle click outside
+  // Close sidebar on outside click
   useEffect(() => {
     function handleClickOutside(event) {
       if (navRef.current && !navRef.current.contains(event.target)) {
-        // Check if the click is not on the hamburger button
-        const hamburgerButton = document.querySelector('.hamburger-button');
+        const hamburgerButton = document.querySelector(".hamburger-button");
         if (!hamburgerButton?.contains(event.target)) {
-          // Dispatch a custom event to close the sidebar
-          const closeSidebarEvent = new CustomEvent('closeSidebar');
+          const closeSidebarEvent = new CustomEvent("closeSidebar");
           window.dispatchEvent(closeSidebarEvent);
         }
       }
     }
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Handle search
+  // Optional: "/" to open search (except when typing in inputs)
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.key === "/" && !showSearchModal) {
+        const tag = (e.target?.tagName || "").toLowerCase();
+        if (tag !== "input" && tag !== "textarea") {
+          e.preventDefault();
+          setShowSearchModal(true);
+        }
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [showSearchModal]);
+
+  // Fake search handler
   const handleSearch = async (query, callback) => {
     try {
-      // Simulate API delay
-      setTimeout(() => {
-        callback([]);
-      }, 500);
+      setTimeout(() => callback([]), 500);
     } catch (error) {
-      console.error('Search error:', error);
+      console.error("Search error:", error);
       callback([]);
     }
   };
 
   return (
     <>
-      {/* Set the base font size here */}
       <div
         ref={navRef}
-        className="flex bg-black/10 flex-col h-screen max-h-screen w-full py-4 px-3 lg:px-5 space-y-3 overflow-y-auto font-[Roboto] text-base" // <--- SET BASE FONT SIZE
+        className="flex bg-[#F5F5F5] flex-col h-screen max-h-screen w-full py-4 px-3 lg:px-5 space-y-3 overflow-y-auto font-[Roboto] text-base"
       >
         {/* Logo */}
         <div className="flex items-center justify-center mb-2">
@@ -73,24 +80,24 @@ export default function NavbarNew() {
             <img
               src={InkarpLogo}
               alt="Inkarp Logo"
-              className="h-[70px] lg:h-[90px] w-auto max-w-full object-contain"
+              className="h-[70px] lg:h-[90px] w-auto object-contain"
             />
           </Link>
         </div>
 
         {/* Nav Links */}
-        <nav className="flex-1 space-y-2  font-medium ">
+        <nav className="flex-1 space-y-2 font-medium">
           {navLinks.map(({ name, path }) => (
             <Link
               key={name}
               to={path}
-              className={`block px-3 py-2 rounded-md  transition-all duration-200 ${isActive(path)
-                ? "bg-[#E63946] text-white shadow"
-                : "text-black hover:bg-gray-300"
-                }`}
+              className={`block px-3 py-2 rounded-md transition-all duration-200 ${
+                isActive(path)
+                  ? "bg-[#E63946] text-white shadow"
+                  : "text-black hover:bg-gray-300"
+              }`}
               onClick={() => {
-                // Dispatch custom event to close sidebar
-                const closeSidebarEvent = new CustomEvent('closeSidebar');
+                const closeSidebarEvent = new CustomEvent("closeSidebar");
                 window.dispatchEvent(closeSidebarEvent);
               }}
             >
@@ -98,7 +105,7 @@ export default function NavbarNew() {
             </Link>
           ))}
 
-          {/* Insights & Updates Dropdown */}
+          {/* Insights & Updates */}
           <div className="w-full relative">
             <button
               onClick={() => setInsightsOpen(!insightsOpen)}
@@ -106,50 +113,54 @@ export default function NavbarNew() {
             >
               <span className="text-left">Insights & Updates</span>
               <ChevronDown
-                className={`h-4 w-4 transition-transform duration-200 ${insightsOpen ? 'rotate-180' : ''}`}
+                className={`h-4 w-4 transition-transform duration-200 ${
+                  insightsOpen ? "rotate-180" : ""
+                }`}
                 color="#E63946"
               />
             </button>
 
-
             {insightsOpen && (
               <div className="absolute z-10 bg-[#F5F5F5] mt-1 rounded-md overflow-hidden shadow-lg w-full left-0 top-full font-normal">
-                <div className="flex flex-col space-y-1 py-2 text-ellipsis overflow-hidden">
+                <div className="flex flex-col space-y-1 py-2">
                   <Link
                     to="/insights-and-updates/blogs"
-                    className={`block px-4 py-2 transition-all ${isActive("/insights&updates/blogs")
-                      ? "bg-[#E63946] text-white"
-                      : "hover:bg-[#E63946] hover:text-white"
-                      }`}
+                    className={`block px-4 py-2 transition-all ${
+                      isActive("/insights&updates/blogs")
+                        ? "bg-[#E63946] text-white"
+                        : "hover:bg-[#E63946] hover:text-white"
+                    }`}
                     onClick={() => {
                       setInsightsOpen(false);
-                      window.dispatchEvent(new CustomEvent('closeSidebar'));
+                      window.dispatchEvent(new CustomEvent("closeSidebar"));
                     }}
                   >
                     Blogs
                   </Link>
                   <Link
                     to="/insights-and-updates/news-and-events"
-                    className={`block px-4 py-2 transition-all ${isActive("/insights&updates/news-and-events")
-                      ? "bg-[#E63946] text-white"
-                      : "hover:bg-[#E63946] hover:text-white"
-                      }`}
+                    className={`block px-4 py-2 transition-all ${
+                      isActive("/insights&updates/news-and-events")
+                        ? "bg-[#E63946] text-white"
+                        : "hover:bg-[#E63946] hover:text-white"
+                    }`}
                     onClick={() => {
                       setInsightsOpen(false);
-                      window.dispatchEvent(new CustomEvent('closeSidebar'));
+                      window.dispatchEvent(new CustomEvent("closeSidebar"));
                     }}
                   >
                     News & Events
                   </Link>
                   <Link
                     to="/insights-and-updates/webinars"
-                    className={`block px-4 py-2 transition-all ${isActive("/insights&updates/webinars")
-                      ? "bg-[#E63946] text-white"
-                      : "hover:bg-[#E63946] hover:text-white"
-                      }`}
+                    className={`block px-4 py-2 transition-all ${
+                      isActive("/insights&updates/webinars")
+                        ? "bg-[#E63946] text-white"
+                        : "hover:bg-[#E63946] hover:text-white"
+                    }`}
                     onClick={() => {
                       setInsightsOpen(false);
-                      window.dispatchEvent(new CustomEvent('closeSidebar'));
+                      window.dispatchEvent(new CustomEvent("closeSidebar"));
                     }}
                   >
                     Webinars
@@ -158,12 +169,13 @@ export default function NavbarNew() {
               </div>
             )}
           </div>
-          {/* CatalystCue logo */}
+
+          {/* CatalystCue */}
           <Link
             to="/catalystcue"
-            className="block "
+            className="block"
             onClick={() => {
-              const closeSidebarEvent = new CustomEvent('closeSidebar');
+              const closeSidebarEvent = new CustomEvent("closeSidebar");
               window.dispatchEvent(closeSidebarEvent);
             }}
           >
@@ -177,19 +189,33 @@ export default function NavbarNew() {
 
         {/* Bottom Buttons */}
         <div className="space-y-2 pt-5 border-t border-gray-200 mt-4">
+          {/* SEARCH BUTTON (opens SearchDialog) */}
+          <button
+            onClick={() => setShowSearchModal(true)}
+            className="flex items-center justify-between px-4 py-2 bg-white text-black border border-gray-300 rounded-md w-full hover:border-[#E63946] hover:bg-[#F5F5F5] transition"
+          >
+            <span className="inline-flex items-center gap-2">
+              <Search className="w-4 h-4 text-[#E63946]" />
+              Search
+            </span>
+            <span className="text-xs text-gray-500 border border-gray-300 rounded px-1.5 py-0.5">
+              /
+            </span>
+          </button>
+
+          {/* Product Profile download */}
           <a
             href={ProductProfile}
             download
             onClick={() => {
-              const closeSidebarEvent = new CustomEvent('closeSidebar');
+              const closeSidebarEvent = new CustomEvent("closeSidebar");
               window.dispatchEvent(closeSidebarEvent);
             }}
           >
-            <button className="flex items-start gap-2 px-4 py-2 bg-[#Be0010] text-white font-medium rounded-md w-full hover:bg-red-600 whitespace-nowrap">
-              Product Profile
+            <button className="flex items-center justify-between gap-2 px-4 py-2 bg-[#BE0010] text-white font-medium rounded-md w-full hover:bg-[#E63946] transition">
+              <span>Product Profile</span>
               <ArrowDownToLine className="w-4 h-4" />
             </button>
-
           </a>
         </div>
       </div>

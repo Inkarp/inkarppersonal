@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { CalendarDays, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import { cardData } from "../NewsAndEvents/BlogsPage";
 
 const articles = cardData;
@@ -16,103 +17,124 @@ export default function HomeBlogs() {
   };
 
   const handleReadMore = (item) => {
-    navigate(`/insights-and-updates/blogs/${item.id}`, {
-      state: { card: item },
-    });
+    navigate(`/insights-and-updates/blogs/${item.id}`, { state: { card: item } });
   };
 
   return (
-    <section className="w-full mx-auto p-3">
-      {/* <div className="text-center mb-6 w-full"> */}
-        <div className="text-center py-3 flex flex-col items-center justify-center gap-3">
-            <h4 className="text-sm font-semibold uppercase font-[MaxOT] border border-[#E63946] px-4 py-1 rounded-full  ">
-              Blogs
-            </h4>
-            <h1 className="text-3xl font-[MaxOT] text-[#E63946] leading-tight ">
-              Expert Perspectives | Real-World Lab Applications
-            </h1>
-          
-            {/* <div className="border rounded-full px-3 py-2" >
-              <button>View All Blogs</button>
-            </div> */}
-        </div>
+    <section className="relative w-[98%] mx-auto py-10 px-5 ">
+      {/* Soft stage background (on-brand) */}
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_20%_-10%,rgba(230,57,70,0.08),transparent),radial-gradient(1200px_600px_at_80%_110%,rgba(230,57,70,0.08),transparent)]" />
 
-        <div className="w-full flex flex-col lg:flex-row gap-6 p-3 mx-auto border border-gray-200 rounded-xl">
-          {/* Left Featured Blog */}
-            <div
-              className="p-5 cursor-pointer w-full"
-              onClick={() => handleReadMore(featured)}
-            >
-              <div className="flex flex-col gap-6 h-full">
-                <img
-                  src={featured.image}
-                  alt={featured.title}
-                  className="rounded-3xl w-full object-fit max-h-[320px] min-h-[250px] border border-gray-500"
-                />
+      {/* Heading – matches other sections */}
+      <div className="text-center flex flex-col justify-center items-center gap-3">
+        <span
+          className="px-4 py-1 text-xs sm:text-sm font-[MaxOT] uppercase rounded-full bg-white"
+          style={{
+            borderImage: 'linear-gradient(90deg,#BE0010,#E63946) 1',
+            borderWidth: 1,
+            borderStyle: 'solid',
+          }}
+        >
+          Blogs
+        </span>
+        <h1 className="text-xl sm:text-2xl font-[MaxOT] text-[#E63946] leading-tight text-center">
+          Expert Perspectives | Real-World Lab Applications
+        </h1>
+      </div>
 
-                {/* Fix content box height to prevent layout shift */}
-                <div className="flex flex-col items-center gap-3 w-full min-h-[180px]">
-                  <p className="text-sm text-[#E63946] uppercase tracking-wider text-center">
-                    {new Date(featured.date).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}{" "}
-                    {" "}
-                    <span className="text-[#E63946] font-medium">
-                      {featured.location}
-                    </span>
-                  </p>
-                  <p className="text-md text-center font-[Roboto] w-full flex-wrap">
-                    {featured.description}
-                  </p>
-                  <button
-                    className="px-6 py-3 bg-[#E63946] text-white font-[Roboto] text-sm font-bold rounded-full w-fit flex items-center gap-2 hover:bg-[#F5F5F5] hover:text-[#E63946] transition"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleReadMore(featured);
-                    }}
-                  >
-                    Read More <ArrowRight size={16} />
-                  </button>
+      {/* Content frame with gradient border + glass */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.45 }}
+        className="mt-6 rounded-3xl p-[1.5px] border border-gray-200 bg-[radial-gradient(1200px_600px_at_20%_-10%,rgba(230,57,70,0.08),transparent),radial-gradient(1200px_600px_at_80%_110%,rgba(230,57,70,0.08),transparent)]"
+      >
+        {/* <div className="rounded-[20px] bg-white/70 backdrop-blur-xl border border-white/60 p-4 sm:p-6 lg:p-8"> */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+            {/* LEFT – Blog list */}
+            <div className="lg:col-span-6">
+              <div className=" rounded-2xl p-4 sm:p-5 h-full">
+                <div className="flex flex-col gap-3 overflow-y-auto custom-scroll max-h-[540px]">
+                  {articles.slice(0, 5).map((item) => {
+                    const isActive = activeId === item.id;
+                    return (
+                      <motion.button
+                        key={item.id}
+                        whileHover={{ y: -2 }}
+                        onClick={() => handleSelect(item)}
+                        className={`text-left rounded-xl border p-3 transition w-full ${
+                          isActive
+                            ? 'bg-[#F5F5F5] border-2 border-[#E63946] shadow-md text-[#E63946]'
+                            : 'bg-white text-black border-gray-200 hover:bg-[#E63946] hover:text-white'
+                        }`}
+                        aria-pressed={isActive}
+                      >
+                        <h4 className="text-sm sm:text-base font-semibold font-[Roboto] text-center">
+                          {item.title}
+                        </h4>
+                        <div className="flex items-center justify-center gap-2 text-xs sm:text-sm mt-1">
+                          <span className="inline-flex items-center gap-1">
+                            <CalendarDays size={14} />
+                            {new Date(item.date).toLocaleDateString('en-US', {
+                              year: 'numeric', month: 'long', day: 'numeric',
+                            })}
+                          </span>
+                        </div>
+                      </motion.button>
+                    );
+                  })}
                 </div>
               </div>
             </div>
 
-          {/* Right Blog List */}
-            <div className="flex flex-col bg-[#F5F5F5] rounded-xl p-5 gap-4 overflow-y-auto custom-scroll w-full ">
-              {articles.slice(0, 5).map((item) => (
-                <div
-                  key={item.id}
-                  onClick={() => handleSelect(item)}
-                  className={`rounded-xl border p-3 cursor-pointer transition w-full
-                    ${
-                      activeId === item.id
-                        ? "bg-[#F5F5F5] border-2 border-[#E63946] shadow-md text-[#E63946] "
-                        : "hover:bg-[#E63946] hover:text-white border-gray-200"
-                    }`}
-                >
-                  <h4 className="text-md font-semibold font-[Roboto] text-center ">
-                    {item.title}
-                  </h4>
-                  <div className="flex items-center justify-center gap-2 text-sm mt-1">
-                    <span className="flex items-center justify-center gap-1">
-                      <CalendarDays size={14} />
-                      {new Date(item.date).toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })}
-                    </span>
-                    {/* <span className="flex items-center gap-1 text-[#be0010] font-medium">
-                      {item.location}
-                    </span> */}
+            {/* RIGHT – Featured article */}
+            <div className="lg:col-span-6">
+              <motion.div
+                key={activeId}
+                initial={{ opacity: 0, scale: 0.98 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.35 }}
+                className="h-full p-4 sm:p-5"
+              >
+                <div className="flex flex-col gap-6 h-full">
+                  <div className="relative rounded-3xl overflow-hidden border border-gray-200">
+                    <img
+                      src={featured.image}
+                      alt={featured.title}
+                      className="w-full object-cover w-full h-full "
+                    />
+                    {/* top accent line */}
+                    <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-[#BE0010] to-[#E63946]" />
+                  </div>
+
+                  <div className="flex flex-col items-center gap-3 w-full min-h-[180px]">
+                    <p className="text-xs sm:text-sm text-[#E63946] uppercase tracking-wider text-center">
+                      {new Date(featured.date).toLocaleDateString('en-US', {
+                        year: 'numeric', month: 'long', day: 'numeric',
+                      })}{' '}
+                      <span className="text-[#E63946] font-medium"> • {featured.location}</span>
+                    </p>
+
+                    <p className="text-sm sm:text-base text-center font-[Roboto] w-full">
+                      {featured.description}
+                    </p>
+
+                    <button
+                      className="px-6 py-3 rounded-full text-white font-[Roboto] text-sm font-bold w-fit inline-flex items-center gap-2 relative overflow-hidden"
+                      onClick={(e) => { e.stopPropagation(); handleReadMore(featured); }}
+                    >
+                      <span className="absolute inset-0 rounded-full bg-[linear-gradient(90deg,#BE0010,#E63946)]" />
+                      <span className="relative z-10 inline-flex items-center gap-2">
+                        Read More <ArrowRight size={16} />
+                      </span>
+                    </button>
                   </div>
                 </div>
-              ))}
+              </motion.div>
             </div>
-        </div>
-      {/* </div> */}
+          </div>
+        {/* </div> */}
+      </motion.div>
     </section>
   );
 }

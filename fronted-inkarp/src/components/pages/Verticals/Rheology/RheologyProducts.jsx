@@ -6,6 +6,7 @@ import Hitachi from '/src/assets/PrincipalLogos/RowSix/hitachi.png';
 import ME204 from "/images/products/Mettler/ME204.jpg";
 import ME204T from "/images/products/Mettler/ME204t.jpg";
 import ME1002 from "/images/products/Mettler/ME1002.jpg";
+import { Rheology } from "../../../../data/Rheology";
 
 
 
@@ -29,7 +30,7 @@ const synthesisData = [
 ];;
 
 const synthesisProducts = {
- 
+ ...Rheology
 };
 
 

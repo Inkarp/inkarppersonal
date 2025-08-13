@@ -36,6 +36,23 @@ import ImgSeparchromPC08 from "/images/products/Ecom/separchrom-pc08.png";
 import ImgSeparpress from "/images/products/Ecom/separpress.png";
 import ImgSeparsys400 from "/images/products/Ecom/Separsys-400.png";
 
+import IMG535XL from "/images/products/Advion/535-XL-scaled.jpg";
+import IMG5020Pres from "/images/products/Advion/5020-pres-img.jpg";
+import IMG5050Pres from "/images/products/Advion/5050-pres-img.jpg";
+import IMG5250Pres from "/images/products/Advion/5250-img-presentation.jpg";
+import IMG5400Pres from "/images/products/Advion/5400-img-pres-2.jpg";
+import AdvionPuriFlash5015XL from "/images/products/Advion/Advion-Interchim-puriFlash-5015-XL.jpg";
+import AISMassSpecPlateExpress from "/images/products/Advion/AIS-MassSpec-PlateExpress.png";
+import AVANT2019FINAL from "/images/products/Advion/AVANT2019FINAL.png";
+import ExpressionCMS from "/images/products/Advion/expression-cms.png";
+import ICPMSSolation from "/images/products/Advion/ICPMS-Solation.png";
+import PhotoProductsTriversaNanomate from "/images/products/Advion/photo_products_triversa-nanomate.png";
+import PuriFlashXS520SuiteShuttle from "/images/products/Advion/PuriFlash_XS520_suite_Shuttle_AdvionInterchim-2.jpg";
+import PuriFlashAS1Interchim from "/images/products/Advion/puriflash-as1-interchim.jpg";
+import PuriFlashMS2 from "/images/products/Advion/puriflash-ms-2.png";
+import Purivap6Goutte from "/images/products/Advion/purivap-6-goutte.jpg";
+import SystemeBainEauPuriFlashXSVap from "/images/products/Advion/systeme-bain-eau-translucide-puriflash-xs-vap.jpg";
+
 
 export const Chromatography = {
     "100-mhz-benchtop-nmr": {
@@ -340,7 +357,267 @@ export const Chromatography = {
             internalLinks: ["industrial-liquid-chromatography", "labomatic-products"],
             externalLinks: ["https://www.labomatic.com"]
         }
+    },
+
+    "express-cms": {
+        models: [
+            { heading: "" },
+            {
+                name: "Express CMS",
+                slug: "express-cms",
+                image: ExpressionCMS
+            }
+        ],
+        meta: {
+            title: "Express CMS | Advion Interchim Scientific | Inkarp India",
+            description: "Discover the Express CMS from Advion Interchim Scientific, a compact mass spectrometer designed for rapid, reliable, and high-performance analysis. Ideal for laboratories seeking accurate compound identification with easy integration into workflows. Distributed by Inkarp Instruments in India.",
+            keywords: [
+                "Express CMS",
+                "Advion CMS",
+                "Compact Mass Spectrometer",
+                "Mass Spectrometry India",
+                "LC/MS system",
+                "CMS Express Advion",
+                "Mass spectrometry for laboratories",
+                "Advion Interchim Scientific",
+                "Inkarp Express CMS distributor",
+                "Compact LC-MS analysis"
+            ],
+            altText: "Express CMS Compact Mass Spectrometer by Advion Interchim Scientific",
+            internalLinks: ["mass-spectrometry", "advion-products"],
+            externalLinks: ["https://www.advion.com/products/express-cms/"]
+        }
+    },
+
+    "plate-express": {
+        models: [
+            { heading: "" },
+            {
+                name: "Plate Express™ TLC Plate Reader",
+                slug: "plate-express",
+                image: AISMassSpecPlateExpress
+            }
+        ],
+        meta: {
+            title: "Plate Express™ TLC Plate Reader | Advion Interchim Scientific | Inkarp India",
+            description: "Explore the Plate Express™ TLC Plate Reader from Advion Interchim Scientific, designed to directly analyze samples from TLC plates without sample scraping. It enhances workflow efficiency and accuracy, making it ideal for organic synthesis, reaction monitoring, and compound identification. Distributed by Inkarp Instruments in India.",
+            keywords: [
+                "Plate Express",
+                "TLC Plate Reader",
+                "Advion Plate Express",
+                "TLC Mass Spectrometry",
+                "Direct TLC Analysis",
+                "TLC-MS interface",
+                "Mass spectrometry accessories",
+                "Advion Interchim Scientific",
+                "Inkarp Plate Express distributor",
+                "TLC analysis India"
+            ],
+            altText: "Plate Express™ TLC Plate Reader by Advion Interchim Scientific",
+            internalLinks: ["mass-spectrometry", "advion-products"],
+            externalLinks: ["https://www.advion-interchim.com/products/plate-express/"]
+        }
+    },
+
+    "avant-u-hpcl": {
+        models: [
+            { heading: "" },
+            {
+                name: "AVANT™ (U)HPLC System",
+                slug: "avant-u-hpcl",
+                image: AVANT2019FINAL
+            }
+        ],
+        meta: {
+            title: "AVANT™ (U)HPLC System | Advion Interchim Scientific | Inkarp India",
+            description: "Discover the AVANT™ (U)HPLC System from Advion Interchim Scientific, a modular high-performance liquid chromatography platform designed for precision, flexibility, and seamless integration with mass spectrometry. Ideal for analytical and preparative workflows. Distributed and serviced by Inkarp Instruments in India.",
+            keywords: [
+                "AVANT HPLC",
+                "AVANT UHPLC",
+                "Advion HPLC system",
+                "Modular liquid chromatography",
+                "HPLC India",
+                "UHPLC India",
+                "HPLC-MS integration",
+                "Advion Interchim Scientific",
+                "Inkarp AVANT HPLC distributor",
+                "Liquid chromatography system"
+            ],
+            altText: "AVANT™ (U)HPLC System by Advion Interchim Scientific",
+            internalLinks: ["liquid-chromatography", "advion-products"],
+            externalLinks: ["https://www.advion-interchim.com/products/avant/"]
+        }
+    },
+
+    "solation-icp-ms": {
+        models: [
+            { heading: "" },
+            {
+                name: "SOLATION® ICP-MS",
+                slug: "solation-icp-ms",
+                image: ICPMSSolation
+            }
+        ],
+        meta: {
+            title: "SOLATION® ICP-MS | Inductively Coupled Plasma Mass Spectrometer | Inkarp India",
+            description: "Discover the SOLATION® ICP-MS from Advion Interchim Scientific, designed for high-sensitivity trace element analysis with exceptional performance in environmental, pharmaceutical, food, and materials testing. Distributed and serviced by Inkarp Instruments in India.",
+            keywords: [
+                "SOLATION ICP-MS",
+                "Inductively Coupled Plasma Mass Spectrometer",
+                "ICP-MS India",
+                "Trace Element Analysis",
+                "Heavy Metal Detection",
+                "Environmental ICP-MS",
+                "Food Testing ICP-MS",
+                "Pharmaceutical ICP-MS",
+                "Advion Interchim Scientific",
+                "Inkarp SOLATION ICP-MS distributor"
+            ],
+            altText: "SOLATION® ICP-MS by Advion Interchim Scientific",
+            internalLinks: ["mass-spectrometry", "advion-products"],
+            externalLinks: ["https://www.advion-interchim.com/products/solation-icp-ms/"]
+        }
+    },
+
+    "triversa-nanomate": {
+        models: [
+            { heading: "" },
+            {
+                name: "TriVersa NanoMate®",
+                slug: "triversa-nanomate",
+                image: PhotoProductsTriversaNanomate
+            }
+        ],
+        meta: {
+            title: "TriVersa NanoMate® | Automated Nanoelectrospray & Liquid Handling | Inkarp India",
+            description: "Discover the TriVersa NanoMate® from Advion Interchim Scientific, the industry's premier chip-based nanoelectrospray ionization system offering automation, reproducibility, and exceptional performance for mass spectrometry workflows. Distributed and serviced by Inkarp Instruments in India.",
+            keywords: [
+                "TriVersa NanoMate",
+                "Advion NanoMate",
+                "Chip-based nanoelectrospray",
+                "Automated ESI source",
+                "Nanoelectrospray ionization",
+                "Mass spectrometry automation",
+                "Liquid handling for MS",
+                "Advion Interchim Scientific",
+                "Inkarp NanoMate distributor",
+                "LC-MS sample introduction"
+            ],
+            altText: "TriVersa NanoMate® by Advion Interchim Scientific",
+            internalLinks: ["mass-spectrometry", "advion-products"],
+            externalLinks: ["https://www.advion-interchim.com/products/triversa-nanomate/"]
+        }
+    },
+
+    "flash-purification-systems": {
+        models: [
+            { heading: "" },
+            {
+                name: "Puriflash® Xs 520 Plus",
+                slug: "puriflash-xs-520-plus",
+                image: PuriFlashXS520SuiteShuttle
+            },
+            {
+                name: "Puriflash® 5.020",
+                slug: "puriflash-5020",
+                image: IMG5020Pres
+            },
+            {
+                name: "Puriflash® 5.050",
+                slug: "puriflash-5050",
+                image: IMG5050Pres
+            },
+            {
+                name: "Puriflash® 535-xl",
+                slug: "puriflash-535-xl",
+                image: IMG535XL
+            },
+            {
+                name: "Puriflash® 5.015-xl",
+                slug: "puriflash-5015-xl",
+                image: AdvionPuriFlash5015XL
+            }
+        ],
+        meta: {
+            title: "Flash Purification Systems | Advion Interchim Scientific | Inkarp India",
+            description: "Explore the full range of Puriflash® Flash Purification Systems from Advion Interchim Scientific, including Xs 520 Plus, 5.020, 5.050, 535-xl, and 5.015-xl. Engineered for speed, precision, and scalability, these systems deliver optimal purification performance for a wide variety of applications. Distributed and serviced by Inkarp Instruments in India.",
+            keywords: [
+                "Puriflash",
+                "Flash Purification System",
+                "Puriflash Xs 520 Plus",
+                "Puriflash 5.020",
+                "Puriflash 5.050",
+                "Puriflash 535-xl",
+                "Puriflash 5.015-xl",
+                "Advion Interchim Scientific",
+                "Flash Chromatography India",
+                "Inkarp Flash Purification distributor"
+            ],
+            altText: "Puriflash Flash Purification Systems by Advion Interchim Scientific",
+            internalLinks: ["flash-purification", "advion-products"],
+            externalLinks: ["https://www.advion-interchim.com/"]
+        }
+    },
+
+    "preperative-purification-systems": {
+        models: [
+            { heading: "" },
+            {
+                name: "Puriflash® 5.250",
+                slug: "puriflash-5250",
+                image: IMG5250Pres
+            },
+            {
+                name: "Puriflash® 5.400uv",
+                slug: "puriflash-5400uv",
+                image: IMG5400Pres
+            }
+        ],
+        meta: {
+            title: "Preparative Purification Systems | Advion Interchim Scientific | Inkarp India",
+            description: "Explore the Puriflash® range of Preparative Purification Systems including the Puriflash® 5.250 and Puriflash® 5.400uv from Advion Interchim Scientific. Engineered for high-throughput and precision purification in laboratory and industrial applications. Distributed and serviced by Inkarp Instruments in India.",
+            keywords: [
+                "Puriflash Preparative Purification System",
+                "Puriflash 5.250",
+                "Puriflash 5.400uv",
+                "Preparative Purification India",
+                "Advion Interchim Scientific",
+                "Inkarp Preparative Purification distributor"
+            ],
+            altText: "Puriflash Preparative Purification Systems by Advion Interchim Scientific",
+            internalLinks: ["preperative-purification", "advion-products"],
+            externalLinks: ["https://www.advion-interchim.com/"]
+        }
+    },
+
+    "peripheral-detection-devices": {
+        models: [
+            { heading: "" },
+            {
+                name: "Mass spectrometer: puriFlash® MS",
+                slug: "puriflash-ms",
+                image: PuriFlashMS2// replace with actual image import
+            }
+        ],
+        meta: {
+            title: "Peripheral Detection Devices | Advion Interchim Scientific | Inkarp India",
+            description: "Explore peripheral detection devices from Advion Interchim Scientific, including the puriFlash® MS mass spectrometer, designed for high-performance detection in purification workflows. Distributed and serviced by Inkarp Instruments in India.",
+            keywords: [
+                "puriFlash MS",
+                "Mass spectrometer Advion",
+                "Peripheral Detection Devices",
+                "Advion Interchim Scientific",
+                "Inkarp detection devices distributor",
+                "Lab mass spectrometry India"
+            ],
+            altText: "Peripheral Detection Devices by Advion Interchim Scientific",
+            internalLinks: ["peripheral-detection-devices", "advion-products"],
+            externalLinks: ["https://www.advion-interchim.com/"]
+        }
     }
+
+
+
 
 
 
