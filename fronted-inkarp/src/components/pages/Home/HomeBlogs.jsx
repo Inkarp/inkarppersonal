@@ -47,7 +47,7 @@ export default function HomeBlogs() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45 }}
-        className="mt-6 rounded-3xl p-[1.5px] border border-gray-200 bg-[radial-gradient(1200px_600px_at_20%_-10%,rgba(230,57,70,0.08),transparent),radial-gradient(1200px_600px_at_80%_110%,rgba(230,57,70,0.08),transparent)]"
+        className="mt-6 rounded-3xl p-[1.5px] border border-gray-200"
       >
         {/* <div className="rounded-[20px] bg-white/70 backdrop-blur-xl border border-white/60 p-4 sm:p-6 lg:p-8"> */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">

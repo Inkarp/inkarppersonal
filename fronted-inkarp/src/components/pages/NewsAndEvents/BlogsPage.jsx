@@ -21,20 +21,21 @@ import { Calendar } from 'lucide-react';
 export const cardData = [
   {
     id: 1,
-    title: "Revolutionizing Sample Preparation in Analytical Laboratories",
-    date: "2025-07-19",
-    image: Blog1,
-    description:
-      ""
-  },
-  {
-    id: 2,
     title: "Advanced Application of Differential Scanning Calorimetry (DSC) in the Lithium-ion Battery Manufacturing Industry",
     date: "2025-07-19",
     image: Blog2,
     description:
       ""
   },
+  {
+    id: 2,
+    title: "Revolutionizing Sample Preparation in Analytical Laboratories",
+    date: "2025-07-19",
+    image: Blog1,
+    description:
+      ""
+  },
+  
 
   {
     id: 3,
