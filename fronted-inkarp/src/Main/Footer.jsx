@@ -215,12 +215,12 @@ const Footer = () => {
                     +91 99666 34008
                   </a>
                 </li>
-                <li className="flex items-center justify-center sm:justify-start gap-2">
+                {/* <li className="flex items-center justify-center sm:justify-start gap-2">
                   <PhoneCall size={16} className="min-w-[16px] text-[#E63946]" />
-                  {/* <a href="tel:+914027172293" className="hover:text-[#E63946] transition-colors duration-200">
+                  <a href="tel:+914027172293" className="hover:text-[#E63946] transition-colors duration-200">
                     +91 40 2717 2293
-                  </a> */}
-                </li>
+                  </a>
+                </li> */}
                 <li className="flex items-center justify-center sm:justify-start gap-2">
                   <Mail size={16} className="min-w-[16px] text-[#E63946]" />
                   <a href="mailto:info@inkarp.co.in" className="hover:text-[#E63946] transition-colors duration-200">
