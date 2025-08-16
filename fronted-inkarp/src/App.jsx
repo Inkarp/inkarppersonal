@@ -60,6 +60,7 @@ import Webinars from "./components/pages/NewsAndEvents/Webinars";
 import HomeNew from "./Main/HomeNew";
 import ScrollAnimations from "./ScrollAnimations";
 import CareersForm from "./components/pages/Careers/CareersForm";
+import VerticalsBubbleNew from "./components/pages/Verticals/VerticalsBubbleNew";
 
 
 function App() {

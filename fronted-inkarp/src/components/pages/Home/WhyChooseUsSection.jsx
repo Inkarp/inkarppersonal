@@ -142,8 +142,8 @@ export default function WhyChooseUsSection() {
       {/* soft stage bg */}
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_20%_-10%,rgba(230,57,70,0.08),transparent),radial-gradient(1200px_600px_at_80%_110%,rgba(230,57,70,0.08),transparent)]" />
       <motion.div
-        style={{ x: useTransform(parallaxX, v => -v), y: useTransform(parallaxY, v => -v) }}
-        className="pointer-events-none absolute -z-10 right-6 bottom-0 h-52 w-52 rounded-full blur-3xl opacity-25 bg-gradient-to-tr from-[#E63946] to-[#BE0010]"
+        // style={{ x: useTransform(parallaxX, v => -v), y: useTransform(parallaxY, v => -v) }}
+        className=""
       />
 
       <div className="w-[98%] mx-auto">

@@ -50,7 +50,6 @@ const Footer = () => {
     <footer className="relative w-[98%] mx-auto mt-2 rounded-2xl border border-[#F5F5F5] bg-white shadow-sm overflow-hidden">
       {/* soft on-brand background wash */}
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_20%_-10%,rgba(230,57,70,0.06),transparent),radial-gradient(1200px_600px_at_80%_110%,rgba(230,57,70,0.06),transparent)]" />
-
       {/* Subscribe */}
       <div className="flex flex-col lg:flex-row items-center justify-center gap-6 px-4 py-6 rounded-t-2xl">
         <img
@@ -59,9 +58,7 @@ const Footer = () => {
           alt="Inkarp Logo"
           title="Inkarp"
         />
-
         <div className="w-full lg:w-3/4 text-center">
-         
           <h3 className="text-xl text-[#E63946] mb-4 font-[MaxOT]">
             Subscribe for Scientific Updates That Matter
           </h3>
@@ -220,9 +217,9 @@ const Footer = () => {
                 </li>
                 <li className="flex items-center justify-center sm:justify-start gap-2">
                   <PhoneCall size={16} className="min-w-[16px] text-[#E63946]" />
-                  <a href="tel:+914027172293" className="hover:text-[#E63946] transition-colors duration-200">
+                  {/* <a href="tel:+914027172293" className="hover:text-[#E63946] transition-colors duration-200">
                     +91 40 2717 2293
-                  </a>
+                  </a> */}
                 </li>
                 <li className="flex items-center justify-center sm:justify-start gap-2">
                   <Mail size={16} className="min-w-[16px] text-[#E63946]" />

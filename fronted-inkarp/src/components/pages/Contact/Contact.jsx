@@ -143,8 +143,8 @@ function Contact() {
         <div className="flex flex-col lg:flex-row justify-center items-center gap-8">
           {/* Left Side */}
           <div className="w-full lg:w-1/4 text-center sm:text-right md:text-right lg:text-left space-y-4 z-0">
-            <h2 className="text-3xl font-bold text-[#E63946] font-[MaxOT]">13+ Branches Across India</h2>
-            <p className="text-lg">Wherever you are, we're nearby—ready to support and serve your scientific journey.</p>
+            <h2 className="text-3xl font-bold text-[#E63946] font-[Roboto]">13+ Branches Across India</h2>
+            <p className="text-lg font-[MaxOT]">Wherever you are, we're nearby—ready to support and serve your scientific journey.</p>
           </div>
 
           {/* India Map */}
@@ -231,8 +231,8 @@ function Contact() {
 
           {/* Right Side */}
           <div className="w-full lg:w-1/4 text-center lg:text-left space-y-4 z-0">
-            <h2 className="text-3xl font-bold text-[#E63946] font-[MaxOT]">Inkarp Is Closer Than You Think</h2>
-            <p className="text-lg">Tap into our local teams for expert consultation and service tailored to your region.</p>
+            <h2 className="text-3xl font-bold text-[#E63946] font-[Roboto]">Inkarp Is Closer Than You Think</h2>
+            <p className="text-lg font-[MaxOT]">Tap into our local teams for expert consultation and service tailored to your region.</p>
           </div>
         </div>
       </section>

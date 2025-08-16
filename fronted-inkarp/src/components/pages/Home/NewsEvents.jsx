@@ -65,35 +65,21 @@ export default function NewsEvents() {
                     />
                   </div>
 
-                  {/* content */}
-                  {/* <div className="mt-3">
-                    {item.title && (
-                      <h3 className="text-sm sm:text-base font-[MaxOT] text-[#E63946]">
-                        {item.title}
-                      </h3>
-                    )}
-                    {item.date && (
-                      <p className="text-xs text-black/70 mt-1">
-                        {item.date}
-                      </p>
-                    )}
-                  </div> */}
-
                   {/* CTA */}
-                  <div className="mt-4 flex">
+                  <div className="mt-4 flex justify-center items-center gap-2">
                     <span
-                      className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-white text-xs font-[MaxOT]"
+                      className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-white text-sm font-[MaxOT]"
                       style={{ background: 'linear-gradient(90deg,#BE0010,#E63946)' }}
                     >
                       Join Us
-                      <svg
+                      {/* <svg
                         className="w-3.5 h-3.5"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 11 11"
                         fill="currentColor"
                       >
                         <path d="M5.977 10.368 4.953 9.354 8.02 6.286H.568V4.805H8.02L4.953 1.742 5.977.723 10.8 5.546z" />
-                      </svg>
+                      </svg> */}
                     </span>
                   </div>
                 </div>

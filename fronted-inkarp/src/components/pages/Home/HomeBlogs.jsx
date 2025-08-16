@@ -56,7 +56,7 @@ export default function HomeBlogs() {
           aria-controls="blogs-mobile-dropdown"
           className="w-full flex items-center justify-between rounded-xl border border-gray-200 bg-white text-left px-4 py-3 transition hover:bg-red-50"
         >
-          <span className="font-[Roboto] font-semibold text-[#E63946] line-clamp-1">
+          <span className="font-[Roboto]  text-[#E63946] line-clamp-1">
             {featured?.title}
           </span>
           {mobileOpen ? (
@@ -127,12 +127,12 @@ export default function HomeBlogs() {
                       whileHover={{ y: -2 }}
                       onClick={() => handleSelect(item)}
                       className={`text-left rounded-xl border p-3 transition w-full ${isActive
-                          ? "bg-[#F5F5F5] border-2 border-[#E63946] shadow-md text-[#E63946]"
+                          ? "bg-[#F5F5F5] border border-[#E63946] shadow-md text-[#E63946]"
                           : "bg-white text-black border-gray-200 hover:bg-[#E63946] hover:text-white"
                         }`}
                       aria-pressed={isActive}
                     >
-                      <h4 className="text-sm sm:text-base font-semibold font-[Roboto] text-center">
+                      <h4 className="text-sm sm:text-base  font-[MaxOT] text-center">
                         {item.title}
                       </h4>
                       <div className="flex items-center justify-center gap-2 text-xs sm:text-sm mt-1">

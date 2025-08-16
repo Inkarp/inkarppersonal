@@ -7,19 +7,19 @@ import CareersKeka from "../components/pages/Careers/CareersKeka";
 import CareersKekaNew from "../components/pages/Careers/CareersKekaNew";
 
 const team = [
-  { name: "Raj Kumar",   quote: "Inkarp isn’t just a workplace — it’s where passion meets purpose.",                  img: "https://source.unsplash.com/featured/?portrait,business" },
-  { name: "Sneha Iyer",  quote: "You’re encouraged to grow — not just in role, but in vision.",                      img: "https://source.unsplash.com/featured/?woman,leader" },
-  { name: "Aarav Menon", quote: "Ownership, learning, and impact are part of everyday work.",                        img: "https://source.unsplash.com/featured/?man,leader" },
-  { name: "Riya Sharma", quote: "A culture that listens, trusts, and enables you to do your best work.",            img: "https://source.unsplash.com/featured/?woman,engineer" },
-  { name: "Karthik Rao", quote: "We celebrate ideas and encourage experimentation.",                                 img: "https://source.unsplash.com/featured/?man,professional" },
-  { name: "Meera Gupta", quote: "Growth here isn’t a buzzword—it’s a roadmap.",                                      img: "https://source.unsplash.com/featured/?business,woman" },
+  { name: "Raj Kumar", quote: "Inkarp isn’t just a workplace — it’s where passion meets purpose.", img: "https://source.unsplash.com/featured/?portrait,business" },
+  { name: "Sneha Iyer", quote: "You’re encouraged to grow — not just in role, but in vision.", img: "https://source.unsplash.com/featured/?woman,leader" },
+  { name: "Aarav Menon", quote: "Ownership, learning, and impact are part of everyday work.", img: "https://source.unsplash.com/featured/?man,leader" },
+  { name: "Riya Sharma", quote: "A culture that listens, trusts, and enables you to do your best work.", img: "https://source.unsplash.com/featured/?woman,engineer" },
+  { name: "Karthik Rao", quote: "We celebrate ideas and encourage experimentation.", img: "https://source.unsplash.com/featured/?man,professional" },
+  { name: "Meera Gupta", quote: "Growth here isn’t a buzzword—it’s a roadmap.", img: "https://source.unsplash.com/featured/?business,woman" },
 ];
 
 const steps = [
   { title: "Discover", desc: "Explore roles that match your passion." },
-  { title: "Apply",    desc: "Send in your resume or drop a message." },
-  { title: "Connect",  desc: "Have a conversation with our team." },
-  { title: "Grow",     desc: "Start your journey with Inkarp." },
+  { title: "Apply", desc: "Send in your resume or drop a message." },
+  { title: "Connect", desc: "Have a conversation with our team." },
+  { title: "Grow", desc: "Start your journey with Inkarp." },
 ];
 
 export default function CareersV2() {
@@ -54,7 +54,7 @@ export default function CareersV2() {
   );
 
   const totalDots = Math.ceil(team.length / spv);
-  const activeDot  = Math.floor(index / spv) % totalDots;
+  const activeDot = Math.floor(index / spv) % totalDots;
 
   return (
     <div className="w-[98%] mx-auto ">
@@ -73,20 +73,23 @@ export default function CareersV2() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16 relative">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             {/* Left copy */}
-           <div className="flex flex-col justify-center">
-                <span
-                  className="px-4 py-1 text-xs md:text-sm font-[MaxOT] w-fit font-semibold uppercase rounded-full bg-white"
-                  style={{
-                    borderImage: "linear-gradient(90deg,#BE0010,#E63946) 1",
-                    borderWidth: 1,
-                    borderStyle: "solid",
-                  }}
-                >
-                  We are hiring
-                </span>
-              <h1 className="mt-5 text-4xl md:text-5xl font-[MaxOT] font-bold leading-tight text-gray-900">
+            <div className="flex flex-col justify-center items-start gap-4">
+              {/* <span
+                className="px-4 py-1 text-xs md:text-sm font-[MaxOT]  w-fit font-semibold uppercase rounded-full bg-white"
+                style={{
+                  borderImage: "linear-gradient(90deg,#BE0010,#E63946) 1",
+                  borderWidth: 1,
+                  borderStyle: "solid",
+                }}
+              >
+                We are hiring
+              </span> */}
+              <h1 className="mt-5 text-4xl md:text-2xl text-[#E63946] font-bold font-[MaxOT] leading-tight">
+                We are hiring
+              </h1>
+              <h1 className="mt-5 text-4xl md:text-4xl font-[MaxOT]  leading-tight ">
                 Do the most meaningful work of your career at{" "}
-                <span className="text-[#E63946]">INKARP</span>.
+                <span className="text-[#E63946] ">INKARP</span>
               </h1>
               {/* <p className="mt-4 text-gray-700 text-lg font-[Roboto]">
                 We hire for potential, not just positions. If you love solving real problems and learning fast, you’ll feel at home.
@@ -104,11 +107,11 @@ export default function CareersV2() {
                     borderStyle: "solid",
                   }}
                 >
-                  What Our Team Says 
+                  What Our Team Says
                 </span>
               </div>
 
-              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 lg:[&>div:nth-child(n+3)]:hidden">
                 {visibleTeam.map((m, k) => (
                   <div
                     key={`${m.name}-${k}`}
@@ -122,7 +125,7 @@ export default function CareersV2() {
                         className="w-12 h-12 rounded-full object-cover ring-2 ring-[#E63946]/20"
                       /> */}
                       <div>
-                        <p className="text-xs text-gray-500 font-[Roboto]">Team Member</p>
+                        {/* <p className="text-xs text-gray-500 font-[Roboto]">Team Member</p> */}
                         <h4 className="text-[#E63946] font-[MaxOT]">{m.name}</h4>
                       </div>
                     </div>
@@ -132,7 +135,7 @@ export default function CareersV2() {
               </div>
 
               {/* Dots */}
-              <div className="mt-5 flex justify-center gap-2">
+              <div className="mt-5  sm:hidden justify-center gap-2">
                 {Array.from({ length: totalDots }).map((_, d) => (
                   <span
                     key={d}
@@ -140,6 +143,7 @@ export default function CareersV2() {
                   />
                 ))}
               </div>
+
             </div>
           </div>
         </div>

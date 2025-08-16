@@ -90,9 +90,9 @@ function StatCard({ icon, number, plus, label, info }) {
           <span ref={ref} className="text-2xl font-bold font-[Roboto] text-black">
             {value}
           </span>
-          <span className="text-[#E63946] font-bold">{plus}</span>
+          <span className="text-[#E63946] ">{plus}</span>
         </div>
-        <h3 className="font-semibold uppercase text-sm md:text-base text-[#E63946] tracking-wider font-[MaxOT]">
+        <h3 className=" uppercase text-sm md:text-base text-[#E63946] tracking-wider font-[MaxOT]">
           {label}
         </h3>
         

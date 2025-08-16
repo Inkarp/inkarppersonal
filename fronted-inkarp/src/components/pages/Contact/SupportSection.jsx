@@ -1,222 +1,97 @@
-import React from 'react';
-import styled from 'styled-components';
-import { MdEmail, MdPhone } from 'react-icons/md';
+import React from "react";
+import { MdEmail, MdPhone } from "react-icons/md";
 
-const SupportSection = () => {
-  const supportData = [
-    {
-      title: 'Import / Logistics / Customs\nRelated Enquiries',
-      email: 'saritha@inkarp.co.in',
-      phone: '9949018605',
-    },
-    {
-      title: 'Accounts / Finance Enquiries',
-      email: 'sundar@inkarp.co.in',
-      phone: '7032221890',
-      alert: true,
-    },
-    {
-      title: 'HR Enquiries',
-      email: 'hrd@inkarp.co.in',
-      phone: '8886277717',
-    },
-  ];
+const supportData = [
+  {
+    title: "Import / Logistics / Customs\nRelated Enquiries",
+    email: "saritha@inkarp.co.in",
+    phone: "9949018605",
+  },
+  {
+    title: "Accounts / Finance Enquiries",
+    email: "sundar@inkarp.co.in",
+    phone: "7032221890",
+    alert: true,
+  },
+  {
+    title: "HR Enquiries",
+    email: "hrd@inkarp.co.in",
+    phone: "8886277717",
+  },
+];
 
+export default function SupportSection() {
   return (
-    <StyledSection>
-      <div className="text-center mb-8">
-        <button className="font-[MaxOT] px-4 py-2 border border-[#E63946] rounded-full font-semibold transition mb-3">
-          CONTACT US
-        </button>
-        <h2 className="heading text-3xl text-[#E63946]">For Support & Enquiries</h2>
-        <p className="subheading text-lg ">
-          For smooth coordination, please reach out to the respective teams for any of the following queries:
-        </p>
-      </div>
+    <section className="relative w-full py-8 px-4 flex justify-center">
+      {/* soft on-brand background */}
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_20%_-10%,rgba(230,57,70,0.08),transparent),radial-gradient(1200px_600px_at_80%_110%,rgba(230,57,70,0.08),transparent)]" />
 
+      <div className="relative w-[98%] max-w-4xl mx-auto space-y-6">
+        {/* Header */}
+        <div className="flex flex-col items-center justify-center gap-3 text-center"> 
+            <span
+          className="px-4 py-1 text-xs sm:text-sm font-[MaxOT] uppercase rounded-full bg-white"
+          style={{
+            borderImage: 'linear-gradient(90deg,#BE0010,#E63946) 1',
+            borderWidth: 1,
+            borderStyle: 'solid',
+          }}
+        >
+          Contact Us
+        </span>
+          <h2 className="font-[MaxOT] text-3xl text-[#E63946]">
+            For Support &amp; Enquiries
+          </h2>
 
-      <div className="cards">
-        {supportData.map((item, idx) => (
-          <div key={idx} className="card">
-            <div className="bg" />
-            <div className="blob" />
-            <div className="content">
-              <div className="title-row">
-                <h3>
-                  {item.title.split('\n').map((line, i) => (
-                    <div key={i}>{line}</div>
-                  ))}
-                </h3>
-                {/* {item.alert && <span className="dot" title="Immediate Attention Required" />} */}
+          <p className="font-[Roboto] text-base text-black/80">
+            For smooth coordination, please reach out to the respective teams
+            for any of the following queries:
+          </p>
+        </div>
+
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {supportData.map((item, idx) => (
+            <article
+              key={idx}
+              className="relative rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:border-[#E63946]/45 hover:shadow-lg hover:-translate-y-0.5"
+              aria-label={item.title.replace(/\n/g, " ")}
+            >
+              <div className="relative p-4 text-left flex flex-col gap-2 text-[#111827]">
+                <div className="flex items-start justify-between">
+                  <h3 className="font-[MaxOT] text-[1rem] text-[#E63946] leading-snug text-[#0f1b33]">
+                    {item.title.split("\n").map((line, i) => (
+                      <div key={i}>{line}</div>
+                    ))}
+                  </h3>
+                </div>
+
+                <p className="flex items-center gap-2 text-sm font-[Roboto]">
+                  <MdEmail className="text-[#E63946] text-base shrink-0" />
+                  <a
+                    href={`mailto:${item.email}`}
+                    className="font-semibold text-[#333] hover:text-[#E63946] hover:underline"
+                    aria-label={`Email ${item.email}`}
+                  >
+                    {item.email}
+                  </a>
+                </p>
+
+                <p className="flex items-center gap-2 text-sm font-[Roboto]">
+                  <MdPhone className="text-[#E63946] text-base shrink-0" />
+                  <a
+                    href={`tel:+91${item.phone}`}
+                    className="font-semibold text-[#333] hover:text-[#E63946] hover:underline"
+                    aria-label={`Call +91 ${item.phone}`}
+                  >
+                    +91 {item.phone}
+                  </a>
+                </p>
               </div>
-              <p className="info">
-                <MdEmail className="icon" />
-                <a href={`mailto:${item.email}`}>{item.email}</a>
-              </p>
-              <p className="info">
-                <MdPhone className="icon " />
-                <a href={`tel:+91${item.phone}`}>+91 {item.phone}</a>
-              </p>
-            </div>
-          </div>
-        ))}
+            </article>
+          ))}
+        </div>
       </div>
-    </StyledSection>
+    </section>
   );
-};
-
-export default SupportSection;
-
-const StyledSection = styled.div`
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 3rem 1rem;
-  text-align: center;
-
-  .heading {
-    // font-weight: bold;
-    margin-bottom: 0.5rem;
-    font-family: MaxOT;
-  }
-
-  .subheading {
-    margin-bottom: 2rem;
-    font-family: Roboto;
-  }
-
-  .cards {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .card {
-  position: relative;
-  width: 250px;
-  height: 200px;
-  border-radius: 14px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: MaxOT;
-  background-color: #fff;
-  z-index: 1;
 }
-
-/* 🔄 Animated border */
-.card::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  border-radius: 16px;
-  background: conic-gradient(from 0deg, red, white, red);
-  animation: rotate-border 4s linear infinite;
-  z-index: 0;
-}
-
-/* Masking inner content so only border glows */
-.card::after {
-  content: '';
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: calc(100% - 4px);
-  height: calc(100% - 4px);
-  background: #FFF;
-  border-radius: 12px;
-  z-index: 1;
-}
-
-@keyframes rotate-border {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-
-  @keyframes blob-bounce {
-    0% {
-      transform: translate(-50%, -50%) translate(0px, 0px);
-    }
-    25% {
-      transform: translate(-50%, -50%) translate(40px, 0px);
-    }
-    50% {
-      transform: translate(-50%, -50%) translate(40px, 40px);
-    }
-    75% {
-      transform: translate(-50%, -50%) translate(0px, 40px);
-    }
-    100% {
-      transform: translate(-50%, -50%) translate(0px, 0px);
-    }
-  }
-
-  .content {
-    position: absolute;
-    z-index: 3;
-    text-align: left;
-    padding: 1rem;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    font-size: 0.9rem;
-  }
-
-  .title-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    position: relative;
-  }
-
-  .content h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 1.3;
-    margin: 0;
-  }
-
-  .dot {
-    position: absolute;
-    top: 0;
-    right: -10px;
-    width: 8px;
-    height: 8px;
-    background: red;
-    border-radius: 50%;
-  }
-
-  .icon {
-    color: red;
-    margin-right: 6px;
-    font-size: 1.1rem;
-  }
-
-  .info {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.85rem;
-  }
-
-  .info a {
-    color: #333;
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-  .info a:hover {
-    color: red;
-    text-decoration: underline;
-  }
-`;

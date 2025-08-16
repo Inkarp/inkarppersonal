@@ -3,16 +3,22 @@ import { FaLinkedin } from 'react-icons/fa';
 import { Fade } from 'react-awesome-reveal';
 import Balu from '/src/assets/Team/Balu.png';
 import Natesh2 from '/src/assets/Team/Natesh2.png';
-import Sign from '/src/assets/Team/balu-sign.png';
+// import Sign from '/src/assets/Team/balu-sign.png'; // (optional) not used now
 
 const members = [
   {
     name: 'S. Balu',
-    title: 'Chairman & Managing Director',
+    title: 'Chairman & Managing Director(Inkarp Group of Companies)',
     email: 'balu@inkarp.com',
     location: 'Hyderabad',
     img: Balu,
-    message: `When I first started Inkarp in 1985, I had one guiding principle: to provide unmatched after-sale service and unwavering support to our customers. This commitment has been the cornerstone of our journey, and it remains at the heart of everything we do today.\n\nOur success is built on the trust and dedication of everyone we work with, from the passionate scientists who use our products to the incredible team that strives to meet and exceed expectations every day. We are not just a company; we are a family that believes in fostering strong relationships and making a real difference in the scientific community.\n\nI am deeply grateful for your continued support and trust. It is your belief in our mission that drives us to push boundaries, explore new markets, and continually enhance our offerings. Together, we are building a future where science thrives, and innovation knows no bounds.\n\nThank you for being an integral part of Inkarp's journey. Let us continue to grow, innovate, and make a lasting impact together.`,
+    message: `When I first started Inkarp in 1985, I had one guiding principle: to provide unmatched after-sale service and unwavering support to our customers. This commitment has been the cornerstone of our journey, and it remains at the heart of everything we do today.
+
+Our success is built on the trust and dedication of everyone we work with, from the passionate scientists who use our products to the incredible team that strives to meet and exceed expectations every day. We are not just a company; we are a family that believes in fostering strong relationships and making a real difference in the scientific community.
+
+I am deeply grateful for your continued support and trust. It is your belief in our mission that drives us to push boundaries, explore new markets, and continually enhance our offerings. Together, we are building a future where science thrives, and innovation knows no bounds.
+
+Thank you for being an integral part of Inkarp's journey. Let us continue to grow, innovate, and make a lasting impact together.`,
     links: ['https://linkedin.com/in/s-balu'],
   },
   {
@@ -37,21 +43,6 @@ const MemberCard = ({ member }) => {
             className="w-full h-full object-cover"
           />
         </div>
-
-        {member.name === 'S. Balu' && (
-          <div className="mt-3 flex justify-center flex-col items-center p-3 bg-[F5F5F5]">
-            {/* <img
-              src={Sign}
-              alt="Balu Signature"
-              className="w-36 h-auto object-contain rounded-3xl"
-            /> */}
-            <div className='font-[MaxOT] flex flex-col justify-center items-center'>
-              <span className='text-bold'>S. Balu</span>
-              <span className='text-[#E63946]'>Chairman & Managing Director</span>
-              <span className='text-[#E63946]'>(Inkarp Group of Companies)</span>   
-            </div>
-          </div>
-        )}
       </div>
 
       <div className="flex flex-col flex-grow min-w-0">
@@ -71,7 +62,7 @@ const MemberCard = ({ member }) => {
             </a>
           )}
         </div>
-        <p className="text-lg italic font-[Roboto]  whitespace-pre-line text-black">
+        <p className="text-lg italic font-[Roboto] whitespace-pre-line text-gray-700 ">
           {member.message}
         </p>
       </div>
@@ -81,13 +72,24 @@ const MemberCard = ({ member }) => {
 
 export default function TeamNew() {
   return (
-    <section className="min-h-screen py-6 px-4 sm:px-6 md:px-10 lg:px-20 ">
+    <section className="min-h-screen py-6 px-4 sm:px-6 md:px-10 lg:px-20">
       <div className="mx-auto text-center max-w-6xl">
+        {/* THEMED HEADING */}
         <div className="flex flex-col justify-center items-center gap-3">
-          <h4 className="text-xs sm:text-sm font-[MaxOT] text-black uppercase px-4 py-1 border border-[#E63946] bg-white rounded-full">
+          <span
+            className="px-4 py-1 text-xs sm:text-sm font-[MaxOT] uppercase  bg-white"
+            style={{
+              borderImage: 'linear-gradient(90deg,#BE0010,#E63946) 1',
+              borderWidth: 1,
+              borderStyle: 'solid',
+
+            }}
+          >
             Meet Our Leadership
-          </h4>
-         
+          </span>
+          {/* <h1 className="text-xl sm:text-2xl font-[MaxOT] text-[#E63946] leading-tight">
+            
+          </h1> */}
         </div>
 
         <div className="flex flex-col items-center gap-5 py-10">

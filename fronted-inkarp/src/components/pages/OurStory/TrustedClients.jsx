@@ -30,68 +30,82 @@ const logos = [
   { src: Alembic, alt: "Alembic" },
   { src: Aragen, alt: "Aragen" },
   { src: Aurobindo, alt: "Aurobindo" },
-  { src: Basf, alt: "Basf" },
+  { src: Basf, alt: "BASF" },
   { src: Biocon, alt: "Biocon" },
   { src: Divis, alt: "Divis" },
   { src: Eisai, alt: "Eisai" },
   { src: Gland, alt: "Gland" },
-  { src: Granuals, alt: "Granuals" },
+  { src: Granuals, alt: "Granules" },
   { src: GVK, alt: "GVK" },
   { src: Hikal, alt: "Hikal" },
   { src: Macleods, alt: "Macleods" },
   { src: Mylan, alt: "Mylan" },
   { src: Natco, alt: "Natco" },
-  { src: Pi, alt: "Pi" },
-  { src: Reddy, alt: "Reddy" },
-  { src: Sai, alt: "Sai" },
+  { src: Pi, alt: "PI Industries" },
+  { src: Reddy, alt: "Dr. Reddy's" },
+  { src: Sai, alt: "Sai Life Sciences" },
   { src: Srigene, alt: "Srigene" },
   { src: Syngene, alt: "Syngene" },
   { src: Syngenta, alt: "Syngenta" },
-  { src: Tcg, alt: "Tcg" }
+  { src: Tcg, alt: "TCG" },
 ];
 
-const TrustedClients = () => {
+export default function TrustedClients() {
   return (
-    <section className="max-w-screen-xl mx-auto px-4 py-10 sm:px-8">
-      <div className="text-center py-3 flex flex-col items-center justify-center gap-3">
-        <h4 className="px-4 py-1 text-sm font-semibold uppercase border border-[#E63946] font-[MaxOT] text-black rounded-full ">
+    <section className="relative w-[98%] mx-auto py-10 md:px-10 lg:px-20">
+      {/* On-brand soft stage background */}
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_20%_-10%,rgba(230,57,70,0.08),transparent),radial-gradient(1200px_600px_at_80%_110%,rgba(230,57,70,0.08),transparent)]" />
+
+      {/* Header */}
+      <div className="text-center flex flex-col items-center justify-center gap-3">
+        <span
+          className="px-4 py-1 text-xs sm:text-sm font-[MaxOT] uppercase rounded-full bg-white"
+          style={{
+            borderImage: "linear-gradient(90deg,#BE0010,#E63946) 1",
+            borderWidth: 1,
+            borderStyle: "solid",
+          }}
+        >
           Our Clients
-        </h4>
-        <h2 className="text-3xl font-[MaxOT] text-[#E63946] leading-tight">
-          Trusted by 
+        </span>
+        <h2 className="text-xl sm:text-2xl font-[MaxOT] text-[#E63946] leading-tight">
+          Trusted by Industry Leaders
         </h2>
       </div>
 
-      <Swiper
-        modules={[Autoplay]}
-        loop={true}
-        speed={2000}
-        autoplay={{
-          delay: 0,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }}
-        breakpoints={{
-          320: { slidesPerView: 2, spaceBetween: 10 },
-          640: { slidesPerView: 3, spaceBetween: 20 },
-          1024: { slidesPerView: 5, spaceBetween: 30 },
-        }}
-        className="group"
-      >
-        {logos.map((logo, idx) => (
-          <SwiperSlide key={idx}>
-            <div className="w-full h-full rounded flex items-center justify-center  transition-all duration-700 ease-out">
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="object-cover max-h-full"
-              />
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      {/* Carousel track in a glassy shell */}
+      <div className="mt-6 backdrop-blur p-3 sm:p-4 shadow-sm">
+        <Swiper
+          modules={[Autoplay]}
+          loop
+          speed={1500}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          breakpoints={{
+            320: { slidesPerView: 2, spaceBetween: 12 },
+            640: { slidesPerView: 3, spaceBetween: 18 },
+            1024: { slidesPerView: 5, spaceBetween: 24 },
+            1280: { slidesPerView: 6, spaceBetween: 28 },
+          }}
+          className="group"
+        >
+          {logos.map((logo, idx) => (
+            <SwiperSlide key={idx} className="select-none">
+              <div className="h-16 sm:h-20 md:h-24 flex items-center justify-center">
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="max-h-full max-w-[160px] object-contain transition"
+                  loading="lazy"
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </section>
   );
-};
-
-export default TrustedClients;
+}

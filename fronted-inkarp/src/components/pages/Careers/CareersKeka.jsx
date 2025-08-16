@@ -1,11 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Briefcase, MapPin } from "lucide-react";
 
 /**
  * THEMED KEKA CAREERS LIST
- * - Loads Keka embed script
- * - Parses injected jobs
- * - Renders our own cards in theme
  */
 
 const KEKA_IDENTIFIER = "357ac919-3c5b-4878-922a-e01bc5fd29cd";
@@ -13,18 +10,14 @@ const KEKA_DOMAIN = "https://inkarpinstrument.keka.com/careers/";
 const KEKA_SCRIPT_SRC = `https://inkarpinstrument.keka.com/careers/api/embedjobs/js/${KEKA_IDENTIFIER}`;
 
 export default function CareersKeka() {
-  const containerRef = useRef(null);        // hidden Keka container
+  const containerRef = useRef(null); // hidden Keka container
   const observerRef = useRef(null);
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState("");
 
-  // Inject Keka embed & watch for content
   useEffect(() => {
-    // Clear/hide container
-    if (containerRef.current) {
-      containerRef.current.innerHTML = "";
-    }
+    if (containerRef.current) containerRef.current.innerHTML = "";
 
     // Keka global config
     window.khConfig = {
@@ -33,7 +26,7 @@ export default function CareersKeka() {
       targetContainer: "#khembedjobs",
     };
 
-    // Remove any old script (HMR / route changes)
+    // Remove any old script
     const existing = document.querySelector(`script[src="${KEKA_SCRIPT_SRC}"]`);
     if (existing) existing.remove();
 
@@ -41,10 +34,7 @@ export default function CareersKeka() {
     const script = document.createElement("script");
     script.src = KEKA_SCRIPT_SRC;
     script.defer = true;
-    script.onload = () => {
-      // If Keka injects instantly, our observer below will catch it
-      setLoadError("");
-    };
+    script.onload = () => setLoadError("");
     script.onerror = () => {
       setLoadError("Failed to load job listings. Please try again later.");
       setLoading(false);
@@ -85,11 +75,7 @@ export default function CareersKeka() {
       <div className="text-center flex flex-col items-center justify-center gap-3">
         <span
           className="px-4 py-1 text-xs sm:text-sm font-[MaxOT] uppercase rounded-full bg-white"
-          style={{
-            borderImage: "linear-gradient(90deg,#BE0010,#E63946) 1",
-            borderWidth: 1,
-            borderStyle: "solid",
-          }}
+          style={{ borderImage: "linear-gradient(90deg,#BE0010,#E63946) 1", borderWidth: 1, borderStyle: "solid" }}
         >
           Careers @ INKARP
         </span>
@@ -102,20 +88,14 @@ export default function CareersKeka() {
       </div>
 
       {/* Content frame */}
-      <div className="mt-6 rounded-2xl border border-gray-200 bg-white/70 backdrop-blur p-4 sm:p-6">
-        {/* Loading / Error */}
+      <div className="mt-6 rounded-2xl p-2 sm:p-6">
         {loading && !loadError && (
-          <div className="py-10 text-center text-sm font-[Roboto] text-black/70">
-            Loading job listings…
-          </div>
+          <div className="py-10 text-center text-sm font-[Roboto] text-black/70">Loading job listings…</div>
         )}
         {loadError && (
-          <div className="py-10 text-center text-sm font-[Roboto] text-red-600">
-            {loadError}
-          </div>
+          <div className="py-10 text-center text-sm font-[Roboto] text-red-600">{loadError}</div>
         )}
 
-        {/* Jobs grid */}
         {!loading && !loadError && jobs.length === 0 && (
           <div className="py-10 text-center text-sm font-[Roboto] text-black/70">
             No openings currently. Please check back soon.
@@ -128,7 +108,6 @@ export default function CareersKeka() {
               <JobCard key={`${job.title}-${i}`} job={job} />
             ))}
 
-            {/* Fallback link to Keka careers page */}
             <div className="text-center mt-8">
               <a
                 href={KEKA_DOMAIN}
@@ -137,7 +116,7 @@ export default function CareersKeka() {
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-white font-[Roboto] text-sm font-semibold shadow"
                 style={{ background: "linear-gradient(90deg,#BE0010,#E63946)" }}
               >
-                View all openings on Keka
+                View all openings
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>
@@ -146,84 +125,93 @@ export default function CareersKeka() {
       </div>
 
       {/* Hidden Keka mount point (kept for script to inject) */}
-      <div
-        id="khembedjobs"
-        ref={containerRef}
-        className="hidden"
-        aria-hidden="true"
-      />
+      <div id="khembedjobs" ref={containerRef} className="hidden" aria-hidden="true" />
     </section>
   );
 }
 
-/* THEMED CARD (like your sample, but in our style) */
+/* ---------- Card ---------- */
+
 function JobCard({ job }) {
-  const { title, location, type, url } = job;
+  const { title, location, type, url } = job || {};
+  const shownLocation = location?.trim() || "Remote / Not specified";
+  const shownType = type?.trim() || "Not specified";
+
   return (
-    <div className="border border-gray-200 rounded-xl mt-4">
-      <div className="flex items-center justify-between p-4 sm:p-6">
-        <div>
-          <h4 className="text-lg sm:text-xl font-semibold font-[MaxOT] mb-1 text-[#0f1b33]">
-            {title}
+    <article className="border border-gray-200 rounded-xl mt-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 sm:p-6">
+        <div className="min-w-0">
+          <h4 className="text-lg sm:text-xl font-[MaxOT] mb-1 ">
+            {title || "Untitled role"}
           </h4>
-          <div className="flex flex-wrap gap-3 text-xs sm:text-sm font-[Roboto] text-black/60">
-            {location && <span className="uppercase">{location}</span>}
-            {type && <span className="uppercase">{type}</span>}
+
+          <div className="mt-1 flex flex-wrap gap-2 text-xs sm:text-sm font-[Roboto] text-black/70">
+            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#F5F5F5] border border-gray-200">
+              <MapPin className="w-3.5 h-3.5 text-[#E63946]" />
+              <span className="font-medium">{shownLocation}</span>
+            </span>
+            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#F5F5F5] border border-gray-200">
+              <Briefcase className="w-3.5 h-3.5 text-[#E63946]" />
+              <span className="font-medium">{shownType}</span>
+            </span>
           </div>
         </div>
-        <a
-          href={url || KEKA_DOMAIN}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-white font-[Roboto] text-sm font-semibold shadow hover:opacity-95"
-          style={{ background: "linear-gradient(90deg,#BE0010,#E63946)" }}
-          aria-label={`Apply for ${title}`}
-        >
-          Apply
-          <ArrowRight className="w-4 h-4" />
-        </a>
+
+        <div className="shrink-0">
+          <a
+            href={url || KEKA_DOMAIN}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-white font-[Roboto] text-sm font-semibold shadow hover:opacity-95"
+            style={{ background: "linear-gradient(90deg,#BE0010,#E63946)" }}
+            aria-label={`Apply for ${title ?? "this role"}`}
+          >
+            Apply
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
       </div>
-    </div>
+    </article>
   );
 }
 
-/* ---------- Parsers ---------- */
-/**
- * Try to extract jobs from Keka’s injected DOM.
- * This is heuristic (Keka markup may change). We aim for:
- *  - title
- *  - location (REMOTE / city if present)
- *  - type (FULL TIME / PART TIME / INTERNSHIP if present)
- *  - url (apply/details link)
- */
-function parseJobsFromContainer(rootEl) {
-  // Grab any obvious job anchors/cards
-  const anchors = Array.from(rootEl.querySelectorAll("a[href]"));
+/* ---------- Parsers (self-contained) ---------- */
 
-  // Group anchors by the nearest card-like block to avoid duplicates
+function parseJobsFromContainer(rootEl) {
+  const anchors = Array.from(rootEl.querySelectorAll("a[href]"));
   const cards = groupByCard(anchors);
+
+  // Skip Keka footer/CTA blocks
+  const SKIP_PATTERNS = /(keka\s*hire|powered\s*by|view\s+all\s+openings)/i;
 
   const jobs = cards
     .map((cardEl) => {
-      const text = cardEl.innerText || cardEl.textContent || "";
-      const firstAnchor = cardEl.querySelector("a[href]");
-      const url = firstAnchor ? firstAnchor.getAttribute("href") : undefined;
+      const textAll = normalizeText(cardEl.innerText || cardEl.textContent || "");
+      if (SKIP_PATTERNS.test(textAll)) return null;
 
-      // Heuristics
-      const title = extractTitle(cardEl) || extractFirstLine(text);
-      const location = extractByKeywords(text, ["remote", "hyderabad", "bangalore", "mumbai", "india"]);
-      const type = extractByKeywords(text, ["full time", "part time", "internship", "contract"]);
+      // Candidate URL (prefer detail/apply-like)
+      let url = (cardEl.querySelector("a[href]") || {}).getAttribute?.("href") || undefined;
+      if (url && !/careers\/(job|jobs|opening|apply|details)/i.test(url)) url = undefined;
+
+      // Title preference: labeled > heading > first line
+      const labeledTitle = matchLabel(textAll, /job\s*title\s*:\s*(.+?)(?:\n|$)/i);
+      const headingTitle = extractTitle(cardEl);
+      const title = labeledTitle || headingTitle || firstNonEmptyLine(textAll) || "";
+      if (!title || SKIP_PATTERNS.test(title)) return null;
+
+      const location = cleanupLocation(extractLocationFromCard(cardEl, textAll));
+      const type = extractTypeFromCard(cardEl, textAll);
 
       return {
         title: cleanup(title),
-        location: cleanup(location)?.toUpperCase(),
-        type: cleanup(type)?.toUpperCase(),
+        location: cleanup(location)?.replace(/\s+/g, " "),
+        type: cleanup(type)?.replace(/-/g, " ").toUpperCase(),
         url,
       };
     })
-    .filter((j) => !!j.title);
+    .filter(Boolean);
 
-  // Deduplicate by title+url
+  // De-duplicate by title+url
   const seen = new Set();
   const uniq = [];
   for (const j of jobs) {
@@ -240,10 +228,8 @@ function groupByCard(anchors) {
   const cards = new Set();
   anchors.forEach((a) => {
     let el = a;
-    // Walk up to a reasonable block (stop at container)
     for (let i = 0; i < 6 && el && el.parentElement; i++) {
       el = el.parentElement;
-      // Heuristic "card-like" containers
       const cls = (el.className || "").toString().toLowerCase();
       const isCardish =
         cls.includes("card") ||
@@ -253,7 +239,6 @@ function groupByCard(anchors) {
         el.tagName === "ARTICLE" ||
         el.tagName === "DIV";
       if (isCardish && el !== document.body) {
-        // stop when block has multiple children / some text content
         if ((el.children?.length || 0) > 0 && (el.innerText || "").length > 0) {
           cards.add(el);
           break;
@@ -265,27 +250,96 @@ function groupByCard(anchors) {
 }
 
 function extractTitle(cardEl) {
-  // try common title tags
-  const titleEl =
-    cardEl.querySelector("h1, h2, h3, h4, .title, .job-title") || null;
-  if (titleEl) return titleEl.innerText || titleEl.textContent || "";
-  return null;
+  const titleEl = cardEl.querySelector("h1, h2, h3, h4, .title, .job-title");
+  return titleEl ? titleEl.innerText || titleEl.textContent || "" : null;
 }
 
-function extractFirstLine(text) {
-  const lines = text.split("\n").map((l) => l.trim()).filter(Boolean);
+function firstNonEmptyLine(text) {
+  const lines = (text || "")
+    .split("\n")
+    .map((l) => l.trim())
+    .filter(Boolean);
   return lines[0] || "";
 }
 
-function extractByKeywords(text, keys) {
-  const t = text.toLowerCase();
-  for (const k of keys) {
-    if (t.includes(k)) return k;
+/* ---- Location & Type helpers ---- */
+
+function extractLocationFromCard(cardEl, textAll) {
+  const text = (textAll || "").trim();
+
+  // 1) Explicit "Location: ..."
+  const m = text.match(/Location:\s*([^\n\r]+)/i);
+  if (m?.[1]) return m[1].trim();
+
+  // 2) Common location nodes
+  const locNode = cardEl.querySelector(
+    '[data-location],[class*="location"],[class*="loc"],[class*="job-location"]'
+  );
+  if (locNode) {
+    const t = (locNode.innerText || locNode.textContent || "").trim();
+    if (t) return t.replace(/^\s*location[:\s]*/i, "").trim();
   }
-  return "";
+
+  // 3) Token fallback (IN cities & generic)
+  const TOKENS = [
+    "Remote",
+    "Pan India",
+    "India",
+    "Chandigarh",
+    "Bhopal",
+    "Bengaluru",
+    "Bangalore",
+    "Hyderabad",
+    "Chennai",
+    "Pune",
+    "Mumbai",
+    "Delhi",
+    "Noida",
+    "Gurugram",
+    "Gurgaon",
+    "Kolkata",
+    "Jaipur",
+    "Ahmedabad",
+    "Indore",
+    "Kochi",
+    "Cochin",
+    "Vadodara",
+    "Surat",
+    "Vizag",
+    "Visakhapatnam",
+  ];
+  const lower = text.toLowerCase();
+  const hit = TOKENS.find((tok) => lower.includes(tok.toLowerCase()));
+  return hit || "";
+}
+
+function extractTypeFromCard(cardEl, textAll) {
+  const text = (textAll || "").toLowerCase();
+  const m =
+    text.match(/\b(full[-\s]?time|part[-\s]?time|internship|contract)\b/i) ||
+    (cardEl.querySelector('[class*="type"],[class*="employment"]') &&
+      (cardEl.querySelector('[class*="type"],[class*="employment"]').innerText ||
+        cardEl.querySelector('[class*="type"],[class*="employment"]').textContent));
+  return typeof m === "string" ? m : m?.[0] || "";
+}
+
+/* ---- General helpers (self-contained) ---- */
+
+function normalizeText(s) {
+  return (s || "").replace(/\u00A0/g, " ").replace(/[ \t]+\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim();
+}
+
+function matchLabel(text, regex) {
+  const m = (text || "").match(regex);
+  return m?.[1]?.trim() || "";
+}
+
+function cleanupLocation(s) {
+  if (!s) return s;
+  return s.replace(/^(?:remote\s*\/\s*)?location[:\s-]*/i, "").replace(/\s{2,}/g, " ").trim();
 }
 
 function cleanup(s) {
   if (!s) return s;
-  return s.replace(/\s+/g, " ").trim();
+  return s.replace(/\s+/g, " ").replace(/[•|]+/g, " ").trim();
 }

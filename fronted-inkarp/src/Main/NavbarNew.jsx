@@ -93,7 +93,7 @@ export default function NavbarNew() {
               to={path}
               className={`block px-3 py-2 rounded-md transition-all duration-200 ${
                 isActive(path)
-                  ? "bg-[#E63946] text-white shadow"
+                  ? "bg-[#BE0010] text-white shadow"
                   : "text-black hover:bg-gray-300"
               }`}
               onClick={() => {
@@ -155,7 +155,7 @@ export default function NavbarNew() {
                     to="/insights-and-updates/webinars"
                     className={`block px-4 py-2 transition-all ${
                       isActive("/insights&updates/webinars")
-                        ? "bg-[#E63946] text-white"
+                        ? "bg-[#BE0010] text-white"
                         : "hover:bg-[#E63946] hover:text-white"
                     }`}
                     onClick={() => {

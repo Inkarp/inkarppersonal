@@ -33,11 +33,13 @@ const OurStory = () => {
         }}
       >
         {/* Overlay for better text contrast */}
-        <div className="absolute inset-0 bg-white/20 backdrop-blur-[3px]"></div>
+        <div className="absolute inset-0 "></div>
 
         {/* Content with background */}
         <div className="relative z-10">
-          <TeamNew />
+          <Team />
+          <TeamIntro />
+          {/* <TeamNew /> */}
           <TeamNewTwo />
           <SubTeam />
         </div>
