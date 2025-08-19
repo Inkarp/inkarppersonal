@@ -160,12 +160,13 @@ const BlogsPage = () => {
 
   return (
     <div className=" max-w-screen-xl mx-auto">
+       
       <Helmet>
         <title>Blogs - Inkarp Instruments Private Ltd</title>
          <meta name="keywords" content='default' />
         <meta name="description" content="Get the latest updates on laboratory instruments, equipment, and services from Inkarp Instruments Pvt Ltd. Explore our blog for expert advice, industry trends, and more." />
       </Helmet>
-
+<div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_20%_-10%,rgba(230,57,70,0.08),transparent),radial-gradient(1200px_600px_at_80%_110%,rgba(230,57,70,0.08),transparent)]" />
       {/* Dynamic Banner */}
       <div className="relative w-full h-auto py-3 rounded-xl overflow-hidden">
         <img
@@ -174,10 +175,6 @@ const BlogsPage = () => {
           alt={selectedBanner?.title}
           className="w-full h-full object-cover rounded-xl"
         />
-        {/* <div className="z-10 h-full flex flex-col items-start justify-center px-6">
-          <h1 className="text-2xl md:text-3xl font-bold text-rose-700">{selectedBanner?.title}</h1>
-          <p className="text-gray-800 text-sm">{selectedBanner?.location} | {new Date(selectedBanner.date).toDateString()}</p>
-        </div> */}
       </div>
 
       {/* Filters */}

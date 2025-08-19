@@ -4,21 +4,15 @@ import { FaWhatsapp, FaBars } from "react-icons/fa";
 import Logo from '/inkarp.png';
 import { FiBell } from 'react-icons/fi';
 
-import NavbarNew from "../Main/NavbarNew";
-import Breadcrumbs from "./pages/Breadcrumb";
-import LoadingScreen from "../LoadingScreen";
+import NavbarNew from "./Main/NavbarNew";
+import Breadcrumbs from "./components/pages/Breadcrumb";
+import LoadingScreen from "./LoadingScreen";
 
 import Webinar1 from '/src/assets/Webinars/WebinarImg1.jpg';
 import Webinar2 from '/src/assets/Webinars/WebinarImg2.jpg';
 import Webinar3 from '/src/assets/Webinars/WebinarImg3.jpg';
-import Footer from "../Main/Footer";
-
-// SVG for scroll-to-top button
-const ScrollToTopIcon = () => (
-  <svg className="w-3 fill-black delay-50 duration-200 group-hover/button:-translate-y-12" viewBox="0 0 384 512">
-    <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" />
-  </svg>
-);
+import Footer from "./Main/Footer";
+import { ChevronUp, MoveUp } from "lucide-react";
 
 export default function MainLayout() {
   const [isLoading, setIsLoading] = useState(true);
@@ -41,6 +35,47 @@ export default function MainLayout() {
     Webinar3
   ];
 
+  // add this near top of MainLayout()
+  const location = useLocation(); // <-- you were using location without declaring it
+
+  const [scrollPercent, setScrollPercent] = useState(0);
+
+  useEffect(() => {
+    const calc = () => {
+      const scrollTop = window.scrollY || 0;
+      const docHeight = Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight
+      ) - window.innerHeight;
+
+      const pct = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+      setScrollPercent(pct);
+      setShowScrollTop(scrollTop > 100); // keep your visibility logic
+    };
+
+    // run once & on scroll/resize
+    calc();
+    window.addEventListener('scroll', calc, { passive: true });
+    window.addEventListener('resize', calc);
+    return () => {
+      window.removeEventListener('scroll', calc);
+      window.removeEventListener('resize', calc);
+    };
+  }, []);
+   // put this near your other effects in MainLayout
+useEffect(() => {
+  // If the URL has a hash (#section), scroll to that element instead
+  if (location.hash) {
+    const el = document.querySelector(location.hash);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+  }
+  // Otherwise go to page top
+  window.scrollTo({ top: 0, behavior: "auto" }); // or "smooth" if you prefer
+  setScrollPercent(0);
+}, [location.pathname, location.hash]);
   // Responsive check for mobile/tablet
   const [isMobileOrTablet, setIsMobileOrTablet] = useState(window.innerWidth < 1024);
   useEffect(() => {
@@ -139,17 +174,17 @@ export default function MainLayout() {
     return () => clearInterval(interval);
   }, []);
 
-useEffect(() => {
-  (function (w, d) {
-    w.CollectId = "672db8abf4bc76248fc52c81";
-    const h = d.head || d.getElementsByTagName("head")[0];
-    const s = d.createElement("script");
-    s.type = "text/javascript";
-    s.async = true;
-    s.src = "https://collectcdn.com/launcher.js";
-    h.appendChild(s);
-  })(window, document);
-}, []);
+  useEffect(() => {
+    (function (w, d) {
+      w.CollectId = "672db8abf4bc76248fc52c81";
+      const h = d.head || d.getElementsByTagName("head")[0];
+      const s = d.createElement("script");
+      s.type = "text/javascript";
+      s.async = true;
+      s.src = "https://collectcdn.com/launcher.js";
+      h.appendChild(s);
+    })(window, document);
+  }, []);
 
 
 
@@ -194,18 +229,16 @@ useEffect(() => {
 
         {/* Sidebar */}
         <aside
-          className={`fixed top-0 left-0 bottom-0 z-20 bg-white border-r border-gray-200 shadow-lg transition-transform duration-300 ease-in-out ${
-            isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-          } lg:translate-x-0 w-[280px] lg:w-[15%] ink:[18%]`}
+          className={`fixed top-0 left-0 bottom-0 z-20 bg-white border-r border-gray-200 shadow-lg transition-transform duration-300 ease-in-out ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+            } lg:translate-x-0 w-[280px] lg:w-[15%] ink:[18%]`}
         >
           <NavbarNew />
         </aside>
 
         {/* Main Content */}
         <div
-          className={`flex-1 transition-all duration-300 ease-in-out  ${
-            isSidebarOpen ? "lg:ml-[15%]" : "ml-0"
-          } w-full lg:w-[85%]`}
+          className={`flex-1 transition-all duration-300 ease-in-out  ${isSidebarOpen ? "lg:ml-[15%]" : "ml-0"
+            } w-full lg:w-[85%]`}
         >
           <div className="relative flex flex-col min-h-screen z-10">
             <main className="flex-grow relative">
@@ -278,9 +311,8 @@ useEffect(() => {
                 </div>
                 {/* WhatsApp icon (appears over animation) */}
                 <div
-                  className={`absolute bottom-0 left-6 ${
-                    showWhatsApp || hovered ? "animate-slideIn" : "animate-slideOut"
-                  }`}
+                  className={`absolute bottom-0 left-6 ${showWhatsApp || hovered ? "animate-slideIn" : "animate-slideOut"
+                    }`}
                 >
                   <a
                     href="https://wa.me/919876543210"
@@ -299,12 +331,55 @@ useEffect(() => {
             {showScrollTop && (
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="cursor-pointer fixed right-25 bottom-5 z-[99999] group/button after:content-['Go_to_top'] after:text-black after:absolute after:text-nowrap after:scale-0 hover:after:scale-100 after:duration-200 w-12 h-12 rounded-full border border-[#E63946] bg-white pointer flex items-center justify-center duration-300 hover:rounded-[50px] hover:w-36 overflow-hidden active:scale-90"
-                // aria-label="Go to top"
+                className="cursor-pointer fixed right-25 bottom-5 z-[99999] group/button active:scale-95 grid place-items-center"
+                aria-label="Go to top"
               >
-                <ScrollToTopIcon />     
+                {/* <span className="pointer-events-none absolute">
+                    <ScrollToTopIcon />
+                  </span> */}
+                {/* Circular progress ring */}
+                {(() => {
+                  const r = 24;                 // radius
+                  const c = 2 * Math.PI * r;    // circumference
+                  const offset = c - (scrollPercent / 100) * c;
+
+                  return (
+                    <svg className="w-12 h-12 -rotate-90" viewBox="0 0 56 56">
+                      {/* track */}
+                      <circle
+                        cx="28"
+                        cy="28"
+                        r={r}
+                        stroke="#E5E7EB"
+                        strokeWidth="4"
+                        fill="none"
+                      />
+                      {/* progress */}
+                      <circle
+                        cx="28"
+                        cy="28"
+                        r={r}
+                        stroke="#E63946"
+                        strokeWidth="2"
+                        fill="none"
+                        strokeDasharray={c}
+                        strokeDashoffset={offset}
+                        style={{ transition: 'stroke-dashoffset 120ms linear' }}
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                    
+                  );
+                })()}
+              
+                {/* center arrow (your existing icon works too) */}
+                <span className="pointer-events-none absolute text-[#E63946] text-xs font-medium rotate-0">
+                  <ChevronUp  className="h-4"/>
+                  {/* {Math.round(scrollPercent)}% */}
+                </span>
               </button>
             )}
+
           </div>
         </div>
       </div>

@@ -75,10 +75,10 @@ export default function ContactForm() {
   return (
     <section className="relative w-[98%] mx-auto py-10 md:px-10 lg:px-20">
       {/* soft on-brand background */}
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_20%_-10%,rgba(230,57,70,0.08),transparent),radial-gradient(1200px_600px_at_80%_110%,rgba(230,57,70,0.08),transparent)]" />
+      {/* <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_20%_-10%,rgba(230,57,70,0.08),transparent),radial-gradient(1200px_600px_at_80%_110%,rgba(230,57,70,0.08),transparent)]" /> */}
 
-      <div className="max-w-3xl mx-auto">
-        <div className="relative rounded-2xl border border-gray-200 bg-white p-6 sm:p-8">
+      <div className="max-w-5xl mx-auto">
+        <div className="relative rounded-2xl border border-gray-200 text-center bg-white p-6 sm:p-8">
           <h3 className="text-2xl text-[#E63946] font-[MaxOT] mb-1">Contact Our Team</h3>
           <p className="mb-6 text-sm font-[Roboto] text-black/70">
             Fill out the form and our team will get back to you shortly. Fields marked * are required.

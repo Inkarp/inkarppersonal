@@ -6,7 +6,6 @@ import 'swiper/css/effect-fade';
 
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Play, Search } from "lucide-react";
-import SearchDialog from "../../SearchDialog";
 
 import HeroImg1 from "/src/assets/HeroSection/RadleysCollabration4.jpg";
 import LabBottle from '/lab-bottel.webp'
@@ -15,7 +14,8 @@ import DNA2 from '/Dna2.jpg'
 import HeroImg2 from "/src/assets/HeroSection/RadleysCollabration3.jpg";
 
 import BGVideo from "/bg-video.mov"
-import { synthesisVertical } from "../Search.jsx/SynthesisVertical";
+import { synthesisVertical } from "../Search/SynthesisVertical";
+import SearchDialog from "../../SearchDialog";
 
 
 

@@ -9,13 +9,13 @@ import SalesforceForm from "../components/pages/Contact/SalesforceForm";
 function ContactUs() {
   return (
     <>
-      <Contact />
+      <LocationCards />
       <SupportSection />
-      <ContactNew />
-      <ContactForm />
-      {/* <SalesforceForm /> */}
+      {/* <Contact /> */}
       {/* <ContactNew /> */}
-      {/* <LocationCards /> */}
+      {/* <ContactForm /> */}
+      {/* <SalesforceForm /> */}
+
     </>
   )
 }

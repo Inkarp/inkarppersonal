@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ScrollToTop from "./ScrollToTop";
-import MainLayout from "./components/MainLayout";
+import MainLayout from "./MainLayout";
 // Main Pages
 import Home from "./Main/Home";
 import OurStory from "./Main/OurStory";
@@ -58,16 +57,16 @@ import GeneralProductDetails from "./components/pages/Verticals/GeneneralLaborat
 import WebinarsNew from "./components/pages/NewsAndEvents/WebinarsPage";
 import Webinars from "./components/pages/NewsAndEvents/Webinars";
 import HomeNew from "./Main/HomeNew";
-import ScrollAnimations from "./ScrollAnimations";
+
 import CareersForm from "./components/pages/Careers/CareersForm";
 import VerticalsBubbleNew from "./components/pages/Verticals/VerticalsBubbleNew";
+import  Verticals  from "./Main/Verticals";
+
 
 
 function App() {
   return (
     <Router>
-      <ScrollToTop />
-      <ScrollAnimations />
       <Routes>
         <Route element={<MainLayout />}>
           {/* Main Routes */}
@@ -91,8 +90,8 @@ function App() {
 
           {/* General fallback */}
           {/* <Route path="/verticals/:subpage" element={<VerticalsPage />} /> */}
-          {/* <Route path="/verticals" element={<VerticalsPage />} /> */}
-          <Route path="/verticals" element={<VerticalsBubble />} />
+          <Route path="/verticals" element={<Verticals />} />
+          {/* <Route path="/verticals" element={<VerticalsBubble />} /> */}
           {/* Verticals Routes */}
           {/* Specific first */}
           <Route path="/verticals/synthesis-and-flow-chemistry" element={<SynthesisAndFlowChemistry />} />

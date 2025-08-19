@@ -1,293 +1,108 @@
-// VerticalExplorer.jsx (Auto-shows first vertical, and product details on click)
-import React, { useState, useEffect } from 'react';
+import React from "react";
 
-export default function VerticalExplorer() {
-  const [verticals, setVerticals] = useState([]);
-  const [selectedVertical, setSelectedVertical] = useState(null);
-  const [selectedPrincipal, setSelectedPrincipal] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const [selectedProduct, setSelectedProduct] = useState(null);
+/**
+ * Radial Verticals UI — matches the reference
+ * - Respects max-height of the screen (no overflow): max-h-screen
+ * - Center circle + evenly spaced nodes with spokes
+ * - Hover tooltip shows each label
+ * - Icons remain upright (counter-rotation)
+ */
+ function Verticals() {
+  // You can replace these with your real verticals + icons
+  const items = [
+    { icon: "Synthesis and flow Chemistry", label: "Quality Check" },
+    { icon: "🔧", label: "Support" },
+    { icon: "🏆", label: "Excellence" },
+    { icon: "👥", label: "Teamwork" },
+    { icon: "📖", label: "Knowledge" },
+    { icon: "💡", label: "Innovation" },
+    { icon: "🚢", label: "Solutions" },
+    { icon: "❤️", label: "Care" },
+  ];
 
-  useEffect(() => {
-    setVerticals(dummyData);
-    setSelectedVertical(dummyData[0]);
-  }, []);
+  const count = items.length;
+  const step = 360 / count;
+
+  // Tunables (match look/spacing here)
+  const SIZE_VH = 92;   // overall wheel size as vh (keeps within screen)
+  const CENTER = 220;   // central circle diameter (px)
+  const NODE   = 84;    // node diameter (px)
+  const GAP    = 12;    // gap between spoke end and node (px)
+
+  const cssVars = {
+    "--size": `min(${SIZE_VH}vh, 720px)`,
+    "--center": `${CENTER}px`,
+    "--node": `${NODE}px`,
+    "--gap": `${GAP}px`,
+    // Distance from container center to node center
+    "--radius": `calc((var(--size)/2) - (var(--node)/2) - var(--gap))`,
+    // Spoke length from center circle edge to before node
+    "--line": `calc((var(--size)/2) - (var(--center)/2) - var(--node) - var(--gap))`,
+  } ;
 
   return (
-    <div className="flex min-h-screen">
-      {/* Left: Verticals */}
-      <aside className="w-1/5 border-r p-4 bg-gray-50">
-        <h2 className="font-bold mb-2">Verticals</h2>
-        {verticals.map((v, i) => (
-          <div
-            key={i}
-            className={`cursor-pointer p-2 rounded hover:bg-orange-100 ${selectedVertical?.name === v.name ? 'bg-orange-200' : ''}`}
-            onClick={() => {
-              setSelectedVertical(v);
-              setSelectedPrincipal(null);
-              setSelectedCategory(null);
-              setSelectedProduct(null);
-            }}
-          >
-            {v.name}
+    <section className="w-full max-h-screen overflow-hidden grid place-items-center py-8">
+      <div
+        className="relative"
+        style={{ width: "var(--size)", height: "var(--size)", ...cssVars }}
+      >
+        {/* central circle */}
+        <div
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white grid place-items-center shadow-[0_20px_60px_rgba(0,0,0,0.10)]"
+          style={{ width: "var(--center)", height: "var(--center)" }}
+        >
+          <div className="absolute inset-0 rounded-full ring-1 ring-gray-300/90" />
+          <div className="flex flex-col items-center gap-1 text-center px-6">
+            <span className="text-3xl">🛠️</span>
+            {/* <p className="text-[10px] tracking-[0.2em] text-gray-500">360°</p> */}
+            <h3 className="text-sm font-medium text-gray-700">Verticals</h3>
           </div>
-        ))}
-      </aside>
+        </div>
 
-      {/* Center: Principals + Categories */}
-      <main className="w-1/5 p-4 overflow-y-auto">
-        {selectedVertical?.principals?.map((p, pi) => (
-          <div key={pi} className="mb-6">
-            <h3
-              className={`text-lg font-semibold flex items-center gap-2 cursor-pointer ${selectedPrincipal?.name === p.name ? 'text-indigo-600' : ''}`}
-              onClick={() => {
-                setSelectedPrincipal(p);
-                setSelectedCategory(null);
-                setSelectedProduct(null);
-              }}
+        {/* spokes + nodes */}
+        {items.map((item, i) => {
+          const angle = i * step;
+          return (
+            <div
+              key={i}
+              className="absolute left-1/2 top-1/2"
+              style={{ transform: `translate(-50%,-50%) rotate(${angle}deg)` }}
             >
-              <img src={p.image} alt={p.name} className="h-6" /> {p.name}
-            </h3>
+              {/* spacer: center to central circle edge */}
+              <div style={{ height: `calc(var(--center)/2)` }} />
+              {/* spoke */}
+              <div className="w-px bg-gray-300/90" style={{ height: `var(--line)` }} />
+              {/* small gap before node */}
+              <div style={{ height: `var(--gap)` }} />
 
-            {(selectedPrincipal?.name === p.name || !selectedPrincipal) && p.categories?.map((cat, ci) => (
-              <div
-                key={ci}
-                className={`ml-6 mt-2 cursor-pointer p-2 rounded hover:bg-purple-100 ${selectedCategory?.name === cat.name ? 'bg-purple-200' : ''}`}
-                onClick={() => {
-                  setSelectedCategory(cat);
-                  setSelectedProduct(null);
-                }}
-              >
-                {cat.name}
-              </div>
-            ))}
-          </div>
-        ))}
-      </main>
+              {/* node (counter-rotated to keep upright) */}
+              <div className="group relative grid place-items-center rounded-full bg-white border border-gray-300 shadow-[0_12px_26px_rgba(0,0,0,0.08)] transition-transform hover:scale-[1.03]">
+                <div
+                  className="grid place-items-center text-2xl"
+                  style={{ width: "var(--node)", height: "var(--node)", transform: `rotate(${-angle}deg)` }}
+                >
+                  {item.icon}
+                </div>
 
-      {/* Right: Products */}
-      <section className="w-3/5 p-4 bg-gray-50 overflow-y-auto">
-        {selectedCategory && selectedCategory.products?.map((prod, pi) => (
-          <div
-            key={pi}
-            className={`cursor-pointer p-2 rounded hover:bg-green-100 ${selectedProduct?.name === prod.name ? 'bg-green-200' : ''}`}
-            onClick={() => setSelectedProduct(prod)}
-          >
-            <div className="flex flex-col  gap-4 items-center justify-center">
-              <div className='flex items-center'>
-              <img src={prod.image} alt={prod.name} className="h-80 w-80 object-contain" />
-              <span>{prod.name}</span>
+                {/* tooltip */}
+                <div className="pointer-events-none absolute left-1/2 top-[calc(100%+10px)] -translate-x-1/2 opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-200">
+                  <div
+                    className="rounded-md bg-gray-900 text-white text-xs px-2.5 py-1.5 shadow-md whitespace-nowrap"
+                    style={{ transform: `rotate(${-angle}deg)` }}
+                  >
+                    {item.label}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
+      </div>
 
-        {/* Product Detail */}
-        {selectedProduct && (
-          <div className="mt-6 border-t pt-4">
-            <h3 className="text-xl font-bold mb-2">{selectedProduct.name}</h3>
-            <img src={selectedProduct.image} alt={selectedProduct.name} className="w-48 mb-2" />
-            <div dangerouslySetInnerHTML={{ __html: selectedProduct.description }} className="text-sm mb-2" />
-            <p className="text-sm mb-2"><strong>Tags:</strong> {selectedProduct.tags?.join(', ')}</p>
-            <div dangerouslySetInnerHTML={{ __html: selectedProduct.specifications }} className="text-sm" />
-          </div>
-        )}
-      </section>
-    </div>
+      {/* Optional caption area (like your original) */}
+      <div className="mt-4 text-red-600 font-semibold">Knowledge...</div>
+      <div className="mt-1 text-black font-bold">SYNTHESIS</div>
+    </section>
   );
 }
-
-const dummyData = [
-  {
-    name: "Synthesis and Flow Chemistry",
-    principals: [
-      {
-        name: "Heidolph",
-        image: "https://www.inkarp.co.in/assets/images/principals/heidolph.png",
-        categories: [
-          {
-            name: "Rotary Evaporators",
-            products: [
-              {
-                name: "Rotavap Alpha 5000",
-                image: "https://www.inkarp.co.in/assets/images/products/Hei-VAP-HL-G3.webp",
-                description: "<p>A high-capacity rotary evaporator for large-scale synthesis labs.</p>",
-                tags: ["5000 mL Flask", "Digital Display", "Automatic Lift"],
-                specifications: "<table><tr><th>Parameter</th><th>Value</th></tr><tr><td>Capacity</td><td>5 L</td></tr><tr><td>Speed</td><td>20–280 RPM</td></tr></table>"
-              },
-              {
-                name: "Rotavap 5003",
-                image: "https://www.inkarp.co.in/assets/images/products/Hei-VAP-HL-G3.webp",
-                description: "<p>A high-capacity rotary evaporator for large-scale synthesis labs.</p>",
-                tags: ["5000 mL Flask", "Digital Display", "Automatic Lift"],
-                specifications: "<table><tr><th>Parameter</th><th>Value</th></tr><tr><td>Capacity</td><td>5 L</td></tr><tr><td>Speed</td><td>20–280 RPM</td></tr></table>"
-              },
-              
-            ]
-          },
-           {
-            name: "Overhead Stirrers",
-            products: [
-              {
-                name: "Rotavap Alpha 5000",
-                image: "https://www.inkarp.co.in/assets/images/products/Hei-VAP-HL-G3.webp",
-                description: "<p>A high-capacity rotary evaporator for large-scale synthesis labs.</p>",
-                tags: ["5000 mL Flask", "Digital Display", "Automatic Lift"],
-                specifications: "<table><tr><th>Parameter</th><th>Value</th></tr><tr><td>Capacity</td><td>5 L</td></tr><tr><td>Speed</td><td>20–280 RPM</td></tr></table>"
-              },
-              {
-                name: "Rotavap Alpha 5000",
-                image: "https://www.inkarp.co.in/assets/images/products/Hei-VAP-HL-G3.webp",
-                description: "<p>A high-capacity rotary evaporator for large-scale synthesis labs.</p>",
-                tags: ["5000 mL Flask", "Digital Display", "Automatic Lift"],
-                specifications: "<table><tr><th>Parameter</th><th>Value</th></tr><tr><td>Capacity</td><td>5 L</td></tr><tr><td>Speed</td><td>20–280 RPM</td></tr></table>"
-              },
-              {
-                name: "Rotavap Alpha 5000",
-                image: "https://www.inkarp.co.in/assets/images/products/Hei-VAP-HL-G3.webp",
-                description: "<p>A high-capacity rotary evaporator for large-scale synthesis labs.</p>",
-                tags: ["5000 mL Flask", "Digital Display", "Automatic Lift"],
-                specifications: "<table><tr><th>Parameter</th><th>Value</th></tr><tr><td>Capacity</td><td>5 L</td></tr><tr><td>Speed</td><td>20–280 RPM</td></tr></table>"
-              },
-              {
-                name: "Rotavap Alpha 5000",
-                image: "https://www.inkarp.co.in/assets/images/products/Hei-VAP-HL-G3.webp",
-                description: "<p>A high-capacity rotary evaporator for large-scale synthesis labs.</p>",
-                tags: ["5000 mL Flask", "Digital Display", "Automatic Lift"],
-                specifications: "<table><tr><th>Parameter</th><th>Value</th></tr><tr><td>Capacity</td><td>5 L</td></tr><tr><td>Speed</td><td>20–280 RPM</td></tr></table>"
-              },
-            ]
-          },
-           {
-            name: "Large sclae Rotary Evaporators",
-            products: [
-              {
-                name: "Rotavap Alpha 5000",
-                image: "https://www.inkarp.co.in/assets/images/products/Hei-VAP-HL-G3.webp",
-                description: "<p>A high-capacity rotary evaporator for large-scale synthesis labs.</p>",
-                tags: ["5000 mL Flask", "Digital Display", "Automatic Lift"],
-                specifications: "<table><tr><th>Parameter</th><th>Value</th></tr><tr><td>Capacity</td><td>5 L</td></tr><tr><td>Speed</td><td>20–280 RPM</td></tr></table>"
-              },
-              {
-                name: "Rotavap Alpha 5000",
-                image: "https://www.inkarp.co.in/assets/images/products/Hei-VAP-HL-G3.webp",
-                description: "<p>A high-capacity rotary evaporator for large-scale synthesis labs.</p>",
-                tags: ["5000 mL Flask", "Digital Display", "Automatic Lift"],
-                specifications: "<table><tr><th>Parameter</th><th>Value</th></tr><tr><td>Capacity</td><td>5 L</td></tr><tr><td>Speed</td><td>20–280 RPM</td></tr></table>"
-              },
-              {
-                name: "Rotavap Alpha 5000",
-                image: "https://www.inkarp.co.in/assets/images/products/Hei-VAP-HL-G3.webp",
-                description: "<p>A high-capacity rotary evaporator for large-scale synthesis labs.</p>",
-                tags: ["5000 mL Flask", "Digital Display", "Automatic Lift"],
-                specifications: "<table><tr><th>Parameter</th><th>Value</th></tr><tr><td>Capacity</td><td>5 L</td></tr><tr><td>Speed</td><td>20–280 RPM</td></tr></table>"
-              },
-            ]
-          },
-           {
-            name: "Magnetic Stirrers",
-            products: [
-              {
-                name: "Rotavap Alpha 5000",
-                image: "https://www.inkarp.co.in/assets/images/products/Hei-VAP-HL-G3.webp",
-                description: "<p>A high-capacity rotary evaporator for large-scale synthesis labs.</p>",
-                tags: ["5000 mL Flask", "Digital Display", "Automatic Lift"],
-                specifications: "<table><tr><th>Parameter</th><th>Value</th></tr><tr><td>Capacity</td><td>5 L</td></tr><tr><td>Speed</td><td>20–280 RPM</td></tr></table>"
-              },
-              {
-                name: "Rotavap Alpha 5000",
-                image: "https://www.inkarp.co.in/assets/images/products/Hei-VAP-HL-G3.webp",
-                description: "<p>A high-capacity rotary evaporator for large-scale synthesis labs.</p>",
-                tags: ["5000 mL Flask", "Digital Display", "Automatic Lift"],
-                specifications: "<table><tr><th>Parameter</th><th>Value</th></tr><tr><td>Capacity</td><td>5 L</td></tr><tr><td>Speed</td><td>20–280 RPM</td></tr></table>"
-              },
-              {
-                name: "Rotavap Alpha 5000",
-                image: "https://www.inkarp.co.in/assets/images/products/Hei-VAP-HL-G3.webp",
-                description: "<p>A high-capacity rotary evaporator for large-scale synthesis labs.</p>",
-                tags: ["5000 mL Flask", "Digital Display", "Automatic Lift"],
-                specifications: "<table><tr><th>Parameter</th><th>Value</th></tr><tr><td>Capacity</td><td>5 L</td></tr><tr><td>Speed</td><td>20–280 RPM</td></tr></table>"
-              },
-              {
-                name: "Rotavap Alpha 5000",
-                image: "https://www.inkarp.co.in/assets/images/products/Hei-VAP-HL-G3.webp",
-                description: "<p>A high-capacity rotary evaporator for large-scale synthesis labs.</p>",
-                tags: ["5000 mL Flask", "Digital Display", "Automatic Lift"],
-                specifications: "<table><tr><th>Parameter</th><th>Value</th></tr><tr><td>Capacity</td><td>5 L</td></tr><tr><td>Speed</td><td>20–280 RPM</td></tr></table>"
-              },
-            ]
-          },
-        ]
-      }
-    ]
-  },
-  {
-    name: "Analytical Instruments",
-    principals: [
-      {
-        name: "Bruker",
-        image: "https://www.inkarp.co.in/assets/images/principals/Bruker.png",
-        categories: [
-          {
-            name: "FTIR Spectrometer",
-            products: [
-              {
-                name: "Alpha II",
-                image: "https://example.com/images/alpha-ii.png",
-                description: "<p>Compact FTIR for routine analysis.</p>",
-                tags: ["Mid-IR", "Touch Interface", "Robust Design"],
-                specifications: "<table><tr><th>Wavelength</th><th>400–4000 cm⁻¹</th></tr></table>"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    name: "Life Sciences",
-    principals: [
-      {
-        name: "Eppendorf",
-        image: "https://www.inkarp.co.in/assets/images/principals/Eppendorf.png",
-        categories: [
-          {
-            name: "Centrifuges",
-            products: [
-              {
-                name: "MiniSpin Plus",
-                image: "https://example.com/images/minispin.png",
-                description: "<p>Compact centrifuge for quick spins.</p>",
-                tags: ["14,000 RPM", "12x1.5ml", "Whisper Quiet"],
-                specifications: "<table><tr><th>Speed</th><th>14,000 RPM</th></tr></table>"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    name: "Material Testing",
-    principals: [
-      {
-        name: "Anton Paar",
-        image: "https://www.inkarp.co.in/assets/images/principals/AntonPaar.png",
-        categories: [
-          {
-            name: "Rheometers",
-            products: [
-              {
-                name: "MCR 302",
-                image: "https://example.com/images/mcr302.png",
-                description: "<p>Modular rheometer for high precision applications.</p>",
-                tags: ["Air Bearing", "Normal Force", "PTD Control"],
-                specifications: "<table><tr><th>Torque</th><th>0.5 nNm</th></tr></table>"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
-];
+export default Verticals;

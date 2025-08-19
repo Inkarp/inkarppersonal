@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Helmet } from "react-helmet";
-import FallingAnimation from "../UI/FallingAnimation";
+
 
 const verticalsList = [
   { name: "Synthesis and Flow Chemistry", key: "synthesis-and-flow-chemistry", },

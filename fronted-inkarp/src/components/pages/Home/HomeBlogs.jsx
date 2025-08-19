@@ -41,7 +41,7 @@ export default function HomeBlogs() {
         </span>
         <h1
           data-animate
-          className="animate-out slide-left text-xl sm:text-2xl font-[MaxOT] text-[#E63946] leading-tight text-center"
+          className=" text-xl sm:text-2xl font-[MaxOT] text-[#E63946] leading-tight text-center"
         >
           Expert Perspectives | Real-World Lab Applications
         </h1>

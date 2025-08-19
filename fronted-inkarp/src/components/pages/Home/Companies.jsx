@@ -90,7 +90,7 @@ export default function Companies() {
                 align-items: center;
                 justify-content: center;
                 flex-wrap: nowrap;
-                padding: 20px;
+                padding:15px;
                 gap: 8px;
                 background: #FFFFFF;
                 box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1), 0px 16px 32px rgba(0, 0, 0, 0.1);

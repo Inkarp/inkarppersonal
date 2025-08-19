@@ -142,14 +142,14 @@ function Contact() {
       <section className="px-2 md:px-12 mx-auto font-['Roboto']">
         <div className="flex flex-col lg:flex-row justify-center items-center gap-8">
           {/* Left Side */}
-          <div className="w-full lg:w-1/4 text-center sm:text-right md:text-right lg:text-left space-y-4 z-0">
-            <h2 className="text-3xl font-bold text-[#E63946] font-[Roboto]">13+ Branches Across India</h2>
+          <div className="w-full lg:w-1/4 text-center sm:text-right md:text-left lg:text-left">
+            <h2 className="text-2xl text-[#E63946] font-[Roboto]">13+ Branches Across India</h2>
             <p className="text-lg font-[MaxOT]">Wherever you are, we're nearby—ready to support and serve your scientific journey.</p>
           </div>
 
           {/* India Map */}
           <div className="relative w-full mx-auto rounded-xl ">
-            <img src={IndiaMap} alt="Location Map" className="object-contain w-full h-full" 
+            <img src={IndiaMap} alt="Location Map" className="object-contain w-full max-h-screen" 
             style={{ filter: "brightness(1)" }} 
             />
 
@@ -171,7 +171,7 @@ function Contact() {
                     <div className="w-5 h-5 bg-red-500 rounded-full location-ping absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0" />
                     <div className="w-3 h-3 bg-red-700 border border-white rounded-full absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 shadow-md z-10" />
                   </div>
-                  <span className="mt-1 text-sm font-medium text-black bg-white px-2 py-0.5 rounded-md shadow border border-gray-200">
+                  <span className="mt-1 text-sm font-[MaxOT] font-medium text-black bg-white px-2 py-0.5 rounded-md shadow border border-gray-200">
                     {branch.name}
                   </span>
                   {/* Show details to the right of marker if hovered */}
@@ -228,10 +228,9 @@ function Contact() {
               );
             })}
           </div>
-
           {/* Right Side */}
-          <div className="w-full lg:w-1/4 text-center lg:text-left space-y-4 z-0">
-            <h2 className="text-3xl font-bold text-[#E63946] font-[Roboto]">Inkarp Is Closer Than You Think</h2>
+          <div className="w-full lg:w-1/4 text-center lg:text-right ">
+            <h2 className="text-2xl text-[#E63946] font-[Roboto]">Inkarp Is Closer Than You Think</h2>
             <p className="text-lg font-[MaxOT]">Tap into our local teams for expert consultation and service tailored to your region.</p>
           </div>
         </div>

@@ -2,7 +2,6 @@ import React, { useEffect, useMemo, useState } from "react";
 import { Helmet } from "react-helmet";
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
-// ⬇️ Use the themed Keka careers list I provided earlier
 import CareersKeka from "../components/pages/Careers/CareersKeka";
 import CareersKekaNew from "../components/pages/Careers/CareersKekaNew";
 
@@ -74,20 +73,10 @@ export default function CareersV2() {
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             {/* Left copy */}
             <div className="flex flex-col justify-center items-start gap-4">
-              {/* <span
-                className="px-4 py-1 text-xs md:text-sm font-[MaxOT]  w-fit font-semibold uppercase rounded-full bg-white"
-                style={{
-                  borderImage: "linear-gradient(90deg,#BE0010,#E63946) 1",
-                  borderWidth: 1,
-                  borderStyle: "solid",
-                }}
-              >
-                We are hiring
-              </span> */}
-              <h1 className="mt-5 text-4xl md:text-2xl text-[#E63946] font-bold font-[MaxOT] leading-tight">
+              <h1 className="mt-5 text-4xl  text-[#E63946] font-bold font-[MaxOT] leading-tight">
                 We are hiring
               </h1>
-              <h1 className="mt-5 text-4xl md:text-4xl font-[MaxOT]  leading-tight ">
+              <h1 className="mt-5 text-2xl md:text-2xl font-[MaxOT]  leading-tight ">
                 Do the most meaningful work of your career at{" "}
                 <span className="text-[#E63946] ">INKARP</span>
               </h1>
@@ -119,15 +108,7 @@ export default function CareersV2() {
                     style={{ transform: `rotate(${k === 1 ? 0.2 : k === 2 ? -0.2 : 0}deg)` }}
                   >
                     <div className="flex items-center gap-4">
-                      {/* <img
-                        src={m.img}
-                        alt={m.name}
-                        className="w-12 h-12 rounded-full object-cover ring-2 ring-[#E63946]/20"
-                      /> */}
-                      <div>
-                        {/* <p className="text-xs text-gray-500 font-[Roboto]">Team Member</p> */}
-                        <h4 className="text-[#E63946] font-[MaxOT]">{m.name}</h4>
-                      </div>
+                      <h4 className="text-[#E63946] font-[MaxOT]">{m.name}</h4>
                     </div>
                     <p className="mt-4 text-gray-800 italic font-[Roboto]">“{m.quote}”</p>
                   </div>
