@@ -18,7 +18,7 @@ const items = [
     icon: Mail,
   },
   {
-    title: "Call Us 24/7",
+    title: "Call Us",
     lines: ["+91 99666 34008"],
     icon: Phone,
   },

@@ -3,7 +3,7 @@ import { FaLinkedin } from 'react-icons/fa';
 import { Fade } from 'react-awesome-reveal';
 import Sarvanan from '/src/assets/Team/Saravanan.jpeg';
 import Madhu from '/src/assets/Team/Madhusudhan.jpeg';
-
+import MsReddy from '/src/assets/Team/MsReddy.jpg';
 const directors = [
   {
     name: 'K. Sreedhar',
@@ -30,7 +30,7 @@ const directors = [
     title: 'Director (West)',
     email: 'msreddy@inkarp.com',
     location: 'Ahmedabad',
-    img: 'https://www.inkarp.co.in/assets/images/our_team/M.S.Reddy.jpeg',
+    img: MsReddy,
     message:
       `Leads Inkarp's sales operations across the Western region. Specializing in advanced homogenization and precision laboratory solutions, he focuses on delivering innovative tools that enhance research workflows.`,
     links: ['https://linkedin.com/in/m-s-reddy'],
@@ -56,7 +56,7 @@ function DirectorCard({ director }) {
           <img
             src={director.img}
             alt={director.name}
-            className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-[1.02]"
+            className="w-full h-full object-contain transform transition-transform duration-300 group-hover:scale-[1.02]"
             loading="lazy"
           />
         </div>
@@ -67,11 +67,11 @@ function DirectorCard({ director }) {
         <h3 className="mt-1 text-xl font-[MaxOT] text-[#E63946]">{director.name}</h3>
         <p className="mt-1 text-base font-[MaxOT] text-black">{director.title}</p>
 
-        <div className="mt-2">
+        {/* <div className="mt-2">
           <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#F5F5F5] border border-gray-200 text-xs font-[Roboto] text-black/70">
             {director.location}
           </span>
-        </div>
+        </div> */}
 
         <p className="mt-3 text-sm font-[Roboto] text-black/80 whitespace-pre-line">
           {director.message}

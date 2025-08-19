@@ -27,6 +27,8 @@ import SplitAffiliates from '../components/pages/Home/SplitAffiliates';
 import HoneyCombAffiliates from '../components/pages/Home/HoneyCombAffiliates';
 import HeroNew from '../components/pages/Home/HeroNew';
 import CompaniesNew from '../components/pages/Home/CompaniesNew';
+import OfferingsNew from '../components/pages/Home/OfferingsNew';
+import OfferingsDemo from '../components/pages/Home/OfferingsDemo';
 
 
 
@@ -140,8 +142,6 @@ const Home = () => {
       <HoneyCombAffiliates/> */}
       {/* <Companies /> */}
       {/* <InkarpGroupShowcase /> */}
-
-
       {/* <ExperienceSection /> */}
       <Sample />
       {/* <About/> */}
@@ -149,6 +149,8 @@ const Home = () => {
       {/* <CompaniesNew /> */}
       {isMobileOrTablet ? <PrincipalsTab /> : <Principles />}
       <Offerings />
+      <OfferingsNew />
+      <OfferingsDemo />
       <HomeBlogs />
       <NewsEvents />
       <ClientReviews />
