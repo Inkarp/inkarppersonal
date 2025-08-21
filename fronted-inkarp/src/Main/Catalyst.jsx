@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { Helmet } from "react-helmet";
-import CatalystBannerImage from "../assets/Catalyst/CatalystBanner.jpg";
+import CatalystBannerImage from "../assets/Catalyst/CatalystcueBannerVolume02Issue01.jpeg";
 import Issue6 from "../assets/Catalyst/Images/Issue6.png";
 import Issue5 from "../assets/Catalyst/Images/Issue5.png";
 import Issue4 from "../assets/Catalyst/Images/Issue4.png";

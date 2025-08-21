@@ -39,7 +39,7 @@ function pad2(n) {
 
 function ProfileCard({ profile, index }) {
     return (
-        <div className="group relative h-full  text-white border  hover:border-[#E63946] transition-colors duration-300">
+        <div className="group relative h-full text-white border border-black/10  hover:border-[#E63946] transition-colors duration-300">
             {/* ghost index number */}
             {/* <span className="pointer-events-none absolute top-10 right-3 text-xl md:text-2xl font-[Roboto] text-black/50 select-none leading-none">
                 {pad2(index + 1)}
@@ -113,7 +113,7 @@ export default function OfferingsNew() {
 
             {/* grid like the reference (2 rows × 3 cols), tight borders (gap-0) */}
             <div className="w-full mt-8 flex justify-center">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 max-w-7xl w-full border border-white/10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 max-w-7xl w-full ">
                     {profiles.map((profile, index) => (
                         <ProfileCard key={index} profile={profile} index={index} />
                     ))}

@@ -46,7 +46,11 @@ function ProfileCard({ profile, isOpen, index, setOpenIndex }) {
         <div className="bg-[#F5F5F5] text-black h-[170px] md:h-[150px] p-4 flex flex-col justify-center items-start relative">
           <div className="flex items-center mb-3">
             <div className="w-14 h-14 md:w-12 md:h-12 rounded-full bg-white grid place-items-center">
-              <img src={profile.icon} alt={`${profile.name} icon`} className="w-10 h-10 md:w-9 md:h-9 object-contain" />
+              <img
+                src={profile.icon}
+                alt={`${profile.name} icon`}
+                className="w-10 h-10 md:w-9 md:h-9 object-contain transition-transform duration-700 ease-in-out group-hover:rotate-[360deg]"
+              />
             </div>
             <h3 className="text-base md:text-sm lg:text-base font-[MaxOT] pl-3 text-[#E63946]">
               {profile.name}
