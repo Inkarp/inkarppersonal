@@ -23,7 +23,7 @@ export default function HomeBlogs() {
   };
 
   return (
-    <section className="relative w-[98%] mx-auto py-10 px-5 ">
+    <section className="relative w-[98%] mx-auto p-5 ">
       {/* Soft stage background (on-brand) */}
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_20%_-10%,rgba(230,57,70,0.08),transparent),radial-gradient(1200px_600px_at_80%_110%,rgba(230,57,70,0.08),transparent)]" />
 
@@ -45,9 +45,7 @@ export default function HomeBlogs() {
         >
           Expert Perspectives | Real-World Lab Applications
         </h1>
-
       </div>
-
       {/* Mobile/Tablet dropdown (visible < lg) */}
       <div className="lg:hidden mt-5 relative max-w-xl mx-auto">
         <button
@@ -77,7 +75,7 @@ export default function HomeBlogs() {
               className="absolute z-20 mt-2 w-full rounded-xl border border-gray-200 bg-white shadow-lg overflow-hidden"
             >
               <ul className="max-h-72 overflow-y-auto">
-                {articles.slice(0, 5).map((item) => {
+                {articles.slice(0, 3).map((item) => {
                   const isActive = activeId === item.id;
                   return (
                     <li key={item.id}>
@@ -118,8 +116,8 @@ export default function HomeBlogs() {
           {/* LEFT – Blog list (hidden on mobile/tablet) */}
           <div className="lg:col-span-6 hidden lg:block">
             <div className="rounded-2xl p-4 sm:p-5 h-full">
-              <div className="flex flex-col gap-3 overflow-y-auto custom-scroll max-h-[540px]">
-                {articles.slice(0, 5).map((item) => {
+              <div className="flex flex-col gap-3 items-center justify-center overflow-y-auto custom-scroll max-h-[540px]">
+                {articles.slice(0, 3).map((item) => {
                   const isActive = activeId === item.id;
                   return (
                     <motion.button
@@ -173,14 +171,14 @@ export default function HomeBlogs() {
                 </div>
 
                 <div className="flex flex-col items-center gap-3 w-full min-h-[180px]">
-                  <p className="text-xs sm:text-sm text-[#E63946] uppercase tracking-wider text-center">
+                  {/* <p className="text-xs sm:text-sm text-[#E63946] uppercase tracking-wider text-center">
                     {new Date(featured.date).toLocaleDateString("en-US", {
                       year: "numeric",
                       month: "long",
                       day: "numeric",
                     })}{" "}
                     <span className="text-[#E63946] font-medium"> • {featured.location}</span>
-                  </p>
+                  </p> */}
 
                   <p className="text-sm sm:text-base text-center font-[Roboto] w-full">
                     {featured.description}

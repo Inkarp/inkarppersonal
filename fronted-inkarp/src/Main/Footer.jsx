@@ -160,7 +160,7 @@ const Footer = () => {
           </div>
 
           {/* Links + Contact */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div className="grid grid-cols-3 sm:grid-cols-2 gap-8">
             {/* Quick Links */}
             <div className="text-center sm:text-left">
               <h3 className="text-xl text-[#E63946] mb-3 font-[MaxOT]">Quick Links</h3>
