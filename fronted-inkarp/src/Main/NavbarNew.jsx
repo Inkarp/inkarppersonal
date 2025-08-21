@@ -48,13 +48,6 @@ function buildProductItem({ name, image, principal, productSlug, modelSlug }) {
   return { name, image: image || null, principal, productSlug, modelSlug };
 }
 
-/**
- * Full verticals search:
- * - If query matches a vertical → return ALL products+models in that vertical (grouped under that vertical title)
- * - If query matches a product → return the product + its models (grouped under product title)
- * - Else do generic model/product matches across all verticals (grouped under principal)
- * Returns: [{ title, products: [ {name,image,principal,productSlug,modelSlug?} ], vertical }]
- */
 function searchVerticals(query) {
   const q = (query || "").trim().toLowerCase();
   if (!q) return [];

@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { FaWhatsapp, FaBars } from "react-icons/fa";
-import Logo from '/inkarp.png';
 import { FiBell } from 'react-icons/fi';
 
 import NavbarNew from "./Main/NavbarNew";
@@ -218,7 +217,7 @@ useEffect(() => {
 
   return (
     <>
-      <div className="flex min-h-screen  w-full overflow-hidden">
+      <div className="flex min-h-screen w-full overflow-hidden">
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -230,7 +229,7 @@ useEffect(() => {
         {/* Sidebar */}
         <aside
           className={`fixed top-0 left-0 bottom-0 z-20 bg-white border-r border-gray-200 shadow-lg transition-transform duration-300 ease-in-out ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-            } lg:translate-x-0 w-[280px] lg:w-[15%] ink:[18%]`}
+            } lg:translate-x-0 w-[280px] lg:w-[15%]`}
         >
           <NavbarNew />
         </aside>

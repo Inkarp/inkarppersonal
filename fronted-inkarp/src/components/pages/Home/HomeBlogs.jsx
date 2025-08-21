@@ -4,6 +4,12 @@ import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { cardData } from "../NewsAndEvents/BlogsPage";
 
+import HeiVapCore from "/images/products/heidolph/Hei-VAP-HL-G3.webp";
+import HeiVapExpert from "/images/products/heidolph/Hei-VAP-Expert.webp";
+import HeiVapUltimate from "/images/products/heidolph/Hei-VAP-Ultimate.webp";
+import HeiVapUltimateControl from "/images/products/heidolph/Hei-VAP-Ultimate-Control.webp";
+import HeiVapExpertControl from "/images/products/heidolph/Hei-VAP-Expert-Control.webp";
+
 const articles = cardData;
 
 export default function HomeBlogs() {
@@ -159,12 +165,12 @@ export default function HomeBlogs() {
               transition={{ duration: 0.35 }}
               className="h-full p-4 sm:p-5"
             >
-              <div className="flex flex-col gap-6 h-full">
+              <div className="flex flex-col gap-6 h-[500px]">
                 <div className="relative rounded-3xl overflow-hidden border border-gray-200">
                   <img
-                    src={featured.image}
+                    src={HeiVapCore}
                     alt={featured.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                   {/* top accent line */}
                   <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-[#BE0010] to-[#E63946]" />
