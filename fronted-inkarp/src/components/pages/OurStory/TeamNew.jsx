@@ -62,7 +62,7 @@ const MemberCard = ({ member }) => {
             </a>
           )}
         </div>
-        <p className="text-lg italic font-[Roboto] whitespace-pre-line text-gray-700 ">
+        <p className="text-[17px] italic font-[Roboto] whitespace-pre-line ">
           {member.message}
         </p>
       </div>

@@ -89,8 +89,8 @@ function App() {
           {/* <Route path="/insights-and-updates/webinars" element={<Webinars />} /> */}
 
           {/* General fallback */}
-          {/* <Route path="/verticals/:subpage" element={<VerticalsPage />} /> */}
-          <Route path="/verticals" element={<Verticals />} />
+          <Route path="/verticals" element={<VerticalsPage />} />
+          {/* <Route path="/verticals" element={<Verticals />} /> */}
           {/* <Route path="/verticals" element={<VerticalsBubble />} /> */}
           {/* Verticals Routes */}
           {/* Specific first */}

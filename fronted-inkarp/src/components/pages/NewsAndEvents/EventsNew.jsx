@@ -41,11 +41,11 @@ const LabCard = ({ category, title, description, image, date }) => {
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 group-hover:opacity-100 opacity-0 transition-opacity duration-300">
                 <button
                     className={`relative px-6 py-2 font-medium rounded-md text-sm ${isPast
-                        ? 'bg-[#E63946] text-white font-[MaxOT]'
-                        : 'bg-[#E63946] text-white hover:bg-[#b72834]'
+                        ? ''
+                        : 'bg-[#BE0010] text-white hover:bg-[#E63946] hover:scale-105 transition-transform duration-300'
                         }`}
                 >
-                    {isPast ? 'Know More' : 'Join Us'}
+                    {isPast ? '' : 'Join Us'}
                 </button>
             </div>
         </div>

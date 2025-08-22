@@ -72,7 +72,7 @@ export default function CareersV2() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16 relative">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             {/* Left copy */}
-            <div className="flex flex-col justify-center items-start gap-4">
+            <div className="flex flex-col justify-center items-start bg-white rounded-xl gap-4">
               <h1 className="mt-5 text-4xl  text-[#E63946] font-bold font-[MaxOT] leading-tight">
                 We are hiring
               </h1>

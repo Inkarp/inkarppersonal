@@ -10,6 +10,7 @@ import ClientsNew from "../components/pages/OurStory/ClientsNew";
 import TeamNewTwo from "../components/pages/OurStory/TeamNewTwo";
 import InkarpBio from "../components/pages/OurStory/InkarpBio";
 import InkarpAbout from "../components/pages/OurStory/InkarpAbout";
+import TeamBubbles from "../components/pages/OurStory/TeamBubbles";
 
 const OurStory = () => {
   return (
@@ -23,7 +24,7 @@ const OurStory = () => {
       {/* Section without background - Mission and Clients */}
       <div className="relative">
         <MissionVision />
-        <InkarpAbout />
+        {/* <InkarpAbout /> */}
         <InkarpBio />
         {/* <ClientsNew /> */}
         <TrustedClients />
@@ -39,9 +40,10 @@ const OurStory = () => {
         <div className="absolute inset-0 "></div>
         {/* Content with background */}
         <div className="relative z-10">
-          <Team />
-          <TeamIntro />
-          {/* <TeamNew /> */}
+          {/* <TeamIntro /> */}
+          {/* <Team /> */}
+          <TeamNew />
+          {/* <TeamBubbles /> */}
           <TeamNewTwo />
           <SubTeam />
         </div>

@@ -93,7 +93,7 @@ export default function TeamNew() {
   return (
     <section className="ezy__about8 light">
       {/* Brand header band (theme) */}
-      <div className="relative bg-[#E63946] bg-opacity-90 py-12">
+      <div className="relative bg-black/40 bg-opacity-90 py-12">
         <div className="container px-4">
           <div className="grid grid-cols-12 my-6">
             <div className="col-span-12">

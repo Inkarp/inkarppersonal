@@ -30,7 +30,7 @@ const VerticalsPage = () => {
       <main className="flex-1 min-h-screen">
         <div className="mx-auto px-6 sm:px-10 max-w-7xl">
           <div className="text-center mb-12">
-            <h1 className="text-3xl sm:text-5xl font-bold font-[MaxOT] mb-4">Explore Our Scientific Focus Areas</h1>
+            <h1 className="text-3xl sm:text-5xlfont-[MaxOT] mb-4">Explore Our Scientific Focus Areas</h1>
             <p className="text-lg font-[Roboto]">
               From research to production, explore how our technologies support every lab need.
             </p>
@@ -46,7 +46,7 @@ const VerticalsPage = () => {
                 
               >
                 <div className="p-5 relative z-10 rounded-full">
-                  <h3 className="text-xl font-semibold mb-2 font-[MaxOT]">{vertical.name}</h3>
+                  <h3 className="text-xl  mb-2 font-[MaxOT]">{vertical.name}</h3>
                   {/* <p className="text-sm font-[Roboto] ">
                     Discover our range of instruments and solutions for {vertical.name.toLowerCase()}.
                   </p> */}
