@@ -26,8 +26,9 @@ const OurStory = () => {
         <MissionVision />
         {/* <InkarpAbout /> */}
         <InkarpBio />
-        {/* <ClientsNew /> */}
         <TrustedClients />
+        {/* <ClientsNew /> */}
+        
       </div>
       {/* Section with background image - Team sections */}
       <div
@@ -42,6 +43,7 @@ const OurStory = () => {
         <div className="relative z-10">
           {/* <TeamIntro /> */}
           {/* <Team /> */}
+          
           <TeamNew />
           {/* <TeamBubbles /> */}
           <TeamNewTwo />

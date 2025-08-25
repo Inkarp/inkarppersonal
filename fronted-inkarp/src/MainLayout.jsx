@@ -61,20 +61,20 @@ export default function MainLayout() {
       window.removeEventListener('resize', calc);
     };
   }, []);
-   // put this near your other effects in MainLayout
-useEffect(() => {
-  // If the URL has a hash (#section), scroll to that element instead
-  if (location.hash) {
-    const el = document.querySelector(location.hash);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-      return;
+  // put this near your other effects in MainLayout
+  useEffect(() => {
+    // If the URL has a hash (#section), scroll to that element instead
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
     }
-  }
-  // Otherwise go to page top
-  window.scrollTo({ top: 0, behavior: "auto" }); // or "smooth" if you prefer
-  setScrollPercent(0);
-}, [location.pathname, location.hash]);
+    // Otherwise go to page top
+    window.scrollTo({ top: 0, behavior: "auto" }); // or "smooth" if you prefer
+    setScrollPercent(0);
+  }, [location.pathname, location.hash]);
   // Responsive check for mobile/tablet
   const [isMobileOrTablet, setIsMobileOrTablet] = useState(window.innerWidth < 1024);
   useEffect(() => {
@@ -333,10 +333,6 @@ useEffect(() => {
                 className="cursor-pointer fixed right-25 bottom-5 z-[99999] group/button active:scale-95 grid place-items-center"
                 aria-label="Go to top"
               >
-                {/* <span className="pointer-events-none absolute">
-                    <ScrollToTopIcon />
-                  </span> */}
-                {/* Circular progress ring */}
                 {(() => {
                   const r = 24;                 // radius
                   const c = 2 * Math.PI * r;    // circumference
@@ -367,16 +363,18 @@ useEffect(() => {
                         strokeLinecap="round"
                       />
                     </svg>
-                    
                   );
                 })()}
-              
-                {/* center arrow (your existing icon works too) */}
+
                 <span className="pointer-events-none absolute text-[#E63946] text-xs font-medium rotate-0">
-                  <ChevronUp  className="h-4"/>
-                  {/* {Math.round(scrollPercent)}% */}
+                  {Math.round(scrollPercent) === 100 ? (
+                    <ChevronUp className="h-4" />
+                  ) : (
+                    `${Math.round(scrollPercent)}%`
+                  )}
                 </span>
               </button>
+
             )}
 
           </div>

@@ -30,7 +30,7 @@ const VerticalsPage = () => {
       <main className="flex-1 min-h-screen">
         <div className="mx-auto px-6 sm:px-10 max-w-7xl">
           <div className="text-center mb-12">
-            <h1 className="text-3xl sm:text-5xlfont-[MaxOT] mb-4">Explore Our Scientific Focus Areas</h1>
+            <h1 className="text-3xl font-[MaxOT] text-[#E63946] mb-4">Explore Our Scientific Focus Areas</h1>
             <p className="text-lg font-[Roboto]">
               From research to production, explore how our technologies support every lab need.
             </p>
@@ -42,7 +42,7 @@ const VerticalsPage = () => {
               <Link
                 key={index}
                 to={`/verticals/${vertical.key}`}
-                className="group relative bg-gray-100 border border-white/20 rounded-2xl overflow-hidden transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl ring-1 ring-white/10 hover:ring-[#E63946]/50 "
+                className="group relative bg-[#F5F5F5] border border-white/20 rounded-2xl overflow-hidden transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl ring-1 ring-white/10 hover:ring-[#E63946]/50 "
                 
               >
                 <div className="p-5 relative z-10 rounded-full">

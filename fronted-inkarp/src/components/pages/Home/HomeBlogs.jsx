@@ -123,7 +123,7 @@ export default function HomeBlogs() {
           <div className="lg:col-span-6 hidden lg:block">
             <div className="rounded-2xl p-4 sm:p-5 h-full">
               <div className="flex flex-col gap-3 items-center justify-center overflow-y-auto custom-scroll max-h-[540px]">
-                {articles.slice(0, 3).map((item) => {
+                {articles.slice(0, 5).map((item) => {
                   const isActive = activeId === item.id;
                   return (
                     <motion.button
@@ -172,11 +172,10 @@ export default function HomeBlogs() {
                     alt={featured.title}
                     className="w-full h-full object-contain"
                   />
-                  {/* top accent line */}
-                  <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-[#BE0010] to-[#E63946]" />
+                  
                 </div>
 
-                <div className="flex flex-col items-center gap-3 w-full min-h-[180px]">
+                <div className="flex flex-col items-center gap-3 w-full max-h-[180px]">
                   {/* <p className="text-xs sm:text-sm text-[#E63946] uppercase tracking-wider text-center">
                     {new Date(featured.date).toLocaleDateString("en-US", {
                       year: "numeric",

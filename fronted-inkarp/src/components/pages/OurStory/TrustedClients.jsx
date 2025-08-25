@@ -52,10 +52,9 @@ const logos = [
 
 export default function TrustedClients() {
   return (
-    <section className="relative w-[98%] mx-auto py-10 md:px-10 lg:px-20">
+    <section className="relative w-full mx-auto py-10 md:px-10 lg:px-20">
       {/* On-brand soft stage background */}
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_20%_-10%,rgba(230,57,70,0.08),transparent),radial-gradient(1200px_600px_at_80%_110%,rgba(230,57,70,0.08),transparent)]" />
-
       {/* Header */}
       <div className="text-center flex flex-col items-center justify-center gap-3">
         <span
@@ -74,7 +73,7 @@ export default function TrustedClients() {
       </div>
 
       {/* Carousel track in a glassy shell */}
-      <div className="mt-6 backdrop-blur p-3 sm:p-4 shadow-sm">
+      <div className="mt-6 backdrop-blur p-3 sm:p-4 shadow-sm bg-white/80">
         <Swiper
           modules={[Autoplay]}
           loop
@@ -99,7 +98,7 @@ export default function TrustedClients() {
                   src={logo.src}
                   alt={logo.alt}
                   className="max-h-full max-w-[160px] object-contain transition"
-                  loading="lazy"
+                  // loading="lazy"
                 />
               </div>
             </SwiperSlide>

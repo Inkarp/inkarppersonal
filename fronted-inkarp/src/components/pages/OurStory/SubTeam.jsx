@@ -172,7 +172,7 @@ export default function SubTeam() {
           {allTeamMembers.Director.map((member, index) => (
             <div
               key={`director-${index}`}
-              className="flex flex-col items-center bg-white p-2 rounded-xl"
+              className="flex flex-col items-center bg-white/70 p-2 rounded-xl"
             >
               <img
                 className="object-cover bg-gray-200 w-full max-w-xs rounded-xl aspect-square"

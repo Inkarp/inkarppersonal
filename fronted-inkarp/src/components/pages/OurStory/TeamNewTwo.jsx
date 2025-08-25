@@ -49,14 +49,14 @@ const directors = [
 
 function DirectorCard({ director }) {
   return (
-    <article className="group flex flex-col bg-white rounded-2xl border border-gray-200 hover:border-[#E63946] shadow-sm hover:shadow-md transition-all duration-300">
+    <article className="group flex flex-col bg-white/70 rounded-2xl border border-gray-200 hover:border-[#E63946] shadow-sm hover:shadow-md transition-all duration-300">
       {/* image */}
       <div className="p-3">
-        <div className="relative w-full max-w-xs mx-auto rounded-[50%] overflow-hidden bg-[#F5F5F5] aspect-[4/4] border-3 border-[#E63946]">
+        <div className="relative w-full max-w-xs mx-auto rounded-3xl overflow-hidden  aspect-[4/4]  ">
           <img
             src={director.img}
             alt={director.name}
-            className="w-full h-full object-contain transform transition-transform duration-300 group-hover:scale-[1.02]"
+            className="w-full h-full bg-white object-cover transform transition-transform duration-300 group-hover:scale-[1.02] object-center"
             loading="lazy"
           />
         </div>

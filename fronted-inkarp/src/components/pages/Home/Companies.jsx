@@ -23,7 +23,7 @@ const subsidiaries = [
 
 export default function Companies() {
   return (
-    <section className="relative w-[98%] mx-auto py-10 md:px-5 lg:px-20">
+    <section className="relative w-[98%] bg-[#F5F5F5] mx-auto py-10 md:px-5 lg:px-20">
       {/* soft on-brand background */}
       <div className="flex justify-center items-center">
         <span

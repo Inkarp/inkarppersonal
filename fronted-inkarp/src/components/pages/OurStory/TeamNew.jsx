@@ -34,9 +34,9 @@ Thank you for being an integral part of Inkarp's journey. Let us continue to gro
 
 const MemberCard = ({ member }) => {
   return (
-    <div className="relative flex flex-col lg:flex-row items-start gap-6 text-left p-5 sm:p-6 bg-white backdrop-blur-md rounded-2xl shadow-lg border border-gray-200 hover:shadow-2xl hover:border-[#E63946] transition-all duration-300 w-full max-w-5xl">
+    <div className="relative flex flex-col lg:flex-row items-start gap-6 text-left p-5 sm:p-6 bg-white/80 backdrop-blur rounded-2xl shadow-xl border border-gray-200 hover:shadow-2xl hover:border-[#E63946] transition-all duration-300 w-full max-w-5xl">
       <div className="w-full sm:w-[300px] flex-shrink-0 mx-auto sm:mx-0">
-        <div className="rounded-lg flex flex-col gap-3 items-center justify-center shadow-md overflow-hidden w-full h-[360px]">
+        <div className="rounded-lg flex flex-col gap-3 items-center justify-center  overflow-hidden w-full h-[400px]">
           <img
             src={member.img}
             alt={member.name}
@@ -94,7 +94,7 @@ export default function TeamNew() {
 
         <div className="flex flex-col items-center gap-5 py-10">
           <Fade direction="down" triggerOnce>
-            <div className="flex justify-center w-full px-2">
+            <div className="flex justify-center w-full px-2 ">
               <MemberCard member={members[0]} />
             </div>
           </Fade>
