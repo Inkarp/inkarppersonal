@@ -3,9 +3,6 @@ import { Helmet } from "react-helmet";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import ThermoFisher from '/src/assets/PrincipalLogos/RowFive/thermofisher.png';
 import Hitachi from '/src/assets/PrincipalLogos/RowSix/hitachi.png';
-import ME204 from "/images/products/Mettler/ME204.jpg";
-import ME204T from "/images/products/Mettler/ME204t.jpg";
-import ME1002 from "/images/products/Mettler/ME1002.jpg";
 import { Rheology } from "../../../../data/Rheology";
 
 
@@ -14,7 +11,6 @@ const synthesisData = [
   {
     principal: "ThermoFisher",
     logo: ThermoFisher,
-    name: "Life Sciences Lab Equipment",
     products: [
       "Rheometers and Viscometers",
     ],

@@ -49,7 +49,7 @@ import Xsr205du from "/images/products/Mettler/xsr205du.jpg";
 
 import Banner1 from "/images/products/Banner/Banner1.jpg";
 import Banner2 from "/images/products/Banner/Banner2.jpg";
-
+import Banner3 from "/images/products/Banner/Banner3.jpg";
 
 export const MoistureAnalyzer = {
 
@@ -58,7 +58,7 @@ export const MoistureAnalyzer = {
         name: "Halogen Moisture Analyzer HE53 (230V)",
         image: He53,
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "Halogen Moisture Analyzer HE53 (230V)",
         videoId: "DBJ_Gs5H76Y", // Replace if actual video available
         meta: {
@@ -121,7 +121,7 @@ export const MoistureAnalyzer = {
         name: "Halogen Moisture Analyzer HE73 (230V)",
         image: He73,
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "Halogen Moisture Analyzer HE73 (230V)",
         videoId: "DBJ_Gs5H76Y", // Replace with actual video if available
         meta: {
@@ -188,7 +188,7 @@ export const MoistureAnalyzer = {
         name: "Halogen Moisture Analyzer HC103 (230V)",
         image: Hc103,
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "Halogen Moisture Analyzer HC103 (230V)",
         videoId: "DBJ_Gs5H76Y", // Replace with actual video if available
         meta: {
@@ -254,7 +254,7 @@ export const MoistureAnalyzer = {
         name: "Halogen Moisture Analyzer HX204",
         image: Hx204,
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "Halogen Moisture Analyzer HX204",
         videoId: "DBJ_Gs5H76Y", // Replace with actual video if available
         meta: {

@@ -87,7 +87,6 @@ export default function CareersV2() {
                 We hire for potential, not just positions. If you love solving real problems and learning fast, you’ll feel at home.
               </p>
             </div>
-
             {/* Right = 70% (7/10) */}
             <div className="lg:col-span-6 p-5 bg-white rounded-2xl shadow-lg overflow-hidden">
               <div className="flex justify-center">

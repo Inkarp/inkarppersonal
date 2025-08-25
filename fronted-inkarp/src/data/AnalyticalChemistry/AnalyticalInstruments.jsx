@@ -14,7 +14,6 @@ import He53 from "/images/products/Mettler/he53.jpg";
 import He73 from "/images/products/Mettler/he73.jpg";
 import Hx204 from "/images/products/Mettler/hx204.jpg";
 
-
 import MeltingPointSystemMp80 from "/images/products/Mettler/melting-point-System-mp80.jpg";
 import MeltingPointSystemMp30 from "/images/products/Mettler/melting-point-System-mp30.jpg";
 
@@ -50,7 +49,7 @@ import Xsr205du from "/images/products/Mettler/xsr205du.jpg";
 
 import Banner1 from "/images/products/Banner/Banner1.jpg";
 import Banner2 from "/images/products/Banner/Banner2.jpg";
-
+import Banner3 from "/images/products/Banner/Banner3.jpg";
 
 export const AnalyticalInstruments = {
     "ph-meter-sevendirect-sd20-kit": {
@@ -58,7 +57,7 @@ export const AnalyticalInstruments = {
         name: "pH Meter SevenDirect SD20 Kit",
         image: Sd20Kit, // replace with your actual import reference
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "pH Meter SevenDirect SD20 Kit",
         videoId: "DBJ_Gs5H76Y", // Replace if actual video available
         meta: {
@@ -129,7 +128,7 @@ export const AnalyticalInstruments = {
         name: "Cond Meter SevenDirect SD30 Kit",
         image: Sd30Kit, // replace with your actual import reference
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "Cond Meter SevenDirect SD30 Kit",
         videoId: "DBJ_Gs5H76Y", // Replace if actual video available
         meta: {
@@ -199,7 +198,7 @@ export const AnalyticalInstruments = {
         name: "pH/Cond Meter SevenDirect SD23 Kit",
         image: Sd23, // replace with your actual import reference
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "pH/Cond Meter SevenDirect SD23 Kit",
         videoId: "DBJ_Gs5H76Y", // Replace if actual video available
         meta: {
@@ -274,7 +273,7 @@ export const AnalyticalInstruments = {
         name: "pH/Ion Meter SevenDirect SD50 Kit",
         image: Sd50Kit, // replace with your actual import reference
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "pH/Ion Meter SevenDirect SD50 Kit",
         videoId: "DBJ_Gs5H76Y", // Replace if actual video available
         meta: {
@@ -349,7 +348,7 @@ export const AnalyticalInstruments = {
         name: "SevenExcellence pH meter S400-Bio-Kit",
         image: S400bio, // replace with your actual import reference
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "SevenExcellence pH meter S400-Bio-Kit",
         videoId: "DBJ_Gs5H76Y", // Replace if actual video available
         meta: {
@@ -414,12 +413,12 @@ export const AnalyticalInstruments = {
         }
     },
 
-    "seven-excellence-cond-meter-s700-std-kit": {
+    "seven-excellence-ph-cond-meter-s700-std-kit": {
         id: "seven-excellence-cond-meter-s700-std-kit",
         name: "SevenExcellence Cond meter S700-Std-Kit",
         image: S700StdKit, // replace with your actual import reference
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "SevenExcellence Cond meter S700-Std-Kit",
         videoId: "DBJ_Gs5H76Y", // Replace if actual video available
         meta: {
@@ -486,7 +485,7 @@ export const AnalyticalInstruments = {
         name: "SevenExcellence pH/Cond meter S470-Std-K",
         image: S470StdKit, // replace with your actual import reference
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "SevenExcellence pH/Cond meter S470-Std-K",
         videoId: "DBJ_Gs5H76Y", // Replace if actual video available
         meta: {
@@ -558,7 +557,7 @@ export const AnalyticalInstruments = {
         name: "Titrator EasyPlus Easy pH",
         image: EasyPh, // replace with your actual import reference
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "Titrator EasyPlus Easy pH",
         videoId: "DBJ_Gs5H76Y", // Replace if actual video available
         meta: {
@@ -618,7 +617,7 @@ export const AnalyticalInstruments = {
         name: "Titrator EasyPlus Easy Pro",
         image: EasyPro, // replace with your actual import reference
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "Titrator EasyPlus Easy Pro",
         videoId: "DBJ_Gs5H76Y", // Replace if actual video available
         meta: {
@@ -682,7 +681,7 @@ export const AnalyticalInstruments = {
         name: "Titrator EasyPlus Easy KFV",
         image: EasyKfv, // replace with your actual import reference
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "Titrator EasyPlus Easy KFV",
         videoId: "DBJ_Gs5H76Y", // Replace if actual video available
         meta: {
@@ -741,7 +740,7 @@ export const AnalyticalInstruments = {
         name: "Titrator Excellence T5",
         image: TitratorExcellenceT5, // replace with your actual import reference
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "Titrator Excellence T5",
         videoId: "DBJ_Gs5H76Y", // Replace if actual video available
         meta: {
@@ -820,7 +819,7 @@ export const AnalyticalInstruments = {
         name: "Titrator Compact V20S",
         image: V20s, // replace with your actual import reference
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "Titrator Compact V20S",
         videoId: "DBJ_Gs5H76Y", // Replace if actual video available
         meta: {
@@ -891,7 +890,7 @@ export const AnalyticalInstruments = {
         name: "Titrator Compact C10SX",
         image: C10sx, // replace with your actual import reference
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "Titrator Compact C10SX",
         videoId: "DBJ_Gs5H76Y", // Replace if actual video available
         meta: {
@@ -970,7 +969,7 @@ export const AnalyticalInstruments = {
         name: "Handheld Density Meter Densito",
         image: Densito, // replace with your actual import reference
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "Handheld Density Meter Densito",
         videoId: "DBJ_Gs5H76Y", // Replace if actual video available
         meta: {
@@ -1051,7 +1050,7 @@ export const AnalyticalInstruments = {
         name: "Density meter Excellence D4",
         image: DensityMeterExcellenceD4, // replace with your actual import reference
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "Density meter Excellence D4",
         videoId: "DBJ_Gs5H76Y", // Replace if actual video available
         meta: {
@@ -1136,7 +1135,7 @@ export const AnalyticalInstruments = {
         name: "Refractometer Excellence R4",
         image: ExcellenceR4, // replace with your actual import reference
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "Refractometer Excellence R4",
         videoId: "DBJ_Gs5H76Y", // Replace if actual video available
         meta: {
@@ -1217,7 +1216,7 @@ export const AnalyticalInstruments = {
         name: "Handheld Refractometer MyBrix",
         image: HandheldRefractometerMybrix, // replace with your actual import reference
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "Handheld Refractometer MyBrix",
         videoId: "DBJ_Gs5H76Y", // Replace if actual video available
         meta: {
@@ -1290,7 +1289,7 @@ export const AnalyticalInstruments = {
         name: "Melting Point System MP30",
         image: MeltingPointSystemMp30, // replace with your actual import reference
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "Melting Point System MP30",
         videoId: "DBJ_Gs5H76Y", // Replace with actual video ID if available
         meta: {
@@ -1362,7 +1361,7 @@ export const AnalyticalInstruments = {
         name: "Melting Point System MP80",
         image: MeltingPointSystemMp80, // replace with your actual import reference
         logo: Mettler,
-        bannerImg: Banner2,
+        bannerImg: Banner3,
         altText: "Melting Point System MP80",
         videoId: "DBJ_Gs5H76Y", // Replace with actual video ID if available
         meta: {
@@ -1432,5 +1431,4 @@ export const AnalyticalInstruments = {
             "Standard compliance": "www.mt.com/mpdp-norms"
         }
     }
-
 }

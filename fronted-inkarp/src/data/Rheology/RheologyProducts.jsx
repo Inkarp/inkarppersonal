@@ -4,6 +4,7 @@ import Labomatic from '/src/assets/PrincipalLogos/RowTwo/Labomatic.svg';
 import ECom from '/src/assets/PrincipalLogos/RowTwo/ECom.png';
 
 import Thermofisher from '/src/assets/PrincipalLogos/RowFive/thermofisher.png';
+import Hitachi from '/src/assets/PrincipalLogos/RowSix/hitachi.png';
 
 import FallingBallViscometer from "/images/products/Thermofisher/falling-ball-viscometers.jpg";
 import OnlineRheometers from "/images/products/Thermofisher/online-rheometers.jpg";
@@ -15,35 +16,35 @@ import Banner3 from "/images/products/Banner/Banner3.jpg";
 
 
 export const RheologyProducts = {
-    "online-rheometers": {
-        id: "online-rheometers",
-        name: "Online Rheometers",
-        image: OnlineRheometers, // replace with your imported image
-        logo: Thermofisher,
-        bannerImg: Banner3,
-        altText: "Thermo Scientific™ HAAKE PCR Online Rheometer",
-        videoId: "",
-        meta: {
-            title: "Thermo Scientific™ HAAKE PCR Online Rheometers | Inkarp India",
-            description:
-                "Thermo Scientific™ HAAKE PCR online rheometers provide precise online measurement of melt index and viscosity with advanced process control technology. Featuring a bypass design for higher sensitivity, die exit pressure control, and flexible pump configurations. Distributed and serviced by Inkarp Instruments across India.",
-            keywords: [
-                "Thermo Scientific Online Rheometers",
-                "HAAKE PCR",
-                "Melt Index Measurement",
-                "Viscosity Measurement",
-                "Process Control Rheometer",
-                "Online Polymer Testing",
-                "HAAKE PCR 620",
-                "HAAKE PCR 630",
-                "Inkarp Thermo Scientific Distributor",
-                "Rheology Testing Equipment"
-            ],
-            altText: "Thermo Scientific™ HAAKE PCR Online Rheometer",
-            internalLinks: ["rheometers-and-viscometers", "thermo-scientific-products"],
-            externalLinks: ["https://www.thermofisher.com/"]
-        },
-        "description": `
+  "online-rheometers": {
+    id: "online-rheometers",
+    name: "Online Rheometers",
+    image: OnlineRheometers, // replace with your imported image
+    logo: Thermofisher,
+    bannerImg: Banner3,
+    altText: "Thermo Scientific™ HAAKE PCR Online Rheometer",
+    videoId: "",
+    meta: {
+      title: "Thermo Scientific™ HAAKE PCR Online Rheometers | Inkarp India",
+      description:
+        "Thermo Scientific™ HAAKE PCR online rheometers provide precise online measurement of melt index and viscosity with advanced process control technology. Featuring a bypass design for higher sensitivity, die exit pressure control, and flexible pump configurations. Distributed and serviced by Inkarp Instruments across India.",
+      keywords: [
+        "Thermo Scientific Online Rheometers",
+        "HAAKE PCR",
+        "Melt Index Measurement",
+        "Viscosity Measurement",
+        "Process Control Rheometer",
+        "Online Polymer Testing",
+        "HAAKE PCR 620",
+        "HAAKE PCR 630",
+        "Inkarp Thermo Scientific Distributor",
+        "Rheology Testing Equipment"
+      ],
+      altText: "Thermo Scientific™ HAAKE PCR Online Rheometer",
+      internalLinks: ["rheometers-and-viscometers", "thermo-scientific-products"],
+      externalLinks: ["https://www.thermofisher.com/"]
+    },
+    "description": `
 <div style="display:flex;flex-wrap:wrap;gap:20px;font-family:Roboto;color:#333;">
     <div style="flex:1 1 60%;min-width:300px;">
         <div style="padding-left:20px;">
@@ -112,36 +113,36 @@ export const RheologyProducts = {
 </div>
 `
 
-    },
+  },
 
-    "rotational-rheometers": {
-        id: "rotational-rheometers",
-        name: "Rotational Rheometers",
-        image: RotationalRheometers, // your imported image
-        logo: Thermofisher,
-        bannerImg: Banner3,
-        altText: "Thermo Scientific™ HAAKE™ MARS™ iQ Rotational Rheometers",
-        videoId: "",
-        meta: {
-            title: "Thermo Scientific™ HAAKE™ MARS™ iQ Rotational Rheometers | Inkarp India",
-            description:
-                "Thermo Scientific™ HAAKE™ MARS™ iQ rotational rheometers deliver intuitive operation, flexible configurations (air- or ball-bearing), and reliable results for QC and R&D. Replace HAAKE RheoStress 1 and RotoVisco 1 with a modern platform. Distributed and serviced by Inkarp Instruments in India.",
-            keywords: [
-                "Rotational Rheometers",
-                "HAAKE MARS iQ",
-                "Thermo Scientific Rheometer",
-                "Rheology QC",
-                "Air bearing rheometer",
-                "Ball bearing rheometer",
-                "RheoWin software",
-                "Inkarp Thermo distributor",
-                "Rheology testing India"
-            ],
-            altText: "Thermo Scientific HAAKE MARS iQ rotational rheometer",
-            internalLinks: ["rheometers-and-viscometers", "thermo-scientific-products"],
-            externalLinks: ["https://www.thermofisher.com/"]
-        },
-        description: `
+  "rotational-rheometers": {
+    id: "rotational-rheometers",
+    name: "Rotational Rheometers",
+    image: RotationalRheometers, // your imported image
+    logo: Thermofisher,
+    bannerImg: Banner3,
+    altText: "Thermo Scientific™ HAAKE™ MARS™ iQ Rotational Rheometers",
+    videoId: "",
+    meta: {
+      title: "Thermo Scientific™ HAAKE™ MARS™ iQ Rotational Rheometers | Inkarp India",
+      description:
+        "Thermo Scientific™ HAAKE™ MARS™ iQ rotational rheometers deliver intuitive operation, flexible configurations (air- or ball-bearing), and reliable results for QC and R&D. Replace HAAKE RheoStress 1 and RotoVisco 1 with a modern platform. Distributed and serviced by Inkarp Instruments in India.",
+      keywords: [
+        "Rotational Rheometers",
+        "HAAKE MARS iQ",
+        "Thermo Scientific Rheometer",
+        "Rheology QC",
+        "Air bearing rheometer",
+        "Ball bearing rheometer",
+        "RheoWin software",
+        "Inkarp Thermo distributor",
+        "Rheology testing India"
+      ],
+      altText: "Thermo Scientific HAAKE MARS iQ rotational rheometer",
+      internalLinks: ["rheometers-and-viscometers", "thermo-scientific-products"],
+      externalLinks: ["https://www.thermofisher.com/"]
+    },
+    description: `
   <div style="display:flex;flex-wrap:wrap;gap:20px;font-family:Roboto,Arial,sans-serif;color:#333;max-width:100%;">
   <div style="flex:1 1 700px;min-width:280px;">
     <div style="padding-left:20px;padding-right:20px;box-sizing:border-box;">
@@ -303,36 +304,36 @@ export const RheologyProducts = {
 </div>
 
 `
+  },
+  "falling-ball-viscometer": {
+    id: "falling-ball-viscometer",
+    name: "Falling Ball Viscometer",
+    image: FallingBallViscometer, // replace with your imported image
+    logo: Thermofisher,
+    bannerImg: Banner3,
+    altText: "Thermo Scientific™ HAAKE Falling Ball Viscometer C",
+    videoId: "",
+    meta: {
+      title: "Thermo Scientific™ HAAKE Falling Ball Viscometer C | Inkarp India",
+      description:
+        "Measure viscosity precisely using only a stopwatch and no power connection with the Thermo Scientific™ HAAKE™ Falling Ball Viscometer C. Among the most accurate viscometers available, especially with precise temperature control, it measures transparent Newtonian liquids and gases and complies with DIN 53015 / ISO 12058.",
+      keywords: [
+        "Falling Ball Viscometer",
+        "HAAKE Falling Ball",
+        "Thermo Scientific Viscometer",
+        "DIN 53015",
+        "ISO 12058",
+        "Newtonian liquids viscosity",
+        "Reference viscometer",
+        "Viscosity measurement India",
+        "Inkarp Thermo Scientific Distributor",
+        "Laboratory viscometers"
+      ],
+      altText: "Thermo Scientific™ HAAKE Falling Ball Viscometer C",
+      internalLinks: ["rheometers-and-viscometers", "thermo-scientific-products"],
+      externalLinks: ["https://www.thermofisher.com/"]
     },
-    "falling-ball-viscometer": {
-        id: "falling-ball-viscometer",
-        name: "Falling Ball Viscometer",
-        image: FallingBallViscometer, // replace with your imported image
-        logo: Thermofisher,
-        bannerImg: Banner3,
-        altText: "Thermo Scientific™ HAAKE Falling Ball Viscometer C",
-        videoId: "",
-        meta: {
-            title: "Thermo Scientific™ HAAKE Falling Ball Viscometer C | Inkarp India",
-            description:
-                "Measure viscosity precisely using only a stopwatch and no power connection with the Thermo Scientific™ HAAKE™ Falling Ball Viscometer C. Among the most accurate viscometers available, especially with precise temperature control, it measures transparent Newtonian liquids and gases and complies with DIN 53015 / ISO 12058.",
-            keywords: [
-                "Falling Ball Viscometer",
-                "HAAKE Falling Ball",
-                "Thermo Scientific Viscometer",
-                "DIN 53015",
-                "ISO 12058",
-                "Newtonian liquids viscosity",
-                "Reference viscometer",
-                "Viscosity measurement India",
-                "Inkarp Thermo Scientific Distributor",
-                "Laboratory viscometers"
-            ],
-            altText: "Thermo Scientific™ HAAKE Falling Ball Viscometer C",
-            internalLinks: ["rheometers-and-viscometers", "thermo-scientific-products"],
-            externalLinks: ["https://www.thermofisher.com/"]
-        },
-        description: `
+    description: `
         <div style="display:flex;flex-wrap:wrap;gap:20px;font-family:Roboto,Arial,sans-serif;color:#333;">
     <div style="flex:1 1 60%;min-width:300px;">
         <div style="padding-left:20px;">
@@ -445,9 +446,9 @@ export const RheologyProducts = {
     </div>
 </div>`
 
-    },
-    "rotational-viscometers": {
-        id: "falling-ball-viscometer",
+  },
+  "rotational-viscometers": {
+    id: "falling-ball-viscometer",
     name: "Falling Ball Viscometer",
     image: FallingBallViscometer, // imported image
     logo: Thermofisher,
@@ -455,26 +456,26 @@ export const RheologyProducts = {
     altText: "Thermo Scientific™ HAAKE™ Falling Ball Viscometer C",
     videoId: "",
     meta: {
-        title: "Thermo Scientific™ HAAKE™ Falling Ball Viscometer C | Inkarp India",
-        description:
-            "Thermo Scientific™ HAAKE™ Falling Ball Viscometer C delivers precise viscosity measurement for transparent Newtonian liquids and gases without power supply. Complies with DIN 53015 and ISO 12058 standards, offering exceptional accuracy with temperature control. Distributed and serviced by Inkarp Instruments in India.",
-        keywords: [
-            "Falling Ball Viscometer",
-            "Thermo Scientific HAAKE Viscometer",
-            "Viscosity Measurement",
-            "DIN 53015",
-            "ISO 12058",
-            "Transparent Liquids Viscosity",
-            "Newtonian Liquids Testing",
-            "Inkarp Thermo Scientific Distributor",
-            "HAAKE Falling Ball Viscometer",
-            "Industrial Viscosity Measurement"
-        ],
-        altText: "Thermo Scientific™ HAAKE™ Falling Ball Viscometer C",
-        internalLinks: ["rheometers-and-viscometers", "thermo-scientific-products"],
-        externalLinks: ["https://www.thermofisher.com/"]
+      title: "Thermo Scientific™ HAAKE™ Falling Ball Viscometer C | Inkarp India",
+      description:
+        "Thermo Scientific™ HAAKE™ Falling Ball Viscometer C delivers precise viscosity measurement for transparent Newtonian liquids and gases without power supply. Complies with DIN 53015 and ISO 12058 standards, offering exceptional accuracy with temperature control. Distributed and serviced by Inkarp Instruments in India.",
+      keywords: [
+        "Falling Ball Viscometer",
+        "Thermo Scientific HAAKE Viscometer",
+        "Viscosity Measurement",
+        "DIN 53015",
+        "ISO 12058",
+        "Transparent Liquids Viscosity",
+        "Newtonian Liquids Testing",
+        "Inkarp Thermo Scientific Distributor",
+        "HAAKE Falling Ball Viscometer",
+        "Industrial Viscosity Measurement"
+      ],
+      altText: "Thermo Scientific™ HAAKE™ Falling Ball Viscometer C",
+      internalLinks: ["rheometers-and-viscometers", "thermo-scientific-products"],
+      externalLinks: ["https://www.thermofisher.com/"]
     },
-        description: `
+    description: `
         <div style="display:flex;flex-wrap:wrap;gap:20px;font-family:Roboto,Arial,sans-serif;color:#333;">
   <div style="flex:1 1 60%;min-width:300px;">
     <div style="padding-left:20px;">
@@ -611,6 +612,5 @@ export const RheologyProducts = {
   </div>
 </div>`
 
-    },
-
+  },
 }

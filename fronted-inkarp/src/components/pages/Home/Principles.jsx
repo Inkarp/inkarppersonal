@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 // Row One Imports
 import Heidolph from '/src/assets/PrincipalLogos/RowOne/Heidolph.svg';
 import Polyscience from '/src/assets/PrincipalLogos/RowOne/Polyscience.png';
@@ -8,7 +7,6 @@ import Rotzmeier from '/src/assets/PrincipalLogos/RowOne/Rotzmeier.gif';
 import ThalesNano from '/src/assets/PrincipalLogos/RowOne/ThalesNano.jpg';
 import Nanalysis from '/src/assets/PrincipalLogos/RowOne/nanalysis.png';
 import Advion from '/src/assets/PrincipalLogos/RowOne/advion.png';
-
 // Row Two Imports
 import ECom from '/src/assets/PrincipalLogos/RowTwo/ECom.png';
 import Labomatic from '/src/assets/PrincipalLogos/RowTwo/Labomatic.svg';
@@ -17,7 +15,6 @@ import Metller from '/src/assets/PrincipalLogos/RowTwo/Metller.png';
 import Header from '/src/assets/PrincipalLogos/RowTwo/header.png';
 import Maccor from '/src/assets/PrincipalLogos/RowTwo/Maccor.jpg';
 import Labstation from '/src/assets/PrincipalLogos/RowTwo/labstation.svg';
-
 // Row Three Imports
 import Bandelin from '/src/assets/PrincipalLogos/RowThree/bandelin.jpg';
 import Kubota from '/src/assets/PrincipalLogos/RowThree/Kubota.png';
@@ -26,7 +23,6 @@ import Luzchem from '/src/assets/PrincipalLogos/RowThree/Luzchem.png';
 import Robot from '/src/assets/PrincipalLogos/RowThree/robot.png';
 import Sonics from '/src/assets/PrincipalLogos/RowThree/sonics-logo.svg';
 import Being from '/src/assets/PrincipalLogos/RowThree/Being.svg';
-
 // Row Four Imports
 import Airtech from '/src/assets/PrincipalLogos/RowFour/Airtech.png';
 import Innova from '/src/assets/PrincipalLogos/RowFour/Innova.png';
@@ -36,7 +32,6 @@ import Implen from '/src/assets/PrincipalLogos/RowFour/Implen.jpg';
 import NanoSurf from '/src/assets/PrincipalLogos/RowFour/NanoSurf.svg';
 import Anvajo from '/src/assets/PrincipalLogos/RowFour/Anvajo.svg';
 import BWB from '/src/assets/PrincipalLogos/RowFour/BWB.png';
-
 // Row Five Imports
 import Nenovision from '/src/assets/PrincipalLogos/RowFive/Nenovision.svg';
 import Reichert from '/src/assets/PrincipalLogos/RowFive/reichert.png';
@@ -45,7 +40,6 @@ import GEA from '/src/assets/PrincipalLogos/RowFive/GEA.png';
 import Proscientific from '/src/assets/PrincipalLogos/RowFive/Proscientific.png';
 import Evonik from '/src/assets/PrincipalLogos/RowFive/Evonik.png';
 import Thermofisher from '/src/assets/PrincipalLogos/RowFive/thermofisher.png';
-
 // Row Six Imports
 import Hitachi from '/src/assets/PrincipalLogos/RowSix/hitachi.png';
 import AP from '/src/assets/PrincipalLogos/RowSix/AP.png';

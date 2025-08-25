@@ -10,11 +10,13 @@ import Mettler from "/src/assets/PrincipalLogos/RowTwo/Metller.svg";
 import ME204T from "/images/products/Mettler/ME204t.jpg";
 import ME1002 from "/images/products/Mettler/ME1002.jpg";
 import { RheologyProducts } from "../../../../data/Rheology/RheologyProducts";
+import { HitachiProducts } from "../../../../data/Rheology/HitachiProducts";
 
 
 
 const SynthesisProductDetails = {
-  ...RheologyProducts
+  ...RheologyProducts,
+  ...HitachiProducts,
 }
 
 export default function RheologyProductDetails() {

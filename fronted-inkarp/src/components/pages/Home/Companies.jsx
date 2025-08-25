@@ -23,7 +23,7 @@ const subsidiaries = [
 
 export default function Companies() {
   return (
-    <section className="relative w-[98%] bg-[#F5F5F5] mx-auto py-10 md:px-5 lg:px-20">
+    <section className="relative w-[98%]  mx-auto py-10 md:px-5 lg:px-20">
       {/* soft on-brand background */}
       <div className="flex justify-center items-center">
         <span
@@ -39,7 +39,7 @@ export default function Companies() {
       </div>
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_20%_-10%,rgba(230,57,70,0.08),transparent),radial-gradient(1200px_600px_at_80%_110%,rgba(230,57,70,0.08),transparent)]" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
         {/* LEFT: headings that were inside the circle */}
         <div className="lg:col-span-3">
           <div className="py-3 flex flex-col items-start justify-center gap-3 max-w-md">
