@@ -4,6 +4,7 @@ import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import CareersKeka from "../components/pages/Careers/CareersKeka";
 import CareersKekaNew from "../components/pages/Careers/CareersKekaNew";
+import CareersForm from "../components/pages/Careers/CareersForm";
 
 const team = [
   { name: "Raj Kumar", quote: "Inkarp isn’t just a workplace — it’s where passion meets purpose.", img: "https://source.unsplash.com/featured/?portrait,business" },
@@ -56,7 +57,7 @@ export default function CareersV2() {
   const activeDot = Math.floor(index / spv) % totalDots;
 
   return (
-    <div className="w-[98%] mx-auto ">
+    <div className="w-[98%] mx-auto">
       <Helmet>
         <title>Careers — Inkarp Instruments</title>
         <meta
@@ -69,24 +70,26 @@ export default function CareersV2() {
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_80%_-10%,rgba(230,57,70,0.08),transparent)]" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16 relative">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            {/* Left copy */}
-            <div className="flex flex-col justify-center items-start bg-white rounded-xl gap-4">
-              <h1 className="mt-5 text-4xl  text-[#E63946] font-bold font-[MaxOT] leading-tight">
+          {/* Use 10 columns → 3/7 split on lg+ */}
+          <div className="grid grid-cols-1 lg:grid-cols-10 gap-10 items-start">
+            {/* Left = 30% (3/10) */}
+            <div className="lg:col-span-4 flex flex-col justify-center items-start rounded-xl gap-2 p-6">
+              <h1 className="mt-1 text-4xl text-[#E63946] font-bold font-[MaxOT] leading-tight">
                 We are hiring
               </h1>
-              <h1 className="mt-5 text-2xl md:text-2xl font-[MaxOT]  leading-tight ">
+              <h2 className="text-2xl font-[MaxOT] leading-tight">
                 Do the most meaningful work of your career at{" "}
-                <span className="text-[#E63946] ">INKARP</span>
-              </h1>
-              {/* <p className="mt-4 text-gray-700 text-lg font-[Roboto]">
+                <span className="text-[#E63946]">INKARP</span>
+              </h2>
+              <p className="mt-2 text-gray-700 text-lg font-[Roboto]">
                 We hire for potential, not just positions. If you love solving real problems and learning fast, you’ll feel at home.
-              </p> */}
+              </p>
             </div>
 
-            {/* Right: testimonials (themed, responsive, auto-advance) */}
-            <div className="p-5 bg-white rounded-2xl shadow-lg overflow-hidden">
+            {/* Right = 70% (7/10) */}
+            <div className="lg:col-span-6 p-5 bg-white rounded-2xl shadow-lg overflow-hidden">
               <div className="flex justify-center">
                 <span
                   className="px-4 py-1 text-xs md:text-sm font-[MaxOT] font-semibold uppercase rounded-full bg-white"
@@ -115,8 +118,8 @@ export default function CareersV2() {
                 ))}
               </div>
 
-              {/* Dots */}
-              <div className="mt-5  sm:hidden justify-center gap-2">
+              {/* Dots (make it flex to center) */}
+              <div className="mt-5 sm:hidden flex justify-center gap-2">
                 {Array.from({ length: totalDots }).map((_, d) => (
                   <span
                     key={d}
@@ -124,11 +127,11 @@ export default function CareersV2() {
                   />
                 ))}
               </div>
-
             </div>
           </div>
         </div>
       </section>
+
 
       {/* PROCESS */}
       <section id="roles" className="px-4 sm:px-6 lg:px-8 py-10">
@@ -161,21 +164,24 @@ export default function CareersV2() {
 
       {/* FOOT CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-10">
-        <div className="max-w-6xl mx-auto rounded-2xl bg-[#E63946] text-white p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="max-w-5xl mx-auto rounded-2xl bg-[#E63946] text-white p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
             <h4 className="text-xl md:text-2xl font-[MaxOT]">Don’t see a perfect role?</h4>
             <p className="text-white/90 font-[Roboto]">
               We always welcome exceptional talent. Share your profile with us.
             </p>
           </div>
-          <Link
-            to="/careers/send-resume"
+          <div
             className="inline-flex items-center gap-2 bg-white text-[#E63946] px-5 py-2.5 rounded-full font-medium hover:bg-white/90 transition"
           >
-            Send your resume <ChevronRight className="w-4 h-4" />
-          </Link>
+            Share your resume
+            <ChevronRight className="w-4 h-4" />
+          </div>
         </div>
+
       </section>
+      <CareersForm />
+
     </div>
   );
 }

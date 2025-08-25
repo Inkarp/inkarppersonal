@@ -61,6 +61,7 @@ import HomeNew from "./Main/HomeNew";
 import CareersForm from "./components/pages/Careers/CareersForm";
 import VerticalsBubbleNew from "./components/pages/Verticals/VerticalsBubbleNew";
 import  Verticals  from "./Main/Verticals";
+import VerticalsNew from "./components/pages/Verticals/VerticalsNew";
 
 
 
@@ -89,7 +90,8 @@ function App() {
           {/* <Route path="/insights-and-updates/webinars" element={<Webinars />} /> */}
 
           {/* General fallback */}
-          <Route path="/verticals" element={<VerticalsPage />} />
+          <Route path="/verticals" element={<VerticalsNew />} />
+          {/* <Route path="/verticals" element={<VerticalsPage />} /> */}
           {/* <Route path="/verticals" element={<Verticals />} /> */}
           {/* <Route path="/verticals" element={<VerticalsBubble />} /> */}
           {/* Verticals Routes */}
